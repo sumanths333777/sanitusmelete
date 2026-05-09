@@ -6,9 +6,6 @@
 
 <title>Sanitas Melete AI</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -21,133 +18,85 @@ box-sizing:border-box;
 
 body{
 font-family:'Inter',sans-serif;
-background:#f3efe8;
+background:#f7f1e8;
+height:100vh;
+overflow:hidden;
 display:flex;
 justify-content:center;
-min-height:100vh;
-overflow-x:hidden;
+align-items:center;
 color:#111827;
 }
 
-/* APP */
+/* MAIN APP */
 
 .app{
 width:100%;
 max-width:430px;
-min-height:100vh;
+height:100vh;
+background:
+radial-gradient(circle at top left,#fff7ef 0%,transparent 35%),
+radial-gradient(circle at bottom right,#fff5e8 0%,transparent 35%),
+linear-gradient(180deg,#f9f4ec 0%,#f6efe5 100%);
 position:relative;
 overflow:hidden;
-
-background:
-radial-gradient(circle at top right,
-rgba(255,255,255,0.85),
-transparent 30%),
-
-linear-gradient(180deg,#fbf8f2 0%,#f5ede3 100%);
 }
 
-/* DESKTOP FLOATING */
-
-@media(min-width:768px){
-
-body{
-padding:24px;
-align-items:center;
-}
+/* DESKTOP */
+@media(min-width:900px){
 
 .app{
-height:95vh;
-border-radius:38px;
-
+height:920px;
+border-radius:34px;
 box-shadow:
-0 30px 80px rgba(0,0,0,0.08),
-0 10px 30px rgba(0,0,0,0.04);
+0 25px 80px rgba(0,0,0,0.12),
+0 0 0 1px rgba(255,255,255,0.4) inset;
+}
 
-border:1px solid rgba(255,255,255,0.7);
-
-overflow-y:auto;
+body{
+padding:30px;
 }
 
 }
 
-/* GLOWS */
+/* GLOW */
 
-.glow{
+.bg-glow{
 position:absolute;
-border-radius:50%;
-filter:blur(70px);
-opacity:0.5;
+width:500px;
+height:500px;
+background:radial-gradient(circle,rgba(255,255,255,0.7),transparent 70%);
+top:-150px;
+left:-120px;
+filter:blur(10px);
 pointer-events:none;
 }
 
-.glow1{
-width:200px;
-height:200px;
-background:#ffffff;
-top:-80px;
-right:-80px;
-}
+/* HEADER */
 
-.glow2{
-width:160px;
-height:160px;
-background:#fff8ea;
-left:-70px;
-bottom:160px;
-}
-
-.glow3{
-width:100px;
-height:100px;
-background:#ffffff;
-right:-30px;
-top:45%;
-}
-
-/* CONTAINER */
-
-.container{
-padding:16px;
-position:relative;
-z-index:2;
-}
-
-/* TOPBAR */
-
-.topbar{
+.header{
+padding:22px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-
-padding:14px 16px;
-
-border-radius:30px;
-
-background:rgba(255,255,255,0.55);
-backdrop-filter:blur(20px);
-
-box-shadow:
-0 10px 30px rgba(0,0,0,0.04),
-inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
-.top-left{
+.left-header{
 display:flex;
 align-items:center;
-gap:12px;
+gap:14px;
 }
 
 .menu-btn{
-width:52px;
-height:52px;
-border:none;
+width:54px;
+height:54px;
 border-radius:18px;
-background:white;
-font-size:24px;
-cursor:pointer;
-
-box-shadow:
-0 8px 20px rgba(0,0,0,0.05);
+background:rgba(255,255,255,0.72);
+backdrop-filter:blur(10px);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:28px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 .logo-wrap{
@@ -156,84 +105,63 @@ align-items:center;
 gap:12px;
 }
 
-.logo{
-font-size:48px;
+.infinity{
+font-size:52px;
 font-weight:800;
-color:#082c78;
+color:#0f2d7a;
 line-height:1;
 }
 
-.logo-text{
+.brand{
 font-size:14px;
 font-weight:800;
-letter-spacing:0.12em;
 line-height:1.2;
-color:#082c78;
+letter-spacing:1px;
+color:#10214f;
 }
 
-.top-right{
+.right-header{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 }
 
 .pro-btn{
-padding:12px 18px;
-border:none;
-border-radius:999px;
+padding:13px 24px;
 background:white;
-
-font-size:14px;
+border-radius:18px;
 font-weight:600;
-color:#d7a13f;
-
-box-shadow:
-0 6px 18px rgba(0,0,0,0.04);
-}
-
-.notify{
-font-size:22px;
+font-size:16px;
+color:#d0a642;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 .profile{
-padding:12px 16px;
-border-radius:999px;
+padding:13px 18px;
 background:white;
-
-font-size:14px;
+border-radius:18px;
 font-weight:600;
-
-box-shadow:
-0 6px 18px rgba(0,0,0,0.04);
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 /* QUICK ACCESS */
 
-.quick-wrap{
-display:flex;
-justify-content:flex-end;
-margin-top:16px;
-}
-
-.quick{
+.quick-card{
+position:absolute;
+right:22px;
+top:120px;
 width:310px;
-
-padding:18px;
-
-border-radius:28px;
-
-background:rgba(255,255,255,0.6);
+background:rgba(255,255,255,0.72);
 backdrop-filter:blur(20px);
-
-box-shadow:
-0 10px 28px rgba(0,0,0,0.04),
-inset 0 1px 0 rgba(255,255,255,0.9);
+border-radius:28px;
+padding:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.06);
 }
 
 .quick-title{
-font-size:16px;
+font-size:24px;
 font-weight:700;
-margin-bottom:14px;
+margin-bottom:18px;
 }
 
 .quick-grid{
@@ -246,271 +174,250 @@ gap:12px;
 display:flex;
 flex-direction:column;
 align-items:center;
-gap:8px;
-
-font-size:11px;
-text-align:center;
+gap:10px;
+font-size:13px;
+font-weight:500;
 }
 
 .quick-icon{
-width:48px;
-height:48px;
-border-radius:16px;
+width:58px;
+height:58px;
 background:white;
-
+border-radius:18px;
 display:flex;
 align-items:center;
 justify-content:center;
-
-font-size:20px;
-
-box-shadow:
-0 4px 14px rgba(0,0,0,0.04);
+font-size:26px;
+box-shadow:0 10px 25px rgba(0,0,0,0.05);
 }
 
 /* HERO */
 
 .hero{
+padding:120px 26px 0;
 display:flex;
 flex-direction:column;
 align-items:center;
-margin-top:24px;
-}
-
-.hero-circle{
-width:190px;
-height:190px;
-border-radius:50%;
-
-background:rgba(255,255,255,0.68);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-font-size:100px;
-font-weight:800;
-color:#082c78;
-
-box-shadow:
-0 20px 50px rgba(0,0,0,0.06),
-inset 0 1px 0 rgba(255,255,255,0.9);
-}
-
-.hero-title{
-margin-top:28px;
-font-size:58px;
-font-weight:800;
-letter-spacing:-0.05em;
-line-height:1.1;
 text-align:center;
 }
 
-.hero-title span{
-background:linear-gradient(135deg,#d7a33f,#f1d67e);
+.logo-circle{
+width:240px;
+height:240px;
+border-radius:50%;
+background:rgba(255,255,255,0.65);
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:120px;
+font-weight:800;
+color:#0f2d7a;
+backdrop-filter:blur(10px);
+box-shadow:
+0 25px 60px rgba(0,0,0,0.06),
+inset 0 0 0 1px rgba(255,255,255,0.4);
+margin-bottom:40px;
+}
 
+.hero h1{
+font-size:62px;
+font-weight:800;
+letter-spacing:-2px;
+margin-bottom:10px;
+}
+
+.hero h1 span{
+background:linear-gradient(180deg,#f6d676,#d8a93a);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-.hero-sub{
-margin-top:14px;
-font-size:18px;
-line-height:1.6;
-text-align:center;
-color:#6b7280;
+.subtitle{
+font-size:24px;
+line-height:1.5;
+color:#666b7b;
+max-width:340px;
 }
 
-/* INTRO */
+/* INFO CARD */
 
-.intro{
-margin-top:34px;
-
-background:rgba(255,255,255,0.64);
-backdrop-filter:blur(20px);
-
-padding:22px;
-border-radius:30px;
-
+.info-card{
+margin:34px 26px 0;
+background:rgba(255,255,255,0.7);
+border-radius:28px;
+padding:24px;
 display:flex;
-gap:14px;
-
-box-shadow:
-0 12px 30px rgba(0,0,0,0.04),
-inset 0 1px 0 rgba(255,255,255,0.9);
+gap:18px;
+align-items:flex-start;
+box-shadow:0 18px 40px rgba(0,0,0,0.05);
 }
 
 .spark{
-width:50px;
-height:50px;
-border-radius:50%;
-background:#fff3df;
-
+width:54px;
+height:54px;
+border-radius:18px;
+background:#fff4db;
 display:flex;
 align-items:center;
 justify-content:center;
-
-font-size:20px;
-flex-shrink:0;
+font-size:24px;
 }
 
-.intro h3{
-font-size:18px;
-margin-bottom:6px;
-}
-
-.intro p{
-font-size:15px;
-line-height:1.6;
-color:#4b5563;
+.info-text{
+font-size:17px;
+line-height:1.7;
+color:#2a2f3d;
 }
 
 /* TRY */
 
 .try{
-margin-top:36px;
+padding:34px 26px 0;
 }
 
 .try h2{
-font-size:18px;
+font-size:26px;
 margin-bottom:18px;
-color:#7c6f5d;
+color:#7d6a52;
 }
-
-/* CARDS */
 
 .cards{
 display:grid;
-grid-template-columns:repeat(2,1fr);
-gap:16px;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
 }
 
 .card{
-background:rgba(255,255,255,0.68);
-backdrop-filter:blur(20px);
-
+background:rgba(255,255,255,0.7);
 border-radius:28px;
-
-padding:18px;
-
-min-height:170px;
-
+padding:18px 16px;
+height:170px;
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-
-box-shadow:
-0 10px 28px rgba(0,0,0,0.04),
-inset 0 1px 0 rgba(255,255,255,0.9);
-
-transition:0.25s ease;
-cursor:pointer;
-}
-
-.card:hover{
-transform:translateY(-4px);
+box-shadow:0 16px 35px rgba(0,0,0,0.05);
 }
 
 .card-icon{
 width:56px;
 height:56px;
 border-radius:18px;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
-font-size:24px;
+font-size:28px;
 }
 
-.yellow{ background:#fff1cf; }
-.purple{ background:#efd9ff; }
-.green{ background:#ebffd6; }
-.blue{ background:#dde8ff; }
+.yellow{background:#fff1cc;}
+.purple{background:#eedcff;}
+.green{background:#e5f5d5;}
+.blue{background:#dfe7ff;}
 
-.card p{
-margin-top:18px;
+.card-title{
 font-size:15px;
-font-weight:600;
-line-height:1.4;
+font-weight:700;
+line-height:1.5;
 }
 
 .arrow{
-font-size:24px;
+font-size:30px;
 }
 
 /* INPUT */
 
 .bottom{
-position:sticky;
-bottom:0;
-padding:28px 0 18px;
-
-background:linear-gradient(to top,#f5ede3 40%,transparent);
+position:absolute;
+left:0;
+bottom:26px;
+width:100%;
+padding:0 24px;
 }
 
-.input-box{
-background:rgba(255,255,255,0.75);
+.input-wrap{
+height:82px;
+background:rgba(255,255,255,0.82);
 backdrop-filter:blur(20px);
-
 border-radius:999px;
-
-padding:10px;
-
 display:flex;
 align-items:center;
-gap:10px;
-
+padding:0 10px 0 24px;
 box-shadow:
-0 16px 36px rgba(0,0,0,0.06),
-inset 0 1px 0 rgba(255,255,255,0.9);
+0 20px 45px rgba(0,0,0,0.08),
+0 0 30px rgba(255,220,120,0.2);
 }
 
 .attach{
-width:50px;
-height:50px;
-border:none;
-border-radius:50%;
-background:white;
-
-font-size:20px;
-cursor:pointer;
-
-box-shadow:
-0 4px 14px rgba(0,0,0,0.05);
+font-size:34px;
+margin-right:14px;
+color:#777;
 }
 
-.input-box input{
+.input-wrap input{
 flex:1;
 border:none;
-outline:none;
 background:transparent;
-
-font-size:16px;
-color:#111827;
+outline:none;
+font-size:20px;
+color:#444;
 }
 
 .mic{
-font-size:22px;
-opacity:0.65;
+font-size:30px;
+margin-right:16px;
 }
 
 .send{
-width:58px;
-height:58px;
-border:none;
+width:64px;
+height:64px;
 border-radius:50%;
-
-background:linear-gradient(135deg,#082c78,#2458e7);
-
+border:none;
+background:linear-gradient(180deg,#103ca9,#07286f);
 color:white;
-font-size:22px;
-
+font-size:28px;
 cursor:pointer;
+box-shadow:0 15px 35px rgba(7,40,111,0.4);
+}
 
-box-shadow:
-0 14px 34px rgba(37,99,235,0.35),
-0 0 0 6px rgba(255,255,255,0.7);
+/* MOBILE */
+
+@media(max-width:480px){
+
+.quick-card{
+width:290px;
+top:110px;
+}
+
+.logo-circle{
+width:210px;
+height:210px;
+font-size:100px;
+}
+
+.hero h1{
+font-size:54px;
+}
+
+.subtitle{
+font-size:20px;
+}
+
+.cards{
+gap:10px;
+}
+
+.card{
+height:155px;
+padding:16px 14px;
+}
+
+.card-title{
+font-size:14px;
+}
+
+.input-wrap{
+height:76px;
+}
+
 }
 
 </style>
@@ -520,42 +427,32 @@ box-shadow:
 
 <div class="app">
 
-<div class="glow glow1"></div>
-<div class="glow glow2"></div>
-<div class="glow glow3"></div>
+<div class="bg-glow"></div>
 
-<div class="container">
+<!-- HEADER -->
 
-<!-- TOPBAR -->
+<div class="header">
 
-<div class="topbar">
+<div class="left-header">
 
-<div class="top-left">
-
-<button class="menu-btn">☰</button>
+<div class="menu-btn">☰</div>
 
 <div class="logo-wrap">
+<div class="infinity">∞</div>
 
-<div class="logo">∞</div>
-
-<div class="logo-text">
+<div class="brand">
 SANITAS<br>
 MELETE AI
 </div>
-
 </div>
 
 </div>
 
-<div class="top-right">
+<div class="right-header">
 
-<button class="pro-btn">👑 Pro</button>
+<div class="pro-btn">👑 Pro</div>
 
-<div class="notify">🔔</div>
-
-<div class="profile">
-SK∞ ▼
-</div>
+<div class="profile">SK∞</div>
 
 </div>
 
@@ -563,18 +460,14 @@ SK∞ ▼
 
 <!-- QUICK ACCESS -->
 
-<div class="quick-wrap">
+<div class="quick-card">
 
-<div class="quick">
-
-<div class="quick-title">
-Quick access
-</div>
+<div class="quick-title">Quick access</div>
 
 <div class="quick-grid">
 
 <div class="quick-item">
-<div class="quick-icon">☁️</div>
+<div class="quick-icon">📤</div>
 Upload
 </div>
 
@@ -597,42 +490,29 @@ Notes
 
 </div>
 
-</div>
-
 <!-- HERO -->
 
 <div class="hero">
 
-<div class="hero-circle">
-∞
-</div>
+<div class="logo-circle">∞</div>
 
-<div class="hero-title">
-Hi, I'm <span>MEBI</span> 👋
-</div>
+<h1>Hi, I'm <span>MEBI</span> 👋</h1>
 
-<div class="hero-sub">
+<div class="subtitle">
 Your AI study buddy for NEET & JEE ✨
 </div>
 
 </div>
 
-<!-- INTRO -->
+<!-- INFO -->
 
-<div class="intro">
+<div class="info-card">
 
-<div class="spark">
-✨
-</div>
+<div class="spark">✨</div>
 
-<div>
-
-<h3>I’m MEBI, your study buddy.</h3>
-
-<p>
+<div class="info-text">
+I’m MEBI, your study buddy.<br>
 Ask doubts, request MCQs, or send images.
-</p>
-
 </div>
 
 </div>
@@ -647,9 +527,11 @@ Ask doubts, request MCQs, or send images.
 
 <div class="card">
 
-<div class="card-icon yellow">❓</div>
+<div class="card-icon yellow">❔</div>
 
-<p>Explain this concept</p>
+<div class="card-title">
+Explain this concept
+</div>
 
 <div class="arrow">→</div>
 
@@ -659,7 +541,9 @@ Ask doubts, request MCQs, or send images.
 
 <div class="card-icon purple">📝</div>
 
-<p>Generate MCQs</p>
+<div class="card-title">
+Generate MCQs
+</div>
 
 <div class="arrow">→</div>
 
@@ -667,9 +551,11 @@ Ask doubts, request MCQs, or send images.
 
 <div class="card">
 
-<div class="card-icon green">🧠</div>
+<div class="card-icon green">⚛️</div>
 
-<p>Solve this problem</p>
+<div class="card-title">
+Solve this problem
+</div>
 
 <div class="arrow">→</div>
 
@@ -679,7 +565,9 @@ Ask doubts, request MCQs, or send images.
 
 <div class="card-icon blue">☁️</div>
 
-<p>Upload image</p>
+<div class="card-title">
+Upload image
+</div>
 
 <div class="arrow">→</div>
 
@@ -693,17 +581,15 @@ Ask doubts, request MCQs, or send images.
 
 <div class="bottom">
 
-<div class="input-box">
+<div class="input-wrap">
 
-<button class="attach">📎</button>
+<div class="attach">📎</div>
 
-<input type="text" placeholder="Type your question here...">
+<input type="text" placeholder="Type your question here..." />
 
 <div class="mic">🎤</div>
 
 <button class="send">➤</button>
-
-</div>
 
 </div>
 
