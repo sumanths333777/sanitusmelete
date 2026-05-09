@@ -236,118 +236,20 @@ display:flex;
 flex-direction:column;
 align-items:center;
 
-gap:12px;
+gap:14px;
 
 position:relative;
 z-index:2;
-}
-
-/* QUICK ACCESS */
-
-.quick-access{
-
-width:100%;
-
-display:flex;
-justify-content:flex-end;
-}
-
-.quick-box{
-
-width:250px;
-
-padding:14px;
-
-background:
-rgba(255,255,255,.42);
-
-backdrop-filter:blur(20px);
-
-border-radius:26px;
-
-border:
-1px solid rgba(255,255,255,.75);
-
-box-shadow:
-0 10px 25px rgba(0,0,0,.04);
-}
-
-.quick-head{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-margin-bottom:14px;
-}
-
-.quick-head h3{
-
-font-size:16px;
-font-weight:700;
-}
-
-.arrow-circle{
-
-width:30px;
-height:30px;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:white;
-
-font-size:16px;
-
-box-shadow:
-0 4px 10px rgba(0,0,0,.05);
-}
-
-.quick-items{
-
-display:flex;
-justify-content:space-between;
-gap:8px;
-}
-
-.quick-item{
-
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:6px;
-
-font-size:11px;
-}
-
-.quick-icon{
-
-width:46px;
-height:46px;
-
-border-radius:16px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:white;
-
-font-size:20px;
-
-box-shadow:
-0 4px 10px rgba(0,0,0,.04);
 }
 
 /* BIG LOGO */
 
 .logo-big{
 
-width:165px;
-height:165px;
+width:190px;
+height:190px;
+
+margin-top:34px;
 
 border-radius:50%;
 
@@ -355,21 +257,22 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:82px;
+font-size:96px;
 font-weight:800;
 
 color:#082b83;
 
 background:
-rgba(255,255,255,.42);
+rgba(255,255,255,.40);
 
 backdrop-filter:blur(20px);
 
 border:
-1px solid rgba(255,255,255,.75);
+1px solid rgba(255,255,255,.8);
 
 box-shadow:
-0 18px 40px rgba(0,0,0,.05);
+0 18px 45px rgba(0,0,0,.05),
+inset 0 1px 1px rgba(255,255,255,.9);
 
 animation:floaty 4s ease-in-out infinite;
 }
@@ -393,17 +296,19 @@ transform:translateY(0);
 
 .hello{
 
-font-size:42px;
+font-size:52px;
 
 font-weight:800;
 
 letter-spacing:-2px;
 
-line-height:1.05;
+line-height:1.02;
 
 text-align:center;
 
 color:#071133;
+
+margin-top:10px;
 }
 
 .hello span{
@@ -423,13 +328,13 @@ linear-gradient(
 
 .sub{
 
-font-size:15px;
+font-size:17px;
 
 color:#6b7280;
 
 text-align:center;
 
-margin-top:-6px;
+margin-top:-2px;
 }
 
 /* CHAT */
@@ -437,7 +342,8 @@ margin-top:-6px;
 .chat-area{
 
 width:100%;
-margin-top:10px;
+
+margin-top:18px;
 }
 
 .bubble.bot{
@@ -501,10 +407,10 @@ color:#4b5563;
 
 width:100%;
 
-margin-top:10px;
+margin-top:18px;
 margin-bottom:8px;
 
-font-size:20px;
+font-size:21px;
 font-weight:700;
 
 color:#7c6752;
@@ -690,10 +596,6 @@ padding:0 16px 92px;
 grid-template-columns:
 repeat(4,1fr);
 }
-
-.quick-card{
-height:112px;
-}
 }
 
 </style>
@@ -731,46 +633,6 @@ MELETE AI
 </header>
 
 <main class="main">
-
-<section class="quick-access">
-
-<div class="quick-box">
-
-<div class="quick-head">
-
-<h3>Quick access</h3>
-
-<div class="arrow-circle">→</div>
-
-</div>
-
-<div class="quick-items">
-
-<div class="quick-item">
-<div class="quick-icon">☁️</div>
-<span>Upload</span>
-</div>
-
-<div class="quick-item">
-<div class="quick-icon">📋</div>
-<span>Mock Test</span>
-</div>
-
-<div class="quick-item">
-<div class="quick-icon">🧾</div>
-<span>MCQs</span>
-</div>
-
-<div class="quick-item">
-<div class="quick-icon">📘</div>
-<span>Notes</span>
-</div>
-
-</div>
-
-</div>
-
-</section>
 
 <div class="logo-big">∞</div>
 
