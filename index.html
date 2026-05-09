@@ -21,7 +21,10 @@ box-sizing:border-box;
 
 body{
 font-family:'Inter',sans-serif;
-background:#f7f1e8;
+background:#f3efe8;
+display:flex;
+justify-content:center;
+min-height:100vh;
 overflow-x:hidden;
 color:#111827;
 }
@@ -30,6 +33,7 @@ color:#111827;
 
 .app{
 width:100%;
+max-width:430px;
 min-height:100vh;
 position:relative;
 overflow:hidden;
@@ -42,7 +46,31 @@ transparent 30%),
 linear-gradient(180deg,#fbf8f2 0%,#f5ede3 100%);
 }
 
-/* GLOW */
+/* DESKTOP FLOATING */
+
+@media(min-width:768px){
+
+body{
+padding:24px;
+align-items:center;
+}
+
+.app{
+height:95vh;
+border-radius:38px;
+
+box-shadow:
+0 30px 80px rgba(0,0,0,0.08),
+0 10px 30px rgba(0,0,0,0.04);
+
+border:1px solid rgba(255,255,255,0.7);
+
+overflow-y:auto;
+}
+
+}
+
+/* GLOWS */
 
 .glow{
 position:absolute;
@@ -53,35 +81,33 @@ pointer-events:none;
 }
 
 .glow1{
-width:220px;
-height:220px;
+width:200px;
+height:200px;
 background:#ffffff;
 top:-80px;
 right:-80px;
 }
 
 .glow2{
-width:180px;
-height:180px;
+width:160px;
+height:160px;
 background:#fff8ea;
 left:-70px;
-bottom:180px;
+bottom:160px;
 }
 
 .glow3{
-width:120px;
-height:120px;
+width:100px;
+height:100px;
 background:#ffffff;
-right:-40px;
+right:-30px;
 top:45%;
 }
 
 /* CONTAINER */
 
 .container{
-max-width:1450px;
-margin:auto;
-padding:18px;
+padding:16px;
 position:relative;
 z-index:2;
 }
@@ -93,93 +119,92 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
+padding:14px 16px;
+
+border-radius:30px;
+
 background:rgba(255,255,255,0.55);
 backdrop-filter:blur(20px);
-
-padding:18px 22px;
-border-radius:30px;
 
 box-shadow:
 0 10px 30px rgba(0,0,0,0.04),
 inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
-/* LEFT */
-
 .top-left{
 display:flex;
 align-items:center;
-gap:16px;
+gap:12px;
 }
 
 .menu-btn{
-width:58px;
-height:58px;
+width:52px;
+height:52px;
 border:none;
-border-radius:20px;
+border-radius:18px;
 background:white;
-font-size:26px;
+font-size:24px;
 cursor:pointer;
 
 box-shadow:
-0 8px 22px rgba(0,0,0,0.05);
+0 8px 20px rgba(0,0,0,0.05);
 }
 
 .logo-wrap{
 display:flex;
 align-items:center;
-gap:14px;
+gap:12px;
 }
 
 .logo{
-font-size:54px;
+font-size:48px;
 font-weight:800;
 color:#082c78;
 line-height:1;
 }
 
 .logo-text{
-font-size:15px;
+font-size:14px;
 font-weight:800;
 letter-spacing:0.12em;
-line-height:1.3;
+line-height:1.2;
 color:#082c78;
 }
-
-/* RIGHT */
 
 .top-right{
 display:flex;
 align-items:center;
-gap:14px;
+gap:10px;
 }
 
 .pro-btn{
-padding:14px 22px;
+padding:12px 18px;
 border:none;
 border-radius:999px;
 background:white;
+
+font-size:14px;
 font-weight:600;
-font-size:15px;
-color:#d6a23e;
+color:#d7a13f;
 
 box-shadow:
-0 8px 22px rgba(0,0,0,0.04);
+0 6px 18px rgba(0,0,0,0.04);
 }
 
 .notify{
-font-size:24px;
+font-size:22px;
 }
 
 .profile{
-padding:14px 18px;
+padding:12px 16px;
 border-radius:999px;
 background:white;
+
+font-size:14px;
 font-weight:600;
-font-size:15px;
 
 box-shadow:
-0 8px 22px rgba(0,0,0,0.04);
+0 6px 18px rgba(0,0,0,0.04);
 }
 
 /* QUICK ACCESS */
@@ -187,17 +212,18 @@ box-shadow:
 .quick-wrap{
 display:flex;
 justify-content:flex-end;
-margin-top:18px;
+margin-top:16px;
 }
 
 .quick{
-width:340px;
+width:310px;
+
+padding:18px;
+
+border-radius:28px;
 
 background:rgba(255,255,255,0.6);
 backdrop-filter:blur(20px);
-
-padding:22px;
-border-radius:28px;
 
 box-shadow:
 0 10px 28px rgba(0,0,0,0.04),
@@ -205,9 +231,9 @@ inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
 .quick-title{
-font-size:18px;
+font-size:16px;
 font-weight:700;
-margin-bottom:18px;
+margin-bottom:14px;
 }
 
 .quick-grid{
@@ -221,24 +247,25 @@ display:flex;
 flex-direction:column;
 align-items:center;
 gap:8px;
-font-size:12px;
+
+font-size:11px;
 text-align:center;
 }
 
 .quick-icon{
-width:52px;
-height:52px;
-border-radius:18px;
+width:48px;
+height:48px;
+border-radius:16px;
 background:white;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:22px;
+font-size:20px;
 
 box-shadow:
-0 6px 18px rgba(0,0,0,0.04);
+0 4px 14px rgba(0,0,0,0.04);
 }
 
 /* HERO */
@@ -247,38 +274,40 @@ box-shadow:
 display:flex;
 flex-direction:column;
 align-items:center;
-margin-top:20px;
+margin-top:24px;
 }
 
 .hero-circle{
-width:270px;
-height:270px;
+width:190px;
+height:190px;
 border-radius:50%;
 
-background:rgba(255,255,255,0.62);
+background:rgba(255,255,255,0.68);
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:140px;
+font-size:100px;
 font-weight:800;
 color:#082c78;
 
 box-shadow:
-0 25px 60px rgba(0,0,0,0.06),
+0 20px 50px rgba(0,0,0,0.06),
 inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
 .hero-title{
-margin-top:34px;
-font-size:82px;
+margin-top:28px;
+font-size:58px;
 font-weight:800;
 letter-spacing:-0.05em;
+line-height:1.1;
+text-align:center;
 }
 
 .hero-title span{
-background:linear-gradient(135deg,#d6a03f,#f1d47b);
+background:linear-gradient(135deg,#d7a33f,#f1d67e);
 
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
@@ -286,114 +315,112 @@ background:linear-gradient(135deg,#d6a03f,#f1d47b);
 
 .hero-sub{
 margin-top:14px;
-font-size:28px;
-color:#6b7280;
+font-size:18px;
+line-height:1.6;
 text-align:center;
-line-height:1.5;
+color:#6b7280;
 }
 
-/* INTRO CARD */
+/* INTRO */
 
 .intro{
-max-width:980px;
-margin:42px auto 0;
+margin-top:34px;
 
-background:rgba(255,255,255,0.62);
+background:rgba(255,255,255,0.64);
 backdrop-filter:blur(20px);
 
-padding:30px;
-border-radius:34px;
+padding:22px;
+border-radius:30px;
 
 display:flex;
-align-items:flex-start;
-gap:18px;
+gap:14px;
 
 box-shadow:
-0 14px 34px rgba(0,0,0,0.05),
+0 12px 30px rgba(0,0,0,0.04),
 inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
 .spark{
-width:62px;
-height:62px;
+width:50px;
+height:50px;
 border-radius:50%;
-background:#fff3de;
+background:#fff3df;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:26px;
+font-size:20px;
 flex-shrink:0;
 }
 
 .intro h3{
-font-size:28px;
-margin-bottom:8px;
+font-size:18px;
+margin-bottom:6px;
 }
 
 .intro p{
-font-size:21px;
-line-height:1.7;
+font-size:15px;
+line-height:1.6;
 color:#4b5563;
 }
 
 /* TRY */
 
 .try{
-margin-top:50px;
+margin-top:36px;
 }
 
 .try h2{
-font-size:32px;
+font-size:18px;
+margin-bottom:18px;
 color:#7c6f5d;
-margin-bottom:26px;
 }
 
 /* CARDS */
 
 .cards{
 display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:24px;
+grid-template-columns:repeat(2,1fr);
+gap:16px;
 }
 
 .card{
-background:rgba(255,255,255,0.65);
+background:rgba(255,255,255,0.68);
 backdrop-filter:blur(20px);
 
-border-radius:32px;
+border-radius:28px;
 
-padding:24px;
+padding:18px;
 
-min-height:230px;
+min-height:170px;
 
 display:flex;
 flex-direction:column;
 justify-content:space-between;
 
 box-shadow:
-0 12px 30px rgba(0,0,0,0.04),
+0 10px 28px rgba(0,0,0,0.04),
 inset 0 1px 0 rgba(255,255,255,0.9);
 
-transition:0.3s ease;
+transition:0.25s ease;
 cursor:pointer;
 }
 
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-4px);
 }
 
 .card-icon{
-width:64px;
-height:64px;
-border-radius:20px;
+width:56px;
+height:56px;
+border-radius:18px;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:28px;
+font-size:24px;
 }
 
 .yellow{ background:#fff1cf; }
@@ -402,13 +429,14 @@ font-size:28px;
 .blue{ background:#dde8ff; }
 
 .card p{
-font-size:24px;
+margin-top:18px;
+font-size:15px;
 font-weight:600;
 line-height:1.4;
 }
 
 .arrow{
-font-size:28px;
+font-size:24px;
 }
 
 /* INPUT */
@@ -416,42 +444,40 @@ font-size:28px;
 .bottom{
 position:sticky;
 bottom:0;
-padding:40px 0 24px;
+padding:28px 0 18px;
+
 background:linear-gradient(to top,#f5ede3 40%,transparent);
 }
 
 .input-box{
-max-width:1050px;
-margin:auto;
-
-background:rgba(255,255,255,0.72);
+background:rgba(255,255,255,0.75);
 backdrop-filter:blur(20px);
 
 border-radius:999px;
 
-padding:14px;
+padding:10px;
 
 display:flex;
 align-items:center;
-gap:14px;
+gap:10px;
 
 box-shadow:
-0 20px 40px rgba(0,0,0,0.06),
+0 16px 36px rgba(0,0,0,0.06),
 inset 0 1px 0 rgba(255,255,255,0.9);
 }
 
 .attach{
-width:62px;
-height:62px;
+width:50px;
+height:50px;
 border:none;
 border-radius:50%;
 background:white;
 
-font-size:24px;
+font-size:20px;
 cursor:pointer;
 
 box-shadow:
-0 6px 18px rgba(0,0,0,0.05);
+0 4px 14px rgba(0,0,0,0.05);
 }
 
 .input-box input{
@@ -460,103 +486,31 @@ border:none;
 outline:none;
 background:transparent;
 
-font-size:22px;
+font-size:16px;
 color:#111827;
 }
 
 .mic{
-font-size:28px;
+font-size:22px;
 opacity:0.65;
 }
 
 .send{
-width:74px;
-height:74px;
+width:58px;
+height:58px;
 border:none;
 border-radius:50%;
 
 background:linear-gradient(135deg,#082c78,#2458e7);
 
 color:white;
-font-size:28px;
+font-size:22px;
 
 cursor:pointer;
 
 box-shadow:
-0 14px 36px rgba(37,99,235,0.35),
-0 0 0 8px rgba(255,255,255,0.65);
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.hero-circle{
-width:170px;
-height:170px;
-font-size:90px;
-}
-
-.hero-title{
-font-size:54px;
-text-align:center;
-}
-
-.hero-sub{
-font-size:18px;
-}
-
-.quick{
-width:100%;
-}
-
-.cards{
-grid-template-columns:repeat(2,1fr);
-}
-
-.card{
-min-height:170px;
-}
-
-.card p{
-font-size:16px;
-}
-
-.try h2{
-font-size:24px;
-}
-
-.intro{
-padding:22px;
-}
-
-.intro h3{
-font-size:20px;
-}
-
-.intro p{
-font-size:15px;
-}
-
-.input-box{
-padding:10px;
-}
-
-.input-box input{
-font-size:16px;
-}
-
-.send{
-width:58px;
-height:58px;
-font-size:22px;
-}
-
-.attach{
-width:50px;
-height:50px;
-}
-
+0 14px 34px rgba(37,99,235,0.35),
+0 0 0 6px rgba(255,255,255,0.7);
 }
 
 </style>
@@ -607,7 +561,7 @@ SK∞ ▼
 
 </div>
 
-<!-- QUICK -->
+<!-- QUICK ACCESS -->
 
 <div class="quick-wrap">
 
@@ -693,9 +647,7 @@ Ask doubts, request MCQs, or send images.
 
 <div class="card">
 
-<div>
 <div class="card-icon yellow">❓</div>
-</div>
 
 <p>Explain this concept</p>
 
@@ -705,9 +657,7 @@ Ask doubts, request MCQs, or send images.
 
 <div class="card">
 
-<div>
 <div class="card-icon purple">📝</div>
-</div>
 
 <p>Generate MCQs</p>
 
@@ -717,9 +667,7 @@ Ask doubts, request MCQs, or send images.
 
 <div class="card">
 
-<div>
 <div class="card-icon green">🧠</div>
-</div>
 
 <p>Solve this problem</p>
 
@@ -729,9 +677,7 @@ Ask doubts, request MCQs, or send images.
 
 <div class="card">
 
-<div>
 <div class="card-icon blue">☁️</div>
-</div>
 
 <p>Upload image</p>
 
