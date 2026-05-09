@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
+<meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>SANITAS MELETE – MEBI AI</title>
@@ -25,18 +25,18 @@ sans-serif;
 background:
 linear-gradient(
 180deg,
-#f8f3ea 0%,
-#f3ece2 100%
+#f8f4ec 0%,
+#f2ebe1 100%
 );
-
-min-height:100vh;
 
 display:flex;
 justify-content:center;
 
-color:#111827;
+min-height:100vh;
 
 overflow:hidden;
+
+color:#111827;
 }
 
 /* APP */
@@ -44,8 +44,7 @@ overflow:hidden;
 .app{
 
 width:100%;
-max-width:430px;
-
+max-width:390px;
 height:100vh;
 
 position:relative;
@@ -60,7 +59,7 @@ linear-gradient(
 );
 }
 
-/* SOFT LIGHTS */
+/* SOFT LIGHT */
 
 .app::before{
 
@@ -72,16 +71,16 @@ inset:0;
 background:
 
 radial-gradient(circle at 15% 20%,
-rgba(255,255,255,.9),
-transparent 12%),
+rgba(255,255,255,.85),
+transparent 14%),
 
-radial-gradient(circle at 90% 25%,
-rgba(255,255,255,.55),
-transparent 18%),
-
-radial-gradient(circle at 85% 85%,
+radial-gradient(circle at 90% 30%,
 rgba(255,255,255,.45),
-transparent 20%);
+transparent 20%),
+
+radial-gradient(circle at 80% 85%,
+rgba(255,255,255,.35),
+transparent 22%);
 
 pointer-events:none;
 }
@@ -90,56 +89,52 @@ pointer-events:none;
 
 .topbar{
 
-height:84px;
+height:72px;
 
-margin:16px;
+margin:12px;
 
-padding:0 18px;
+padding:0 16px;
 
 display:flex;
 align-items:center;
 justify-content:space-between;
 
-border-radius:30px;
+border-radius:24px;
 
 background:
 rgba(255,255,255,.45);
 
-backdrop-filter:blur(24px);
+backdrop-filter:blur(20px);
 
 border:
 1px solid rgba(255,255,255,.7);
 
 box-shadow:
-0 10px 30px rgba(0,0,0,.04);
-
-position:relative;
-z-index:10;
+0 8px 24px rgba(0,0,0,.04);
 }
 
 .top-left{
 
 display:flex;
 align-items:center;
-gap:14px;
+gap:12px;
 }
 
 .menu{
 
-font-size:30px;
-cursor:pointer;
+font-size:24px;
 }
 
 .brand{
 
 display:flex;
 align-items:center;
-gap:10px;
+gap:8px;
 }
 
 .logo-small{
 
-font-size:44px;
+font-size:36px;
 font-weight:800;
 
 color:#082b83;
@@ -147,112 +142,97 @@ color:#082b83;
 
 .brand-text{
 
-font-size:13px;
+font-size:11px;
 font-weight:800;
 
 line-height:1.15;
 
-letter-spacing:1px;
-
-color:#111827;
+letter-spacing:.08em;
 }
-
-/* RIGHT */
 
 .top-right{
 
 display:flex;
 align-items:center;
-gap:12px;
+gap:10px;
 }
 
 .pro-btn{
 
-padding:11px 18px;
+padding:9px 14px;
 
 border-radius:999px;
 
 background:
-rgba(255,255,255,.7);
+rgba(255,255,255,.75);
 
 border:
-1px solid #f3dfb1;
+1px solid #f1ddb0;
 
-font-size:14px;
+font-size:12px;
 font-weight:700;
 
-color:#c89d33;
-
-box-shadow:
-0 6px 16px rgba(0,0,0,.03);
+color:#c99b32;
 }
 
 .bell{
-
-font-size:24px;
+font-size:20px;
 }
 
 .profile{
 
-padding:12px 16px;
+padding:10px 14px;
 
 border-radius:999px;
 
 background:
-rgba(255,255,255,.72);
+rgba(255,255,255,.75);
 
+font-size:13px;
 font-weight:700;
-
-font-size:14px;
-
-box-shadow:
-0 6px 18px rgba(0,0,0,.03);
 }
 
 /* MAIN */
 
 .main{
 
-height:calc(100vh - 110px);
+height:calc(100vh - 90px);
 
 padding:
-0 22px 120px;
+0 18px 105px;
 
 overflow-y:auto;
 
 display:flex;
 flex-direction:column;
 align-items:center;
-
-position:relative;
-z-index:2;
 }
 
-/* QUICK */
+/* QUICK ACCESS */
 
 .quick-box{
 
 width:100%;
 
-max-width:320px;
+max-width:280px;
 
 margin-left:auto;
-margin-top:6px;
+margin-top:4px;
 
-padding:16px;
+padding:14px;
 
-border-radius:26px;
+border-radius:22px;
 
 background:
 rgba(255,255,255,.45);
 
-backdrop-filter:blur(22px);
+backdrop-filter:blur(18px);
 
 border:
 1px solid rgba(255,255,255,.7);
 
 box-shadow:
-0 10px 30px rgba(0,0,0,.04);
+0 8px 24px rgba(0,0,0,.04);
 }
 
 .quick-head{
@@ -261,19 +241,19 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 
-margin-bottom:16px;
+margin-bottom:14px;
 }
 
 .quick-head h3{
 
-font-size:18px;
+font-size:16px;
 font-weight:700;
 }
 
 .arrow{
 
-width:30px;
-height:30px;
+width:28px;
+height:28px;
 
 border-radius:50%;
 
@@ -296,17 +276,17 @@ gap:8px;
 display:flex;
 flex-direction:column;
 align-items:center;
-gap:8px;
+gap:6px;
 
-font-size:12px;
+font-size:11px;
 }
 
 .quick-icon{
 
-width:52px;
-height:52px;
+width:44px;
+height:44px;
 
-border-radius:18px;
+border-radius:14px;
 
 display:flex;
 align-items:center;
@@ -314,23 +294,17 @@ justify-content:center;
 
 background:white;
 
-font-size:22px;
-
-box-shadow:
-0 4px 12px rgba(0,0,0,.03);
+font-size:18px;
 }
 
 /* LOGO */
 
-.logo-wrap{
-
-margin-top:28px;
-}
-
 .logo-big{
 
-width:170px;
-height:170px;
+width:120px;
+height:120px;
+
+margin-top:20px;
 
 border-radius:50%;
 
@@ -338,7 +312,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:90px;
+font-size:64px;
 font-weight:800;
 
 color:#082b83;
@@ -346,25 +320,25 @@ color:#082b83;
 background:
 rgba(255,255,255,.45);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(18px);
 
 border:
 1px solid rgba(255,255,255,.7);
 
 box-shadow:
-0 20px 45px rgba(0,0,0,.05);
+0 14px 36px rgba(0,0,0,.05);
 }
 
 /* HELLO */
 
 .hello{
 
-margin-top:28px;
+margin-top:18px;
 
-font-size:48px;
+font-size:38px;
 font-weight:800;
 
-letter-spacing:-2px;
+letter-spacing:-1.5px;
 
 text-align:center;
 
@@ -376,8 +350,8 @@ color:#071133;
 background:
 linear-gradient(
 90deg,
-#d8aa41,
-#f1d77d
+#d6a63b,
+#f3d882
 );
 
 -webkit-background-clip:text;
@@ -386,84 +360,84 @@ linear-gradient(
 
 .sub{
 
-margin-top:10px;
+margin-top:6px;
 
-font-size:17px;
+font-size:15px;
 
 color:#6b7280;
 
 text-align:center;
 }
 
-/* CHAT CARD */
+/* CHAT */
 
 .chat-card{
 
 width:100%;
 
-margin-top:28px;
+margin-top:22px;
 
-padding:24px;
+padding:18px;
 
 display:flex;
-gap:14px;
+gap:12px;
 
-border-radius:30px;
+border-radius:24px;
 
 background:
 rgba(255,255,255,.45);
 
-backdrop-filter:blur(22px);
+backdrop-filter:blur(18px);
 
 border:
 1px solid rgba(255,255,255,.7);
 
 box-shadow:
-0 10px 30px rgba(0,0,0,.04);
+0 8px 24px rgba(0,0,0,.04);
 }
 
 .chat-icon{
 
-width:52px;
-height:52px;
+width:44px;
+height:44px;
 
-border-radius:18px;
+border-radius:14px;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-background:#fff2d2;
+background:#fff2d5;
 
-font-size:24px;
+font-size:20px;
 }
 
 .chat-text h3{
 
-font-size:18px;
+font-size:16px;
 
-margin-bottom:8px;
+margin-bottom:4px;
 }
 
 .chat-text p{
 
-font-size:16px;
+font-size:14px;
 
-line-height:1.6;
+line-height:1.5;
 
 color:#4b5563;
 }
 
-/* TITLE */
+/* TRY */
 
 .quick-title{
 
 width:100%;
 
-margin-top:28px;
-margin-bottom:16px;
+margin-top:22px;
+margin-bottom:14px;
 
-font-size:22px;
+font-size:18px;
 font-weight:700;
 
 color:#7c6752;
@@ -480,23 +454,23 @@ display:grid;
 grid-template-columns:
 repeat(2,1fr);
 
-gap:14px;
+gap:12px;
 }
 
-/* CARD */
+/* CARDS */
 
 .quick-card{
 
-height:160px;
+height:130px;
 
-padding:18px;
+padding:16px;
 
-border-radius:30px;
+border-radius:24px;
 
 background:
 rgba(255,255,255,.45);
 
-backdrop-filter:blur(22px);
+backdrop-filter:blur(18px);
 
 border:
 1px solid rgba(255,255,255,.7);
@@ -506,21 +480,21 @@ flex-direction:column;
 justify-content:space-between;
 
 box-shadow:
-0 10px 28px rgba(0,0,0,.04);
+0 8px 24px rgba(0,0,0,.04);
 }
 
 .card-icon{
 
-width:52px;
-height:52px;
+width:44px;
+height:44px;
 
-border-radius:18px;
+border-radius:14px;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:24px;
+font-size:20px;
 }
 
 .yellow{
@@ -541,16 +515,16 @@ background:#dce7ff;
 
 .quick-card h3{
 
-font-size:20px;
+font-size:16px;
 
-line-height:1.4;
+line-height:1.35;
 
 font-weight:700;
 }
 
 .quick-card span{
 
-font-size:32px;
+font-size:26px;
 }
 
 /* INPUT */
@@ -559,40 +533,40 @@ font-size:32px;
 
 position:absolute;
 
-bottom:18px;
+bottom:14px;
 
 width:100%;
 
-padding:0 18px;
+padding:0 14px;
 }
 
 .input-row{
 
-height:78px;
+height:64px;
 
 display:flex;
 align-items:center;
 
-padding:0 10px 0 16px;
+padding:0 8px 0 12px;
 
 border-radius:999px;
 
 background:
 rgba(255,255,255,.58);
 
-backdrop-filter:blur(24px);
+backdrop-filter:blur(22px);
 
 border:
 1px solid rgba(255,255,255,.75);
 
 box-shadow:
-0 12px 30px rgba(0,0,0,.05);
+0 10px 24px rgba(0,0,0,.04);
 }
 
 .attach{
 
-width:52px;
-height:52px;
+width:42px;
+height:42px;
 
 border-radius:50%;
 
@@ -602,12 +576,9 @@ justify-content:center;
 
 background:white;
 
-font-size:24px;
+font-size:20px;
 
-margin-right:10px;
-
-box-shadow:
-0 4px 12px rgba(0,0,0,.04);
+margin-right:8px;
 }
 
 .input-row input{
@@ -619,62 +590,32 @@ outline:none;
 
 background:transparent;
 
-font-size:17px;
+font-size:15px;
 
 color:#6b7280;
 }
 
 .mic{
 
-font-size:24px;
+font-size:20px;
 
-margin-right:14px;
+margin-right:10px;
 }
 
 .send{
 
-width:58px;
-height:58px;
-
-border-radius:50%;
+width:50px;
+height:50px;
 
 border:none;
+
+border-radius:50%;
 
 background:#082b83;
 
 color:white;
 
-font-size:24px;
-
-cursor:pointer;
-
-box-shadow:
-0 10px 24px rgba(8,43,131,.3);
-}
-
-/* MOBILE */
-
-@media(max-width:480px){
-
-.hello{
-font-size:42px;
-}
-
-.logo-big{
-
-width:150px;
-height:150px;
-
-font-size:82px;
-}
-
-.quick-card{
-height:145px;
-}
-
-.quick-card h3{
-font-size:18px;
-}
+font-size:20px;
 }
 
 </style>
@@ -736,7 +677,7 @@ MELETE AI
 
 <div class="quick-item">
 <div class="quick-icon">📋</div>
-<span>Mock Test</span>
+<span>Mock</span>
 </div>
 
 <div class="quick-item">
@@ -753,11 +694,7 @@ MELETE AI
 
 </div>
 
-<div class="logo-wrap">
-
 <div class="logo-big">∞</div>
-
-</div>
 
 <div class="hello">
 Hi, I'm <span>MEBI</span> 👋
