@@ -1,70 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <!-- MAIN TITLE -->
-  <title>SANITAS MELETE – AI Study Platform for NEET & JEE Students</title>
+<title>SANITAS MELETE – MEBI AI</title>
 
-  <!-- GOOGLE VERIFICATION -->
-  <meta name="google-site-verification" content="EdU-ky9MPlB5lYDK43D_SqeqpwxaNWTrfc-tO6FDCqc" />
+<link rel="icon" href="favicon.ico"/>
 
-  <!-- RESPONSIVE -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- DESCRIPTION -->
-  <meta name="description" content="Sanitas Melete is a smart AI-powered study platform for NEET and JEE students. Get notes, MCQs, PYQs, quizzes and instant answers using AI.">
-
-  <!-- KEYWORDS -->
-  <meta name="keywords" content="Sanitas Melete, NEET, JEE, AI study app, MCQs, PYQs, notes, competitive exams, study platform, AI education, online learning, AI tutor">
-
-  <!-- AUTHOR -->
-  <meta name="author" content="Sanitas Melete Team">
-
-  <!-- OG TAGS -->
-  <meta property="og:title" content="SANITAS MELETE – AI Study Platform">
-  <meta property="og:description" content="Smart AI doubt solver for NEET & JEE students. Ask doubts, get instant answers.">
-  <meta property="og:url" content="https://sanitasmelete.vercel.app">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://sanitasmelete.vercel.app/favicon.ico">
-
-  <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="favicon.ico" />
-
-  <!-- JSON-LD (FIXED) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "SANITAS MELETE",
-    "url": "https://sanitasmelete.vercel.app",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Web",
-    "inLanguage": "en",
-    "description": "Sanitas Melete is an AI-powered study platform with MEBI, your study buddy for NEET, ECET and JEE students. Ask doubts, request MCQs, see PYQs, and learn with AI support.",
-    "author": {
-      "@type": "Person",
-      "name": "SK"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "INR"
-    },
-    "featureList": [
-      "Instant AI answers for NEET and JEE doubts",
-      "MCQs with explanations",
-      "Previous year questions (PYQs)",
-      "Support for image-based questions",
-      "Available 24/7 on web"
-    ],
-    "brand": {
-      "@type": "Brand",
-      "name": "Sanitas Melete",
-      "logo": "https://sanitasmelete.vercel.app/favicon.ico"
-    }
-  }
-  </script>
 <style>
 
 /* RESET */
@@ -79,8 +22,6 @@ html{
 scroll-behavior:smooth;
 }
 
-/* BODY */
-
 body{
 
 font-family:
@@ -92,16 +33,16 @@ sans-serif;
 background:
 linear-gradient(
 180deg,
-#faf5ee 0%,
-#f6efe7 100%
+#faf6ef 0%,
+#f3ece3 100%
 );
-
-color:#111827;
 
 min-height:100vh;
 
 display:flex;
 justify-content:center;
+
+color:#111827;
 
 overflow-x:hidden;
 }
@@ -120,11 +61,33 @@ position:relative;
 padding-bottom:120px;
 
 overflow:hidden;
+}
+
+/* GLOW BACKGROUND */
+
+.app::before{
+
+content:"";
+
+position:absolute;
+inset:0;
 
 background:
-radial-gradient(circle at top,
+
+radial-gradient(circle at 20% 25%,
+rgba(255,255,255,.9),
+transparent 13%),
+
+radial-gradient(circle at 80% 35%,
+rgba(255,255,255,.5),
+transparent 16%),
+
+radial-gradient(circle at 90% 75%,
 rgba(255,255,255,.45),
-transparent 45%);
+transparent 18%);
+
+pointer-events:none;
+opacity:.8;
 }
 
 /* DESKTOP */
@@ -140,78 +103,49 @@ align-items:center;
 
 height:95vh;
 
-border-radius:38px;
+border-radius:40px;
 
 background:
 linear-gradient(
 180deg,
 #faf6ef 0%,
-#f4ede4 100%
+#f3ece3 100%
 );
 
 box-shadow:
-0 25px 70px rgba(0,0,0,.10);
+0 25px 70px rgba(0,0,0,.12);
 
 border:
-1px solid rgba(255,255,255,.6);
+1px solid rgba(255,255,255,.7);
 }
-}
-
-/* LIGHT EFFECTS */
-
-.app::before{
-
-content:"";
-
-position:absolute;
-
-inset:0;
-
-pointer-events:none;
-
-background:
-
-radial-gradient(circle at 15% 25%,
-rgba(255,255,255,.85),
-transparent 14%),
-
-radial-gradient(circle at 80% 30%,
-rgba(255,255,255,.55),
-transparent 16%),
-
-radial-gradient(circle at 70% 75%,
-rgba(255,255,255,.45),
-transparent 18%);
-
-opacity:.7;
 }
 
 /* TOPBAR */
 
 .topbar{
 
-height:86px;
+height:88px;
+
+margin:18px;
+
+padding:0 20px;
 
 display:flex;
 align-items:center;
 justify-content:space-between;
 
-padding:0 22px;
-
-margin:18px;
-
 background:
-rgba(255,255,255,.42);
+rgba(255,255,255,.45);
 
 backdrop-filter:blur(20px);
 
 border-radius:30px;
 
 border:
-1px solid rgba(255,255,255,.65);
+1px solid rgba(255,255,255,.75);
 
 box-shadow:
-0 8px 24px rgba(0,0,0,.04);
+0 10px 28px rgba(0,0,0,.04);
 
 position:relative;
 z-index:10;
@@ -224,8 +158,6 @@ align-items:center;
 gap:14px;
 }
 
-/* ICON BUTTON */
-
 .icon-btn{
 
 border:none;
@@ -235,139 +167,93 @@ font-size:30px;
 
 cursor:pointer;
 
-color:#0f172a;
+color:#111827;
 }
 
-/* BRAND */
+.brand{
+
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.logo-small{
+
+font-size:52px;
+font-weight:800;
+
+color:#082b83;
+}
 
 .brand-text{
 
 font-size:14px;
-
 font-weight:800;
 
-line-height:1.2;
+line-height:1.15;
 
 letter-spacing:1px;
-
-color:#111827;
 }
 
-/* MENUS */
+/* RIGHT */
 
-.study-menu,
-.settings-menu{
+.top-right{
 
-position:absolute;
+display:flex;
+align-items:center;
+gap:12px;
+}
 
-top:96px;
+.pro-btn{
 
-width:220px;
+padding:12px 22px;
+
+border-radius:999px;
+
+background:
+rgba(255,255,255,.75);
+
+border:
+1px solid #f2deb1;
+
+font-weight:600;
+
+color:#c39a36;
+
+box-shadow:
+0 4px 12px rgba(0,0,0,.03);
+}
+
+.profile{
+
+width:70px;
+height:50px;
+
+border-radius:999px;
+
+display:flex;
+align-items:center;
+justify-content:center;
 
 background:
 rgba(255,255,255,.72);
 
-backdrop-filter:blur(22px);
-
-border-radius:24px;
-
-padding:10px;
-
-border:
-1px solid rgba(255,255,255,.7);
-
-box-shadow:
-0 20px 45px rgba(0,0,0,.08);
-
-opacity:0;
-
-transform:translateY(-10px);
-
-pointer-events:none;
-
-transition:.25s ease;
-
-z-index:999;
-}
-
-.study-menu{
-left:18px;
-}
-
-.settings-menu{
-right:18px;
-}
-
-.study-menu.open,
-.settings-menu.open{
-
-opacity:1;
-
-transform:translateY(0);
-
-pointer-events:auto;
-}
-
-.menu-title{
-
-font-size:13px;
 font-weight:700;
 
-padding:10px 12px;
-
-color:#6b7280;
-}
-
-.menu-divider{
-
-height:1px;
-
-background:#ececec;
-
-margin:6px 0;
-}
-
-.menu-item{
-
-width:100%;
-
-border:none;
-background:transparent;
-
-padding:13px 14px;
-
-display:flex;
-align-items:center;
-justify-content:space-between;
-
-font-size:15px;
-font-weight:500;
-
-border-radius:16px;
-
-cursor:pointer;
-
-transition:.2s ease;
-}
-
-.menu-item:hover{
-background:#f8f5ef;
-}
-
-.danger{
-color:#dc2626;
+box-shadow:
+0 4px 12px rgba(0,0,0,.03);
 }
 
 /* MAIN */
 
 .main{
 
+padding:
+8px 22px 140px;
+
 display:flex;
 flex-direction:column;
 align-items:center;
-
-padding:
-10px 22px 140px;
 
 position:relative;
 z-index:2;
@@ -382,15 +268,15 @@ width:100%;
 display:flex;
 justify-content:flex-end;
 
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
 .quick-box{
 
-width:270px;
+width:280px;
 
 background:
-rgba(255,255,255,.46);
+rgba(255,255,255,.45);
 
 backdrop-filter:blur(20px);
 
@@ -399,19 +285,44 @@ border-radius:28px;
 padding:18px;
 
 border:
-1px solid rgba(255,255,255,.65);
+1px solid rgba(255,255,255,.7);
 
 box-shadow:
-0 8px 25px rgba(0,0,0,.04);
+0 10px 25px rgba(0,0,0,.04);
 }
 
-.quick-box h3{
+.quick-head{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+margin-bottom:18px;
+}
+
+.quick-head h3{
+
+font-size:18px;
+font-weight:700;
+}
+
+.arrow-circle{
+
+width:34px;
+height:34px;
+
+border-radius:50%;
+
+background:white;
+
+display:flex;
+align-items:center;
+justify-content:center;
 
 font-size:18px;
 
-font-weight:700;
-
-margin-bottom:18px;
+box-shadow:
+0 4px 10px rgba(0,0,0,.05);
 }
 
 .quick-items{
@@ -429,14 +340,12 @@ align-items:center;
 gap:8px;
 
 font-size:12px;
-
-color:#111827;
 }
 
 .quick-icon{
 
-width:52px;
-height:52px;
+width:54px;
+height:54px;
 
 border-radius:18px;
 
@@ -444,8 +353,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-background:
-rgba(255,255,255,.8);
+background:white;
 
 font-size:22px;
 
@@ -457,10 +365,12 @@ box-shadow:
 
 .logo-big{
 
-width:240px;
-height:240px;
+width:250px;
+height:250px;
 
 border-radius:50%;
+
+margin-top:12px;
 
 display:flex;
 align-items:center;
@@ -472,18 +382,15 @@ font-weight:800;
 color:#082b83;
 
 background:
-rgba(255,255,255,.40);
+rgba(255,255,255,.42);
 
 backdrop-filter:blur(20px);
 
 border:
-1px solid rgba(255,255,255,.65);
+1px solid rgba(255,255,255,.75);
 
 box-shadow:
-inset 0 0 0 2px rgba(255,255,255,.35),
-0 18px 40px rgba(0,0,0,.04);
-
-margin-top:10px;
+0 18px 40px rgba(0,0,0,.05);
 
 animation:floaty 4s ease-in-out infinite;
 }
@@ -507,15 +414,15 @@ transform:translateY(0);
 
 .hello{
 
-margin-top:42px;
+margin-top:40px;
 
-font-size:58px;
+font-size:60px;
 
 font-weight:800;
 
-line-height:1.05;
-
 letter-spacing:-2px;
+
+line-height:1.05;
 
 text-align:center;
 
@@ -528,7 +435,7 @@ background:
 linear-gradient(
 90deg,
 #d6a63b,
-#f1d47d
+#f3d882
 );
 
 -webkit-background-clip:text;
@@ -543,25 +450,21 @@ margin-top:16px;
 
 font-size:20px;
 
-line-height:1.6;
+color:#6b7280;
 
 text-align:center;
 
-max-width:330px;
-
-color:#6b7280;
+line-height:1.6;
 }
 
-/* CHAT */
+/* CHAT CARD */
 
 .chat-area{
 
 width:100%;
 
-margin-top:30px;
+margin-top:32px;
 }
-
-/* BOT CARD */
 
 .bubble.bot{
 
@@ -576,39 +479,49 @@ border-radius:30px;
 
 padding:24px;
 
-font-size:18px;
-
-line-height:1.7;
-
-color:#111827;
+display:flex;
+gap:16px;
 
 border:
-1px solid rgba(255,255,255,.7);
+1px solid rgba(255,255,255,.75);
 
 box-shadow:
-0 10px 28px rgba(0,0,0,.04);
+0 10px 25px rgba(0,0,0,.04);
 }
 
-/* USER */
+.bot-icon{
 
-.bubble.user{
+width:58px;
+height:58px;
 
-align-self:flex-end;
+border-radius:20px;
 
-background:#082b83;
+background:#fff2d5;
 
-color:white;
+display:flex;
+align-items:center;
+justify-content:center;
 
-padding:14px 18px;
+font-size:28px;
+}
 
-border-radius:24px;
+.bot-content h3{
+
+font-size:18px;
+
+margin-bottom:8px;
+}
+
+.bot-content p{
 
 font-size:16px;
 
-max-width:80%;
+line-height:1.7;
+
+color:#4b5563;
 }
 
-/* TRY ASKING */
+/* TRY */
 
 .quick-title{
 
@@ -618,7 +531,6 @@ margin-top:38px;
 margin-bottom:18px;
 
 font-size:24px;
-
 font-weight:700;
 
 color:#7c6752;
@@ -642,26 +554,26 @@ gap:14px;
 
 .quick-card{
 
+min-height:170px;
+
+padding:18px;
+
+border-radius:28px;
+
 background:
 rgba(255,255,255,.42);
 
 backdrop-filter:blur(20px);
 
-border-radius:28px;
-
-padding:18px;
-
-min-height:165px;
+border:
+1px solid rgba(255,255,255,.75);
 
 display:flex;
 flex-direction:column;
 justify-content:space-between;
 
-border:
-1px solid rgba(255,255,255,.7);
-
 box-shadow:
-0 8px 24px rgba(0,0,0,.04);
+0 10px 25px rgba(0,0,0,.04);
 
 transition:.28s ease;
 }
@@ -670,12 +582,7 @@ transition:.28s ease;
 
 transform:
 translateY(-5px);
-
-box-shadow:
-0 18px 35px rgba(0,0,0,.07);
 }
-
-/* SMALL ICON */
 
 .card-icon{
 
@@ -692,40 +599,34 @@ font-size:28px;
 }
 
 .yellow{
-background:#fff1d0;
+background:#fff0cd;
 }
 
 .purple{
-background:#efd9ff;
+background:#efd8ff;
 }
 
 .green{
-background:#ecffd9;
+background:#ecffd7;
 }
 
 .blue{
-background:#dfe8ff;
+background:#dce6ff;
 }
-
-/* CARD TEXT */
 
 .quick-card h3{
 
 font-size:16px;
 
-line-height:1.4;
-
-font-weight:700;
+line-height:1.45;
 }
 
 .quick-card span{
 
 font-size:34px;
-
-font-weight:300;
 }
 
-/* INPUT BAR */
+/* INPUT */
 
 .bottombar{
 
@@ -743,10 +644,10 @@ z-index:100;
 
 .input-row{
 
-height:76px;
+height:78px;
 
 background:
-rgba(255,255,255,.52);
+rgba(255,255,255,.5);
 
 backdrop-filter:blur(22px);
 
@@ -758,13 +659,11 @@ align-items:center;
 padding:0 10px 0 18px;
 
 border:
-1px solid rgba(255,255,255,.7);
+1px solid rgba(255,255,255,.75);
 
 box-shadow:
 0 12px 30px rgba(0,0,0,.05);
 }
-
-/* UPLOAD */
 
 .upload-btn{
 
@@ -773,12 +672,10 @@ background:transparent;
 
 font-size:30px;
 
-cursor:pointer;
-
 margin-right:10px;
-}
 
-/* INPUT */
+cursor:pointer;
+}
 
 .input-row input{
 
@@ -793,8 +690,6 @@ font-size:18px;
 
 color:#6b7280;
 }
-
-/* SEND */
 
 .send-btn{
 
@@ -814,90 +709,7 @@ font-size:24px;
 cursor:pointer;
 
 box-shadow:
-0 10px 20px rgba(8,43,131,.30);
-}
-
-/* ABOUT */
-
-.about-modal{
-
-position:fixed;
-inset:0;
-
-background:
-rgba(0,0,0,.45);
-
-display:none;
-
-justify-content:center;
-align-items:center;
-
-z-index:9999;
-}
-
-.about-card{
-
-background:
-rgba(255,255,255,.85);
-
-backdrop-filter:blur(20px);
-
-padding:28px;
-
-border-radius:30px;
-
-width:90%;
-max-width:340px;
-
-text-align:center;
-
-box-shadow:
-0 20px 60px rgba(0,0,0,.18);
-}
-
-.about-card h2{
-
-font-size:24px;
-
-margin-bottom:12px;
-}
-
-.about-card p{
-
-font-size:16px;
-
-line-height:1.7;
-
-color:#4b5563;
-}
-
-.about-close-btn{
-
-margin-top:18px;
-
-border:none;
-
-background:#082b83;
-
-color:white;
-
-padding:12px 28px;
-
-border-radius:999px;
-
-font-size:15px;
-
-cursor:pointer;
-}
-
-/* HIDE */
-
-.typing,
-.upload-preview,
-.powered-by,
-.next-watermark,
-[class*="watermark"]{
-display:none !important;
+0 12px 24px rgba(8,43,131,.3);
 }
 
 /* MOBILE */
@@ -905,18 +717,22 @@ display:none !important;
 @media(max-width:480px){
 
 .quick-grid{
+
 grid-template-columns:
 repeat(2,1fr);
 }
 
-.hello{
-font-size:50px;
+.logo-big{
+
+width:220px;
+height:220px;
+
+font-size:110px;
 }
 
-.logo-big{
-width:210px;
-height:210px;
-font-size:110px;
+.hello{
+
+font-size:52px;
 }
 
 .quick-box{
@@ -925,142 +741,199 @@ width:100%;
 }
 
 </style>
-
 </head>
+
 <body>
-  <div class="app">
 
-    <!-- TOP BAR -->
-    <header class="topbar">
-      <div class="top-left">
-        <button class="icon-btn" title="Study menu" onclick="toggleStudy()">📘</button>
-        <div class="brand-text">SANITAS MELETE</div>
-      </div>
-      <button class="icon-btn" title="Settings" onclick="toggleSettings()">⋮</button>
-    </header>
+<div class="app">
 
-    <!-- STUDY MENU -->
-    <div id="studyMenu" class="study-menu">
-      <div class="menu-title">Study</div>
-      <div class="menu-divider"></div>
-      <button class="menu-item">📚 Study plan <small>soon</small></button>
-    <div class="menu-item" id="mcq-menu-item">
-    ❓ MCQs <span>practice</span>
-  </div>
-      <button class="menu-item">🕒 History <small>recent</small></button>
-    </div>
+<!-- TOPBAR -->
 
-    <!-- SETTINGS MENU -->
-    <div id="settingsMenu" class="settings-menu">
-      <div class="menu-title">Settings</div>
-      <div class="menu-divider"></div>
-      <button class="menu-item">👤 Profile <small>soon</small></button>
-      <button class="menu-item">🎨 Theme <small>coming</small></button>
-      <button class="menu-item" onclick="openAboutMebi()">ℹ️ About MEBI <small>info</small></button>
-      <div class="menu-divider"></div>
-      <button class="menu-item danger">🧹 Clear chat <small>coming</small></button>
-    </div>
+<header class="topbar">
 
-    <!-- MAIN CONTENT -->
-    <main class="main">
-      <div class="logo-big">∞</div>
-      <div class="hello">Hi, I'm <span>MEBI</span> 👋</div>
-      <div class="sub">How can I help you today?</div>
+<div class="top-left">
 
-      <div id="chat" class="chat-area">
-        <div class="bubble bot">
-          I’m MEBI, your study buddy. Ask doubts, request MCQs, or send images.
-        </div>
-      </div>
+<button class="icon-btn">☰</button>
 
-      <div id="typing" class="typing hidden">
-        <div class="typing-dots">
-          <span></span><span></span><span></span>
-        </div>
-        <small>MEBI is thinking…</small>
-      </div>
-    </main>
+<div class="brand">
 
-    <!-- BOTTOM INPUT -->
-    <footer class="bottombar">
-      <div class="input-row">
-        <button class="upload-btn" title="Upload image" onclick="document.getElementById('fileInput').click()">📄</button>
-        <input id="fileInput" type="file" accept="image/*" style="display:none" />
-        <input id="user-input" type="text" placeholder="Type your question here..." />
-        <button class="send-btn" onclick="sendMessage()">➤</button>
-      
-      </div>
-      <div id="uploadPreview" class="upload-preview"></div>
-    </footer>
+<div class="logo-small">∞</div>
 
-  </div>
+<div class="brand-text">
+SANITAS<br>
+MELETE AI
+</div>
 
-  <!-- ABOUT MEBI POPUP -->
-  <div id="aboutMebiModal" class="about-modal">
-    <div class="about-card">
-      <h2>SANITAS MELETE – MEBI</h2>
-      <p>MEBI is your study buddy for NEET, JEE and other exams.</p>
-      <p>Ask doubts, request MCQs, or send images for help.</p>
-      <p style="font-size: 12px; opacity: 0.8;">
-        Built by SK♾️
-      </p>
-      <button class="about-close-btn" onclick="closeAboutMebi()">Close</button>
-    </div>
-  </div>
+</div>
 
-  <!-- UI HELPERS + ENTER KEY -->
-  <script>
-    function toggleStudy() {
-      const s = document.getElementById('studyMenu');
-      const t = document.getElementById('settingsMenu');
-      s.classList.toggle('open');
-      t.classList.remove('open');
-    }
+</div>
 
-    function toggleSettings() {
-      const s = document.getElementById('settingsMenu');
-      const t = document.getElementById('studyMenu');
-      s.classList.toggle('open');
-      t.classList.remove('open');
-    }
+<div class="top-right">
 
-    // close menus when clicking outside
-    document.addEventListener('click', function(e) {
-      const study = document.getElementById('studyMenu');
-      const settings = document.getElementById('settingsMenu');
-      const studyBtn = document.querySelector('.top-left .icon-btn');
-      const settingsBtn = document.querySelector('header .icon-btn[title="Settings"]');
+<div class="pro-btn">👑 Pro</div>
 
-      if (!study.contains(e.target) && !studyBtn.contains(e.target) &&
-          !settings.contains(e.target) && !settingsBtn.contains(e.target)) {
-        study.classList.remove('open');
-        settings.classList.remove('open');
-      }
-    });
+<div class="profile">SK∞</div>
 
-    // About MEBI
-    function openAboutMebi() {
-      document.getElementById('aboutMebiModal').style.display = 'flex';
-    }
-    function closeAboutMebi() {
-      document.getElementById('aboutMebiModal').style.display = 'none';
-    }
+</div>
 
-    // Enter key to send
-    document.addEventListener('DOMContentLoaded', () => {
-      const input = document.getElementById('user-input');
-      if (input) {
-        input.addEventListener('keydown', function(e) {
-          if (e.key === 'Enter') {
-            e.preventDefault();
-            sendMessage();
-          }
-        });
-      }
-    });
-  </script>
+</header>
 
-  <!-- REAL CHAT LOGIC -->
-  <script src="script.js"></script>
+<!-- MAIN -->
+
+<main class="main">
+
+<!-- QUICK ACCESS -->
+
+<section class="quick-access">
+
+<div class="quick-box">
+
+<div class="quick-head">
+
+<h3>Quick access</h3>
+
+<div class="arrow-circle">→</div>
+
+</div>
+
+<div class="quick-items">
+
+<div class="quick-item">
+<div class="quick-icon">☁️</div>
+<span>Upload</span>
+</div>
+
+<div class="quick-item">
+<div class="quick-icon">📋</div>
+<span>Mock Test</span>
+</div>
+
+<div class="quick-item">
+<div class="quick-icon">🧾</div>
+<span>MCQs</span>
+</div>
+
+<div class="quick-item">
+<div class="quick-icon">📘</div>
+<span>Notes</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- LOGO -->
+
+<div class="logo-big">∞</div>
+
+<!-- HELLO -->
+
+<div class="hello">
+Hi, I'm <span>MEBI</span> 👋
+</div>
+
+<div class="sub">
+Your AI study buddy for NEET & JEE ✨
+</div>
+
+<!-- CHAT -->
+
+<div class="chat-area">
+
+<div class="bubble bot">
+
+<div class="bot-icon">✨</div>
+
+<div class="bot-content">
+
+<h3>I’m MEBI, your study buddy.</h3>
+
+<p>
+Ask doubts, request MCQs, or send images.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- TRY -->
+
+<div class="quick-title">
+✨ Try asking me
+</div>
+
+<!-- CARDS -->
+
+<div class="quick-grid">
+
+<div class="quick-card">
+
+<div class="card-icon yellow">❓</div>
+
+<h3>Explain this concept</h3>
+
+<span>→</span>
+
+</div>
+
+<div class="quick-card">
+
+<div class="card-icon purple">📄</div>
+
+<h3>Generate MCQs</h3>
+
+<span>→</span>
+
+</div>
+
+<div class="quick-card">
+
+<div class="card-icon green">⚛️</div>
+
+<h3>Solve this problem</h3>
+
+<span>→</span>
+
+</div>
+
+<div class="quick-card">
+
+<div class="card-icon blue">☁️</div>
+
+<h3>Upload image</h3>
+
+<span>→</span>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- INPUT -->
+
+<footer class="bottombar">
+
+<div class="input-row">
+
+<button class="upload-btn">📎</button>
+
+<input
+type="text"
+placeholder="Type your question here..."
+/>
+
+<button class="send-btn">➤</button>
+
+</div>
+
+</footer>
+
+</div>
+
 </body>
 </html>
