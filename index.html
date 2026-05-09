@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>SANITAS MELETE – MEBI AI</title>
+
+<link rel="icon" href="favicon.ico"/>
 
 <style>
 
@@ -15,7 +17,6 @@ box-sizing:border-box;
 }
 
 body{
-
 font-family:
 -apple-system,
 BlinkMacSystemFont,
@@ -25,18 +26,16 @@ sans-serif;
 background:
 linear-gradient(
 180deg,
-#f8f4ec 0%,
-#f2ebe1 100%
+#f8f4ed 0%,
+#f4ede4 100%
 );
 
 display:flex;
 justify-content:center;
 
-min-height:100vh;
+color:#111827;
 
 overflow:hidden;
-
-color:#111827;
 }
 
 /* APP */
@@ -44,7 +43,8 @@ color:#111827;
 .app{
 
 width:100%;
-max-width:390px;
+max-width:430px;
+
 height:100vh;
 
 position:relative;
@@ -54,12 +54,12 @@ overflow:hidden;
 background:
 linear-gradient(
 180deg,
-#faf6ef 0%,
-#f3ece2 100%
+#fbf7f1 0%,
+#f6efe6 100%
 );
 }
 
-/* SOFT LIGHT */
+/* SOFT GLOW */
 
 .app::before{
 
@@ -70,17 +70,17 @@ inset:0;
 
 background:
 
-radial-gradient(circle at 15% 20%,
-rgba(255,255,255,.85),
-transparent 14%),
+radial-gradient(circle at 20% 20%,
+rgba(255,255,255,.9),
+transparent 15%),
 
-radial-gradient(circle at 90% 30%,
-rgba(255,255,255,.45),
-transparent 20%),
+radial-gradient(circle at 80% 30%,
+rgba(255,255,255,.5),
+transparent 18%),
 
-radial-gradient(circle at 80% 85%,
-rgba(255,255,255,.35),
-transparent 22%);
+radial-gradient(circle at 85% 80%,
+rgba(255,255,255,.4),
+transparent 20%);
 
 pointer-events:none;
 }
@@ -89,53 +89,62 @@ pointer-events:none;
 
 .topbar{
 
-height:68px;
+height:88px;
 
-margin:10px 12px;
+margin:16px;
 
-padding:0 14px;
+padding:0 18px;
 
 display:flex;
 align-items:center;
 justify-content:space-between;
 
-border-radius:22px;
-
 background:
-rgba(255,255,255,.45);
+rgba(255,255,255,.5);
 
-backdrop-filter:blur(20px);
+backdrop-filter:blur(24px);
+
+border-radius:32px;
 
 border:
 1px solid rgba(255,255,255,.7);
 
 box-shadow:
-0 8px 24px rgba(0,0,0,.04);
+0 12px 30px rgba(0,0,0,.04);
+
+position:relative;
+z-index:10;
 }
 
 .top-left{
 
 display:flex;
 align-items:center;
-gap:12px;
+gap:14px;
 }
 
-.menu{
+.icon-btn{
 
-font-size:22px;
+border:none;
+background:transparent;
+
+font-size:28px;
+
 cursor:pointer;
+
+color:#111827;
 }
 
-.brand{
+.logo-row{
 
 display:flex;
 align-items:center;
-gap:8px;
+gap:12px;
 }
 
 .logo-small{
 
-font-size:32px;
+font-size:46px;
 font-weight:800;
 
 color:#082b83;
@@ -143,169 +152,57 @@ color:#082b83;
 
 .brand-text{
 
-font-size:10px;
+font-size:16px;
 font-weight:800;
 
-line-height:1.05;
+line-height:1.1;
 
-letter-spacing:.06em;
-}
+letter-spacing:.08em;
 
-.top-right{
-
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.pro-btn{
-
-padding:8px 12px;
-
-border-radius:999px;
-
-background:
-rgba(255,255,255,.75);
-
-border:
-1px solid #f1ddb0;
-
-font-size:11px;
-font-weight:700;
-
-color:#c99b32;
-}
-
-.bell{
-font-size:18px;
+color:#0f172a;
 }
 
 .profile{
 
-padding:8px 12px;
+padding:16px 18px;
 
-border-radius:999px;
+border-radius:22px;
 
 background:
-rgba(255,255,255,.75);
+rgba(255,255,255,.65);
 
-font-size:12px;
+font-size:15px;
 font-weight:700;
+
+box-shadow:
+0 6px 20px rgba(0,0,0,.04);
 }
 
 /* MAIN */
 
 .main{
 
-height:calc(100vh - 90px);
+padding:10px 18px 120px;
 
-padding:
-0 16px 96px;
+display:flex;
+flex-direction:column;
+align-items:center;
 
 overflow-y:auto;
+overflow-x:hidden;
 
-display:flex;
-flex-direction:column;
-align-items:center;
+height:calc(100vh - 90px);
+
+position:relative;
+z-index:2;
 }
 
-/* QUICK ACCESS */
-
-.quick-box{
-
-width:100%;
-
-max-width:255px;
-
-margin-left:auto;
-margin-top:2px;
-
-padding:12px;
-
-border-radius:20px;
-
-background:
-rgba(255,255,255,.45);
-
-backdrop-filter:blur(18px);
-
-border:
-1px solid rgba(255,255,255,.7);
-
-box-shadow:
-0 8px 24px rgba(0,0,0,.04);
-}
-
-.quick-head{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-margin-bottom:12px;
-}
-
-.quick-head h3{
-
-font-size:14px;
-font-weight:700;
-}
-
-.arrow{
-
-width:26px;
-height:26px;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:white;
-}
-
-.quick-items{
-
-display:flex;
-justify-content:space-between;
-gap:6px;
-}
-
-.quick-item{
-
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:6px;
-
-font-size:10px;
-}
-
-.quick-icon{
-
-width:40px;
-height:40px;
-
-border-radius:12px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:white;
-
-font-size:16px;
-}
-
-/* LOGO */
+/* BIG LOGO */
 
 .logo-big{
 
-width:105px;
-height:105px;
-
-margin-top:18px;
+width:120px;
+height:120px;
 
 border-radius:50%;
 
@@ -313,33 +210,54 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:56px;
+font-size:58px;
 font-weight:800;
 
 color:#082b83;
 
 background:
-rgba(255,255,255,.45);
+rgba(255,255,255,.5);
 
-backdrop-filter:blur(18px);
+backdrop-filter:blur(20px);
 
 border:
-1px solid rgba(255,255,255,.7);
+1px solid rgba(255,255,255,.75);
 
 box-shadow:
-0 14px 36px rgba(0,0,0,.05);
+0 18px 40px rgba(0,0,0,.06);
+
+margin-top:8px;
+
+animation:floatInfinity 4s ease-in-out infinite;
+}
+
+@keyframes floatInfinity{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-7px);
+}
+
+100%{
+transform:translateY(0);
+}
 }
 
 /* HELLO */
 
 .hello{
 
-margin-top:16px;
+margin-top:28px;
 
-font-size:30px;
+font-size:56px;
 font-weight:800;
 
-letter-spacing:-1px;
+letter-spacing:-3px;
+
+line-height:1.05;
 
 text-align:center;
 
@@ -352,7 +270,7 @@ background:
 linear-gradient(
 90deg,
 #d6a63b,
-#f3d882
+#f0d27c
 );
 
 -webkit-background-clip:text;
@@ -361,72 +279,50 @@ linear-gradient(
 
 .sub{
 
-margin-top:4px;
+margin-top:10px;
 
-font-size:13px;
+font-size:18px;
 
 color:#6b7280;
 
 text-align:center;
+
+line-height:1.5;
 }
 
 /* CHAT */
 
-.chat-card{
+.chat-area{
 
 width:100%;
 
-margin-top:18px;
+margin-top:24px;
+}
 
-padding:16px;
+.bubble.bot{
 
-display:flex;
-gap:10px;
-
-border-radius:22px;
+width:100%;
 
 background:
-rgba(255,255,255,.45);
+rgba(255,255,255,.52);
 
 backdrop-filter:blur(18px);
 
+border-radius:28px;
+
+padding:20px;
+
+font-size:16px;
+
+line-height:1.7;
+
 border:
-1px solid rgba(255,255,255,.7);
+1px solid rgba(255,255,255,.75);
 
 box-shadow:
-0 8px 24px rgba(0,0,0,.04);
-}
+0 10px 30px rgba(0,0,0,.04);
 
-.chat-icon{
-
-width:40px;
-height:40px;
-
-border-radius:12px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:#fff2d5;
-
-font-size:18px;
-}
-
-.chat-text h3{
-
-font-size:15px;
-
-margin-bottom:3px;
-}
-
-.chat-text p{
-
-font-size:13px;
-
-line-height:1.45;
-
-color:#4b5563;
+color:#111827;
 }
 
 /* TRY */
@@ -435,10 +331,10 @@ color:#4b5563;
 
 width:100%;
 
-margin-top:18px;
-margin-bottom:12px;
+margin-top:26px;
+margin-bottom:16px;
 
-font-size:16px;
+font-size:20px;
 font-weight:700;
 
 color:#7c6752;
@@ -453,49 +349,55 @@ width:100%;
 display:grid;
 
 grid-template-columns:
-repeat(2,1fr);
+repeat(2,minmax(0,1fr));
 
-gap:10px;
+gap:14px;
 }
 
 /* CARDS */
 
 .quick-card{
 
-height:115px;
+width:100%;
 
-padding:14px;
+min-width:0;
 
-border-radius:22px;
+height:170px;
+
+padding:18px;
+
+border-radius:28px;
 
 background:
-rgba(255,255,255,.45);
+rgba(255,255,255,.52);
 
-backdrop-filter:blur(18px);
+backdrop-filter:blur(20px);
 
 border:
-1px solid rgba(255,255,255,.7);
+1px solid rgba(255,255,255,.75);
 
 display:flex;
 flex-direction:column;
 justify-content:space-between;
 
 box-shadow:
-0 8px 24px rgba(0,0,0,.04);
+0 10px 25px rgba(0,0,0,.04);
+
+overflow:hidden;
 }
 
 .card-icon{
 
-width:40px;
-height:40px;
+width:52px;
+height:52px;
 
-border-radius:12px;
+border-radius:18px;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:18px;
+font-size:24px;
 }
 
 .yellow{
@@ -503,29 +405,29 @@ background:#fff0cb;
 }
 
 .purple{
-background:#edd9ff;
+background:#efd9ff;
 }
 
 .green{
-background:#ecffd9;
+background:#ebffd9;
 }
 
 .blue{
-background:#dce7ff;
+background:#dce8ff;
 }
 
 .quick-card h3{
 
-font-size:14px;
+font-size:18px;
 
-line-height:1.3;
+line-height:1.4;
 
 font-weight:700;
 }
 
 .quick-card span{
 
-font-size:22px;
+font-size:30px;
 }
 
 /* INPUT */
@@ -534,52 +436,46 @@ font-size:22px;
 
 position:absolute;
 
-bottom:10px;
+bottom:16px;
 
 width:100%;
 
-padding:0 12px;
+padding:0 18px;
 }
 
 .input-row{
 
-height:58px;
+height:74px;
+
+background:
+rgba(255,255,255,.65);
+
+backdrop-filter:blur(24px);
+
+border-radius:999px;
 
 display:flex;
 align-items:center;
 
-padding:0 8px 0 10px;
-
-border-radius:999px;
-
-background:
-rgba(255,255,255,.58);
-
-backdrop-filter:blur(22px);
+padding:0 10px 0 18px;
 
 border:
 1px solid rgba(255,255,255,.75);
 
 box-shadow:
-0 10px 24px rgba(0,0,0,.04);
+0 12px 30px rgba(0,0,0,.05);
 }
 
-.attach{
+.upload-btn{
 
-width:38px;
-height:38px;
+border:none;
+background:transparent;
 
-border-radius:50%;
+font-size:24px;
 
-display:flex;
-align-items:center;
-justify-content:center;
+margin-right:10px;
 
-background:white;
-
-font-size:18px;
-
-margin-right:6px;
+cursor:pointer;
 }
 
 .input-row input{
@@ -591,34 +487,69 @@ outline:none;
 
 background:transparent;
 
-font-size:14px;
+font-size:16px;
 
 color:#6b7280;
 }
 
-.mic{
-
-font-size:18px;
-
-margin-right:8px;
-}
-
-.send{
-
-width:44px;
-height:44px;
+.mic-btn{
 
 border:none;
+background:transparent;
+
+font-size:22px;
+
+margin-right:10px;
+
+cursor:pointer;
+}
+
+.send-btn{
+
+width:58px;
+height:58px;
 
 border-radius:50%;
+
+border:none;
 
 background:#082b83;
 
 color:white;
 
-font-size:18px;
+font-size:22px;
 
 cursor:pointer;
+
+box-shadow:
+0 10px 24px rgba(8,43,131,.3);
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.hello{
+font-size:50px;
+}
+
+.logo-big{
+
+width:110px;
+height:110px;
+
+font-size:52px;
+}
+
+.quick-card{
+
+height:160px;
+}
+
+.quick-card h3{
+
+font-size:16px;
+}
 }
 
 </style>
@@ -632,9 +563,9 @@ cursor:pointer;
 
 <div class="top-left">
 
-<div class="menu">☰</div>
+<button class="icon-btn">☰</button>
 
-<div class="brand">
+<div class="logo-row">
 
 <div class="logo-small">∞</div>
 
@@ -647,16 +578,11 @@ MELETE AI
 
 </div>
 
-<div class="top-right">
-
-<div class="profile">SK</div>
-
-</div>
+<div class="profile">SK∞</div>
 
 </header>
 
-
-</div>
+<main class="main">
 
 <div class="logo-big">∞</div>
 
@@ -668,18 +594,11 @@ Hi, I'm <span>MEBI</span> 👋
 Your AI study buddy for NEET & JEE ✨
 </div>
 
-<div class="chat-card">
+<div class="chat-area">
 
-<div class="chat-icon">✨</div>
-
-<div class="chat-text">
-
-<h3>I’m MEBI, your study buddy.</h3>
-
-<p>
+<div class="bubble bot">
+I’m MEBI, your study buddy.<br>
 Ask doubts, request MCQs, or send images.
-</p>
-
 </div>
 
 </div>
@@ -738,16 +657,16 @@ Ask doubts, request MCQs, or send images.
 
 <div class="input-row">
 
-<div class="attach">📎</div>
+<button class="upload-btn">📎</button>
 
 <input
 type="text"
 placeholder="Type your question here..."
 />
 
-<div class="mic">🎤</div>
+<button class="mic-btn">🎤</button>
 
-<button class="send">➤</button>
+<button class="send-btn">➤</button>
 
 </div>
 
