@@ -214,15 +214,39 @@
       gap: 10px;
       overflow-y: auto;
     }
+/* LOGO */
 
-    .logo-big {
-      font-size: 90px;
-      font-weight: 800;
-      color: #1f3b73;
-      animation: Infinity 3s ease-in-out infinite;
-      text-shadow: 0 10px 25px rgba(15, 23, 42, 0.2);
-      margin-top: 10px;
-    }
+.logo-wrap{
+  margin-top:40px;
+  position:relative;
+  z-index:2;
+}
+
+.logo-big{
+  width:180px;
+  height:180px;
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,0.9),
+  rgba(255,255,255,0.55));
+
+  backdrop-filter:blur(12px);
+
+  font-size:88px;
+  font-weight:800;
+  color:#16306b;
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.08),
+  inset 0 2px 8px rgba(255,255,255,0.8);
+}
 
     @keyframes floatInfinity {
       0%   { transform: translateY(0); }
