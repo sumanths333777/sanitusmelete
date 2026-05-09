@@ -6,6 +6,7 @@
 
 <title>SANITAS MELETE AI</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
@@ -18,175 +19,188 @@ box-sizing:border-box;
 
 body{
 font-family:'Inter',sans-serif;
-background:#f7f1e8;
+background:#f5efe7;
+display:flex;
+justify-content:center;
+min-height:100vh;
 overflow-x:hidden;
-color:#0f172a;
+color:#111827;
 }
 
-/* APP */
+/* MAIN APP */
 
 .app{
+width:100%;
 max-width:430px;
-margin:auto;
 min-height:100vh;
-padding:18px;
-position:relative;
-
 background:
-radial-gradient(circle at top left,#fff9f1 0%,transparent 35%),
-radial-gradient(circle at bottom right,#fff8ef 0%,transparent 35%),
-linear-gradient(180deg,#f9f4ec 0%,#f5efe7 100%);
-}
-
-/* SOFT GLOW */
-
-.bg-blur{
-position:absolute;
-width:420px;
-height:420px;
-border-radius:50%;
-background:rgba(255,255,255,0.45);
-filter:blur(120px);
-top:-140px;
-left:-120px;
-z-index:0;
-}
-
-/* NAVBAR */
-
-.navbar{
+radial-gradient(circle at top left,#fffaf4 0%,#f8f1e8 45%,#f5ede3 100%);
 position:relative;
-z-index:2;
+overflow:hidden;
+padding:18px;
+}
 
+/* DESKTOP = SAME UI ONLY SCALED */
+
+@media(min-width:900px){
+
+body{
+align-items:center;
+padding:24px;
+}
+
+.app{
+height:920px;
+max-height:95vh;
+border-radius:38px;
+box-shadow:
+0 30px 80px rgba(0,0,0,0.12);
+transform:scale(1.02);
+}
+
+}
+
+/* SOFT GLOW BG */
+
+.bg-glow{
+position:absolute;
+border-radius:50%;
+filter:blur(10px);
+opacity:.45;
+pointer-events:none;
+}
+
+.glow1{
+width:220px;
+height:220px;
+background:#fff7d8;
+top:-60px;
+left:-80px;
+}
+
+.glow2{
+width:180px;
+height:180px;
+background:#ffffff;
+right:-60px;
+top:320px;
+}
+
+/* TOP BAR */
+
+.topbar{
+width:100%;
+height:88px;
+background:rgba(255,255,255,0.45);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,0.6);
+border-radius:28px;
 display:flex;
 align-items:center;
 justify-content:space-between;
-
-padding:16px 18px;
-border-radius:30px;
-
-background:rgba(255,255,255,0.55);
-
-backdrop-filter:blur(18px);
-
+padding:0 18px;
 box-shadow:
-0 10px 40px rgba(0,0,0,0.04),
-inset 0 1px 0 rgba(255,255,255,0.7);
+0 10px 30px rgba(0,0,0,0.04);
+position:relative;
+z-index:2;
 }
 
-.left-nav{
+.left{
 display:flex;
 align-items:center;
 gap:14px;
 }
 
 .menu{
-font-size:30px;
-font-weight:500;
+font-size:32px;
+font-weight:300;
+cursor:pointer;
 }
 
-.logo{
+.brand{
 display:flex;
 align-items:center;
 gap:12px;
 }
 
 .infinity{
-font-size:50px;
-font-weight:800;
-color:#082f89;
+font-size:56px;
+font-weight:700;
+color:#082b83;
 line-height:1;
 }
 
-.brand{
+.brand-text{
 font-size:13px;
 font-weight:800;
-line-height:1.15;
-letter-spacing:2px;
+line-height:1.2;
+letter-spacing:1px;
 }
 
-.right-nav{
+.right{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 }
 
 .pro{
-padding:12px 18px;
+padding:14px 22px;
 border-radius:18px;
-background:#fffaf2;
+background:rgba(255,255,255,0.65);
+border:1px solid rgba(234,197,94,.3);
+box-shadow:0 4px 18px rgba(0,0,0,.03);
 font-weight:600;
-font-size:15px;
-color:#d0a13a;
-
-box-shadow:
-0 4px 14px rgba(0,0,0,0.04),
-inset 0 0 0 1px rgba(230,198,121,0.2);
+color:#c59b2c;
 }
 
-.bell{
-font-size:22px;
+.icon{
+font-size:24px;
 }
 
 .profile{
-padding:12px 18px;
+padding:14px 18px;
 border-radius:18px;
-background:white;
+background:rgba(255,255,255,.7);
 font-weight:600;
-
-box-shadow:
-0 4px 14px rgba(0,0,0,0.04);
 }
 
 /* QUICK ACCESS */
 
 .quick{
+margin-top:18px;
+margin-left:auto;
+width:310px;
+background:rgba(255,255,255,.48);
+backdrop-filter:blur(20px);
+border-radius:26px;
+padding:18px;
+border:1px solid rgba(255,255,255,.6);
+box-shadow:0 10px 30px rgba(0,0,0,.04);
 position:relative;
 z-index:2;
-
-margin-top:22px;
-margin-left:auto;
-
-width:78%;
-
-padding:22px;
-border-radius:28px;
-
-background:rgba(255,255,255,0.55);
-
-backdrop-filter:blur(20px);
-
-box-shadow:
-0 10px 40px rgba(0,0,0,0.04),
-inset 0 1px 0 rgba(255,255,255,0.7);
 }
 
 .quick-top{
 display:flex;
-align-items:center;
 justify-content:space-between;
+align-items:center;
 margin-bottom:18px;
 }
 
-.quick-top h2{
-font-size:22px;
-font-weight:700;
+.quick-top h3{
+font-size:24px;
+font-weight:800;
 }
 
-.round-arrow{
-width:34px;
-height:34px;
+.arrow{
+width:36px;
+height:36px;
 border-radius:50%;
 background:white;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
-font-size:18px;
-
-box-shadow:
-0 4px 14px rgba(0,0,0,0.04);
+font-size:22px;
 }
 
 .quick-grid{
@@ -195,7 +209,7 @@ grid-template-columns:repeat(4,1fr);
 gap:12px;
 }
 
-.quick-item{
+.quick-card{
 text-align:center;
 }
 
@@ -203,22 +217,16 @@ text-align:center;
 width:58px;
 height:58px;
 border-radius:18px;
-background:white;
-
+background:rgba(255,255,255,.8);
 display:flex;
 align-items:center;
 justify-content:center;
-
-margin:auto;
-margin-bottom:10px;
-
-font-size:24px;
-
-box-shadow:
-0 4px 14px rgba(0,0,0,0.04);
+font-size:28px;
+margin:auto auto 10px;
+box-shadow:0 4px 14px rgba(0,0,0,.03);
 }
 
-.quick-item p{
+.quick-card span{
 font-size:13px;
 font-weight:500;
 }
@@ -226,284 +234,256 @@ font-weight:500;
 /* HERO */
 
 .hero{
+margin-top:34px;
+text-align:center;
 position:relative;
 z-index:2;
-text-align:center;
-margin-top:36px;
 }
 
-.hero-circle{
-width:220px;
-height:220px;
+.logo-wrap{
+width:260px;
+height:260px;
 border-radius:50%;
-
 margin:auto;
-
-background:rgba(255,255,255,0.5);
-
+background:rgba(255,255,255,.5);
+backdrop-filter:blur(12px);
 display:flex;
 align-items:center;
 justify-content:center;
-
-backdrop-filter:blur(20px);
-
 box-shadow:
-0 18px 50px rgba(0,0,0,0.05),
-inset 0 1px 0 rgba(255,255,255,0.7);
+inset 0 0 0 2px rgba(255,255,255,.6),
+0 20px 50px rgba(0,0,0,.05);
 }
 
-.hero-circle span{
-font-size:110px;
+.logo{
+font-size:150px;
+color:#082b83;
 font-weight:800;
-color:#082f89;
+line-height:1;
 }
 
 .hero h1{
 margin-top:34px;
-
-font-size:52px;
+font-size:58px;
 font-weight:800;
-line-height:1.05;
+line-height:1.1;
 letter-spacing:-2px;
-
-color:#081226;
 }
 
 .gold{
-background:linear-gradient(180deg,#e7ca73,#dca63a);
-
+background:linear-gradient(90deg,#c79a2e,#f0d372);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .hero p{
-margin-top:18px;
-
-font-size:20px;
-font-weight:500;
-line-height:1.5;
-
+margin-top:16px;
+font-size:18px;
 color:#6b7280;
 }
 
-/* INFO CARD */
+/* MESSAGE CARD */
 
-.info{
-position:relative;
-z-index:2;
-
-margin-top:28px;
-
-padding:24px;
+.message{
+margin-top:34px;
+background:rgba(255,255,255,.42);
+backdrop-filter:blur(18px);
 border-radius:30px;
-
+padding:26px;
 display:flex;
-align-items:center;
 gap:18px;
-
-background:rgba(255,255,255,0.55);
-
-backdrop-filter:blur(20px);
-
-box-shadow:
-0 10px 40px rgba(0,0,0,0.04),
-inset 0 1px 0 rgba(255,255,255,0.7);
+align-items:flex-start;
+box-shadow:0 10px 30px rgba(0,0,0,.04);
+border:1px solid rgba(255,255,255,.6);
 }
 
 .spark{
-width:64px;
-height:64px;
-border-radius:20px;
-background:#fff5db;
-
+width:58px;
+height:58px;
+border-radius:18px;
+background:#fff4d5;
 display:flex;
 align-items:center;
 justify-content:center;
-
-font-size:28px;
+font-size:30px;
 flex-shrink:0;
 }
 
-.info h3{
-font-size:22px;
-margin-bottom:4px;
+.message h4{
+font-size:28px;
+font-weight:800;
+margin-bottom:8px;
 }
 
-.info p{
-font-size:17px;
-line-height:1.5;
+.message p{
+font-size:18px;
+line-height:1.7;
 color:#4b5563;
 }
 
-/* TRY */
+/* TRY ASKING */
 
-.try{
-position:relative;
-z-index:2;
-
-margin-top:34px;
-padding-bottom:140px;
+.ask{
+margin-top:36px;
 }
 
-.try h2{
-font-size:26px;
-font-weight:700;
-color:#826a53;
-margin-bottom:18px;
+.ask-title{
+font-size:30px;
+font-weight:800;
+margin-bottom:24px;
+color:#7c6551;
 }
 
-.try-grid{
+.cards{
 display:grid;
-grid-template-columns:1fr 1fr;
+grid-template-columns:repeat(2,1fr);
 gap:18px;
 }
 
 .card{
+background:rgba(255,255,255,.5);
+backdrop-filter:blur(16px);
+border-radius:28px;
+padding:24px;
 min-height:220px;
-
-padding:22px;
-border-radius:30px;
-
-background:rgba(255,255,255,0.58);
-
-backdrop-filter:blur(20px);
-
 display:flex;
 flex-direction:column;
 justify-content:space-between;
-
-box-shadow:
-0 10px 40px rgba(0,0,0,0.04),
-inset 0 1px 0 rgba(255,255,255,0.7);
+box-shadow:0 10px 25px rgba(0,0,0,.04);
+border:1px solid rgba(255,255,255,.7);
 }
 
 .card-icon{
 width:74px;
 height:74px;
 border-radius:24px;
-
 display:flex;
 align-items:center;
 justify-content:center;
-
-font-size:38px;
+font-size:40px;
 margin-bottom:18px;
 }
 
-.yellow{
-background:#fff3d1;
-}
-
-.purple{
-background:#eedcff;
-}
-
-.green{
-background:#eaf9d9;
-}
-
-.blue{
-background:#dfe8ff;
-}
+.yellow{background:#fff3d6;}
+.purple{background:#f2ddff;}
+.green{background:#e9ffd8;}
+.blue{background:#dfe8ff;}
 
 .card h3{
-font-size:20px;
-line-height:1.25;
+font-size:22px;
+line-height:1.3;
 font-weight:700;
 }
 
-.arrow{
-font-size:48px;
+.card-arrow{
+font-size:52px;
 font-weight:300;
+margin-top:14px;
 }
 
 /* INPUT */
 
 .bottom{
-position:fixed;
-bottom:18px;
-left:50%;
-transform:translateX(-50%);
-
-width:100%;
-max-width:430px;
-
-padding:0 18px;
-z-index:20;
+position:sticky;
+bottom:14px;
+margin-top:26px;
+z-index:10;
 }
 
-.input{
-height:84px;
-border-radius:999px;
-
-background:rgba(255,255,255,0.75);
-
+.input-box{
+height:82px;
+background:rgba(255,255,255,.55);
 backdrop-filter:blur(20px);
-
+border-radius:999px;
 display:flex;
 align-items:center;
-gap:12px;
-
-padding:0 14px;
-
+padding:0 12px 0 20px;
 box-shadow:
-0 10px 40px rgba(0,0,0,0.05),
-inset 0 1px 0 rgba(255,255,255,0.8);
+0 15px 40px rgba(0,0,0,.06);
+border:1px solid rgba(255,255,255,.7);
 }
 
-.attach,
-.mic{
-font-size:34px;
+.attach{
+font-size:38px;
+margin-right:14px;
 }
 
-.input input{
+.input-box input{
 flex:1;
 border:none;
-outline:none;
 background:transparent;
-
-font-size:20px;
+outline:none;
+font-size:22px;
+color:#6b7280;
 font-family:'Inter',sans-serif;
-color:#374151;
 }
 
-.input input::placeholder{
-color:#9ca3af;
+.mic{
+font-size:34px;
+margin-right:16px;
 }
 
 .send{
-width:68px;
-height:68px;
-border:none;
+width:64px;
+height:64px;
 border-radius:50%;
-
-background:#082f89;
+border:none;
+background:#082b83;
 color:white;
-
-font-size:30px;
+font-size:28px;
 cursor:pointer;
-
 box-shadow:
-0 0 24px rgba(231,195,89,0.55);
+0 10px 25px rgba(8,43,131,.3);
 }
 
-/* DESKTOP */
+/* MOBILE */
 
-@media(min-width:900px){
+@media(max-width:480px){
 
-body{
-display:flex;
-justify-content:center;
-align-items:center;
-padding:30px;
+.topbar{
+height:82px;
 }
 
-.app{
-border-radius:40px;
-overflow:hidden;
+.quick{
+width:100%;
+}
 
-box-shadow:
-0 25px 80px rgba(0,0,0,0.12);
+.logo-wrap{
+width:210px;
+height:210px;
+}
+
+.logo{
+font-size:120px;
+}
+
+.hero h1{
+font-size:44px;
+}
+
+.message h4{
+font-size:20px;
+}
+
+.message p{
+font-size:16px;
+}
+
+.card{
+min-height:180px;
+padding:20px;
+}
+
+.card h3{
+font-size:18px;
+}
+
+.input-box{
+height:74px;
+}
+
+.input-box input{
+font-size:18px;
 }
 
 }
@@ -515,34 +495,33 @@ box-shadow:
 
 <div class="app">
 
-<div class="bg-blur"></div>
+<div class="bg-glow glow1"></div>
+<div class="bg-glow glow2"></div>
 
-<!-- NAVBAR -->
+<!-- TOPBAR -->
 
-<div class="navbar">
+<div class="topbar">
 
-<div class="left-nav">
+<div class="left">
 
 <div class="menu">☰</div>
 
-<div class="logo">
-
+<div class="brand">
 <div class="infinity">∞</div>
 
-<div class="brand">
+<div class="brand-text">
 SANITAS<br>
 MELETE AI
 </div>
-
 </div>
 
 </div>
 
-<div class="right-nav">
+<div class="right">
 
 <div class="pro">👑 Pro</div>
 
-<div class="bell">🔔</div>
+<div class="icon">🔔</div>
 
 <div class="profile">SK∞</div>
 
@@ -555,33 +534,30 @@ MELETE AI
 <div class="quick">
 
 <div class="quick-top">
-
-<h2>Quick access</h2>
-
-<div class="round-arrow">→</div>
-
+<h3>Quick access</h3>
+<div class="arrow">→</div>
 </div>
 
 <div class="quick-grid">
 
-<div class="quick-item">
-<div class="quick-icon">☁️</div>
-<p>Upload</p>
+<div class="quick-card">
+<div class="quick-icon">📤</div>
+<span>Upload</span>
 </div>
 
-<div class="quick-item">
+<div class="quick-card">
 <div class="quick-icon">📋</div>
-<p>Mock Test</p>
+<span>Mock Test</span>
 </div>
 
-<div class="quick-item">
-<div class="quick-icon">🧾</div>
-<p>MCQs</p>
+<div class="quick-card">
+<div class="quick-icon">📄</div>
+<span>MCQs</span>
 </div>
 
-<div class="quick-item">
-<div class="quick-icon">📘</div>
-<p>Notes</p>
+<div class="quick-card">
+<div class="quick-icon">📔</div>
+<span>Notes</span>
 </div>
 
 </div>
@@ -592,8 +568,8 @@ MELETE AI
 
 <div class="hero">
 
-<div class="hero-circle">
-<span>∞</span>
+<div class="logo-wrap">
+<div class="logo">∞</div>
 </div>
 
 <h1>
@@ -606,31 +582,31 @@ Your AI study buddy for NEET & JEE ✨
 
 </div>
 
-<!-- INFO -->
+<!-- MESSAGE -->
 
-<div class="info">
+<div class="message">
 
 <div class="spark">✨</div>
 
 <div>
-
-<h3>I’m MEBI, your study buddy.</h3>
+<h4>I'm MEBI, your study buddy.</h4>
 
 <p>
 Ask doubts, request MCQs, or send images.
 </p>
-
 </div>
 
 </div>
 
-<!-- TRY -->
+<!-- TRY ASKING -->
 
-<div class="try">
+<div class="ask">
 
-<h2>✨ Try asking me</h2>
+<div class="ask-title">
+✨ Try asking me
+</div>
 
-<div class="try-grid">
+<div class="cards">
 
 <div class="card">
 
@@ -638,13 +614,11 @@ Ask doubts, request MCQs, or send images.
 
 <div class="card-icon yellow">❓</div>
 
-<h3>
-Explain this concept
-</h3>
+<h3>Explain this concept</h3>
 
 </div>
 
-<div class="arrow">→</div>
+<div class="card-arrow">→</div>
 
 </div>
 
@@ -654,13 +628,11 @@ Explain this concept
 
 <div class="card-icon purple">📝</div>
 
-<h3>
-Generate MCQs
-</h3>
+<h3>Generate MCQs</h3>
 
 </div>
 
-<div class="arrow">→</div>
+<div class="card-arrow">→</div>
 
 </div>
 
@@ -670,13 +642,11 @@ Generate MCQs
 
 <div class="card-icon green">🧠</div>
 
-<h3>
-Solve this problem
-</h3>
+<h3>Solve this problem</h3>
 
 </div>
 
-<div class="arrow">→</div>
+<div class="card-arrow">→</div>
 
 </div>
 
@@ -686,13 +656,11 @@ Solve this problem
 
 <div class="card-icon blue">☁️</div>
 
-<h3>
-Upload image
-</h3>
+<h3>Upload image</h3>
 
 </div>
 
-<div class="arrow">→</div>
+<div class="card-arrow">→</div>
 
 </div>
 
@@ -704,20 +672,15 @@ Upload image
 
 <div class="bottom">
 
-<div class="input">
+<div class="input-box">
 
 <div class="attach">📎</div>
 
-<input
-type="text"
-placeholder="Type your question here..."
->
+<input type="text" placeholder="Type your question here..." />
 
 <div class="mic">🎤</div>
 
-<button class="send">
-➤
-</button>
+<button class="send">➤</button>
 
 </div>
 
