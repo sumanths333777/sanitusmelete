@@ -133,7 +133,7 @@ padding:0 20px;
 
 display:flex;
 align-items:center;
-justify-content:space-between;
+justify-content:flex-start;
 
 background:
 rgba(255,255,255,.42);
@@ -196,55 +196,6 @@ line-height:1.15;
 letter-spacing:1px;
 }
 
-.top-right{
-
-display:flex;
-align-items:center;
-gap:12px;
-}
-
-.pro-btn{
-
-padding:12px 22px;
-
-border-radius:999px;
-
-background:
-rgba(255,255,255,.75);
-
-border:
-1px solid #f2ddb1;
-
-font-size:15px;
-font-weight:700;
-
-color:#c49b36;
-
-box-shadow:
-0 4px 12px rgba(0,0,0,.03);
-}
-
-.profile{
-
-width:74px;
-height:50px;
-
-border-radius:999px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:
-rgba(255,255,255,.72);
-
-font-size:15px;
-font-weight:700;
-
-box-shadow:
-0 4px 12px rgba(0,0,0,.03);
-}
-
 /* MAIN */
 
 .main{
@@ -261,117 +212,12 @@ position:relative;
 z-index:2;
 }
 
-/* QUICK ACCESS */
-
-.quick-access{
-
-width:100%;
-
-display:flex;
-justify-content:flex-end;
-
-margin-top:4px;
-margin-bottom:10px;
-}
-
-.quick-box{
-
-width:285px;
-
-padding:18px;
-
-border-radius:26px;
-
-background:
-rgba(255,255,255,.45);
-
-backdrop-filter:blur(20px);
-
-border:
-1px solid rgba(255,255,255,.72);
-
-box-shadow:
-0 10px 30px rgba(0,0,0,.04);
-}
-
-.quick-head{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-margin-bottom:18px;
-}
-
-.quick-head h3{
-
-font-size:18px;
-font-weight:700;
-}
-
-.arrow-circle{
-
-width:36px;
-height:36px;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:white;
-
-font-size:18px;
-
-box-shadow:
-0 4px 10px rgba(0,0,0,.05);
-}
-
-.quick-items{
-
-display:flex;
-justify-content:space-between;
-
-gap:10px;
-}
-
-.quick-item{
-
-display:flex;
-flex-direction:column;
-align-items:center;
-
-gap:8px;
-
-font-size:12px;
-}
-
-.quick-icon{
-
-width:54px;
-height:54px;
-
-border-radius:18px;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:white;
-
-font-size:22px;
-
-box-shadow:
-0 4px 10px rgba(0,0,0,.04);
-}
-
 /* BIG LOGO */
 
 .logo-big{
 
-width:220px;
-height:220px;
+width:180px;
+height:180px;
 
 border-radius:50%;
 
@@ -379,7 +225,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:110px;
+font-size:90px;
 font-weight:800;
 
 color:#082b83;
@@ -395,14 +241,14 @@ border:
 box-shadow:
 0 18px 40px rgba(0,0,0,.04);
 
-margin-top:8px;
+margin-top:10px;
 }
 
 /* HELLO */
 
 .hello{
 
-font-size:58px;
+font-size:46px;
 
 font-weight:800;
 
@@ -412,7 +258,7 @@ letter-spacing:-2px;
 
 text-align:center;
 
-margin-top:8px;
+margin-top:6px;
 
 color:#071133;
 }
@@ -434,7 +280,7 @@ linear-gradient(
 
 .sub{
 
-font-size:20px;
+font-size:16px;
 
 line-height:1.5;
 
@@ -456,14 +302,14 @@ width:100%;
 
 width:100%;
 
-padding:24px;
+padding:20px;
 
-border-radius:30px;
+border-radius:26px;
 
 display:flex;
 align-items:flex-start;
 
-gap:16px;
+gap:14px;
 
 background:
 rgba(255,255,255,.42);
@@ -479,10 +325,10 @@ box-shadow:
 
 .bot-icon{
 
-width:58px;
-height:58px;
+width:54px;
+height:54px;
 
-border-radius:20px;
+border-radius:18px;
 
 background:#fff2d5;
 
@@ -490,7 +336,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:28px;
+font-size:24px;
 }
 
 .bot-content h3{
@@ -502,9 +348,9 @@ margin-bottom:8px;
 
 .bot-content p{
 
-font-size:16px;
+font-size:15px;
 
-line-height:1.7;
+line-height:1.6;
 
 color:#4b5563;
 }
@@ -515,7 +361,7 @@ color:#4b5563;
 
 width:100%;
 
-font-size:24px;
+font-size:22px;
 
 font-weight:700;
 
@@ -534,7 +380,7 @@ width:100%;
 display:grid;
 
 grid-template-columns:
-repeat(4,1fr);
+repeat(2,1fr);
 
 gap:14px;
 }
@@ -543,11 +389,11 @@ gap:14px;
 
 .quick-card{
 
-height:165px;
+height:135px;
 
-padding:18px;
+padding:16px;
 
-border-radius:28px;
+border-radius:24px;
 
 background:
 rgba(255,255,255,.42);
@@ -575,16 +421,16 @@ translateY(-5px);
 
 .card-icon{
 
-width:58px;
-height:58px;
+width:50px;
+height:50px;
 
-border-radius:20px;
+border-radius:18px;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-font-size:28px;
+font-size:24px;
 }
 
 .yellow{
@@ -605,7 +451,7 @@ background:#dce6ff;
 
 .quick-card h3{
 
-font-size:16px;
+font-size:15px;
 
 line-height:1.4;
 
@@ -614,7 +460,7 @@ font-weight:700;
 
 .quick-card span{
 
-font-size:34px;
+font-size:28px;
 }
 
 /* INPUT */
@@ -635,7 +481,7 @@ z-index:100;
 
 .input-row{
 
-height:76px;
+height:68px;
 
 border-radius:999px;
 
@@ -661,7 +507,7 @@ align-items:center;
 border:none;
 background:transparent;
 
-font-size:30px;
+font-size:28px;
 
 margin-right:10px;
 
@@ -677,15 +523,15 @@ outline:none;
 
 background:transparent;
 
-font-size:18px;
+font-size:16px;
 
 color:#6b7280;
 }
 
 .send-btn{
 
-width:58px;
-height:58px;
+width:52px;
+height:52px;
 
 border-radius:50%;
 
@@ -695,7 +541,7 @@ background:#082b83;
 
 color:white;
 
-font-size:24px;
+font-size:20px;
 
 cursor:pointer;
 
@@ -711,32 +557,22 @@ box-shadow:
 padding:0 16px 120px;
 }
 
-.quick-grid{
-
-grid-template-columns:
-repeat(2,1fr);
-}
-
-.quick-card{
-height:145px;
-}
-
 .logo-big{
-width:190px;
-height:190px;
-font-size:95px;
+width:170px;
+height:170px;
+font-size:84px;
 }
 
 .hello{
-font-size:46px;
+font-size:42px;
 }
 
 .sub{
-font-size:16px;
+font-size:15px;
 }
 
-.quick-box{
-width:100%;
+.quick-card{
+height:125px;
 }
 }
 
@@ -766,57 +602,9 @@ MELETE AI
 
 </div>
 
-<div class="top-right">
-
-<div class="pro-btn">👑 Pro</div>
-
-<div class="profile">SK∞</div>
-
-</div>
-
 </header>
 
 <main class="main">
-
-<section class="quick-access">
-
-<div class="quick-box">
-
-<div class="quick-head">
-
-<h3>Quick access</h3>
-
-<div class="arrow-circle">→</div>
-
-</div>
-
-<div class="quick-items">
-
-<div class="quick-item">
-<div class="quick-icon">☁️</div>
-<span>Upload</span>
-</div>
-
-<div class="quick-item">
-<div class="quick-icon">📋</div>
-<span>Mock Test</span>
-</div>
-
-<div class="quick-item">
-<div class="quick-icon">🧾</div>
-<span>MCQs</span>
-</div>
-
-<div class="quick-item">
-<div class="quick-icon">📘</div>
-<span>Notes</span>
-</div>
-
-</div>
-
-</div>
-
-</section>
 
 <div class="logo-big">∞</div>
 
