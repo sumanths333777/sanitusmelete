@@ -1,8 +1,10 @@
-/* =========================
-   SANITAS MELETE FINAL UI
-   ========================= */
+<!-- PASTE THIS INSIDE <head> ABOVE </head> -->
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
 
 *{
 margin:0;
@@ -12,8 +14,7 @@ box-sizing:border-box;
 
 body{
 font-family:'Inter',sans-serif;
-background:
-linear-gradient(180deg,#fbf7f1 0%,#f6efe5 100%);
+background:linear-gradient(180deg,#fbf7f1 0%,#f6efe5 100%);
 color:#111827;
 min-height:100vh;
 display:flex;
@@ -21,8 +22,6 @@ justify-content:center;
 overflow-x:hidden;
 position:relative;
 }
-
-/* Soft background glow */
 
 body::before{
 content:'';
@@ -36,21 +35,6 @@ top:-120px;
 right:-120px;
 z-index:-1;
 }
-
-body::after{
-content:'';
-position:fixed;
-width:300px;
-height:300px;
-background:rgba(255,255,255,0.35);
-filter:blur(90px);
-border-radius:50%;
-bottom:-120px;
-left:-120px;
-z-index:-1;
-}
-
-/* APP */
 
 .app{
 width:100%;
@@ -391,3 +375,5 @@ max-width:100%;
 }
 
 }
+
+</style>
