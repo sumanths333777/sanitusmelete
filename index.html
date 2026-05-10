@@ -85,6 +85,8 @@ body{
   box-shadow:
   inset 0 1px 1px rgba(255,255,255,0.8),
   0 8px 22px rgba(180,140,100,0.10);
+
+  cursor:pointer;
 }
 
 .glass-btn i{
@@ -303,7 +305,7 @@ body{
   font-size:17px;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media (max-width:768px){
 
@@ -395,7 +397,8 @@ body{
   }
 
 }
-  /* SIDE MENU */
+
+/* SIDE MENU */
 
 .menu-overlay{
   position:fixed;
@@ -557,7 +560,6 @@ body{
 
 .menu-item span{
   font-size:26px;
-
   color:#8d847c;
 }
 
@@ -580,187 +582,6 @@ body{
 
   font-size:28px;
 }
-
-</style>
-</head>
-
-<body>
-
-<div class="app">
-  <!-- SIDE MENU -->
-
-<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
-
-<div class="side-menu" id="sideMenu">
-
-  <div class="menu-profile">
-
-    <div class="profile-left">
-
-      <div class="profile-icon">👤</div>
-
-      <div>
-        <h2>SK</h2>
-        <p>Premium User</p>
-      </div>
-
-    </div>
-
-    <div class="profile-star">✦</div>
-
-  </div>
-
-  <div class="menu-items">
-
-    <div class="menu-item">
-      <span>☷</span>
-      <p>Dashboard</p>
-      <i>›</i>
-    </div>
-
-    <div class="menu-item">
-      <span>💬</span>
-      <p>My Chats</p>
-      <i>›</i>
-    </div>
-
-    <div class="menu-item">
-      <span>📄</span>
-      <p>My Documents</p>
-      <i>›</i>
-    </div>
-
-    <div class="menu-item">
-      <span>🔖</span>
-      <p>Saved Answers</p>
-      <i>›</i>
-    </div>
-
-    <div class="menu-item">
-      <span>🗓</span>
-      <p>Study Planner</p>
-      <i>›</i>
-    </div>
-
-    <div class="menu-item">
-      <span>✦</span>
-      <p>AI Tools</p>
-      <i>›</i>
-    </div>
-
-    <div class="menu-item">
-      <span>⚙</span>
-      <p>Settings</p>
-    </div>
-
-    <div class="menu-item">
-      <span>↪</span>
-      <p>Log Out</p>
-    </div>
-
-  </div>
-
-</div>
-  <!-- TOP -->
-
-  <div class="top-bar">
-
-    <div class="left-top">
-
-      <div class="glass-btn"onclick="openMenu()">
-        <i>☰</i>
-      </div>
-
-      <div class="brand">
-        Sanitas Melete
-      </div>
-
-    </div>
-
-    <div class="glass-btn"onclick="openAbout()">
-      <i>∞</i>
-
-
-  </div>
-
-  <!-- CENTER -->
-
-  <div class="center">
-
-    <div class="logo-ring">
-      <div class="infinity">∞</div>
-    </div>
-
-    <div class="hero-title">
-      Hi iam mebi<span class="spark">✦</span>
-    </div>
-
-    <div class="divider">
-      <span></span>
-      <p>✦</p>
-      <span></span>
-    </div>
-
-    <div class="sub">
-      your study buddy
-    </div>
-
-  </div>
-
-  <!-- SEARCH -->
-
-  <div class="search-wrap">
-
-    <div class="search-left">
-
-      <div class="circle-btn">
-        <span>⌘</span>
-      </div>
-
-      <div class="placeholder">
-        type your questions here
-      </div>
-
-    </div>
-
-    <div class="circle-btn">
-      <span>↑</span>
-    </div>
-
-  </div>
-
-</div>
-<!-- ABOUT POPUP -->
-
-<div class="about-popup" id="aboutPopup">
-
-  <div class="about-card">
-
-    <button class="close-popup" onclick="closeAbout()">✕</button>
-
-    <div class="about-logo">∞</div>
-
-    <h2>Sanitas Melete AI</h2>
-
-    <p class="about-sub">
-      your study buddy
-    </p>
-
-    <div class="about-line"></div>
-
-    <p class="about-text">
-      Premium AI learning platform crafted for students with elegant design and intelligent study experience.
-    </p>
-
-    <p class="founder">
-      Founder — SK
-    </p>
-
-  </div>
-
-</div>
-
-<style>
 
 /* ABOUT POPUP */
 
@@ -884,8 +705,190 @@ body{
 }
 
 </style>
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- SIDE MENU -->
+
+  <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+  <div class="side-menu" id="sideMenu">
+
+    <div class="menu-profile">
+
+      <div class="profile-left">
+
+        <div class="profile-icon">👤</div>
+
+        <div>
+          <h2>SK</h2>
+          <p>Premium User</p>
+        </div>
+
+      </div>
+
+      <div class="profile-star">✦</div>
+
+    </div>
+
+    <div class="menu-items">
+
+      <div class="menu-item">
+        <span>☷</span>
+        <p>Dashboard</p>
+        <i>›</i>
+      </div>
+
+      <div class="menu-item">
+        <span>💬</span>
+        <p>My Chats</p>
+        <i>›</i>
+      </div>
+
+      <div class="menu-item">
+        <span>📄</span>
+        <p>My Documents</p>
+        <i>›</i>
+      </div>
+
+      <div class="menu-item">
+        <span>🔖</span>
+        <p>Saved Answers</p>
+        <i>›</i>
+      </div>
+
+      <div class="menu-item">
+        <span>🗓</span>
+        <p>Study Planner</p>
+        <i>›</i>
+      </div>
+
+      <div class="menu-item">
+        <span>✦</span>
+        <p>AI Tools</p>
+        <i>›</i>
+      </div>
+
+      <div class="menu-item">
+        <span>⚙</span>
+        <p>Settings</p>
+      </div>
+
+      <div class="menu-item">
+        <span>↪</span>
+        <p>Log Out</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- TOP -->
+
+  <div class="top-bar">
+
+    <div class="left-top">
+
+      <div class="glass-btn" onclick="openMenu()">
+        <i>☰</i>
+      </div>
+
+      <div class="brand">
+        Sanitas Melete
+      </div>
+
+    </div>
+
+    <div class="glass-btn" onclick="openAbout()">
+      <i>∞</i>
+    </div>
+
+  </div>
+
+  <!-- CENTER -->
+
+  <div class="center">
+
+    <div class="logo-ring">
+      <div class="infinity">∞</div>
+    </div>
+
+    <div class="hero-title">
+      Hi iam mebi<span class="spark">✦</span>
+    </div>
+
+    <div class="divider">
+      <span></span>
+      <p>✦</p>
+      <span></span>
+    </div>
+
+    <div class="sub">
+      your study buddy
+    </div>
+
+  </div>
+
+  <!-- SEARCH -->
+
+  <div class="search-wrap">
+
+    <div class="search-left">
+
+      <div class="circle-btn">
+        <span>⌘</span>
+      </div>
+
+      <div class="placeholder">
+        type your questions here
+      </div>
+
+    </div>
+
+    <div class="circle-btn">
+      <span>↑</span>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ABOUT POPUP -->
+
+<div class="about-popup" id="aboutPopup">
+
+  <div class="about-card">
+
+    <button class="close-popup" onclick="closeAbout()">✕</button>
+
+    <div class="about-logo">∞</div>
+
+    <h2>Sanitas Melete AI</h2>
+
+    <p class="about-sub">
+      your study buddy
+    </p>
+
+    <div class="about-line"></div>
+
+    <p class="about-text">
+      Premium AI learning platform crafted for students with elegant design and intelligent study experience.
+    </p>
+
+    <p class="founder">
+      Founder — SK
+    </p>
+
+  </div>
+
+</div>
 
 <script>
+
+/* ABOUT POPUP */
 
 function openAbout(){
   document
@@ -898,7 +901,8 @@ function closeAbout(){
   .getElementById("aboutPopup")
   .classList.remove("active");
 }
-<script>
+
+/* SIDE MENU */
 
 const sideMenu =
 document.getElementById("sideMenu");
@@ -928,12 +932,10 @@ document.addEventListener("touchmove", e=>{
 
   let moveX = e.touches[0].clientX;
 
-  /* OPEN MENU */
   if(startX < 30 && moveX > 100){
     openMenu();
   }
 
-  /* CLOSE MENU */
   if(startX > 250 && moveX < 120){
     closeMenu();
   }
@@ -941,6 +943,6 @@ document.addEventListener("touchmove", e=>{
 });
 
 </script>
-</script>
+
 </body>
 </html>
