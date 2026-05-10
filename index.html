@@ -704,6 +704,61 @@ body{
   cursor:pointer;
 }
 
+  .ai-input{
+  width:100%;
+  border:none;
+  outline:none;
+  background:transparent;
+
+  font-size:16px;
+  color:#444;
+
+  font-family:'Poppins',sans-serif;
+}
+
+.ai-input::placeholder{
+  color:#7d756e;
+}
+
+#responseBox{
+  position:absolute;
+
+  left:50%;
+  transform:translateX(-50%);
+
+  bottom:120px;
+
+  width:88%;
+  max-height:220px;
+
+  overflow-y:auto;
+
+  padding:20px;
+
+  border-radius:28px;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.58),
+  rgba(255,255,255,0.18)
+  );
+
+  border:1px solid rgba(255,255,255,0.72);
+
+  backdrop-filter:blur(18px);
+
+  color:#062d71;
+
+  font-size:15px;
+
+  line-height:1.7;
+
+  box-shadow:
+  inset 0 0 12px rgba(255,255,255,0.4),
+  0 12px 28px rgba(180,140,100,0.10);
+}
+  
 </style>
 </head>
 
@@ -832,30 +887,34 @@ body{
 
   </div>
 
-  <!-- SEARCH -->
+ <!-- SEARCH -->
 
-  <div class="search-wrap">
+<div class="search-wrap">
 
-    <div class="search-left">
-
-      <div class="circle-btn">
-        <span>⌘</span>
-      </div>
-
-      <div class="placeholder">
-        type your questions here
-      </div>
-
-    </div>
+  <div class="search-left" style="width:100%;">
 
     <div class="circle-btn">
-      <span>↑</span>
+      <span>⌘</span>
     </div>
 
+    <input
+      type="text"
+      id="userInput"
+      placeholder="type your questions here"
+      class="ai-input"
+    />
+
+  </div>
+
+  <div class="circle-btn" onclick="sendMessage()">
+    <span>↑</span>
   </div>
 
 </div>
 
+<!-- RESPONSE -->
+
+<div id="responseBox"></div>
 <!-- ABOUT POPUP -->
 
 <div class="about-popup" id="aboutPopup">
