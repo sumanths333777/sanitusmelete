@@ -305,99 +305,6 @@ body{
   font-size:17px;
 }
 
-/* MOBILE */
-
-@media (max-width:768px){
-
-  .top-bar{
-    padding:22px 18px 0;
-  }
-
-  .left-top{
-    gap:12px;
-  }
-
-  .brand{
-    font-size:15px;
-  }
-
-  .glass-btn{
-    width:44px;
-    height:44px;
-  }
-
-  .glass-btn i{
-    font-size:20px;
-  }
-
-  .center{
-    top:50%;
-  }
-
-  .logo-ring{
-    width:190px;
-    height:190px;
-  }
-
-  .logo-ring::before{
-    width:240px;
-    height:240px;
-  }
-
-  .infinity{
-    font-size:92px;
-  }
-
-  .hero-title{
-    margin-top:24px;
-    font-size:30px;
-  }
-
-  .divider{
-    width:170px;
-    margin:12px auto;
-    gap:10px;
-  }
-
-  .divider span{
-    width:55px;
-  }
-
-  .divider p{
-    font-size:14px;
-  }
-
-  .sub{
-    font-size:18px;
-  }
-
-  .search-wrap{
-    width:93%;
-    height:72px;
-    bottom:12px;
-    border-radius:28px;
-    padding:0 12px;
-  }
-
-  .search-left{
-    gap:10px;
-  }
-
-  .circle-btn{
-    width:44px;
-    height:44px;
-  }
-
-  .circle-btn span{
-    font-size:22px;
-  }
-
-  .placeholder{
-    font-size:14px;
-  }
-
-}
-
 /* SIDE MENU */
 
 .menu-overlay{
@@ -494,7 +401,7 @@ body{
   width:52px;
   height:52px;
 
-  border-radius:18%;
+  border-radius:50%;
 
   display:flex;
   align-items:center;
@@ -502,27 +409,31 @@ body{
 
   background:#f5dfba;
 
-  font-size:20px;
+  font-size:24px;
 }
 
 .menu-profile h2{
   color:#062d71;
 
-  font-size:14px;
+  font-size:26px;
 
   font-family:'Cormorant Garamond',serif;
+
+  line-height:1;
 }
 
 .menu-profile p{
   color:#b8862e;
 
-  font-size:18px;
+  font-size:14px;
+
+  margin-top:2px;
 }
 
 .profile-star{
   color:#d4a54f;
 
-  font-size:26px;
+  font-size:20px;
 }
 
 /* MENU ITEMS */
@@ -530,15 +441,16 @@ body{
 .menu-items{
   display:flex;
   flex-direction:column;
-  gap:14px;
+
+  gap:10px;
 }
 
 .menu-item{
-  height:76px;
+  height:60px;
 
-  padding:0 22px;
+  padding:0 16px;
 
-  border-radius:24px;
+  border-radius:18px;
 
   display:flex;
   align-items:center;
@@ -559,16 +471,17 @@ body{
 }
 
 .menu-item span{
-  font-size:26px;
+  font-size:20px;
+
   color:#8d847c;
 }
 
 .menu-item p{
-  margin-left:18px;
+  margin-left:14px;
 
   color:#222;
 
-  font-size:20px;
+  font-size:16px;
 
   font-family:'Cormorant Garamond',serif;
 
@@ -580,7 +493,7 @@ body{
 
   color:#999;
 
-  font-size:28px;
+  font-size:22px;
 }
 
 /* ABOUT POPUP */
@@ -704,6 +617,76 @@ body{
   cursor:pointer;
 }
 
+@media (max-width:768px){
+
+  .top-bar{
+    padding:22px 18px 0;
+  }
+
+  .brand{
+    font-size:15px;
+  }
+
+  .glass-btn{
+    width:44px;
+    height:44px;
+  }
+
+  .glass-btn i{
+    font-size:20px;
+  }
+
+  .logo-ring{
+    width:190px;
+    height:190px;
+  }
+
+  .logo-ring::before{
+    width:240px;
+    height:240px;
+  }
+
+  .infinity{
+    font-size:92px;
+  }
+
+  .hero-title{
+    margin-top:24px;
+    font-size:30px;
+  }
+
+  .divider{
+    width:170px;
+    margin:12px auto;
+    gap:10px;
+  }
+
+  .divider span{
+    width:55px;
+  }
+
+  .divider p{
+    font-size:14px;
+  }
+
+  .sub{
+    font-size:18px;
+  }
+
+  .search-wrap{
+    width:93%;
+    height:72px;
+    bottom:12px;
+    border-radius:28px;
+    padding:0 12px;
+  }
+
+  .placeholder{
+    font-size:14px;
+  }
+
+}
+
 </style>
 </head>
 
@@ -711,198 +694,174 @@ body{
 
 <div class="app">
 
-  <!-- SIDE MENU -->
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
-  <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+<div class="side-menu" id="sideMenu">
 
-  <div class="side-menu" id="sideMenu">
+<div class="menu-profile">
 
-    <div class="menu-profile">
+<div class="profile-left">
 
-      <div class="profile-left">
+<div class="profile-icon">👤</div>
 
-        <div class="profile-icon">👤</div>
-
-        <div>
-          <h2>SK</h2>
-          <p>Premium User</p>
-        </div>
-
-      </div>
-
-      <div class="profile-star">✦</div>
-
-    </div>
-
-    <div class="menu-items">
-
-      <div class="menu-item">
-        <span>☷</span>
-        <p>Dashboard</p>
-        <i>›</i>
-      </div>
-
-      <div class="menu-item">
-        <span>💬</span>
-        <p>My Chats</p>
-        <i>›</i>
-      </div>
-
-      <div class="menu-item">
-        <span>📄</span>
-        <p>My Documents</p>
-        <i>›</i>
-      </div>
-
-      <div class="menu-item">
-        <span>🔖</span>
-        <p>Saved Answers</p>
-        <i>›</i>
-      </div>
-
-      <div class="menu-item">
-        <span>🗓</span>
-        <p>Study Planner</p>
-        <i>›</i>
-      </div>
-
-      <div class="menu-item">
-        <span>✦</span>
-        <p>AI Tools</p>
-        <i>›</i>
-      </div>
-
-      <div class="menu-item">
-        <span>⚙</span>
-        <p>Settings</p>
-      </div>
-
-      <div class="menu-item">
-        <span>↪</span>
-        <p>Log Out</p>
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- TOP -->
-
-  <div class="top-bar">
-
-    <div class="left-top">
-
-      <div class="glass-btn" onclick="openMenu()">
-        <i>☰</i>
-      </div>
-
-      <div class="brand">
-        Sanitas Melete
-      </div>
-
-    </div>
-
-    <div class="glass-btn" onclick="openAbout()">
-      <i>∞</i>
-    </div>
-
-  </div>
-
-  <!-- CENTER -->
-
-  <div class="center">
-
-    <div class="logo-ring">
-      <div class="infinity">∞</div>
-    </div>
-
-    <div class="hero-title">
-      Hi iam mebi<span class="spark">✦</span>
-    </div>
-
-    <div class="divider">
-      <span></span>
-      <p>✦</p>
-      <span></span>
-    </div>
-
-    <div class="sub">
-      your study buddy
-    </div>
-
-  </div>
-
-  <!-- SEARCH -->
-
-  <div class="search-wrap">
-
-    <div class="search-left">
-
-      <div class="circle-btn">
-        <span>⌘</span>
-      </div>
-
-      <div class="placeholder">
-        type your questions here
-      </div>
-
-    </div>
-
-    <div class="circle-btn">
-      <span>↑</span>
-    </div>
-
-  </div>
+<div>
+<h2>SK</h2>
+<p>Premium User</p>
+</div>
 
 </div>
 
-<!-- ABOUT POPUP -->
+<div class="profile-star">✦</div>
+
+</div>
+
+<div class="menu-items">
+
+<div class="menu-item">
+<span>☷</span>
+<p>Dashboard</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>💬</span>
+<p>My Chats</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>📄</span>
+<p>My Documents</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>🔖</span>
+<p>Saved Answers</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>🗓</span>
+<p>Study Planner</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>✦</span>
+<p>AI Tools</p>
+<i>›</i>
+</div>
+
+</div>
+
+</div>
+
+<div class="top-bar">
+
+<div class="left-top">
+
+<div class="glass-btn" onclick="openMenu()">
+<i>☰</i>
+</div>
+
+<div class="brand">
+Sanitas Melete
+</div>
+
+</div>
+
+<div class="glass-btn" onclick="openAbout()">
+<i>∞</i>
+</div>
+
+</div>
+
+<div class="center">
+
+<div class="logo-ring">
+<div class="infinity">∞</div>
+</div>
+
+<div class="hero-title">
+Hi iam mebi<span class="spark">✦</span>
+</div>
+
+<div class="divider">
+<span></span>
+<p>✦</p>
+<span></span>
+</div>
+
+<div class="sub">
+your study buddy
+</div>
+
+</div>
+
+<div class="search-wrap">
+
+<div class="search-left">
+
+<div class="circle-btn">
+<span>⌘</span>
+</div>
+
+<div class="placeholder">
+type your questions here
+</div>
+
+</div>
+
+<div class="circle-btn">
+<span>↑</span>
+</div>
+
+</div>
+
+</div>
 
 <div class="about-popup" id="aboutPopup">
 
-  <div class="about-card">
+<div class="about-card">
 
-    <button class="close-popup" onclick="closeAbout()">✕</button>
+<button class="close-popup" onclick="closeAbout()">✕</button>
 
-    <div class="about-logo">∞</div>
+<div class="about-logo">∞</div>
 
-    <h2>Sanitas Melete AI</h2>
+<h2>Sanitas Melete AI</h2>
 
-    <p class="about-sub">
-      your study buddy
-    </p>
+<p class="about-sub">
+your study buddy
+</p>
 
-    <div class="about-line"></div>
+<div class="about-line"></div>
 
-    <p class="about-text">
-      Premium AI learning platform crafted for students with elegant design and intelligent study experience.
-    </p>
+<p class="about-text">
+Premium AI learning platform crafted for students with elegant design and intelligent study experience.
+</p>
 
-    <p class="founder">
-      Founder — SK
-    </p>
+<p class="founder">
+Founder — SK
+</p>
 
-  </div>
+</div>
 
 </div>
 
 <script>
 
-/* ABOUT POPUP */
-
 function openAbout(){
-  document
-  .getElementById("aboutPopup")
-  .classList.add("active");
+document
+.getElementById("aboutPopup")
+.classList.add("active");
 }
 
 function closeAbout(){
-  document
-  .getElementById("aboutPopup")
-  .classList.remove("active");
+document
+.getElementById("aboutPopup")
+.classList.remove("active");
 }
-
-/* SIDE MENU */
 
 const sideMenu =
 document.getElementById("sideMenu");
@@ -911,34 +870,32 @@ const menuOverlay =
 document.getElementById("menuOverlay");
 
 function openMenu(){
-  sideMenu.classList.add("active");
-  menuOverlay.classList.add("active");
+sideMenu.classList.add("active");
+menuOverlay.classList.add("active");
 }
 
 function closeMenu(){
-  sideMenu.classList.remove("active");
-  menuOverlay.classList.remove("active");
+sideMenu.classList.remove("active");
+menuOverlay.classList.remove("active");
 }
-
-/* SWIPE SUPPORT */
 
 let startX = 0;
 
 document.addEventListener("touchstart", e=>{
-  startX = e.touches[0].clientX;
+startX = e.touches[0].clientX;
 });
 
 document.addEventListener("touchmove", e=>{
 
-  let moveX = e.touches[0].clientX;
+let moveX = e.touches[0].clientX;
 
-  if(startX < 30 && moveX > 100){
-    openMenu();
-  }
+if(startX < 30 && moveX > 100){
+openMenu();
+}
 
-  if(startX > 250 && moveX < 120){
-    closeMenu();
-  }
+if(startX > 250 && moveX < 120){
+closeMenu();
+}
 
 });
 
