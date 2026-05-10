@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-
-<title>SANITAS MELETE – AI Study Platform</title>
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Sanitas Melete AI</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -108,7 +107,7 @@ body{
   font-weight:600;
 }
 
-/* CENTER */
+/* CENTER AREA */
 
 .center{
   position:absolute;
@@ -186,6 +185,8 @@ body{
   font-family:'Cormorant Garamond',serif;
 
   font-weight:700;
+
+  line-height:1;
 }
 
 .spark{
@@ -268,7 +269,6 @@ body{
   display:flex;
   align-items:center;
   gap:14px;
-  width:100%;
 }
 
 .circle-btn{
@@ -290,7 +290,9 @@ body{
 
   border:1px solid rgba(255,255,255,0.7);
 
-  cursor:pointer;
+  box-shadow:
+  inset 0 0 8px rgba(255,255,255,0.5),
+  0 5px 16px rgba(180,140,100,0.10);
 }
 
 .circle-btn span{
@@ -298,19 +300,9 @@ body{
   font-size:24px;
 }
 
-/* INPUT */
-
 .placeholder{
-  background:transparent;
-  border:none;
-  outline:none;
-
   color:#7d756e;
   font-size:17px;
-
-  width:100%;
-
-  font-family:'Poppins',sans-serif;
 }
 
 /* SIDE MENU */
@@ -360,18 +352,23 @@ body{
 
   backdrop-filter:blur(24px);
 
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.08);
+
   transform:translateX(-100%);
 
   transition:transform 0.35s ease;
 
   z-index:1000;
+
+  overflow-y:auto;
 }
 
 .side-menu.active{
   transform:translateX(0);
 }
 
-/* MENU PROFILE */
+/* PROFILE */
 
 .menu-profile{
   display:flex;
@@ -388,6 +385,8 @@ body{
   rgba(255,255,255,0.72),
   rgba(255,255,255,0.20)
   );
+
+  border:1px solid rgba(255,255,255,0.7);
 
   margin-bottom:16px;
 }
@@ -415,13 +414,26 @@ body{
 
 .menu-profile h2{
   color:#062d71;
+
   font-size:26px;
+
   font-family:'Cormorant Garamond',serif;
+
+  line-height:1;
 }
 
 .menu-profile p{
   color:#b8862e;
+
   font-size:14px;
+
+  margin-top:2px;
+}
+
+.profile-star{
+  color:#d4a54f;
+
+  font-size:20px;
 }
 
 /* MENU ITEMS */
@@ -429,6 +441,7 @@ body{
 .menu-items{
   display:flex;
   flex-direction:column;
+
   gap:10px;
 }
 
@@ -448,10 +461,19 @@ body{
   rgba(255,255,255,0.72),
   rgba(255,255,255,0.20)
   );
+
+  border:1px solid rgba(255,255,255,0.65);
+
+  box-shadow:
+  inset 0 0 6px rgba(255,255,255,0.4);
+
+  cursor:pointer;
 }
 
 .menu-item span{
   font-size:20px;
+
+  color:#8d847c;
 }
 
 .menu-item p{
@@ -464,6 +486,14 @@ body{
   font-family:'Cormorant Garamond',serif;
 
   flex:1;
+}
+
+.menu-item i{
+  font-style:normal;
+
+  color:#999;
+
+  font-size:22px;
 }
 
 /* ABOUT POPUP */
@@ -509,6 +539,14 @@ body{
   rgba(255,255,255,0.72),
   rgba(255,255,255,0.18)
   );
+
+  border:1px solid rgba(255,255,255,0.7);
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.08),
+  inset 0 0 10px rgba(255,255,255,0.3);
 }
 
 .about-logo{
@@ -518,15 +556,22 @@ body{
 
 .about-card h2{
   margin-top:10px;
+
   color:#062d71;
+
   font-size:30px;
+
   font-family:'Cormorant Garamond',serif;
 }
 
 .about-sub{
   color:#b8862e;
+
   font-size:18px;
+
   margin-top:4px;
+
+  font-family:'Cormorant Garamond',serif;
 }
 
 .about-line{
@@ -540,18 +585,37 @@ body{
 
 .about-text{
   color:#6f645b;
+
   line-height:1.6;
+
   font-size:16px;
 }
 
 .founder{
   margin-top:18px;
+
   color:#062d71;
+
   font-size:22px;
+
   font-family:'Cormorant Garamond',serif;
 }
 
-/* MOBILE */
+.close-popup{
+  position:absolute;
+
+  top:16px;
+  right:20px;
+
+  border:none;
+  background:none;
+
+  font-size:22px;
+
+  color:#7b7066;
+
+  cursor:pointer;
+}
 
 @media (max-width:768px){
 
@@ -591,6 +655,20 @@ body{
     font-size:30px;
   }
 
+  .divider{
+    width:170px;
+    margin:12px auto;
+    gap:10px;
+  }
+
+  .divider span{
+    width:55px;
+  }
+
+  .divider p{
+    font-size:14px;
+  }
+
   .sub{
     font-size:18px;
   }
@@ -599,6 +677,8 @@ body{
     width:93%;
     height:72px;
     bottom:12px;
+    border-radius:28px;
+    padding:0 12px;
   }
 
   .placeholder{
@@ -613,8 +693,6 @@ body{
 <body>
 
 <div class="app">
-
-<!-- MENU -->
 
 <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
@@ -633,7 +711,7 @@ body{
 
 </div>
 
-<div>✦</div>
+<div class="profile-star">✦</div>
 
 </div>
 
@@ -642,28 +720,42 @@ body{
 <div class="menu-item">
 <span>☷</span>
 <p>Dashboard</p>
+<i>›</i>
 </div>
 
 <div class="menu-item">
 <span>💬</span>
 <p>My Chats</p>
+<i>›</i>
 </div>
 
 <div class="menu-item">
 <span>📄</span>
 <p>My Documents</p>
+<i>›</i>
 </div>
 
 <div class="menu-item">
 <span>🔖</span>
 <p>Saved Answers</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>🗓</span>
+<p>Study Planner</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>✦</span>
+<p>AI Tools</p>
+<i>›</i>
 </div>
 
 </div>
 
 </div>
-
-<!-- TOP -->
 
 <div class="top-bar">
 
@@ -684,8 +776,6 @@ Sanitas Melete
 </div>
 
 </div>
-
-<!-- CENTER -->
 
 <div class="center">
 
@@ -709,8 +799,6 @@ your study buddy
 
 </div>
 
-<!-- SEARCH -->
-
 <div class="search-wrap">
 
 <div class="search-left">
@@ -719,11 +807,9 @@ your study buddy
 <span>⌘</span>
 </div>
 
-<input
-type="text"
-class="placeholder"
-placeholder="type your questions here"
-/>
+<div class="placeholder">
+type your questions here
+</div>
 
 </div>
 
@@ -735,11 +821,11 @@ placeholder="type your questions here"
 
 </div>
 
-<!-- ABOUT -->
-
 <div class="about-popup" id="aboutPopup">
 
 <div class="about-card">
+
+<button class="close-popup" onclick="closeAbout()">✕</button>
 
 <div class="about-logo">∞</div>
 
@@ -792,6 +878,26 @@ function closeMenu(){
 sideMenu.classList.remove("active");
 menuOverlay.classList.remove("active");
 }
+
+let startX = 0;
+
+document.addEventListener("touchstart", e=>{
+startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchmove", e=>{
+
+let moveX = e.touches[0].clientX;
+
+if(startX < 30 && moveX > 100){
+openMenu();
+}
+
+if(startX > 250 && moveX < 120){
+closeMenu();
+}
+
+});
 
 </script>
 
