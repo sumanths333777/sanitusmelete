@@ -15,8 +15,9 @@
 }
 
 body{
-  background:#f3e7da;
   overflow:hidden;
+
+  background:#f3e7da;
 
   font-family:
   -apple-system,
@@ -25,69 +26,77 @@ body{
   sans-serif;
 }
 
+/* ========================= */
 /* APP */
+/* ========================= */
 
 .app{
   width:100%;
   height:100vh;
+
+  position:relative;
+
+  overflow:hidden;
 
   background:
   radial-gradient(circle at top,
   #f7ede3 0%,
   #f3e7da 55%,
   #efe2d5 100%);
-
-  position:relative;
-
-  overflow:hidden;
 }
 
-/* LIGHT */
+/* SOFT BACK LIGHT */
 
 .app::before{
   content:"";
 
   position:absolute;
 
-  width:420px;
-  height:420px;
+  width:460px;
+  height:460px;
+
+  left:50%;
+  top:180px;
+
+  transform:translateX(-50%);
 
   border-radius:50%;
 
   background:rgba(255,255,255,0.16);
 
   filter:blur(90px);
-
-  left:50%;
-  top:130px;
-
-  transform:translateX(-50%);
 }
 
+/* ========================= */
 /* TOPBAR */
+/* ========================= */
 
 .topbar{
-  height:90px;
+  height:92px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  padding:0 32px;
+  padding:0 28px;
 
   position:relative;
-  z-index:10;
+  z-index:5;
 }
 
-/* BUTTONS */
+/* GLASS BUTTON */
 
 .glass-btn{
-  width:52px;
-  height:52px;
+  width:54px;
+  height:54px;
 
   border:none;
 
   border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
   background:
   linear-gradient(
@@ -100,16 +109,12 @@ body{
   backdrop-filter:blur(20px);
 
   box-shadow:
-  0 8px 24px rgba(190,160,120,0.12),
+  0 8px 24px rgba(190,160,120,0.10),
   inset 0 2px 4px rgba(255,255,255,0.95);
 
   color:#082b67;
 
-  font-size:22px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  font-size:23px;
 
   cursor:pointer;
 }
@@ -124,36 +129,41 @@ body{
 
   font-family:Georgia,serif;
 
-  font-size:18px;
+  font-size:20px;
 
   font-weight:600;
 
   color:#082b67;
+
+  letter-spacing:-0.03em;
 }
 
-/* HERO */
+/* ========================= */
+/* CENTER */
+/* ========================= */
 
 .hero{
-  height:calc(100vh - 90px);
+  height:calc(100vh - 92px);
 
   display:flex;
   flex-direction:column;
   align-items:center;
-  justify-content:center;
 
-  padding-bottom:90px;
+  padding-top:120px;
 
   position:relative;
-  z-index:5;
+  z-index:2;
 }
 
+/* ========================= */
 /* LOGO */
+/* ========================= */
 
 .logo-wrapper{
   position:relative;
 
-  width:260px;
-  height:260px;
+  width:330px;
+  height:330px;
 
   display:flex;
   align-items:center;
@@ -171,27 +181,29 @@ body{
 }
 
 .ring1{
-  width:220px;
-  height:220px;
+  width:230px;
+  height:230px;
 }
 
 .ring2{
-  width:270px;
-  height:270px;
+  width:300px;
+  height:300px;
 }
 
 .ring3{
-  width:320px;
-  height:320px;
+  width:360px;
+  height:360px;
 }
 
-/* ORB */
+/* MAIN ORB */
 
 .logo-orb{
-  width:170px;
-  height:170px;
+  width:215px;
+  height:215px;
 
   border-radius:50%;
+
+  position:relative;
 
   display:flex;
   align-items:center;
@@ -200,39 +212,34 @@ body{
   background:
   linear-gradient(
   180deg,
-  rgba(255,255,255,0.88),
-  rgba(255,255,255,0.46));
+  rgba(255,255,255,0.32),
+  rgba(255,255,255,0.10));
 
-  border:1px solid rgba(255,255,255,0.82);
+  border:1px solid rgba(255,255,255,0.42);
 
-  backdrop-filter:blur(25px);
+  backdrop-filter:blur(30px);
 
   box-shadow:
-  0 0 40px rgba(255,255,255,0.45),
-  0 14px 40px rgba(214,184,146,0.10),
-  inset 0 2px 10px rgba(255,255,255,0.95);
-
-  position:relative;
-
-  overflow:hidden;
+  0 0 40px rgba(255,255,255,0.28),
+  inset 0 2px 12px rgba(255,255,255,0.42);
 }
 
-/* REFLECTION */
+/* ORB REFLECTION */
 
 .logo-orb::before{
   content:"";
 
   position:absolute;
 
-  width:90px;
-  height:180px;
+  width:120px;
+  height:240px;
 
-  background:rgba(255,255,255,0.14);
-
-  left:-5px;
-  top:-20px;
+  left:-10px;
+  top:-30px;
 
   transform:rotate(18deg);
+
+  background:rgba(255,255,255,0.08);
 
   filter:blur(10px);
 }
@@ -240,21 +247,27 @@ body{
 /* INFINITY */
 
 .infinity{
-  font-size:92px;
+  font-size:118px;
 
   font-weight:700;
 
   color:#082b67;
-}
-
-/* TITLE */
-
-.title{
-  margin-top:-6px;
-
-  font-size:38px;
 
   line-height:1;
+
+  filter:
+  drop-shadow(
+  0 4px 10px rgba(11,43,103,0.10));
+}
+
+/* ========================= */
+/* TEXTS */
+/* ========================= */
+
+.title{
+  margin-top:34px;
+
+  font-size:40px;
 
   font-family:Georgia,serif;
 
@@ -262,7 +275,7 @@ body{
 
   color:#082b67;
 
-  letter-spacing:-0.04em;
+  letter-spacing:-0.05em;
 }
 
 .spark{
@@ -276,19 +289,19 @@ body{
 
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:14px;
 }
 
 .line{
-  width:70px;
+  width:92px;
   height:1px;
 
   background:#d4aa5c;
 
-  opacity:0.45;
+  opacity:0.42;
 }
 
-.small-star{
+.star-small{
   color:#d4aa5c;
 
   font-size:16px;
@@ -297,94 +310,102 @@ body{
 /* SUBTITLE */
 
 .subtitle{
-  margin-top:10px;
+  margin-top:12px;
 
   font-size:18px;
 
   font-family:Georgia,serif;
 
   color:#b58b45;
+
+  letter-spacing:0.01em;
 }
 
-/* BOTTOM BAR */
+/* ========================= */
+/* INPUT BAR */
+/* ========================= */
 
 .bottom-bar{
   position:absolute;
 
   left:18px;
   right:18px;
-  bottom:18px;
+  bottom:22px;
 
-  z-index:10;
+  z-index:5;
 }
 
-/* INPUT BOX */
+/* INPUT CONTAINER */
 
 .input-box{
-  height:72px;
+  height:76px;
 
   border-radius:999px;
-
-  background:
-  linear-gradient(
-  180deg,
-  rgba(255,255,255,0.82),
-  rgba(255,255,255,0.42));
-
-  border:1px solid rgba(255,255,255,0.82);
-
-  backdrop-filter:blur(24px);
-
-  box-shadow:
-  0 14px 35px rgba(190,160,120,0.12),
-  inset 0 1px 3px rgba(255,255,255,0.95);
-
-  display:flex;
-  align-items:center;
-
-  padding:0 12px;
-
-  gap:10px;
 
   position:relative;
 
   overflow:hidden;
+
+  display:flex;
+  align-items:center;
+
+  gap:12px;
+
+  padding:0 14px;
+
+  background:
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,0.42),
+  rgba(255,255,255,0.20));
+
+  border:1px solid rgba(255,255,255,0.52);
+
+  backdrop-filter:blur(24px);
+
+  box-shadow:
+  0 18px 35px rgba(190,160,120,0.12),
+  inset 0 1px 2px rgba(255,255,255,0.42);
 }
 
-/* REFLECTION */
+/* INPUT REFLECTION */
 
 .input-box::before{
   content:"";
 
   position:absolute;
 
-  width:120px;
-  height:200px;
+  width:160px;
+  height:240px;
 
-  background:rgba(255,255,255,0.14);
-
-  left:60px;
-  top:-30px;
+  left:120px;
+  top:-60px;
 
   transform:rotate(18deg);
 
-  filter:blur(10px);
+  background:rgba(255,255,255,0.10);
+
+  filter:blur(12px);
 }
 
 /* BUTTONS */
 
 .attach-btn,
 .send-btn{
-  width:46px;
-  height:46px;
+  width:50px;
+  height:50px;
 
   border:none;
 
   border-radius:50%;
 
-  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
   cursor:pointer;
+
+  z-index:2;
 }
 
 /* ATTACH */
@@ -393,17 +414,15 @@ body{
   background:
   linear-gradient(
   180deg,
-  rgba(255,255,255,0.9),
-  rgba(255,255,255,0.5));
+  rgba(255,255,255,0.82),
+  rgba(255,255,255,0.42));
 
   color:#b58b45;
 
-  font-size:20px;
+  font-size:22px;
 
   box-shadow:
   0 6px 16px rgba(181,139,69,0.10);
-
-  z-index:2;
 }
 
 /* SEND */
@@ -417,12 +436,10 @@ body{
 
   color:#8a5f1c;
 
-  font-size:22px;
+  font-size:24px;
 
   box-shadow:
   0 8px 18px rgba(181,139,69,0.16);
-
-  z-index:2;
 }
 
 /* INPUT */
@@ -446,12 +463,28 @@ body{
   color:#8f847a;
 }
 
+/* MOBILE */
+
+@media(max-width:480px){
+
+  .brand{
+    font-size:18px;
+  }
+
+  .logo-wrapper{
+    transform:scale(0.95);
+  }
+
+}
+
 </style>
 </head>
 
 <body>
 
 <div class="app">
+
+  <!-- TOPBAR -->
 
   <header class="topbar">
 
@@ -469,6 +502,8 @@ body{
 
   </header>
 
+  <!-- HERO -->
+
   <section class="hero">
 
     <div class="logo-wrapper">
@@ -478,7 +513,11 @@ body{
       <div class="ring ring3"></div>
 
       <div class="logo-orb">
-        <div class="infinity">∞</div>
+
+        <div class="infinity">
+          ∞
+        </div>
+
       </div>
 
     </div>
@@ -491,7 +530,7 @@ body{
 
       <div class="line"></div>
 
-      <div class="small-star">
+      <div class="star-small">
         ✦
       </div>
 
@@ -505,12 +544,14 @@ body{
 
   </section>
 
+  <!-- INPUT -->
+
   <div class="bottom-bar">
 
     <div class="input-box">
 
       <button class="attach-btn">
-        ⎋
+        📎
       </button>
 
       <input
