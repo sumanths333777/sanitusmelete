@@ -783,29 +783,7 @@ your study buddy
 
 </div>
 
-<!-- SEARCH BAR -->
 
-<div class="search-wrap">
-
-<div class="search-left">
-
-<div class="circle-btn upload-btn">
-<span>⌘</span>
-</div>
-
-<input
-type="text"
-class="search-input"
-placeholder="type your questions here"
-/>
-
-</div>
-
-<div class="circle-btn send-btn">
-<span>↑</span>
-</div>
-
-</div>
 
 </div>
 
@@ -832,6 +810,36 @@ Premium AI learning platform crafted for students with elegant design and intell
 <p class="founder">
 Founder — SK
 </p>
+
+  <!-- SEARCH BAR -->
+
+<div class="search-wrap">
+
+  <div class="search-left">
+
+    <!-- LEFT BUTTON -->
+
+    <div class="circle-btn upload-btn">
+      <span>⌘</span>
+    </div>
+
+    <!-- REAL INPUT -->
+
+    <input
+      id="userInput"
+      type="text"
+      class="search-input"
+      placeholder="type your questions here"
+    />
+
+  </div>
+
+  <!-- SEND BUTTON -->
+
+  <div class="circle-btn send-btn" onclick="sendMessage()">
+    <span>↑</span>
+  </div>
+
 
 </div>
 
@@ -883,6 +891,106 @@ openMenu();
 
 if(startX > 250 && moveX < 120){
 closeMenu();
+}
+
+});
+
+  <script>
+
+function openAbout(){
+document
+.getElementById("aboutPopup")
+.classList.add("active");
+}
+
+function closeAbout(){
+document
+.getElementById("aboutPopup")
+.classList.remove("active");
+}
+
+const sideMenu =
+document.getElementById("sideMenu");
+
+const menuOverlay =
+document.getElementById("menuOverlay");
+
+function openMenu(){
+sideMenu.classList.add("active");
+menuOverlay.classList.add("active");
+}
+
+function closeMenu(){
+sideMenu.classList.remove("active");
+menuOverlay.classList.remove("active");
+}
+
+let startX = 0;
+
+document.addEventListener("touchstart", e=>{
+startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchmove", e=>{
+
+let moveX = e.touches[0].clientX;
+
+if(startX < 30 && moveX > 100){
+openMenu();
+}
+
+if(startX > 250 && moveX < 120){
+closeMenu();
+}
+
+});
+
+/* =========================
+   AI SEARCH CONNECTION
+========================= */
+
+async function sendMessage(){
+
+const input =
+document.getElementById("userInput");
+
+const message =
+input.value.trim();
+
+if(message === "") return;
+
+/* YOUR ASK.JS API */
+
+const response = await fetch("/api/ask",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+message:message
+})
+
+});
+
+const data = await response.json();
+
+alert(data.reply);
+
+input.value = "";
+
+}
+
+/* ENTER KEY */
+
+document
+.getElementById("userInput")
+.addEventListener("keypress", function(e){
+
+if(e.key === "Enter"){
+sendMessage();
 }
 
 });
