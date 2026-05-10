@@ -300,9 +300,12 @@ body{
   font-size:24px;
 }
 
-.placeholder{
-  color:#7d756e;
-  font-size:17px;
+<input
+  type="text"
+  id="user-input"
+  placeholder="type your questions here"
+  class="ai-inputg"
+  />
 }
 
 /* SIDE MENU */
@@ -680,7 +683,12 @@ body{
     border-radius:28px;
     padding:0 12px;
   }
-
+<innput
+  type="file"
+  id="fileInput"
+  accept="image/"
+  hidden
+  />
   .placeholder{
     font-size:14px;
   }
@@ -799,6 +807,11 @@ your study buddy
 
 </div>
 
+ <div id="chat" class="chat-area"></div>
+ <div id="typing"class="typing hidden">
+   MEBI is thinking✨
+ </div>
+  
 <div class="search-wrap">
 
 <div class="search-left">
@@ -813,7 +826,7 @@ type your questions here
 
 </div>
 
-<div class="circle-btn">
+<div class="circle-btn" onclick="sendMessage()">
 <span>↑</span>
 </div>
 
