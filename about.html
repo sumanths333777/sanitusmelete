@@ -1,40 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>About – SANITAS MELETE</title>
 
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Arial, sans-serif;
-      background: #f8f1e8; /* creamy */
-      color: #111827;
-      padding: 20px;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    body{
+      min-height:100vh;
+      background:#f8f1e8;
+      font-family:'Poppins',sans-serif;
+      color:#0b2c74;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      padding:25px;
+      overflow-x:hidden;
     }
 
-    h1, h2 {
-      color: #0f172a;
+    /* SOFT BACKGROUND GLOW */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+      radial-gradient(circle at top left, rgba(255,255,255,0.7), transparent 35%),
+      radial-gradient(circle at bottom right, rgba(255,255,255,0.55), transparent 35%);
+      z-index:-1;
     }
 
-    ul {
-      line-height: 1.7;
+    .container{
+      width:100%;
+      max-width:850px;
+
+      padding:40px 30px;
+
+      border-radius:32px;
+
+      background:rgba(255,255,255,0.38);
+
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+
+      border:1px solid rgba(255,255,255,0.45);
+
+      box-shadow:
+      0 8px 30px rgba(0,0,0,0.06),
+      inset 0 1px 1px rgba(255,255,255,0.5);
     }
 
-    a {
-      color: #0f172a;
-      text-decoration: none;
-      font-weight: bold;
+    .logo-wrap{
+      width:110px;
+      height:110px;
+
+      margin:auto;
+      margin-bottom:28px;
+
+      border-radius:50%;
+
+      background:rgba(255,255,255,0.35);
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border:1px solid rgba(255,255,255,0.5);
+
+      box-shadow:
+      inset 0 1px 1px rgba(255,255,255,0.7),
+      0 8px 25px rgba(0,0,0,0.05);
+    }
+
+    .logo{
+      font-size:52px;
+      color:#0b2c74;
+      font-weight:600;
+    }
+
+    h1{
+      text-align:center;
+      font-size:48px;
+      font-family:'Cormorant Garamond',serif;
+      font-weight:700;
+      margin-bottom:25px;
+      color:#0b2c74;
+      letter-spacing:0.5px;
+    }
+
+    h2{
+      font-size:28px;
+      font-family:'Cormorant Garamond',serif;
+      margin-top:35px;
+      margin-bottom:14px;
+      color:#0b2c74;
+    }
+
+    p{
+      font-size:16px;
+      line-height:1.9;
+      color:#233876;
+    }
+
+    ul{
+      padding-left:22px;
+      line-height:2;
+      color:#233876;
+      margin-top:10px;
+    }
+
+    li{
+      margin-bottom:4px;
+    }
+
+    .founder{
+      margin-top:35px;
+      font-size:14px;
+      opacity:0.75;
+      text-align:center;
+    }
+
+    .back-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      margin-top:35px;
+
+      padding:14px 24px;
+
+      border-radius:50px;
+
+      text-decoration:none;
+
+      background:#0b2c74;
+      color:white;
+
+      font-weight:500;
+
+      transition:0.3s ease;
+    }
+
+    .back-btn:hover{
+      transform:translateY(-2px);
+      opacity:0.92;
+    }
+
+    .back-wrap{
+      text-align:center;
+    }
+
+    @media (max-width:600px){
+
+      .container{
+        padding:32px 22px;
+      }
+
+      h1{
+        font-size:38px;
+      }
+
+      h2{
+        font-size:24px;
+      }
+
+      p,
+      li{
+        font-size:15px;
+      }
+
+      .logo-wrap{
+        width:95px;
+        height:95px;
+      }
+
+      .logo{
+        font-size:44px;
+      }
+
     }
 
   </style>
@@ -43,37 +198,54 @@
 <body>
 
   <div class="container">
-    <h1>About SANITAS MELETE (MEBI)</h1>
 
+    <!-- LOGO -->
+    <div class="logo-wrap">
+      <div class="logo">∞</div>
+    </div>
+
+    <!-- TITLE -->
+    <h1>About SANITAS MELETE</h1>
+
+    <!-- DESCRIPTION -->
     <p>
-      Sanitas Melete is a free AI-powered study platform created for NEET,JEE
-      and all competitive exam students across India.  
-      Ask doubts, get instant explanations, solve MCQs, view PYQs, and learn smarter with the help of AI.
+      Sanitas Melete is a free AI-powered study platform created for NEET, JEE,
+      and competitive exam students across India.
+      Ask doubts, get instant explanations, solve MCQs, view PYQs,
+      and learn smarter with the help of AI.
     </p>
 
+    <!-- FEATURES -->
     <h2>✨ What We Provide</h2>
+
     <ul>
       <li>⚡ Instant AI Answers</li>
-      <li>📘 Notes for NEET,JEE</li>
+      <li>📘 Notes for NEET & JEE</li>
       <li>❓ MCQs with step-by-step solutions</li>
       <li>📄 Previous Year Questions (PYQs)</li>
       <li>🧠 24/7 Study Assistant</li>
     </ul>
 
+    <!-- GOAL -->
     <h2>🎯 Our Goal</h2>
+
     <p>
-      To help every student in India study smarter using technology — completely free, 
-      simple, and accessible from any device.
+      To help every student in India study smarter using technology —
+      completely free, simple, elegant, and accessible from any device.
     </p>
 
-    <p style="margin-top:30px; font-size:14px; opacity:0.7;">
+    <!-- FOUNDER -->
+    <p class="founder">
       Built by SK
-      sk full name is SUMANTH KUMAR G 
     </p>
 
-    <p>
-      <a href="index.html">← Back to Home</a>
-    </p>
+    <!-- BACK BUTTON -->
+    <div class="back-wrap">
+      <a href="index.html" class="back-btn">
+        ← Back to Home
+      </a>
+    </div>
+
   </div>
 
 </body>
