@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"/>
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1.0, maximum-scale=1"
+/>
 
 <title>Sanitas Melete AI</title>
 
@@ -16,19 +20,25 @@
   box-sizing:border-box;
 }
 
-body{
-  font-family:'Poppins',sans-serif;
+html,body{
+  width:100%;
+  height:100%;
   overflow:hidden;
+  font-family:'Poppins',sans-serif;
   background:#efe1d2;
 }
 
-/* MAIN */
+/* APP */
 
 .app{
   width:100%;
-  height:100vh;
-  overflow:hidden;
+  min-height:100dvh;
+
   position:relative;
+  overflow:hidden;
+
+  display:flex;
+  flex-direction:column;
 
   background:
   radial-gradient(circle at top,
@@ -41,24 +51,25 @@ body{
 
 .top-bar{
   width:100%;
+
   display:flex;
   justify-content:space-between;
   align-items:center;
 
-  padding:26px 28px;
+  padding:24px 22px 0;
 }
 
 .left-top{
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:12px;
 }
 
 /* GLASS BUTTON */
 
 .glass-btn{
-  width:58px;
-  height:58px;
+  width:46px;
+  height:46px;
 
   border-radius:50%;
 
@@ -80,52 +91,53 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+
+  flex-shrink:0;
 }
 
 .glass-btn i{
   font-style:normal;
   color:#062d71;
-  font-size:26px;
+  font-size:20px;
 }
 
 /* BRAND */
 
 .brand{
   color:#062d71;
-  font-size:28px;
+
+  font-size:15px;
+
   font-family:'Cormorant Garamond',serif;
+
   font-weight:600;
 }
 
 /* CENTER */
 
 .center{
-  position:absolute;
-  top:53%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  width:100%;
+  flex:1;
+
+  display:flex;
+  flex-direction:column;
+
+  align-items:center;
+  justify-content:center;
+
   text-align:center;
+
+  padding:20px;
+
+  margin-top:-20px;
 }
 
 /* LOGO */
 
 .logo-ring{
-  width:320px;
-  height:320px;
-
-  margin:auto;
+  width:170px;
+  height:170px;
 
   border-radius:50%;
-
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.24),
-  rgba(255,255,255,0.05)
-  );
-
-  border:1px solid rgba(255,255,255,0.45);
 
   position:relative;
 
@@ -133,27 +145,37 @@ body{
   align-items:center;
   justify-content:center;
 
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.25),
+  rgba(255,255,255,0.05)
+  );
+
+  border:1px solid rgba(255,255,255,0.45);
+
   box-shadow:
-  inset 0 0 18px rgba(255,255,255,0.22),
+  inset 0 0 18px rgba(255,255,255,0.25),
   0 0 45px rgba(255,255,255,0.08);
 }
 
 .logo-ring::before{
   content:'';
+
   position:absolute;
 
-  width:400px;
-  height:400px;
+  width:215px;
+  height:215px;
 
   border-radius:50%;
 
-  background:rgba(255,255,255,0.04);
+  background:rgba(255,255,255,0.05);
 
   filter:blur(2px);
 }
 
 .infinity{
-  font-size:150px;
+  font-size:82px;
   color:#062d71;
   z-index:2;
 }
@@ -161,15 +183,17 @@ body{
 /* TITLE */
 
 .hero-title{
-  margin-top:40px;
+  margin-top:24px;
 
   color:#062d71;
 
-  font-size:56px;
+  font-size:28px;
 
   font-family:'Cormorant Garamond',serif;
 
   font-weight:700;
+
+  line-height:1;
 }
 
 .spark{
@@ -179,26 +203,26 @@ body{
 /* DIVIDER */
 
 .divider{
-  width:260px;
+  width:150px;
 
-  margin:16px auto;
+  margin:12px auto;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  gap:14px;
+  gap:10px;
 }
 
 .divider span{
-  width:90px;
+  width:48px;
   height:1px;
   background:#c79a3d;
 }
 
 .divider p{
   color:#c79a3d;
-  font-size:18px;
+  font-size:14px;
 }
 
 /* SUBTEXT */
@@ -206,7 +230,7 @@ body{
 .sub{
   color:#b78633;
 
-  font-size:30px;
+  font-size:16px;
 
   font-family:'Cormorant Garamond',serif;
 }
@@ -216,17 +240,17 @@ body{
 .search-wrap{
   position:absolute;
 
-  bottom:18px;
   left:50%;
+  bottom:14px;
 
   transform:translateX(-50%);
 
   width:94%;
-  height:88px;
+  height:66px;
 
-  border-radius:34px;
+  border-radius:26px;
 
-  padding:0 18px;
+  padding:0 12px;
 
   display:flex;
   align-items:center;
@@ -251,16 +275,22 @@ body{
 .search-left{
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:10px;
 }
 
-/* SEARCH BUTTONS */
+/* BUTTONS */
 
 .circle-btn{
-  width:56px;
-  height:56px;
+  width:40px;
+  height:40px;
 
   border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  flex-shrink:0;
 
   background:
   linear-gradient(
@@ -271,10 +301,6 @@ body{
 
   border:1px solid rgba(255,255,255,0.7);
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
   box-shadow:
   inset 0 0 8px rgba(255,255,255,0.5),
   0 5px 16px rgba(180,140,100,0.10);
@@ -282,116 +308,96 @@ body{
 
 .circle-btn span{
   color:#b8862e;
-  font-size:28px;
+  font-size:18px;
 }
+
+/* PLACEHOLDER */
 
 .placeholder{
   color:#7d756e;
-  font-size:18px;
+  font-size:13px;
 }
-@media (max-width:768px){
 
-  /* TOP */
+/* DESKTOP */
+
+@media (min-width:769px){
 
   .top-bar{
-    padding:18px 16px 0;
-  }
-
-  .left-top{
-    gap:10px;
+    padding:28px 34px 0;
   }
 
   .brand{
-    font-size:14px;
+    font-size:28px;
   }
 
   .glass-btn{
-    width:42px;
-    height:42px;
+    width:58px;
+    height:58px;
   }
 
   .glass-btn i{
-    font-size:18px;
+    font-size:26px;
   }
-
-  /* CENTER */
 
   .center{
-    top:49%;
-    padding:0 16px;
+    margin-top:-30px;
   }
 
-  /* LOGO */
-
   .logo-ring{
-    width:150px;
-    height:150px;
+    width:320px;
+    height:320px;
   }
 
   .logo-ring::before{
-    width:190px;
-    height:190px;
+    width:400px;
+    height:400px;
   }
 
   .infinity{
-    font-size:72px;
+    font-size:150px;
   }
-
-  /* TITLE */
 
   .hero-title{
-    margin-top:18px;
-    font-size:24px;
-    line-height:1;
+    margin-top:38px;
+    font-size:56px;
   }
 
-  /* DIVIDER */
-
   .divider{
-    width:130px;
-    margin:8px auto;
-    gap:8px;
+    width:260px;
+    margin:18px auto;
   }
 
   .divider span{
-    width:40px;
+    width:90px;
   }
 
   .divider p{
-    font-size:12px;
-  }
-
-  /* SUB */
-
-  .sub{
-    font-size:14px;
-  }
-
-  /* SEARCH BAR */
-
-  .search-wrap{
-    width:94%;
-    height:62px;
-    bottom:10px;
-    border-radius:24px;
-    padding:0 10px;
-  }
-
-  .search-left{
-    gap:8px;
-  }
-
-  .circle-btn{
-    width:38px;
-    height:38px;
-  }
-
-  .circle-btn span{
     font-size:18px;
   }
 
+  .sub{
+    font-size:30px;
+  }
+
+  .search-wrap{
+    width:94%;
+    height:88px;
+    border-radius:34px;
+    bottom:18px;
+    padding:0 18px;
+  }
+
+  .circle-btn{
+    width:56px;
+    height:56px;
+  }
+
+  .circle-btn span{
+    font-size:26px;
+  }
+
   .placeholder{
-    font-size:12px;
+    font-size:18px;
   }
 
 }
@@ -403,7 +409,7 @@ body{
 
 <div class="app">
 
-  <!-- TOP BAR -->
+  <!-- TOP -->
 
   <div class="top-bar">
 
@@ -449,7 +455,7 @@ body{
 
   </div>
 
-  <!-- SEARCH -->
+  <!-- SEARCH BAR -->
 
   <div class="search-wrap">
 
