@@ -51,6 +51,9 @@ body{
   align-items:center;
 
   padding:28px 38px 0;
+
+  position:relative;
+  z-index:50;
 }
 
 .left-top{
@@ -107,6 +110,75 @@ body{
   font-weight:600;
 }
 
+/* CHAT AREA */
+
+.chat-area{
+  position:absolute;
+
+  top:100px;
+  left:0;
+
+  width:100%;
+  height:calc(100dvh - 210px);
+
+  overflow-y:auto;
+
+  padding:20px;
+
+  display:flex;
+  flex-direction:column;
+
+  gap:14px;
+
+  z-index:20;
+}
+
+.chat-area::-webkit-scrollbar{
+  width:0;
+}
+
+.bubble{
+  max-width:82%;
+
+  padding:14px 18px;
+
+  border-radius:24px;
+
+  line-height:1.7;
+
+  white-space:pre-wrap;
+
+  animation:fadeUp 0.3s ease;
+}
+
+.user{
+  align-self:flex-end;
+
+  background:#062d71;
+  color:white;
+
+  border-bottom-right-radius:8px;
+}
+
+.bot{
+  align-self:flex-start;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.20)
+  );
+
+  border:1px solid rgba(255,255,255,0.6);
+
+  backdrop-filter:blur(18px);
+
+  color:#062d71;
+
+  border-bottom-left-radius:8px;
+}
+
 /* CENTER AREA */
 
 .center{
@@ -120,6 +192,8 @@ body{
   width:100%;
 
   text-align:center;
+
+  pointer-events:none;
 }
 
 /* LOGO */
@@ -263,12 +337,16 @@ body{
   box-shadow:
   inset 0 0 12px rgba(255,255,255,0.4),
   0 12px 28px rgba(180,140,100,0.10);
+
+  z-index:100;
 }
 
 .search-left{
   display:flex;
   align-items:center;
   gap:14px;
+
+  width:100%;
 }
 
 .circle-btn{
@@ -293,6 +371,10 @@ body{
   box-shadow:
   inset 0 0 8px rgba(255,255,255,0.5),
   0 5px 16px rgba(180,140,100,0.10);
+
+  cursor:pointer;
+
+  flex-shrink:0;
 }
 
 .circle-btn span{
@@ -300,12 +382,57 @@ body{
   font-size:24px;
 }
 
-<input
-  type="text"
-  id="user-input"
-  placeholder="type your questions here"
-  class="ai-inputg"
-  />
+.ai-input{
+  width:100%;
+
+  border:none;
+  outline:none;
+
+  background:transparent;
+
+  color:#222;
+
+  font-size:17px;
+
+  font-family:'Poppins',sans-serif;
+}
+
+.ai-input::placeholder{
+  color:#7d756e;
+}
+
+/* TYPING */
+
+.typing{
+  position:absolute;
+
+  top:90px;
+  left:20px;
+
+  color:#000;
+
+  font-size:18px;
+
+  z-index:100;
+}
+
+.hidden{
+  display:none;
+}
+
+/* IMAGE PREVIEW */
+
+#uploadPreview{
+  position:absolute;
+
+  bottom:108px;
+  left:28px;
+
+  color:#8b6f45;
+
+  font-size:13px;
+
+  z-index:100;
 }
 
 /* SIDE MENU */
@@ -620,10 +747,16 @@ body{
   cursor:pointer;
 }
 
+/* MOBILE */
+
 @media (max-width:768px){
 
   .top-bar{
     padding:22px 18px 0;
+  }
+
+  .left-top{
+    gap:12px;
   }
 
   .brand{
@@ -637,6 +770,10 @@ body{
 
   .glass-btn i{
     font-size:20px;
+  }
+
+  .center{
+    top:50%;
   }
 
   .logo-ring{
@@ -683,16 +820,32 @@ body{
     border-radius:28px;
     padding:0 12px;
   }
-<innput
-  type="file"
-  id="fileInput"
-  accept="image/"
-  hidden
-  />
-  .placeholder{
+
+  .circle-btn{
+    width:44px;
+    height:44px;
+  }
+
+  .circle-btn span{
+    font-size:22px;
+  }
+
+  .ai-input{
     font-size:14px;
   }
 
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
 }
 
 </style>
@@ -701,6 +854,8 @@ body{
 <body>
 
 <div class="app">
+
+<!-- SIDE MENU -->
 
 <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
@@ -765,6 +920,8 @@ body{
 
 </div>
 
+<!-- TOP -->
+
 <div class="top-bar">
 
 <div class="left-top">
@@ -784,6 +941,18 @@ Sanitas Melete
 </div>
 
 </div>
+
+<!-- CHAT -->
+
+<div id="chat" class="chat-area"></div>
+
+<div id="typing" class="typing hidden">
+MEBI is thinking✨
+</div>
+
+<div id="uploadPreview"></div>
+
+<!-- CENTER -->
 
 <div class="center">
 
@@ -807,24 +976,34 @@ your study buddy
 
 </div>
 
- <div id="chat" class="chat-area"></div>
- <div id="typing"class="typing hidden">
-   MEBI is thinking✨
- </div>
-  
+<!-- SEARCH -->
+
 <div class="search-wrap">
 
 <div class="search-left">
 
-<div class="circle-btn">
+<div
+class="circle-btn"
+onclick="document.getElementById('fileInput').click()"
+>
 <span>⌘</span>
 </div>
 
-<div class="placeholder">
-type your questions here
-</div>
+<input
+type="text"
+id="user-input"
+placeholder="type your questions here"
+class="ai-input"
+/>
 
 </div>
+
+<input
+type="file"
+id="fileInput"
+accept="image/*"
+hidden
+/>
 
 <div class="circle-btn" onclick="sendMessage()">
 <span>↑</span>
@@ -833,6 +1012,8 @@ type your questions here
 </div>
 
 </div>
+
+<!-- ABOUT POPUP -->
 
 <div class="about-popup" id="aboutPopup">
 
@@ -864,6 +1045,8 @@ Founder — SK
 
 <script>
 
+/* ABOUT POPUP */
+
 function openAbout(){
 document
 .getElementById("aboutPopup")
@@ -875,6 +1058,8 @@ document
 .getElementById("aboutPopup")
 .classList.remove("active");
 }
+
+/* SIDE MENU */
 
 const sideMenu =
 document.getElementById("sideMenu");
@@ -891,6 +1076,8 @@ function closeMenu(){
 sideMenu.classList.remove("active");
 menuOverlay.classList.remove("active");
 }
+
+/* SWIPE SUPPORT */
 
 let startX = 0;
 
@@ -913,6 +1100,8 @@ closeMenu();
 });
 
 </script>
+
+<script src="script.js"></script>
 
 </body>
 </html>
