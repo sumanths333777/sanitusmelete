@@ -27,8 +27,6 @@ body{
   background:#efe3d6;
 }
 
-/* MAIN */
-
 .app{
   width:100%;
   height:100dvh;
@@ -42,14 +40,13 @@ body{
   #eadccd 100%);
 }
 
-/* TOP BAR */
+/* TOP */
 
 .top-bar{
   width:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-
   padding:28px 38px 0;
 }
 
@@ -59,12 +56,9 @@ body{
   gap:16px;
 }
 
-/* BUTTONS */
-
 .glass-btn{
   width:58px;
   height:58px;
-
   border-radius:50%;
 
   display:flex;
@@ -95,8 +89,6 @@ body{
   font-size:26px;
 }
 
-/* BRAND */
-
 .brand{
   color:#062d71;
   font-size:30px;
@@ -104,7 +96,7 @@ body{
   font-weight:600;
 }
 
-/* CENTER AREA */
+/* CENTER */
 
 .center{
   position:absolute;
@@ -114,8 +106,6 @@ body{
   width:100%;
   text-align:center;
 }
-
-/* LOGO */
 
 .logo-ring{
   width:290px;
@@ -162,8 +152,6 @@ body{
   z-index:2;
 }
 
-/* TITLE */
-
 .hero-title{
   margin-top:34px;
   color:#062d71;
@@ -176,8 +164,6 @@ body{
 .spark{
   color:#c79a3d;
 }
-
-/* DIVIDER */
 
 .divider{
   width:260px;
@@ -201,15 +187,13 @@ body{
   font-size:18px;
 }
 
-/* SUBTEXT */
-
 .sub{
   color:#b78633;
   font-size:30px;
   font-family:'Cormorant Garamond',serif;
 }
 
-/* SEARCH BAR */
+/* SEARCH */
 
 .search-wrap{
   position:absolute;
@@ -286,26 +270,12 @@ body{
 
 .search-input{
   width:100%;
-
-  border:none !important;
-  outline:none !important;
-
-  background:transparent !important;
-
-  box-shadow:none !important;
-
-  appearance:none;
-  -webkit-appearance:none;
-
+  border:none;
+  outline:none;
+  background:transparent;
   color:#7d756e;
-
   font-size:17px;
-
   font-family:'Poppins',sans-serif;
-
-  padding:0;
-
-  height:100%;
 }
 
 .search-input::placeholder{
@@ -337,13 +307,11 @@ body{
 
 .side-menu{
   position:fixed;
-
   top:0;
   left:0;
 
   width:285px;
   max-width:82%;
-
   height:100dvh;
 
   padding:18px 14px;
@@ -363,139 +331,16 @@ body{
   0 10px 40px rgba(0,0,0,0.08);
 
   transform:translateX(-100%);
-
   transition:transform 0.35s ease;
 
   z-index:1000;
-
-  overflow-y:auto;
 }
 
 .side-menu.active{
   transform:translateX(0);
 }
 
-/* PROFILE */
-
-.menu-profile{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:14px;
-
-  border-radius:22px;
-
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.20)
-  );
-
-  border:1px solid rgba(255,255,255,0.7);
-
-  margin-bottom:16px;
-}
-
-.profile-left{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.profile-icon{
-  width:52px;
-  height:52px;
-
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:#f5dfba;
-
-  font-size:24px;
-}
-
-.menu-profile h2{
-  color:#062d71;
-  font-size:26px;
-  font-family:'Cormorant Garamond',serif;
-  line-height:1;
-}
-
-.menu-profile p{
-  color:#b8862e;
-  font-size:14px;
-  margin-top:2px;
-}
-
-.profile-star{
-  color:#d4a54f;
-  font-size:20px;
-}
-
-/* MENU ITEMS */
-
-.menu-items{
-  display:flex;
-  flex-direction:column;
-  gap:10px;
-}
-
-.menu-item{
-  height:60px;
-
-  padding:0 16px;
-
-  border-radius:18px;
-
-  display:flex;
-  align-items:center;
-
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.20)
-  );
-
-  border:1px solid rgba(255,255,255,0.65);
-
-  box-shadow:
-  inset 0 0 6px rgba(255,255,255,0.4);
-
-  cursor:pointer;
-}
-
-.menu-item span{
-  font-size:20px;
-  color:#8d847c;
-}
-
-.menu-item p{
-  margin-left:14px;
-
-  color:#222;
-
-  font-size:16px;
-
-  font-family:'Cormorant Garamond',serif;
-
-  flex:1;
-}
-
-.menu-item i{
-  font-style:normal;
-
-  color:#999;
-
-  font-size:22px;
-}
-
-/* ABOUT POPUP */
+/* ABOUT */
 
 .about-popup{
   position:fixed;
@@ -542,10 +387,6 @@ body{
   border:1px solid rgba(255,255,255,0.7);
 
   backdrop-filter:blur(18px);
-
-  box-shadow:
-  0 10px 40px rgba(0,0,0,0.08),
-  inset 0 0 10px rgba(255,255,255,0.3);
 }
 
 .about-logo{
@@ -553,43 +394,8 @@ body{
   color:#062d71;
 }
 
-.about-card h2{
-  margin-top:10px;
-  color:#062d71;
-  font-size:30px;
-  font-family:'Cormorant Garamond',serif;
-}
-
-.about-sub{
-  color:#b8862e;
-  font-size:18px;
-  margin-top:4px;
-  font-family:'Cormorant Garamond',serif;
-}
-
-.about-line{
-  width:70px;
-  height:1px;
-  background:#d2a34f;
-  margin:18px auto;
-}
-
-.about-text{
-  color:#6f645b;
-  line-height:1.6;
-  font-size:16px;
-}
-
-.founder{
-  margin-top:18px;
-  color:#062d71;
-  font-size:22px;
-  font-family:'Cormorant Garamond',serif;
-}
-
 .close-popup{
   position:absolute;
-
   top:16px;
   right:20px;
 
@@ -597,7 +403,6 @@ body{
   background:none;
 
   font-size:22px;
-
   color:#7b7066;
 
   cursor:pointer;
@@ -607,67 +412,67 @@ body{
 
 @media (max-width:768px){
 
-  .top-bar{
-    padding:22px 18px 0;
-  }
+.top-bar{
+padding:22px 18px 0;
+}
 
-  .brand{
-    font-size:15px;
-  }
+.brand{
+font-size:15px;
+}
 
-  .glass-btn{
-    width:44px;
-    height:44px;
-  }
+.glass-btn{
+width:44px;
+height:44px;
+}
 
-  .glass-btn i{
-    font-size:20px;
-  }
+.glass-btn i{
+font-size:20px;
+}
 
-  .logo-ring{
-    width:190px;
-    height:190px;
-  }
+.logo-ring{
+width:190px;
+height:190px;
+}
 
-  .logo-ring::before{
-    width:240px;
-    height:240px;
-  }
+.logo-ring::before{
+width:240px;
+height:240px;
+}
 
-  .infinity{
-    font-size:92px;
-  }
+.infinity{
+font-size:92px;
+}
 
-  .hero-title{
-    margin-top:24px;
-    font-size:30px;
-  }
+.hero-title{
+margin-top:24px;
+font-size:30px;
+}
 
-  .divider{
-    width:170px;
-    margin:12px auto;
-    gap:10px;
-  }
+.divider{
+width:170px;
+margin:12px auto;
+gap:10px;
+}
 
-  .divider span{
-    width:55px;
-  }
+.divider span{
+width:55px;
+}
 
-  .divider p{
-    font-size:14px;
-  }
+.divider p{
+font-size:14px;
+}
 
-  .sub{
-    font-size:18px;
-  }
+.sub{
+font-size:18px;
+}
 
-  .search-wrap{
-    width:93%;
-    height:72px;
-    bottom:12px;
-    border-radius:28px;
-    padding:0 12px;
-  }
+.search-wrap{
+width:93%;
+height:72px;
+bottom:12px;
+border-radius:28px;
+padding:0 12px;
+}
 
 }
 
@@ -680,66 +485,9 @@ body{
 
 <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
-<div class="side-menu" id="sideMenu">
+<div class="side-menu" id="sideMenu"></div>
 
-<div class="menu-profile">
-
-<div class="profile-left">
-
-<div class="profile-icon">👤</div>
-
-<div>
-<h2>SK</h2>
-<p>Premium User</p>
-</div>
-
-</div>
-
-<div class="profile-star">✦</div>
-
-</div>
-
-<div class="menu-items">
-
-<div class="menu-item">
-<span>☷</span>
-<p>Dashboard</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>💬</span>
-<p>My Chats</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>📄</span>
-<p>My Documents</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>🔖</span>
-<p>Saved Answers</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>🗓</span>
-<p>Study Planner</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>✦</span>
-<p>AI Tools</p>
-<i>›</i>
-</div>
-
-</div>
-
-</div>
+<!-- TOP -->
 
 <div class="top-bar">
 
@@ -760,6 +508,8 @@ Sanitas Melete
 </div>
 
 </div>
+
+<!-- CENTER -->
 
 <div class="center">
 
@@ -783,63 +533,65 @@ your study buddy
 
 </div>
 
+<!-- SEARCH -->
 
+<div class="search-wrap">
+
+<div class="search-left">
+
+<div class="circle-btn">
+<span>⌘</span>
+</div>
+
+<input
+id="userInput"
+type="text"
+class="search-input"
+placeholder="type your questions here"
+/>
 
 </div>
+
+<div
+class="circle-btn"
+onclick="sendMessage()"
+>
+<span>↑</span>
+</div>
+
+</div>
+
+</div>
+
+<!-- ABOUT -->
 
 <div class="about-popup" id="aboutPopup">
 
 <div class="about-card">
 
-<button class="close-popup" onclick="closeAbout()">✕</button>
+<button class="close-popup" onclick="closeAbout()">
+✕
+</button>
 
 <div class="about-logo">∞</div>
 
-<h2>Sanitas Melete AI</h2>
+<h2 style="color:#062d71;font-family:'Cormorant Garamond',serif;font-size:34px;margin-top:10px;">
+Sanitas Melete AI
+</h2>
 
-<p class="about-sub">
+<p style="color:#b8862e;font-size:18px;margin-top:6px;">
 your study buddy
 </p>
 
-<div class="about-line"></div>
+<div style="width:70px;height:1px;background:#d2a34f;margin:18px auto;"></div>
 
-<p class="about-text">
+<p style="color:#6f645b;line-height:1.7;font-size:16px;">
 Premium AI learning platform crafted for students with elegant design and intelligent study experience.
 </p>
 
-<p class="founder">
+<p style="margin-top:18px;color:#062d71;font-size:22px;font-family:'Cormorant Garamond',serif;">
 Founder — SK
 </p>
-
-  <!-- SEARCH BAR -->
-
-<div class="search-wrap">
-
-  <div class="search-left">
-
-    <!-- LEFT BUTTON -->
-
-    <div class="circle-btn upload-btn">
-      <span>⌘</span>
-    </div>
-
-    <!-- REAL INPUT -->
-
-    <input
-      id="userInput"
-      type="text"
-      class="search-input"
-      placeholder="type your questions here"
-    />
-
-  </div>
-
-  <!-- SEND BUTTON -->
-
-  <div class="circle-btn send-btn" onclick="sendMessage()">
-    <span>↑</span>
-  </div>
-
 
 </div>
 
@@ -875,79 +627,7 @@ sideMenu.classList.remove("active");
 menuOverlay.classList.remove("active");
 }
 
-let startX = 0;
-
-document.addEventListener("touchstart", e=>{
-startX = e.touches[0].clientX;
-});
-
-document.addEventListener("touchmove", e=>{
-
-let moveX = e.touches[0].clientX;
-
-if(startX < 30 && moveX > 100){
-openMenu();
-}
-
-if(startX > 250 && moveX < 120){
-closeMenu();
-}
-
-});
-
-  <script>
-
-function openAbout(){
-document
-.getElementById("aboutPopup")
-.classList.add("active");
-}
-
-function closeAbout(){
-document
-.getElementById("aboutPopup")
-.classList.remove("active");
-}
-
-const sideMenu =
-document.getElementById("sideMenu");
-
-const menuOverlay =
-document.getElementById("menuOverlay");
-
-function openMenu(){
-sideMenu.classList.add("active");
-menuOverlay.classList.add("active");
-}
-
-function closeMenu(){
-sideMenu.classList.remove("active");
-menuOverlay.classList.remove("active");
-}
-
-let startX = 0;
-
-document.addEventListener("touchstart", e=>{
-startX = e.touches[0].clientX;
-});
-
-document.addEventListener("touchmove", e=>{
-
-let moveX = e.touches[0].clientX;
-
-if(startX < 30 && moveX > 100){
-openMenu();
-}
-
-if(startX > 250 && moveX < 120){
-closeMenu();
-}
-
-});
-
-/* =========================
-   AI SEARCH CONNECTION
-========================= */
+/* AI SEARCH */
 
 async function sendMessage(){
 
@@ -959,7 +639,7 @@ input.value.trim();
 
 if(message === "") return;
 
-/* YOUR ASK.JS API */
+try{
 
 const response = await fetch("/api/ask",{
 
@@ -975,15 +655,22 @@ message:message
 
 });
 
-const data = await response.json();
+const data =
+await response.json();
 
 alert(data.reply);
 
 input.value = "";
 
+}catch(err){
+
+alert("AI connection error");
+
 }
 
-/* ENTER KEY */
+}
+
+/* ENTER */
 
 document
 .getElementById("userInput")
