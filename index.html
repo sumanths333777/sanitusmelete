@@ -303,7 +303,6 @@ body{
   color:#b8862e;
   font-size:24px;
 }
-
 .search-input{
   width:100%;
 
@@ -331,6 +330,7 @@ body{
 .search-input::placeholder{
   color:#7d756e;
 }
+
 
 /* SIDE MENU */
 
@@ -826,19 +826,32 @@ your study buddy
 
 <div class="search-wrap">
 
-<div class="search-left">
+  <div class="search-left">
 
-<div class="circle-btn upload-btn">
-<span>⌘</span>
+    <!-- UPLOAD BUTTON -->
+
+    <div class="circle-btn upload-btn">
+      <span>⌘</span>
+    </div>
+
+    <!-- INPUT -->
+
+    <input
+      type="text"
+      class="search-input"
+      placeholder="type your questions here"
+    />
+
+  </div>
+
+  <!-- SEND BUTTON -->
+
+  <div class="circle-btn send-btn">
+    <span>↑</span>
+  </div>
+
 </div>
-
-<input
-type="text"
-class="search-input"
-placeholder="type your questions here"
-/>
-
-</div>
+  
 
 <div class="circle-btn send-btn">
 <span>↑</span>
