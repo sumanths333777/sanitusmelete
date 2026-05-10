@@ -51,6 +51,9 @@ body{
   align-items:center;
 
   padding:28px 38px 0;
+
+  position:relative;
+  z-index:1000;
 }
 
 .left-top{
@@ -70,6 +73,8 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+
+  cursor:pointer;
 
   background:
   linear-gradient(
@@ -297,6 +302,229 @@ body{
   font-size:17px;
 }
 
+/* LEFT PANEL */
+
+.left-panel{
+  position:fixed;
+
+  top:0;
+  left:-100%;
+
+  width:360px;
+  height:100vh;
+
+  background:rgba(248,241,232,0.96);
+
+  backdrop-filter:blur(28px);
+
+  padding:22px;
+
+  transition:0.35s ease;
+
+  z-index:3000;
+
+  overflow-y:auto;
+}
+
+.left-panel.active{
+  left:0;
+}
+
+.profile-card{
+  background:rgba(255,255,255,0.55);
+
+  border-radius:34px;
+
+  padding:20px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:24px;
+
+  border:1px solid rgba(255,255,255,0.7);
+}
+
+.profile-left{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.avatar{
+  width:72px;
+  height:72px;
+
+  border-radius:50%;
+
+  background:#f2ddb4;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size:38px;
+}
+
+.profile-name{
+  font-size:34px;
+  color:#062d71;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+}
+
+.profile-sub{
+  color:#b8862e;
+  font-size:17px;
+}
+
+.sparkle{
+  color:#d0a13c;
+  font-size:30px;
+}
+
+.menu-card{
+  background:rgba(255,255,255,0.55);
+
+  border-radius:28px;
+
+  padding:24px 20px;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  margin-bottom:16px;
+
+  border:1px solid rgba(255,255,255,0.7);
+}
+
+.menu-left{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.menu-emoji{
+  font-size:30px;
+}
+
+.menu-title{
+  font-size:22px;
+  color:#222;
+}
+
+.arrow{
+  font-size:28px;
+  color:#999;
+}
+
+/* RIGHT PANEL */
+
+.right-panel{
+  position:fixed;
+
+  top:50%;
+  left:50%;
+
+  transform:translate(-50%,-50%) scale(0.9);
+
+  width:620px;
+
+  background:rgba(255,255,255,0.55);
+
+  backdrop-filter:blur(30px);
+
+  border-radius:42px;
+
+  padding:54px;
+
+  text-align:center;
+
+  border:1px solid rgba(255,255,255,0.72);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.3s ease;
+
+  z-index:4000;
+}
+
+.right-panel.active{
+  opacity:1;
+  visibility:visible;
+
+  transform:translate(-50%,-50%) scale(1);
+}
+
+.close-btn{
+  position:absolute;
+
+  top:24px;
+  right:28px;
+
+  font-size:42px;
+
+  color:#8d8172;
+
+  cursor:pointer;
+}
+
+.about-logo{
+  font-size:90px;
+  color:#062d71;
+
+  margin-bottom:16px;
+}
+
+.right-panel h2{
+  font-size:64px;
+
+  color:#062d71;
+
+  font-family:'Cormorant Garamond',serif;
+
+  margin-bottom:10px;
+}
+
+.about-sub{
+  color:#c79a3d;
+
+  font-size:28px;
+
+  margin-bottom:28px;
+}
+
+.about-line{
+  width:120px;
+  height:2px;
+
+  background:#c79a3d;
+
+  margin:auto;
+  margin-bottom:32px;
+}
+
+.about-text{
+  color:#6c655f;
+
+  font-size:22px;
+
+  line-height:1.8;
+
+  margin-bottom:34px;
+}
+
+.founder{
+  color:#062d71;
+
+  font-size:50px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
 /* MOBILE */
 
 @media (max-width:768px){
@@ -391,6 +619,27 @@ body{
     font-size:14px;
   }
 
+  .left-panel{
+    width:100%;
+  }
+
+  .right-panel{
+    width:92%;
+    padding:36px 24px;
+  }
+
+  .right-panel h2{
+    font-size:42px;
+  }
+
+  .about-text{
+    font-size:18px;
+  }
+
+  .founder{
+    font-size:34px;
+  }
+
 }
 
 </style>
@@ -406,20 +655,19 @@ body{
 
     <div class="left-top">
 
-      <!-- LEFT MENU BUTTON -->
-      <div class="glass-btn">
+      <!-- LEFT BUTTON -->
+      <div class="glass-btn" id="menuBtn">
         <i>☰</i>
       </div>
 
-      <!-- BRAND -->
       <div class="brand">
         Sanitas Melete
       </div>
 
     </div>
 
-    <!-- RIGHT LOGO BUTTON -->
-    <div class="glass-btn">
+    <!-- RIGHT BUTTON -->
+    <div class="glass-btn" id="aboutBtn">
       <i>∞</i>
     </div>
 
@@ -472,6 +720,166 @@ body{
   </div>
 
 </div>
+
+<!-- LEFT PANEL -->
+
+<div class="left-panel" id="leftPanel">
+
+  <div class="profile-card">
+
+    <div class="profile-left">
+
+      <div class="avatar">
+        👤
+      </div>
+
+      <div>
+        <div class="profile-name">SK</div>
+        <div class="profile-sub">Premium User</div>
+      </div>
+
+    </div>
+
+    <div class="sparkle">✦</div>
+
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-left">
+      <div class="menu-emoji">☷</div>
+      <div class="menu-title">Dashboard</div>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-left">
+      <div class="menu-emoji">💬</div>
+      <div class="menu-title">My Chats</div>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-left">
+      <div class="menu-emoji">📄</div>
+      <div class="menu-title">My Documents</div>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-left">
+      <div class="menu-emoji">🔖</div>
+      <div class="menu-title">Saved Answers</div>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-left">
+      <div class="menu-emoji">🗓</div>
+      <div class="menu-title">Study Planner</div>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+  <div class="menu-card">
+    <div class="menu-left">
+      <div class="menu-emoji">✦</div>
+      <div class="menu-title">AI Tools</div>
+    </div>
+    <div class="arrow">›</div>
+  </div>
+
+</div>
+
+<!-- RIGHT PANEL -->
+
+<div class="right-panel" id="rightPanel">
+
+  <div class="close-btn" id="closeAbout">
+    ✕
+  </div>
+
+  <div class="about-logo">
+    ∞
+  </div>
+
+  <h2>Sanitas Melete AI</h2>
+
+  <div class="about-sub">
+    your study buddy
+  </div>
+
+  <div class="about-line"></div>
+
+  <div class="about-text">
+    Premium AI learning platform crafted for students with elegant design and intelligent study experience.
+  </div>
+
+  <div class="founder">
+    Founder — SK
+  </div>
+
+</div>
+
+<script>
+
+/* BUTTONS */
+
+const menuBtn = document.getElementById("menuBtn");
+const aboutBtn = document.getElementById("aboutBtn");
+
+/* PANELS */
+
+const leftPanel = document.getElementById("leftPanel");
+const rightPanel = document.getElementById("rightPanel");
+
+const closeAbout = document.getElementById("closeAbout");
+
+/* LEFT OPEN */
+
+menuBtn.onclick = () => {
+
+  leftPanel.classList.add("active");
+
+  rightPanel.classList.remove("active");
+
+}
+
+/* RIGHT OPEN */
+
+aboutBtn.onclick = () => {
+
+  rightPanel.classList.add("active");
+
+  leftPanel.classList.remove("active");
+
+}
+
+/* CLOSE RIGHT */
+
+closeAbout.onclick = () => {
+
+  rightPanel.classList.remove("active");
+
+}
+
+/* CLOSE LEFT OUTSIDE */
+
+document.addEventListener("click", (e)=>{
+
+  if(
+    !leftPanel.contains(e.target) &&
+    !menuBtn.contains(e.target)
+  ){
+    leftPanel.classList.remove("active");
+  }
+
+});
+
+</script>
 
 </body>
 </html>
