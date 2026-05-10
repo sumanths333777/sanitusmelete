@@ -99,11 +99,8 @@ body{
 
 .brand{
   color:#062d71;
-
   font-size:30px;
-
   font-family:'Cormorant Garamond',serif;
-
   font-weight:600;
 }
 
@@ -111,14 +108,10 @@ body{
 
 .center{
   position:absolute;
-
   top:48%;
   left:50%;
-
   transform:translate(-50%,-50%);
-
   width:100%;
-
   text-align:center;
 }
 
@@ -127,11 +120,8 @@ body{
 .logo-ring{
   width:290px;
   height:290px;
-
   margin:auto;
-
   border-radius:50%;
-
   position:relative;
 
   display:flex;
@@ -154,7 +144,6 @@ body{
 
 .logo-ring::before{
   content:'';
-
   position:absolute;
 
   width:360px;
@@ -177,15 +166,10 @@ body{
 
 .hero-title{
   margin-top:34px;
-
   color:#062d71;
-
   font-size:64px;
-
   font-family:'Cormorant Garamond',serif;
-
   font-weight:700;
-
   line-height:1;
 }
 
@@ -197,7 +181,6 @@ body{
 
 .divider{
   width:260px;
-
   margin:18px auto;
 
   display:flex;
@@ -222,9 +205,7 @@ body{
 
 .sub{
   color:#b78633;
-
   font-size:30px;
-
   font-family:'Cormorant Garamond',serif;
 }
 
@@ -269,7 +250,6 @@ body{
   display:flex;
   align-items:center;
   gap:14px;
-
   width:100%;
 }
 
@@ -303,6 +283,7 @@ body{
   color:#b8862e;
   font-size:24px;
 }
+
 .search-input{
   width:100%;
 
@@ -330,7 +311,6 @@ body{
 .search-input::placeholder{
   color:#7d756e;
 }
-
 
 /* SIDE MENU */
 
@@ -441,25 +421,19 @@ body{
 
 .menu-profile h2{
   color:#062d71;
-
   font-size:26px;
-
   font-family:'Cormorant Garamond',serif;
-
   line-height:1;
 }
 
 .menu-profile p{
   color:#b8862e;
-
   font-size:14px;
-
   margin-top:2px;
 }
 
 .profile-star{
   color:#d4a54f;
-
   font-size:20px;
 }
 
@@ -468,7 +442,6 @@ body{
 .menu-items{
   display:flex;
   flex-direction:column;
-
   gap:10px;
 }
 
@@ -499,7 +472,6 @@ body{
 
 .menu-item span{
   font-size:20px;
-
   color:#8d847c;
 }
 
@@ -583,48 +555,35 @@ body{
 
 .about-card h2{
   margin-top:10px;
-
   color:#062d71;
-
   font-size:30px;
-
   font-family:'Cormorant Garamond',serif;
 }
 
 .about-sub{
   color:#b8862e;
-
   font-size:18px;
-
   margin-top:4px;
-
   font-family:'Cormorant Garamond',serif;
 }
 
 .about-line{
   width:70px;
   height:1px;
-
   background:#d2a34f;
-
   margin:18px auto;
 }
 
 .about-text{
   color:#6f645b;
-
   line-height:1.6;
-
   font-size:16px;
 }
 
 .founder{
   margin-top:18px;
-
   color:#062d71;
-
   font-size:22px;
-
   font-family:'Cormorant Garamond',serif;
 }
 
@@ -643,6 +602,8 @@ body{
 
   cursor:pointer;
 }
+
+/* MOBILE */
 
 @media (max-width:768px){
 
@@ -826,32 +787,19 @@ your study buddy
 
 <div class="search-wrap">
 
-  <div class="search-left">
+<div class="search-left">
 
-    <!-- UPLOAD BUTTON -->
+<div class="circle-btn upload-btn">
+<span>⌘</span>
+</div>
 
-    <div class="circle-btn upload-btn">
-      <span>⌘</span>
-    </div>
-
-    <!-- INPUT -->
-
-    <input
-      type="text"
-      class="search-input"
-      placeholder="type your questions here"
-    />
-
-  </div>
-
-  <!-- SEND BUTTON -->
-
-  <div class="circle-btn send-btn">
-    <span>↑</span>
-  </div>
+<input
+type="text"
+class="search-input"
+placeholder="type your questions here"
+/>
 
 </div>
-  
 
 <div class="circle-btn send-btn">
 <span>↑</span>
