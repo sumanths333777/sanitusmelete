@@ -1,999 +1,825 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
 
   <!-- MAIN TITLE -->
   <title>SANITAS MELETE – AI Study Platform for NEET & JEE Students</title>
 
-  <!-- GOOGLE VERIFICATION -->
-  <meta name="google-site-verification" content="EdU-ky9MPlB5lYDK43D_SqeqpwxaNWTrfc-tO6FDCqc" />
-
   <!-- RESPONSIVE -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- DESCRIPTION -->
-  <meta name="description" content="Sanitas Melete is a smart AI-powered study platform for NEET and JEE students. Get notes, MCQs, PYQs, quizzes and instant answers using AI.">
+  <!-- SEO -->
+  <meta name="description"
+    content="Sanitas Melete is a smart AI-powered study platform for students. Ask doubts, get instant answers and learn with MEBI AI.">
 
-  <!-- KEYWORDS -->
-  <meta name="keywords" content="Sanitas Melete, AI study app, MCQs, PYQs, notes, competitive exams, study platform, AI education, online learning, AI tutor">
+  <!-- FONTS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap"
+    rel="stylesheet">
 
-  <!-- AUTHOR -->
-  <meta name="author" content="Sanitas Melete Team">
-
-  <!-- OG TAGS -->
-  <meta property="og:title" content="SANITAS MELETE – AI Study Platform">
-  <meta property="og:description" content="Smart AI doubt solver for NEET & JEE students. Ask doubts, get instant answers.">
-  <meta property="og:url" content="https://sanitasmelete.vercel.app">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://sanitasmelete.vercel.app/favicon.ico">
-
-  <!-- FAVICON -->
-  <link rel="icon" type="image/png" href="favicon.ico" />
-
-  <!-- JSON-LD (FIXED) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "SANITAS MELETE",
-    "url": "https://sanitasmelete.vercel.app",
-    "applicationCategory": "EducationalApplication",
-    "operatingSystem": "Web",
-    "inLanguage": "en",
-    "description": "Sanitas Melete is an AI-powered study platform with MEBI, your study buddy for All type of students. Ask doubts, request MCQs, see PYQs, and learn with AI support.",
-    "author": {
-      "@type": "Person",
-      "name": "SK",
-    "full name"; "SUMANTH KUMAR G"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "INR"
-    },
-    "featureList": [
-      "Instant AI answers for all doubts",
-      "MCQs with explanations",
-      "Previous year questions (PYQs)",
-      "Support for image-based questions",
-      "Available 24/7 on web"
-    ],
-    "brand": {
-      "@type": "Brand",
-      "name": "Sanitas Melete",
-      "logo": "https://sanitasmelete.vercel.app/favicon.ico"
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  }
-  </script>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+    }
 
-<style>
+    body {
+      background: #efe3d6;
+    }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+    .app {
+      width: 100%;
+      height: 100dvh;
+      position: relative;
+      overflow: hidden;
 
-html,body{
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  font-family:'Poppins',sans-serif;
-}
+      background:
+        radial-gradient(circle at top,
+          #f8eee4 0%,
+          #efe3d6 45%,
+          #eadccd 100%);
+    }
 
-body{
-  background:#efe3d6;
-}
+    /* TOP BAR */
 
-/* MAIN */
+    .top-bar {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-.app{
-  width:100%;
-  height:100dvh;
-  position:relative;
-  overflow:hidden;
+      padding: 28px 38px 0;
+    }
 
-  background:
-  radial-gradient(circle at top,
-  #f8eee4 0%,
-  #efe3d6 45%,
-  #eadccd 100%);
-}
+    .left-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
 
-/* TOP BAR */
+    /* BUTTONS */
 
-.top-bar{
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+    .glass-btn {
+      width: 58px;
+      height: 58px;
 
-  padding:28px 38px 0;
-}
+      border-radius: 50%;
 
-.left-top{
-  display:flex;
-  align-items:center;
-  gap:16px;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-/* BUTTONS */
+      background:
+        linear-gradient(145deg,
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0.18));
 
-.glass-btn{
-  width:58px;
-  height:58px;
+      border: 1px solid rgba(255, 255, 255, 0.72);
 
-  border-radius:50%;
+      backdrop-filter: blur(18px);
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+      box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.8),
+        0 8px 22px rgba(180, 140, 100, 0.10);
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.75),
-  rgba(255,255,255,0.18)
-  );
+      cursor: pointer;
+    }
 
-  border:1px solid rgba(255,255,255,0.72);
+    .glass-btn i {
+      font-style: normal;
+      color: #062d71;
+      font-size: 26px;
+    }
 
-  backdrop-filter:blur(18px);
+    /* BRAND */
 
-  box-shadow:
-  inset 0 1px 1px rgba(255,255,255,0.8),
-  0 8px 22px rgba(180,140,100,0.10);
+    .brand {
+      color: #062d71;
+      font-size: 30px;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
 
-  cursor:pointer;
-}
+    /* CENTER */
 
-.glass-btn i{
-  font-style:normal;
-  color:#062d71;
-  font-size:26px;
-}
+    .center {
+      position: absolute;
 
-/* BRAND */
+      top: 48%;
+      left: 50%;
 
-.brand{
-  color:#062d71;
+      transform: translate(-50%, -50%);
 
-  font-size:30px;
+      width: 100%;
+      text-align: center;
+    }
 
-  font-family:'Cormorant Garamond',serif;
+    /* LOGO */
 
-  font-weight:600;
-}
+    .logo-ring {
+      width: 290px;
+      height: 290px;
 
-/* CENTER AREA */
+      margin: auto;
 
-.center{
-  position:absolute;
+      border-radius: 50%;
 
-  top:48%;
-  left:50%;
+      position: relative;
 
-  transform:translate(-50%,-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  width:100%;
+      background:
+        linear-gradient(145deg,
+          rgba(255, 255, 255, 0.24),
+          rgba(255, 255, 255, 0.05));
 
-  text-align:center;
-}
+      border: 1px solid rgba(255, 255, 255, 0.48);
 
-/* LOGO */
+      box-shadow:
+        inset 0 0 18px rgba(255, 255, 255, 0.25),
+        0 0 45px rgba(255, 255, 255, 0.08);
+    }
 
-.logo-ring{
-  width:290px;
-  height:290px;
+    .logo-ring::before {
+      content: '';
 
-  margin:auto;
+      position: absolute;
 
-  border-radius:50%;
+      width: 360px;
+      height: 360px;
 
-  position:relative;
+      border-radius: 50%;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+      background: rgba(255, 255, 255, 0.05);
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.24),
-  rgba(255,255,255,0.05)
-  );
+      filter: blur(2px);
+    }
 
-  border:1px solid rgba(255,255,255,0.48);
+    .infinity {
+      font-size: 132px;
+      color: #062d71;
+      z-index: 2;
+    }
 
-  box-shadow:
-  inset 0 0 18px rgba(255,255,255,0.25),
-  0 0 45px rgba(255,255,255,0.08);
-}
+    /* TITLE */
 
-.logo-ring::before{
-  content:'';
+    .hero-title {
+      margin-top: 34px;
 
-  position:absolute;
+      color: #062d71;
 
-  width:360px;
-  height:360px;
+      font-size: 64px;
 
-  border-radius:50%;
+      font-family: 'Cormorant Garamond', serif;
 
-  background:rgba(255,255,255,0.05);
+      font-weight: 700;
+    }
 
-  filter:blur(2px);
-}
+    .spark {
+      color: #c79a3d;
+    }
 
-.infinity{
-  font-size:132px;
-  color:#062d71;
-  z-index:2;
-}
+    /* DIVIDER */
 
-/* TITLE */
+    .divider {
+      width: 260px;
 
-.hero-title{
-  margin-top:34px;
+      margin: 18px auto;
 
-  color:#062d71;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  font-size:64px;
+      gap: 14px;
+    }
 
-  font-family:'Cormorant Garamond',serif;
+    .divider span {
+      width: 90px;
+      height: 1px;
+      background: #c79a3d;
+    }
 
-  font-weight:700;
+    .divider p {
+      color: #c79a3d;
+      font-size: 18px;
+    }
 
-  line-height:1;
-}
+    /* SUBTEXT */
 
-.spark{
-  color:#c79a3d;
-}
+    .sub {
+      color: #b78633;
+      font-size: 30px;
+      font-family: 'Cormorant Garamond', serif;
+    }
 
-/* DIVIDER */
+    /* SEARCH */
 
-.divider{
-  width:260px;
+    .search-wrap {
+      position: absolute;
 
-  margin:18px auto;
+      left: 50%;
+      bottom: 20px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+      transform: translateX(-50%);
 
-  gap:14px;
-}
+      width: 92%;
+      height: 78px;
 
-.divider span{
-  width:90px;
-  height:1px;
-  background:#c79a3d;
-}
+      border-radius: 32px;
 
-.divider p{
-  color:#c79a3d;
-  font-size:18px;
-}
+      padding: 0 16px;
 
-/* SUBTEXT */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-.sub{
-  color:#b78633;
+      background:
+        linear-gradient(145deg,
+          rgba(255, 255, 255, 0.58),
+          rgba(255, 255, 255, 0.18));
 
-  font-size:30px;
+      border: 1px solid rgba(255, 255, 255, 0.72);
 
-  font-family:'Cormorant Garamond',serif;
-}
+      backdrop-filter: blur(18px);
 
-/* SEARCH BAR */
+      box-shadow:
+        inset 0 0 12px rgba(255, 255, 255, 0.4),
+        0 12px 28px rgba(180, 140, 100, 0.10);
+    }
 
-.search-wrap{
-  position:absolute;
+    .search-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-  left:50%;
-  bottom:20px;
+    .circle-btn {
+      width: 50px;
+      height: 50px;
 
-  transform:translateX(-50%);
+      border-radius: 50%;
 
-  width:92%;
-  height:78px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  border-radius:32px;
+      background:
+        linear-gradient(145deg,
+          rgba(255, 255, 255, 0.72),
+          rgba(255, 255, 255, 0.20));
 
-  padding:0 16px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
 
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+      cursor: pointer;
+    }
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.58),
-  rgba(255,255,255,0.18)
-  );
+    .circle-btn span {
+      color: #b8862e;
+      font-size: 24px;
+    }
 
-  border:1px solid rgba(255,255,255,0.72);
+    .placeholder {
+      border: none;
+      outline: none;
+      background: transparent;
 
-  backdrop-filter:blur(18px);
+      color: #7d756e;
+      font-size: 17px;
+      width: 100%;
+    }
 
-  box-shadow:
-  inset 0 0 12px rgba(255,255,255,0.4),
-  0 12px 28px rgba(180,140,100,0.10);
-}
+    /* SIDE MENU */
 
-.search-left{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
+    .menu-overlay {
+      position: fixed;
+      inset: 0;
 
-.circle-btn{
-  width:50px;
-  height:50px;
+      background: rgba(0, 0, 0, 0.08);
 
-  border-radius:50%;
+      backdrop-filter: blur(8px);
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+      opacity: 0;
+      visibility: hidden;
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.20)
-  );
+      transition: 0.35s ease;
 
-  border:1px solid rgba(255,255,255,0.7);
+      z-index: 999;
+    }
 
-  box-shadow:
-  inset 0 0 8px rgba(255,255,255,0.5),
-  0 5px 16px rgba(180,140,100,0.10);
-}
+    .menu-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
 
-.circle-btn span{
-  color:#b8862e;
-  font-size:24px;
-}
+    .side-menu {
+      position: fixed;
 
-.placeholder{
-  color:#7d756e;
-  font-size:17px;
-}
+      top: 0;
+      left: 0;
 
-/* SIDE MENU */
+      width: 285px;
+      max-width: 82%;
 
-.menu-overlay{
-  position:fixed;
-  inset:0;
+      height: 100dvh;
 
-  background:rgba(0,0,0,0.08);
+      padding: 18px 14px;
 
-  backdrop-filter:blur(8px);
+      background:
+        linear-gradient(145deg,
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0.25));
 
-  opacity:0;
-  visibility:hidden;
+      border-right: 1px solid rgba(255, 255, 255, 0.7);
 
-  transition:0.35s ease;
+      backdrop-filter: blur(24px);
 
-  z-index:999;
-}
+      transform: translateX(-100%);
 
-.menu-overlay.active{
-  opacity:1;
-  visibility:visible;
-}
+      transition: transform 0.35s ease;
 
-.side-menu{
-  position:fixed;
+      z-index: 1000;
+    }
 
-  top:0;
-  left:0;
+    .side-menu.active {
+      transform: translateX(0);
+    }
 
-  width:285px;
-  max-width:82%;
+    .menu-profile {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-  height:100dvh;
+      padding: 14px;
 
-  padding:18px 14px;
+      border-radius: 22px;
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.75),
-  rgba(255,255,255,0.25)
-  );
+      background:
+        linear-gradient(145deg,
+          rgba(255, 255, 255, 0.72),
+          rgba(255, 255, 255, 0.20));
 
-  border-right:1px solid rgba(255,255,255,0.7);
+      margin-bottom: 16px;
+    }
 
-  backdrop-filter:blur(24px);
+    .profile-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-  box-shadow:
-  0 10px 40px rgba(0,0,0,0.08);
+    .profile-icon {
+      width: 52px;
+      height: 52px;
 
-  transform:translateX(-100%);
+      border-radius: 50%;
 
-  transition:transform 0.35s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  z-index:1000;
+      background: #f5dfba;
 
-  overflow-y:auto;
-}
+      font-size: 24px;
+    }
 
-.side-menu.active{
-  transform:translateX(0);
-}
+    .menu-profile h2 {
+      color: #062d71;
+      font-size: 26px;
+      font-family: 'Cormorant Garamond', serif;
+    }
 
-/* PROFILE */
+    .menu-profile p {
+      color: #b8862e;
+      font-size: 14px;
+    }
 
-.menu-profile{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+    .profile-star {
+      color: #d4a54f;
+      font-size: 20px;
+    }
 
-  padding:14px;
+    .menu-items {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
 
-  border-radius:22px;
+    .menu-item {
+      height: 60px;
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.20)
-  );
+      padding: 0 16px;
 
-  border:1px solid rgba(255,255,255,0.7);
+      border-radius: 18px;
 
-  margin-bottom:16px;
-}
+      display: flex;
+      align-items: center;
 
-.profile-left{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+      background:
+        linear-gradient(145deg,
+          rgba(255, 255, 255, 0.72),
+          rgba(255, 255, 255, 0.20));
+    }
 
-.profile-icon{
-  width:52px;
-  height:52px;
+    .menu-item span {
+      font-size: 20px;
+    }
 
-  border-radius:50%;
+    .menu-item p {
+      margin-left: 14px;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+      color: #222;
 
-  background:#f5dfba;
+      font-size: 16px;
 
-  font-size:24px;
-}
+      font-family: 'Cormorant Garamond', serif;
 
-.menu-profile h2{
-  color:#062d71;
+      flex: 1;
+    }
 
-  font-size:26px;
+    .menu-item i {
+      font-style: normal;
+      color: #999;
+      font-size: 22px;
+    }
 
-  font-family:'Cormorant Garamond',serif;
+    /* ABOUT */
 
-  line-height:1;
-}
+    .about-popup {
+      position: fixed;
+      inset: 0;
 
-.menu-profile p{
-  color:#b8862e;
+      background: rgba(0, 0, 0, 0.10);
 
-  font-size:14px;
+      backdrop-filter: blur(10px);
 
-  margin-top:2px;
-}
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-.profile-star{
-  color:#d4a54f;
+      opacity: 0;
+      visibility: hidden;
 
-  font-size:20px;
-}
+      transition: 0.3s ease;
 
-/* MENU ITEMS */
+      z-index: 9999;
+    }
 
-.menu-items{
-  display:flex;
-  flex-direction:column;
+    .about-popup.active {
+      opacity: 1;
+      visibility: visible;
+    }
 
-  gap:10px;
-}
+    .about-card {
+      width: 88%;
+      max-width: 360px;
 
-.menu-item{
-  height:60px;
+      padding: 30px 24px;
 
-  padding:0 16px;
+      border-radius: 30px;
 
-  border-radius:18px;
+      text-align: center;
 
-  display:flex;
-  align-items:center;
+      background:
+        linear-gradient(145deg,
+          rgba(255, 255, 255, 0.72),
+          rgba(255, 255, 255, 0.18));
+    }
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.20)
-  );
+    .about-logo {
+      font-size: 52px;
+      color: #062d71;
+    }
 
-  border:1px solid rgba(255,255,255,0.65);
+    .about-card h2 {
+      margin-top: 10px;
+      color: #062d71;
+      font-size: 30px;
+      font-family: 'Cormorant Garamond', serif;
+    }
 
-  box-shadow:
-  inset 0 0 6px rgba(255,255,255,0.4);
+    .about-sub {
+      color: #b8862e;
+      font-size: 18px;
+      margin-top: 4px;
+      font-family: 'Cormorant Garamond', serif;
+    }
 
-  cursor:pointer;
-}
+    .about-line {
+      width: 70px;
+      height: 1px;
 
-.menu-item span{
-  font-size:20px;
+      background: #d2a34f;
 
-  color:#8d847c;
-}
+      margin: 18px auto;
+    }
 
-.menu-item p{
-  margin-left:14px;
+    .about-text {
+      color: #6f645b;
+      line-height: 1.6;
+      font-size: 16px;
+    }
 
-  color:#222;
+    .founder {
+      margin-top: 18px;
+      color: #062d71;
+      font-size: 22px;
+      font-family: 'Cormorant Garamond', serif;
+    }
 
-  font-size:16px;
+    .close-popup {
+      position: absolute;
+      top: 16px;
+      right: 20px;
 
-  font-family:'Cormorant Garamond',serif;
+      border: none;
+      background: none;
 
-  flex:1;
-}
+      font-size: 22px;
+      color: #7b7066;
 
-.menu-item i{
-  font-style:normal;
+      cursor: pointer;
+    }
 
-  color:#999;
+    /* MOBILE */
 
-  font-size:22px;
-}
+    @media (max-width:768px) {
 
-/* ABOUT POPUP */
+      .top-bar {
+        padding: 22px 18px 0;
+      }
 
-.about-popup{
-  position:fixed;
-  inset:0;
+      .brand {
+        font-size: 15px;
+      }
 
-  background:rgba(0,0,0,0.10);
+      .glass-btn {
+        width: 44px;
+        height: 44px;
+      }
 
-  backdrop-filter:blur(10px);
+      .glass-btn i {
+        font-size: 20px;
+      }
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+      .logo-ring {
+        width: 190px;
+        height: 190px;
+      }
 
-  opacity:0;
-  visibility:hidden;
+      .logo-ring::before {
+        width: 240px;
+        height: 240px;
+      }
 
-  transition:0.3s ease;
+      .infinity {
+        font-size: 92px;
+      }
 
-  z-index:9999;
-}
+      .hero-title {
+        margin-top: 24px;
+        font-size: 30px;
+      }
 
-.about-popup.active{
-  opacity:1;
-  visibility:visible;
-}
+      .sub {
+        font-size: 18px;
+      }
 
-.about-card{
-  width:88%;
-  max-width:360px;
+      .search-wrap {
+        width: 93%;
+        height: 72px;
+        bottom: 12px;
+      }
 
-  padding:30px 24px;
-
-  border-radius:30px;
-
-  text-align:center;
-
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.18)
-  );
-
-  border:1px solid rgba(255,255,255,0.7);
-
-  backdrop-filter:blur(18px);
-
-  box-shadow:
-  0 10px 40px rgba(0,0,0,0.08),
-  inset 0 0 10px rgba(255,255,255,0.3);
-}
-
-.about-logo{
-  font-size:52px;
-  color:#062d71;
-}
-
-.about-card h2{
-  margin-top:10px;
-
-  color:#062d71;
-
-  font-size:30px;
-
-  font-family:'Cormorant Garamond',serif;
-}
-
-.about-sub{
-  color:#b8862e;
-
-  font-size:18px;
-
-  margin-top:4px;
-
-  font-family:'Cormorant Garamond',serif;
-}
-
-.about-line{
-  width:70px;
-  height:1px;
-
-  background:#d2a34f;
-
-  margin:18px auto;
-}
-
-.about-text{
-  color:#6f645b;
-
-  line-height:1.6;
-
-  font-size:16px;
-}
-
-.founder{
-  margin-top:18px;
-
-  color:#062d71;
-
-  font-size:22px;
-
-  font-family:'Cormorant Garamond',serif;
-}
-
-.close-popup{
-  position:absolute;
-
-  top:16px;
-  right:20px;
-
-  border:none;
-  background:none;
-
-  font-size:22px;
-
-  color:#7b7066;
-
-  cursor:pointer;
-}
-
-@media (max-width:768px){
-
-  .top-bar{
-    padding:22px 18px 0;
-  }
-
-  .brand{
-    font-size:15px;
-  }
-
-  .glass-btn{
-    width:44px;
-    height:44px;
-  }
-
-  .glass-btn i{
-    font-size:20px;
-  }
-
-  .logo-ring{
-    width:190px;
-    height:190px;
-  }
-
-  .logo-ring::before{
-    width:240px;
-    height:240px;
-  }
-
-  .infinity{
-    font-size:92px;
-  }
-
-  .hero-title{
-    margin-top:24px;
-    font-size:30px;
-  }
-
-  .divider{
-    width:170px;
-    margin:12px auto;
-    gap:10px;
-  }
-
-  .divider span{
-    width:55px;
-  }
-
-  .divider p{
-    font-size:14px;
-  }
-
-  .sub{
-    font-size:18px;
-  }
-
-  .search-wrap{
-    width:93%;
-    height:72px;
-    bottom:12px;
-    border-radius:28px;
-    padding:0 12px;
-  }
-
-  .placeholder{
-    font-size:14px;
-  }
-
-}
-
-</style>
-</head>
-
-<body>
-
-<div class="app">
-
-<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
-
-<div class="side-menu" id="sideMenu">
-
-<div class="menu-profile">
-
-<div class="profile-left">
-
-<div class="profile-icon">👤</div>
-
-<div>
-<h2>SK</h2>
-<p>Premium User</p>
-</div>
-
-</div>
-
-<div class="profile-star">✦</div>
-
-</div>
-
-<div class="menu-items">
-
-<div class="menu-item">
-<span>☷</span>
-<p>Dashboard</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>💬</span>
-<p>My Chats</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>📄</span>
-<p>My Documents</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>🔖</span>
-<p>Saved Answers</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>🗓</span>
-<p>Study Planner</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>✦</span>
-<p>AI Tools</p>
-<i>›</i>
-</div>
-
-</div>
-
-</div>
-
-<div class="top-bar">
-
-<div class="left-top">
-
-<div class="glass-btn" onclick="openMenu()">
-<i>☰</i>
-</div>
-
-<div class="brand">
-Sanitas Melete
-</div>
-
-</div>
-
-<div class="glass-btn" onclick="openAbout()">
-<i>∞</i>
-</div>
-
-</div>
-
-<div class="center">
-
-<div class="logo-ring">
-<div class="infinity">∞</div>
-</div>
-
-<div class="hero-title">
-Hi iam mebi<span class="spark">✦</span>
-</div>
-
-<div class="divider">
-<span></span>
-<p>✦</p>
-<span></span>
-</div>
-
-<div class="sub">
-your study buddy
-</div>
-
-</div>
-
-<div class="search-wrap">
-
-<div class="search-left">
-
-<div class="circle-btn">
-<span>⌘</span>
-</div>
-
-<div class="placeholder">
-type your questions here
-</div>
-
-</div>
-
-<div class="circle-btn">
-<span>↑</span>
-</div>
-
-</div>
-
-</div>
-
-<div class="about-popup" id="aboutPopup">
-
-<div class="about-card">
-
-<button class="close-popup" onclick="closeAbout()">✕</button>
-
-<div class="about-logo">∞</div>
-
-<h2>Sanitas Melete AI</h2>
-
-<p class="about-sub">
-your study buddy
-</p>
-
-<div class="about-line"></div>
-
-<p class="about-text">
-Premium AI learning platform crafted for students with elegant design and intelligent study experience.
-</p>
-
-<p class="founder">
-Founder — SK
-</p>
-
-</div>
-
-</div>
-
-<script>
-
-function openAbout(){
-document
-.getElementById("aboutPopup")
-.classList.add("active");
-}
-
-function closeAbout(){
-document
-.getElementById("aboutPopup")
-.classList.remove("active");
-}
-
-const sideMenu =
-document.getElementById("sideMenu");
-
-const menuOverlay =
-document.getElementById("menuOverlay");
-
-function openMenu(){
-sideMenu.classList.add("active");
-menuOverlay.classList.add("active");
-}
-
-function closeMenu(){
-sideMenu.classList.remove("active");
-menuOverlay.classList.remove("active");
-}
-
-let startX = 0;
-
-document.addEventListener("touchstart", e=>{
-startX = e.touches[0].clientX;
-});
-
-document.addEventListener("touchmove", e=>{
-
-let moveX = e.touches[0].clientX;
-
-if(startX < 30 && moveX > 100){
-openMenu();
-}
-
-if(startX > 250 && moveX < 120){
-closeMenu();
-}
-
-});
-
-</script>
-
-</body>
-</html>
-
-    
+      .placeholder {
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
+
 <body>
+
   <div class="app">
 
-      <div id="typing" class="typing hidden">
-        <div class="typing-dots">
-          <span></span><span></span><span></span>
-        </div>
-        <small>MEBI is thinking…</small>
-      </div>
-    </main>
+    <!-- MENU -->
 
-    <!-- BOTTOM INPUT -->
-    <footer class="bottombar">
-      <div class="input-row">
-        <button class="upload-btn" title="Upload image" onclick="document.getElementById('fileInput').click()">⌘</button>
-        <input id="fileInput" type="file" accept="image/*" style="display:none" />
-        <input id="user-input" type="text" placeholder="Type your question here..." />
-        <button class="send-btn" onclick="sendMessage()">↑</button>
-      
+    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+    <div class="side-menu" id="sideMenu">
+
+      <div class="menu-profile">
+
+        <div class="profile-left">
+
+          <div class="profile-icon">👤</div>
+
+          <div>
+            <h2>SK</h2>
+            <p>Premium User</p>
+          </div>
+
+        </div>
+
+        <div class="profile-star">✦</div>
+
       </div>
-      <div id="uploadPreview" class="upload-preview"></div>
-    </footer>
+
+      <div class="menu-items">
+
+        <div class="menu-item">
+          <span>☷</span>
+          <p>Dashboard</p>
+          <i>›</i>
+        </div>
+
+        <div class="menu-item">
+          <span>💬</span>
+          <p>My Chats</p>
+          <i>›</i>
+        </div>
+
+        <div class="menu-item">
+          <span>📄</span>
+          <p>My Documents</p>
+          <i>›</i>
+        </div>
+
+        <div class="menu-item">
+          <span>🔖</span>
+          <p>Saved Answers</p>
+          <i>›</i>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TOP -->
+
+    <div class="top-bar">
+
+      <div class="left-top">
+
+        <div class="glass-btn" onclick="openMenu()">
+          <i>☰</i>
+        </div>
+
+        <div class="brand">
+          Sanitas Melete
+        </div>
+
+      </div>
+
+      <div class="glass-btn" onclick="openAbout()">
+        <i>∞</i>
+      </div>
+
+    </div>
+
+    <!-- CENTER -->
+
+    <div class="center">
+
+      <div class="logo-ring">
+        <div class="infinity">∞</div>
+      </div>
+
+      <div class="hero-title">
+        Hi iam mebi<span class="spark">✦</span>
+      </div>
+
+      <div class="divider">
+        <span></span>
+        <p>✦</p>
+        <span></span>
+      </div>
+
+      <div class="sub">
+        your study buddy
+      </div>
+
+    </div>
+
+    <!-- SEARCH -->
+
+    <div class="search-wrap">
+
+      <div class="search-left">
+
+        <div class="circle-btn">
+          <span>⌘</span>
+        </div>
+
+        <input
+          type="text"
+          class="placeholder"
+          placeholder="Type your question here..." />
+
+      </div>
+
+      <div class="circle-btn">
+        <span>↑</span>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ABOUT -->
+
+  <div class="about-popup" id="aboutPopup">
+
+    <div class="about-card">
+
+      <button class="close-popup" onclick="closeAbout()">✕</button>
+
+      <div class="about-logo">∞</div>
+
+      <h2>Sanitas Melete AI</h2>
+
+      <p class="about-sub">
+        your study buddy
+      </p>
+
+      <div class="about-line"></div>
+
+      <p class="about-text">
+        Premium AI learning platform crafted for students with elegant design and intelligent study experience.
+      </p>
+
+      <p class="founder">
+        Founder — SK
+      </p>
+
+    </div>
+
+  </div>
+
+  <script>
+
+    function openAbout() {
+      document
+        .getElementById("aboutPopup")
+        .classList.add("active");
+    }
+
+    function closeAbout() {
+      document
+        .getElementById("aboutPopup")
+        .classList.remove("active");
+    }
+
+    const sideMenu =
+      document.getElementById("sideMenu");
+
+    const menuOverlay =
+      document.getElementById("menuOverlay");
+
+    function openMenu() {
+      sideMenu.classList.add("active");
+      menuOverlay.classList.add("active");
+    }
+
+    function closeMenu() {
+      sideMenu.classList.remove("active");
+      menuOverlay.classList.remove("active");
+    }
+
+    let startX = 0;
+
+    document.addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+    });
+
+    document.addEventListener("touchmove", e => {
+
+      let moveX = e.touches[0].clientX;
+
+      if (startX < 30 && moveX > 100) {
+        openMenu();
+      }
+
+      if (startX > 250 && moveX < 120) {
+        closeMenu();
+      }
+
+    });
 
   </script>
 
-  <!-- REAL CHAT LOGIC -->
-  <script src="script.js"></script>
 </body>
+
 </html>
