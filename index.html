@@ -683,6 +683,26 @@ body{
 
   .placeholder{
     font-size:14px;
+    /* ADD THIS BELOW .placeholder */
+
+.search-input{
+  width:100%;
+
+  border:none;
+  outline:none;
+
+  background:transparent;
+
+  color:#7d756e;
+
+  font-size:17px;
+
+  font-family:'Poppins',sans-serif;
+}
+
+.search-input::placeholder{
+  color:#7d756e;
+}
   }
 
 }
@@ -807,13 +827,15 @@ your study buddy
 <span>⌘</span>
 </div>
 
-<div class="placeholder">
-type your questions here
-</div>
+<input
+type="text"
+class="search-input"
+placeholder="type your questions here"
+/>
 
 </div>
 
-<div class="circle-btn">
+<div class="circle-btn send-btn">
 <span>↑</span>
 </div>
 
@@ -899,6 +921,32 @@ closeMenu();
 
 });
 
+const input =
+document.querySelector(".search-input");
+
+const sendBtn =
+document.querySelector(".send-btn");
+
+sendBtn.addEventListener("click", ()=>{
+
+  const text = input.value.trim();
+
+  if(text === "") return;
+
+  console.log(text);
+
+  input.value = "";
+
+});
+
+input.addEventListener("keypress", e=>{
+
+  if(e.key === "Enter"){
+    sendBtn.click();
+  }
+
+});
+  
 </script>
 
 </body>
