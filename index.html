@@ -6,7 +6,7 @@
 
 <title>Sanitas Melete AI</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -20,16 +20,11 @@ html,body{
   width:100%;
   height:100%;
   overflow:hidden;
+  font-family:'Poppins',sans-serif;
 }
 
 body{
-  font-family:'Cormorant Garamond',serif;
-
-  background:
-  radial-gradient(circle at top,
-  #f8eee4 0%,
-  #efe3d6 45%,
-  #eadccd 100%);
+  background:#efe3d6;
 }
 
 /* MAIN */
@@ -39,38 +34,23 @@ body{
   height:100dvh;
   position:relative;
   overflow:hidden;
-}
-
-/* SOFT LIGHTS */
-
-.app::before{
-  content:'';
-
-  position:absolute;
-  inset:-20%;
 
   background:
-  radial-gradient(circle at 20% 20%, rgba(255,255,255,0.28), transparent 25%),
-  radial-gradient(circle at 80% 70%, rgba(255,255,255,0.18), transparent 30%);
-
-  filter:blur(60px);
-
-  z-index:0;
+  radial-gradient(circle at top,
+  #f8eee4 0%,
+  #efe3d6 45%,
+  #eadccd 100%);
 }
 
 /* TOP BAR */
 
 .top-bar{
-  position:relative;
-  z-index:2;
-
   width:100%;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
 
-  padding:28px 34px 0;
+  padding:28px 38px 0;
 }
 
 .left-top{
@@ -79,7 +59,7 @@ body{
   gap:16px;
 }
 
-/* GLASS BUTTON */
+/* BUTTONS */
 
 .glass-btn{
   width:58px;
@@ -104,8 +84,7 @@ body{
 
   box-shadow:
   inset 0 1px 1px rgba(255,255,255,0.8),
-  0 8px 24px rgba(220,180,120,0.18),
-  0 0 18px rgba(255,240,220,0.45);
+  0 8px 22px rgba(180,140,100,0.10);
 }
 
 .glass-btn i{
@@ -121,19 +100,17 @@ body{
 
   font-size:30px;
 
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
 
-  font-weight:700;
-
-  letter-spacing:0.3px;
+  font-weight:600;
 }
 
-/* CENTER */
+/* CENTER AREA */
 
 .center{
   position:absolute;
 
-  top:50%;
+  top:48%;
   left:50%;
 
   transform:translate(-50%,-50%);
@@ -141,15 +118,13 @@ body{
   width:100%;
 
   text-align:center;
-
-  z-index:2;
 }
 
-/* LOGO RING */
+/* LOGO */
 
 .logo-ring{
-  width:320px;
-  height:320px;
+  width:290px;
+  height:290px;
 
   margin:auto;
 
@@ -164,18 +139,15 @@ body{
   background:
   linear-gradient(
   145deg,
-  rgba(255,255,255,0.28),
-  rgba(255,255,255,0.08)
+  rgba(255,255,255,0.24),
+  rgba(255,255,255,0.05)
   );
 
-  border:1px solid rgba(255,255,255,0.55);
-
-  backdrop-filter:blur(22px);
+  border:1px solid rgba(255,255,255,0.48);
 
   box-shadow:
-  inset 0 0 28px rgba(255,255,255,0.35),
-  0 0 40px rgba(255,230,180,0.35),
-  0 0 90px rgba(255,240,220,0.18);
+  inset 0 0 18px rgba(255,255,255,0.25),
+  0 0 45px rgba(255,255,255,0.08);
 }
 
 .logo-ring::before{
@@ -183,20 +155,18 @@ body{
 
   position:absolute;
 
-  width:390px;
-  height:390px;
+  width:360px;
+  height:360px;
 
   border-radius:50%;
 
-  border:1px solid rgba(255,255,255,0.14);
+  background:rgba(255,255,255,0.05);
 
-  opacity:0.6;
+  filter:blur(2px);
 }
 
-/* LOGO */
-
 .infinity{
-  font-size:145px;
+  font-size:132px;
   color:#062d71;
   z-index:2;
 }
@@ -204,13 +174,13 @@ body{
 /* TITLE */
 
 .hero-title{
-  margin-top:42px;
+  margin-top:34px;
 
   color:#062d71;
 
-  font-size:68px;
+  font-size:64px;
 
-  font-family:'Playfair Display',serif;
+  font-family:'Cormorant Garamond',serif;
 
   font-weight:700;
 
@@ -251,11 +221,9 @@ body{
 .sub{
   color:#b78633;
 
-  font-size:34px;
+  font-size:30px;
 
   font-family:'Cormorant Garamond',serif;
-
-  font-weight:500;
 }
 
 /* SEARCH BAR */
@@ -269,33 +237,30 @@ body{
   transform:translateX(-50%);
 
   width:92%;
-  height:82px;
+  height:78px;
 
-  border-radius:34px;
+  border-radius:32px;
 
-  padding:0 18px;
+  padding:0 16px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  z-index:2;
-
   background:
   linear-gradient(
   145deg,
   rgba(255,255,255,0.58),
-  rgba(255,255,255,0.16)
+  rgba(255,255,255,0.18)
   );
 
-  border:1px solid rgba(255,255,255,0.78);
+  border:1px solid rgba(255,255,255,0.72);
 
-  backdrop-filter:blur(22px);
+  backdrop-filter:blur(18px);
 
   box-shadow:
-  inset 0 0 14px rgba(255,255,255,0.45),
-  0 12px 28px rgba(220,180,120,0.14),
-  0 0 22px rgba(255,240,220,0.22);
+  inset 0 0 12px rgba(255,255,255,0.4),
+  0 12px 28px rgba(180,140,100,0.10);
 }
 
 .search-left{
@@ -304,11 +269,9 @@ body{
   gap:14px;
 }
 
-/* CIRCLE BUTTONS */
-
 .circle-btn{
-  width:54px;
-  height:54px;
+  width:50px;
+  height:50px;
 
   border-radius:50%;
 
@@ -319,106 +282,108 @@ body{
   background:
   linear-gradient(
   145deg,
-  rgba(255,255,255,0.76),
+  rgba(255,255,255,0.72),
   rgba(255,255,255,0.20)
   );
 
-  border:1px solid rgba(255,255,255,0.75);
+  border:1px solid rgba(255,255,255,0.7);
 
   box-shadow:
   inset 0 0 8px rgba(255,255,255,0.5),
-  0 6px 18px rgba(220,180,120,0.14),
-  0 0 14px rgba(255,240,220,0.22);
+  0 5px 16px rgba(180,140,100,0.10);
 }
 
 .circle-btn span{
   color:#b8862e;
-  font-size:28px;
+  font-size:24px;
 }
-
-/* PLACEHOLDER */
 
 .placeholder{
   color:#7d756e;
-
-  font-size:20px;
-
-  font-family:'Cormorant Garamond',serif;
-
-  font-weight:500;
+  font-size:17px;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media (max-width:768px){
 
   .top-bar{
-    padding:24px 22px 0;
+    padding:22px 18px 0;
+  }
+
+  .left-top{
+    gap:12px;
   }
 
   .brand{
-    font-size:18px;
-  }
-
-  .glass-btn{
-    width:48px;
-    height:48px;
-  }
-
-  .glass-btn i{
-    font-size:22px;
-  }
-
-  .logo-ring{
-    width:210px;
-    height:210px;
-  }
-
-  .logo-ring::before{
-    width:260px;
-    height:260px;
-  }
-
-  .infinity{
-    font-size:96px;
-  }
-
-  .hero-title{
-    margin-top:28px;
-    font-size:42px;
-  }
-
-  .divider{
-    width:180px;
-    margin:14px auto;
-  }
-
-  .divider span{
-    width:58px;
-  }
-
-  .divider p{
     font-size:15px;
   }
 
+  .glass-btn{
+    width:44px;
+    height:44px;
+  }
+
+  .glass-btn i{
+    font-size:20px;
+  }
+
+  .center{
+    top:50%;
+  }
+
+  .logo-ring{
+    width:190px;
+    height:190px;
+  }
+
+  .logo-ring::before{
+    width:240px;
+    height:240px;
+  }
+
+  .infinity{
+    font-size:92px;
+  }
+
+  .hero-title{
+    margin-top:24px;
+    font-size:30px;
+  }
+
+  .divider{
+    width:170px;
+    margin:12px auto;
+    gap:10px;
+  }
+
+  .divider span{
+    width:55px;
+  }
+
+  .divider p{
+    font-size:14px;
+  }
+
   .sub{
-    font-size:22px;
+    font-size:18px;
   }
 
   .search-wrap{
-    width:94%;
-    height:76px;
+    width:93%;
+    height:72px;
+    bottom:12px;
+    border-radius:28px;
+    padding:0 12px;
+  }
 
-    bottom:14px;
-
-    border-radius:30px;
-
-    padding:0 14px;
+  .search-left{
+    gap:10px;
   }
 
   .circle-btn{
-    width:46px;
-    height:46px;
+    width:44px;
+    height:44px;
   }
 
   .circle-btn span{
@@ -426,7 +391,7 @@ body{
   }
 
   .placeholder{
-    font-size:16px;
+    font-size:14px;
   }
 
 }
@@ -469,7 +434,7 @@ body{
     </div>
 
     <div class="hero-title">
-      Hi iam mebi<span class="spark"> ✦</span>
+      Hi iam mebi<span class="spark">✦</span>
     </div>
 
     <div class="divider">
@@ -495,7 +460,7 @@ body{
       </div>
 
       <div class="placeholder">
-        Put your documents or photos...
+        type your questions here
       </div>
 
     </div>
