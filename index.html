@@ -682,8 +682,17 @@ body{
   }
 
   .placeholder{
-    font-size:14px;
-  }
+  background:transparent;
+  border:none;
+  outline:none;
+
+  color:#7d756e;
+  font-size:17px;
+
+  width:100%;
+
+  font-family:'Poppins',sans-serif;
+}
 
 }
 
@@ -807,9 +816,11 @@ your study buddy
 <span>⌘</span>
 </div>
 
-<div class="placeholder">
-type your questions here
-</div>
+<input
+  type="text"
+  class="placeholder"
+  placeholder="type your questions here"
+  />
 
 </div>
 
