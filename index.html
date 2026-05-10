@@ -15,44 +15,39 @@
 }
 
 body{
+  background:#f4e8dc;
   font-family:
   -apple-system,
   BlinkMacSystemFont,
   "SF Pro Display",
-  "Segoe UI",
   sans-serif;
-
-  background:#f3e7da;
 
   overflow:hidden;
 }
 
-/* ========================= */
-/* APP */
-/* ========================= */
+/* MAIN APP */
 
 .app{
   width:100%;
   height:100vh;
 
   background:
-  radial-gradient(circle at top,#f7ede3 0%,#f3e7da 55%,#efe2d5 100%);
+  radial-gradient(circle at top,
+  #f7ede3 0%,
+  #f3e7da 55%,
+  #efe2d5 100%);
 
   position:relative;
 
   overflow:hidden;
 }
 
-/* SOFT LIGHT */
+/* SOFT BACKGROUND LIGHT */
 
 .app::before{
   content:"";
 
   position:absolute;
-  top:120px;
-  left:50%;
-
-  transform:translateX(-50%);
 
   width:420px;
   height:420px;
@@ -61,9 +56,12 @@ body{
 
   background:rgba(255,255,255,0.18);
 
-  filter:blur(80px);
+  filter:blur(90px);
 
-  pointer-events:none;
+  left:50%;
+  top:140px;
+
+  transform:translateX(-50%);
 }
 
 /* ========================= */
@@ -71,27 +69,21 @@ body{
 /* ========================= */
 
 .topbar{
-  height:92px;
+  height:88px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  padding:0 22px;
+  padding:0 26px;
 
   position:relative;
   z-index:5;
 }
 
-.top-left{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
 /* BUTTONS */
 
-.icon-btn{
+.glass-btn{
   width:58px;
   height:58px;
 
@@ -99,30 +91,39 @@ body{
 
   border-radius:50%;
 
+  background:
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,0.85),
+  rgba(255,255,255,0.45));
+
+  border:1px solid rgba(255,255,255,0.75);
+
+  backdrop-filter:blur(20px);
+
+  box-shadow:
+  0 10px 30px rgba(190,160,120,0.14),
+  inset 0 2px 4px rgba(255,255,255,0.95);
+
   color:#082b67;
 
   font-size:24px;
 
-  background:
-  linear-gradient(
-  180deg,
-  rgba(255,255,255,0.82),
-  rgba(255,255,255,0.42));
-
-  backdrop-filter:blur(20px);
-
-  border:1px solid rgba(255,255,255,0.7);
-
-  box-shadow:
-  0 10px 30px rgba(190,160,120,0.18),
-  inset 0 2px 4px rgba(255,255,255,0.95);
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
   cursor:pointer;
 }
 
 /* TITLE */
 
-.brand-text{
+.brand{
+  position:absolute;
+
+  left:50%;
+  transform:translateX(-50%);
+
   font-family:Georgia,serif;
 
   font-size:20px;
@@ -135,11 +136,11 @@ body{
 }
 
 /* ========================= */
-/* MAIN */
+/* CENTER AREA */
 /* ========================= */
 
-.main{
-  height:calc(100vh - 92px);
+.hero{
+  height:calc(100vh - 88px);
 
   display:flex;
   flex-direction:column;
@@ -149,11 +150,10 @@ body{
   padding-bottom:120px;
 
   position:relative;
+  z-index:2;
 }
 
-/* ========================= */
-/* LOGO */
-/* ========================= */
+/* LOGO WRAPPER */
 
 .logo-wrapper{
   position:relative;
@@ -164,8 +164,6 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-
-  margin-top:-10px;
 }
 
 /* RINGS */
@@ -175,7 +173,7 @@ body{
 
   border-radius:50%;
 
-  border:1px solid rgba(255,255,255,0.16);
+  border:1px solid rgba(255,255,255,0.14);
 }
 
 .ring1{
@@ -208,16 +206,16 @@ body{
   background:
   linear-gradient(
   180deg,
-  rgba(255,255,255,0.92),
-  rgba(255,255,255,0.52));
+  rgba(255,255,255,0.88),
+  rgba(255,255,255,0.48));
 
   border:1px solid rgba(255,255,255,0.85);
 
   backdrop-filter:blur(25px);
 
   box-shadow:
-  0 0 60px rgba(255,255,255,0.7),
-  0 20px 60px rgba(214,184,146,0.18),
+  0 0 60px rgba(255,255,255,0.55),
+  0 20px 60px rgba(214,184,146,0.14),
   inset 0 2px 10px rgba(255,255,255,0.95);
 
   overflow:hidden;
@@ -235,10 +233,10 @@ body{
   width:120px;
   height:240px;
 
-  background:rgba(255,255,255,0.22);
+  background:rgba(255,255,255,0.18);
 
+  left:-10px;
   top:-20px;
-  left:-5px;
 
   transform:rotate(18deg);
 
@@ -256,41 +254,39 @@ body{
 
   filter:
   drop-shadow(
-  0 6px 14px rgba(11,43,103,0.14));
+  0 6px 14px rgba(11,43,103,0.12));
 }
 
-/* ========================= */
-/* TEXTS */
-/* ========================= */
+/* TEXT */
 
-.hello{
-  margin-top:10px;
+.title{
+  margin-top:8px;
 
   font-size:62px;
-
-  line-height:1;
 
   font-family:Georgia,serif;
 
   font-weight:700;
 
+  color:#082b67;
+
   letter-spacing:-0.05em;
 
-  color:#082b67;
+  line-height:1;
 }
 
 .spark{
-  color:#d4aa5c;
+  color:#d3ab63;
 }
 
 /* DIVIDER */
 
 .divider{
+  margin-top:22px;
+
   display:flex;
   align-items:center;
   gap:14px;
-
-  margin-top:20px;
 }
 
 .line{
@@ -299,40 +295,44 @@ body{
 
   background:#d4aa5c;
 
-  opacity:0.5;
+  opacity:0.45;
 }
 
 .small-star{
   color:#d4aa5c;
+
+  font-size:18px;
 }
 
-/* SUB */
+/* SUBTITLE */
 
-.sub{
+.subtitle{
   margin-top:14px;
 
   font-size:26px;
 
   font-family:Georgia,serif;
 
-  color:#b88d49;
+  color:#b58b45;
 }
 
 /* ========================= */
 /* INPUT BAR */
 /* ========================= */
 
-.bottombar{
+.bottom-bar{
   position:absolute;
 
+  left:20px;
+  right:20px;
   bottom:24px;
-  left:18px;
-  right:18px;
+
+  z-index:10;
 }
 
-/* INPUT */
+/* INPUT CONTAINER */
 
-.input-row{
+.input-box{
   height:84px;
 
   border-radius:999px;
@@ -343,18 +343,19 @@ body{
   rgba(255,255,255,0.82),
   rgba(255,255,255,0.42));
 
-  backdrop-filter:blur(25px);
-
   border:1px solid rgba(255,255,255,0.82);
 
-  box-shadow:
-  0 20px 45px rgba(190,160,120,0.18),
-  inset 0 1px 3px rgba(255,255,255,0.95);
+  backdrop-filter:blur(24px);
 
-  padding:0 14px;
+  box-shadow:
+  0 20px 45px rgba(190,160,120,0.14),
+  inset 0 1px 3px rgba(255,255,255,0.95);
 
   display:flex;
   align-items:center;
+
+  padding:0 14px;
+
   gap:12px;
 
   overflow:hidden;
@@ -364,7 +365,7 @@ body{
 
 /* REFLECTION */
 
-.input-row::before{
+.input-box::before{
   content:"";
 
   position:absolute;
@@ -372,9 +373,9 @@ body{
   width:150px;
   height:220px;
 
-  background:rgba(255,255,255,0.22);
+  background:rgba(255,255,255,0.18);
 
-  left:75px;
+  left:70px;
   top:-40px;
 
   transform:rotate(18deg);
@@ -384,7 +385,7 @@ body{
 
 /* BUTTONS */
 
-.upload-btn,
+.attach-btn,
 .send-btn{
   width:52px;
   height:52px;
@@ -398,14 +399,14 @@ body{
   cursor:pointer;
 }
 
-/* UPLOAD */
+/* ATTACH */
 
-.upload-btn{
+.attach-btn{
   background:
   linear-gradient(
   180deg,
-  rgba(255,255,255,0.9),
-  rgba(255,255,255,0.5));
+  rgba(255,255,255,0.92),
+  rgba(255,255,255,0.52));
 
   color:#b58b45;
 
@@ -428,17 +429,17 @@ body{
 
   color:#8a5f1c;
 
-  font-size:22px;
+  font-size:24px;
 
   box-shadow:
-  0 10px 25px rgba(181,139,69,0.25);
+  0 10px 25px rgba(181,139,69,0.22);
 
   z-index:2;
 }
 
-/* INPUT FIELD */
+/* INPUT */
 
-.input-row input{
+.input-box input{
   flex:1;
 
   border:none;
@@ -453,29 +454,27 @@ body{
   z-index:2;
 }
 
-.input-row input::placeholder{
+.input-box input::placeholder{
   color:#8f847a;
 }
 
-/* ========================= */
 /* MOBILE */
-/* ========================= */
 
 @media(max-width:480px){
 
-  .brand-text{
+  .brand{
     font-size:18px;
   }
 
   .logo-wrapper{
-    transform:scale(0.92);
+    transform:scale(0.94);
   }
 
-  .hello{
+  .title{
     font-size:56px;
   }
 
-  .sub{
+  .subtitle{
     font-size:22px;
   }
 
@@ -492,27 +491,23 @@ body{
 
   <header class="topbar">
 
-    <div class="top-left">
+    <button class="glass-btn">
+      ☰
+    </button>
 
-      <button class="icon-btn">
-        ☰
-      </button>
-
-      <div class="brand-text">
-        Sanitas Melete
-      </div>
-
+    <div class="brand">
+      Sanitas Melete
     </div>
 
-    <button class="icon-btn">
+    <button class="glass-btn">
       ∞
     </button>
 
   </header>
 
-  <!-- MAIN -->
+  <!-- HERO -->
 
-  <main class="main">
+  <section class="hero">
 
     <div class="logo-wrapper">
 
@@ -530,7 +525,7 @@ body{
 
     </div>
 
-    <div class="hello">
+    <div class="title">
       Hi iam mebi<span class="spark">✦</span>
     </div>
 
@@ -546,19 +541,19 @@ body{
 
     </div>
 
-    <div class="sub">
+    <div class="subtitle">
       your study buddy
     </div>
 
-  </main>
+  </section>
 
-  <!-- INPUT BAR -->
+  <!-- INPUT -->
 
-  <footer class="bottombar">
+  <div class="bottom-bar">
 
-    <div class="input-row">
+    <div class="input-box">
 
-      <button class="upload-btn">
+      <button class="attach-btn">
         ⎋
       </button>
 
@@ -573,7 +568,7 @@ body{
 
     </div>
 
-  </footer>
+  </div>
 
 </div>
 
