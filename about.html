@@ -1,541 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Sanitas Melete AI</title>
+  <title>About – SANITAS MELETE</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-<style>
+  <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    width:100%;
-    height:100%;
-}
-
-body{
-    width:100%;
-    min-height:100vh;
-
-    background:#f8f1e8;
-    font-family:'Poppins',sans-serif;
-
-    color:#0b2c74;
-
-    position:relative;
-}
-
-/* SOFT PREMIUM GLOW */
-
-body::before{
-    content:"";
-
-    position:fixed;
-    inset:0;
-
-    background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.75), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(255,255,255,0.45), transparent 35%);
-
-    z-index:-1;
-}
-
-/* TOPBAR */
-
-.topbar{
-    position:fixed;
-
-    top:0;
-    left:0;
-    right:0;
-
-    padding:28px 42px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    z-index:999;
-}
-
-.left-top{
-    display:flex;
-    align-items:center;
-    gap:18px;
-}
-
-.menu-btn,
-.logo-btn{
-    width:74px;
-    height:74px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,0.28);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,0.55);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    box-shadow:
-    inset 0 1px 1px rgba(255,255,255,0.8),
-    0 8px 25px rgba(0,0,0,0.04);
-}
-
-.menu-btn{
-    font-size:34px;
-}
-
-.logo-btn{
-    font-size:36px;
-}
-
-.brand{
-    font-size:38px;
-
-    font-family:'Cormorant Garamond',serif;
-    font-weight:600;
-}
-
-/* HERO SECTION */
-
-.hero{
-    width:100vw;
-    min-height:100vh;
-
-    display:flex;
-    flex-direction:column;
-
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    position:relative;
-
-    padding-top:120px;
-    padding-bottom:60px;
-}
-
-.hero-logo-circle{
-    width:min(42vw,520px);
-    height:min(42vw,520px);
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,0.16);
-
-    border:1px solid rgba(255,255,255,0.5);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    margin-bottom:40px;
-
-    box-shadow:
-    inset 0 1px 1px rgba(255,255,255,0.7),
-    0 18px 50px rgba(0,0,0,0.03);
-}
-
-.hero-logo{
-    font-size:min(14vw,180px);
-
-    color:#0b2c74;
-}
-
-.hero h1{
-    font-size:min(7vw,110px);
-
-    font-family:'Cormorant Garamond',serif;
-
-    font-weight:700;
-
-    margin-bottom:10px;
-}
-
-.hero-line{
-    display:flex;
-    align-items:center;
-    gap:18px;
-
-    color:#c79c36;
-
-    margin-bottom:14px;
-}
-
-.hero-line span{
-    width:min(12vw,150px);
-    height:1px;
-
-    background:#c79c36;
-}
-
-.hero p{
-    font-size:min(2vw,34px);
-
-    color:#b48a2f;
-}
-
-/* CHAT AREA */
-
-#chatContainer{
-    width:100%;
-
-    display:flex;
-    flex-direction:column;
-
-    gap:24px;
-
-    padding:30px 40px 180px;
-}
-
-/* MESSAGES */
-
-.message{
-    width:fit-content;
-
-    max-width:700px;
-
-    padding:22px 28px;
-
-    border-radius:34px;
-
-    font-size:22px;
-
-    line-height:1.7;
-
-    word-wrap:break-word;
-}
-
-.user{
-    align-self:flex-end;
-
-    background:#0b2c74;
-
-    color:white;
-}
-
-.ai{
-    align-self:flex-start;
-
-    background:rgba(255,255,255,0.42);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    border:1px solid rgba(255,255,255,0.55);
-
-    color:#0b2c74;
-}
-
-/* INPUT AREA */
-
-.input-area{
-    position:fixed;
-
-    left:28px;
-    right:28px;
-    bottom:20px;
-
-    height:92px;
-
-    background:rgba(255,255,255,0.4);
-
-    backdrop-filter:blur(18px);
-    -webkit-backdrop-filter:blur(18px);
-
-    border-radius:50px;
-
-    border:1px solid rgba(255,255,255,0.55);
-
-    display:flex;
-    align-items:center;
-
-    padding:0 18px;
-
-    z-index:1000;
-
-    box-shadow:
-    inset 0 1px 1px rgba(255,255,255,0.75),
-    0 10px 30px rgba(0,0,0,0.04);
-}
-
-.left-icon{
-    width:58px;
-    height:58px;
-
-    border-radius:50%;
-
-    background:rgba(255,255,255,0.65);
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    font-size:28px;
-
-    color:#c79c36;
-
-    margin-right:14px;
-}
-
-#userInput{
-    flex:1;
-
-    border:none;
-    outline:none;
-
-    background:transparent;
-
-    font-size:22px;
-
-    color:#555;
-}
-
-#sendBtn{
-    width:60px;
-    height:60px;
-
-    border:none;
-
-    border-radius:50%;
-
-    background:white;
-
-    color:#b48a2f;
-
-    font-size:32px;
-
-    cursor:pointer;
-}
-
-/* MOBILE */
-
-@media(max-width:768px){
-
-    .topbar{
-        padding:22px 20px;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    .menu-btn,
-    .logo-btn{
-        width:60px;
-        height:60px;
+    body{
+      min-height:100vh;
+      background:#f8f1e8;
+      font-family:'Poppins',sans-serif;
+      color:#0b2c74;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      padding:25px;
+      overflow-x:hidden;
     }
 
-    .menu-btn{
-        font-size:28px;
+    /* SOFT BACKGROUND GLOW */
+    body::before{
+      content:"";
+      position:fixed;
+      inset:0;
+      background:
+      radial-gradient(circle at top left, rgba(255,255,255,0.7), transparent 35%),
+      radial-gradient(circle at bottom right, rgba(255,255,255,0.55), transparent 35%);
+      z-index:-1;
     }
 
-    .logo-btn{
-        font-size:30px;
+    .container{
+      width:100%;
+      max-width:850px;
+
+      padding:40px 30px;
+
+      border-radius:32px;
+
+      background:rgba(255,255,255,0.38);
+
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+
+      border:1px solid rgba(255,255,255,0.45);
+
+      box-shadow:
+      0 8px 30px rgba(0,0,0,0.06),
+      inset 0 1px 1px rgba(255,255,255,0.5);
     }
 
-    .brand{
-        font-size:22px;
+    .logo-wrap{
+      width:110px;
+      height:110px;
+
+      margin:auto;
+      margin-bottom:28px;
+
+      border-radius:50%;
+
+      background:rgba(255,255,255,0.35);
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border:1px solid rgba(255,255,255,0.5);
+
+      box-shadow:
+      inset 0 1px 1px rgba(255,255,255,0.7),
+      0 8px 25px rgba(0,0,0,0.05);
     }
 
-    .hero{
-        padding-top:120px;
+    .logo{
+      font-size:52px;
+      color:#0b2c74;
+      font-weight:600;
     }
 
-    .hero-logo-circle{
-        width:240px;
-        height:240px;
+    h1{
+      text-align:center;
+      font-size:48px;
+      font-family:'Cormorant Garamond',serif;
+      font-weight:700;
+      margin-bottom:25px;
+      color:#0b2c74;
+      letter-spacing:0.5px;
     }
 
-    .hero-logo{
-        font-size:84px;
+    h2{
+      font-size:28px;
+      font-family:'Cormorant Garamond',serif;
+      margin-top:35px;
+      margin-bottom:14px;
+      color:#0b2c74;
     }
 
-    .hero h1{
-        font-size:52px;
+    p{
+      font-size:16px;
+      line-height:1.9;
+      color:#233876;
     }
 
-    .hero-line span{
-        width:70px;
+    ul{
+      padding-left:22px;
+      line-height:2;
+      color:#233876;
+      margin-top:10px;
     }
 
-    .hero p{
-        font-size:20px;
+    li{
+      margin-bottom:4px;
     }
 
-    #chatContainer{
-        padding:25px 18px 150px;
+    .founder{
+      margin-top:35px;
+      font-size:14px;
+      opacity:0.75;
+      text-align:center;
     }
 
-    .message{
-        max-width:85%;
+    .back-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
 
-        font-size:17px;
+      margin-top:35px;
 
-        padding:18px 20px;
+      padding:14px 24px;
+
+      border-radius:50px;
+
+      text-decoration:none;
+
+      background:#0b2c74;
+      color:white;
+
+      font-weight:500;
+
+      transition:0.3s ease;
     }
 
-    .input-area{
-        left:16px;
-        right:16px;
-        bottom:16px;
-
-        height:78px;
+    .back-btn:hover{
+      transform:translateY(-2px);
+      opacity:0.92;
     }
 
-    .left-icon,
-    #sendBtn{
-        width:50px;
-        height:50px;
-
-        font-size:26px;
+    .back-wrap{
+      text-align:center;
     }
 
-    #userInput{
-        font-size:18px;
+    @media (max-width:600px){
+
+      .container{
+        padding:32px 22px;
+      }
+
+      h1{
+        font-size:38px;
+      }
+
+      h2{
+        font-size:24px;
+      }
+
+      p,
+      li{
+        font-size:15px;
+      }
+
+      .logo-wrap{
+        width:95px;
+        height:95px;
+      }
+
+      .logo{
+        font-size:44px;
+      }
+
     }
 
-}
-
-</style>
+  </style>
 </head>
 
 <body>
 
-<!-- TOPBAR -->
+  <div class="container">
 
-<div class="topbar">
-
-    <div class="left-top">
-
-        <div class="menu-btn">
-            ☰
-        </div>
-
-        <div class="brand">
-            Sanitas Melete
-        </div>
-
+    <!-- LOGO -->
+    <div class="logo-wrap">
+      <div class="logo">∞</div>
     </div>
 
-    <div class="logo-btn">
-        ∞
+    <!-- TITLE -->
+    <h1>About SANITAS MELETE</h1>
+
+    <!-- DESCRIPTION -->
+    <p>
+      Sanitas Melete is a free AI-powered study platform created for NEET, JEE,
+      and competitive exam students across India.
+      Ask doubts, get instant explanations, solve MCQs, view PYQs,
+      and learn smarter with the help of AI.
+    </p>
+
+    <!-- FEATURES -->
+    <h2>✨ What We Provide</h2>
+
+    <ul>
+      <li>⚡ Instant AI Answers</li>
+      <li>📘 Notes for NEET & JEE</li>
+      <li>❓ MCQs with step-by-step solutions</li>
+      <li>📄 Previous Year Questions (PYQs)</li>
+      <li>🧠 24/7 Study Assistant</li>
+    </ul>
+
+    <!-- GOAL -->
+    <h2>🎯 Our Goal</h2>
+
+    <p>
+      To help every student in India study smarter using technology —
+      completely free, simple, elegant, and accessible from any device.
+    </p>
+
+    <!-- FOUNDER -->
+    <p class="founder">
+      Built by SK
+    </p>
+
+    <!-- BACK BUTTON -->
+    <div class="back-wrap">
+      <a href="index.html" class="back-btn">
+        ← Back to Home
+      </a>
     </div>
 
-</div>
-
-<!-- HERO -->
-
-<section class="hero">
-
-    <div class="hero-logo-circle">
-        <div class="hero-logo">∞</div>
-    </div>
-
-    <h1>Hi iam mebi</h1>
-
-    <div class="hero-line">
-        <span></span>
-        ✦
-        <span></span>
-    </div>
-
-    <p>your study buddy</p>
-
-</section>
-
-<!-- CHAT AREA -->
-
-<section id="chatContainer"></section>
-
-<!-- INPUT BAR -->
-
-<div class="input-area">
-
-    <div class="left-icon">
-        ⌘
-    </div>
-
-    <input
-        type="text"
-        id="userInput"
-        placeholder="type your questions here"
-    >
-
-    <button id="sendBtn">
-        ↑
-    </button>
-
-</div>
-
-<script>
-
-const userInput = document.getElementById("userInput");
-const sendBtn = document.getElementById("sendBtn");
-const chatContainer = document.getElementById("chatContainer");
-
-function addMessage(text,type){
-
-    const msg = document.createElement("div");
-
-    msg.classList.add("message");
-    msg.classList.add(type);
-
-    msg.innerText = text;
-
-    chatContainer.appendChild(msg);
-
-    window.scrollTo({
-        top:document.body.scrollHeight,
-        behavior:"smooth"
-    });
-}
-
-function sendMessage(){
-
-    const text = userInput.value.trim();
-
-    if(text === "") return;
-
-    addMessage(text,"user");
-
-    userInput.value = "";
-
-    setTimeout(()=>{
-
-        addMessage(
-`Hello there! 😊
-
-I am MEBI, your study buddy.
-How can I help you today?`,
-            "ai"
-        );
-
-    },700);
-}
-
-sendBtn.addEventListener("click",sendMessage);
-
-userInput.addEventListener("keypress",function(e){
-
-    if(e.key === "Enter"){
-        sendMessage();
-    }
-
-});
-
-</script>
+  </div>
 
 </body>
 </html>
