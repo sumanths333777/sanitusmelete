@@ -262,100 +262,108 @@ body{
 }
 @media(max-width:768px){
 
-  body{
-    overflow:hidden;
-  }
-
   .top-bar{
-    padding:24px 22px;
+    padding:22px 20px;
   }
 
   .brand{
-    font-size:17px;
+    font-size:16px;
   }
 
   .glass-btn{
+    width:48px;
+    height:48px;
+  }
+
+  .glass-btn i{
+    font-size:22px;
+  }
+
+  /* MAIN CENTER FIX */
+
+  .center{
+    position:absolute;
+    top:52%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:100%;
+    padding:0 20px;
+    text-align:center;
+  }
+
+  /* LOGO */
+
+  .logo-ring{
+    width:220px;
+    height:220px;
+    margin:auto;
+  }
+
+  .logo-ring::before{
+    width:270px;
+    height:270px;
+  }
+
+  .infinity{
+    font-size:105px;
+  }
+
+  /* TEXT */
+
+  .hero-title{
+    margin-top:28px;
+    font-size:30px;
+    line-height:1;
+  }
+
+  .divider{
+    width:180px;
+    margin:12px auto 10px;
+    gap:12px;
+  }
+
+  .divider span{
+    width:60px;
+  }
+
+  .divider p{
+    font-size:16px;
+  }
+
+  .sub{
+    font-size:18px;
+    line-height:1;
+  }
+
+  /* SEARCH BAR */
+
+  .search-wrap{
+    width:92%;
+    height:78px;
+    bottom:14px;
+    border-radius:30px;
+    padding:0 14px;
+  }
+
+  .search-left{
+    gap:12px;
+  }
+
+  .circle-btn{
     width:50px;
     height:50px;
   }
 
-  .glass-btn i{
-    font-size:24px;
-  }
-
-  /* CENTER PERFECT ALIGN */
-
-  .center{
-    width:100%;
-    top:50%;
-    transform:translate(-50%,-50%);
-    padding:0 18px;
-  }
-
-  .logo-ring{
-    width:240px;
-    height:240px;
-  }
-
-  .logo-ring::before{
-    width:300px;
-    height:300px;
-  }
-
-  .infinity{
-    font-size:120px;
-  }
-
-  .hero-title{
-    margin-top:42px;
-    font-size:34px;
-    line-height:1.1;
-    text-align:center;
-  }
-
-  .divider{
-    width:200px;
-    margin-top:14px;
-  }
-
-  .divider span{
-    width:70px;
-  }
-
-  .sub{
-    font-size:21px;
-    margin-top:4px;
-  }
-
-  /* SEARCH BAR FIX */
-
-  .search-wrap{
-    width:92%;
-    height:82px;
-    bottom:18px;
-    border-radius:32px;
-    padding:0 16px;
-  }
-
-  .search-left{
-    gap:14px;
-  }
-
-  .circle-btn{
-    width:52px;
-    height:52px;
-    flex-shrink:0;
-  }
-
   .circle-btn span{
-    font-size:28px;
+    font-size:26px;
   }
 
   .placeholder{
-    font-size:15px;
-    line-height:1.2;
+    font-size:14px;
+    white-space:nowrap;
   }
 
+}
 }
 
 }
