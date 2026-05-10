@@ -15,17 +15,17 @@
 }
 
 body{
-  background:#f4e8dc;
+  background:#f3e7da;
+  overflow:hidden;
+
   font-family:
   -apple-system,
   BlinkMacSystemFont,
   "SF Pro Display",
   sans-serif;
-
-  overflow:hidden;
 }
 
-/* MAIN APP */
+/* APP */
 
 .app{
   width:100%;
@@ -42,7 +42,7 @@ body{
   overflow:hidden;
 }
 
-/* SOFT BACKGROUND LIGHT */
+/* LIGHT */
 
 .app::before{
   content:"";
@@ -54,38 +54,36 @@ body{
 
   border-radius:50%;
 
-  background:rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.16);
 
   filter:blur(90px);
 
   left:50%;
-  top:140px;
+  top:130px;
 
   transform:translateX(-50%);
 }
 
-/* ========================= */
 /* TOPBAR */
-/* ========================= */
 
 .topbar{
-  height:88px;
+  height:90px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  padding:0 26px;
+  padding:0 32px;
 
   position:relative;
-  z-index:5;
+  z-index:10;
 }
 
 /* BUTTONS */
 
 .glass-btn{
-  width:58px;
-  height:58px;
+  width:52px;
+  height:52px;
 
   border:none;
 
@@ -94,20 +92,20 @@ body{
   background:
   linear-gradient(
   180deg,
-  rgba(255,255,255,0.85),
-  rgba(255,255,255,0.45));
+  rgba(255,255,255,0.82),
+  rgba(255,255,255,0.42));
 
   border:1px solid rgba(255,255,255,0.75);
 
   backdrop-filter:blur(20px);
 
   box-shadow:
-  0 10px 30px rgba(190,160,120,0.14),
+  0 8px 24px rgba(190,160,120,0.12),
   inset 0 2px 4px rgba(255,255,255,0.95);
 
   color:#082b67;
 
-  font-size:24px;
+  font-size:22px;
 
   display:flex;
   align-items:center;
@@ -116,7 +114,7 @@ body{
   cursor:pointer;
 }
 
-/* TITLE */
+/* BRAND */
 
 .brand{
   position:absolute;
@@ -126,40 +124,36 @@ body{
 
   font-family:Georgia,serif;
 
-  font-size:20px;
+  font-size:18px;
 
   font-weight:600;
 
   color:#082b67;
-
-  letter-spacing:-0.03em;
 }
 
-/* ========================= */
-/* CENTER AREA */
-/* ========================= */
+/* HERO */
 
 .hero{
-  height:calc(100vh - 88px);
+  height:calc(100vh - 90px);
 
   display:flex;
   flex-direction:column;
   align-items:center;
   justify-content:center;
 
-  padding-bottom:120px;
+  padding-bottom:90px;
 
   position:relative;
-  z-index:2;
+  z-index:5;
 }
 
-/* LOGO WRAPPER */
+/* LOGO */
 
 .logo-wrapper{
   position:relative;
 
-  width:340px;
-  height:340px;
+  width:260px;
+  height:260px;
 
   display:flex;
   align-items:center;
@@ -173,29 +167,29 @@ body{
 
   border-radius:50%;
 
-  border:1px solid rgba(255,255,255,0.14);
+  border:1px solid rgba(255,255,255,0.12);
 }
 
 .ring1{
-  width:240px;
-  height:240px;
+  width:220px;
+  height:220px;
 }
 
 .ring2{
-  width:300px;
-  height:300px;
+  width:270px;
+  height:270px;
 }
 
 .ring3{
-  width:360px;
-  height:360px;
+  width:320px;
+  height:320px;
 }
 
 /* ORB */
 
 .logo-orb{
-  width:220px;
-  height:220px;
+  width:170px;
+  height:170px;
 
   border-radius:50%;
 
@@ -207,20 +201,20 @@ body{
   linear-gradient(
   180deg,
   rgba(255,255,255,0.88),
-  rgba(255,255,255,0.48));
+  rgba(255,255,255,0.46));
 
-  border:1px solid rgba(255,255,255,0.85);
+  border:1px solid rgba(255,255,255,0.82);
 
   backdrop-filter:blur(25px);
 
   box-shadow:
-  0 0 60px rgba(255,255,255,0.55),
-  0 20px 60px rgba(214,184,146,0.14),
+  0 0 40px rgba(255,255,255,0.45),
+  0 14px 40px rgba(214,184,146,0.10),
   inset 0 2px 10px rgba(255,255,255,0.95);
 
-  overflow:hidden;
-
   position:relative;
+
+  overflow:hidden;
 }
 
 /* REFLECTION */
@@ -230,12 +224,12 @@ body{
 
   position:absolute;
 
-  width:120px;
-  height:240px;
+  width:90px;
+  height:180px;
 
-  background:rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.14);
 
-  left:-10px;
+  left:-5px;
   top:-20px;
 
   transform:rotate(18deg);
@@ -246,23 +240,21 @@ body{
 /* INFINITY */
 
 .infinity{
-  font-size:120px;
+  font-size:92px;
 
   font-weight:700;
 
   color:#082b67;
-
-  filter:
-  drop-shadow(
-  0 6px 14px rgba(11,43,103,0.12));
 }
 
-/* TEXT */
+/* TITLE */
 
 .title{
-  margin-top:8px;
+  margin-top:-6px;
 
-  font-size:62px;
+  font-size:38px;
+
+  line-height:1;
 
   font-family:Georgia,serif;
 
@@ -270,27 +262,25 @@ body{
 
   color:#082b67;
 
-  letter-spacing:-0.05em;
-
-  line-height:1;
+  letter-spacing:-0.04em;
 }
 
 .spark{
-  color:#d3ab63;
+  color:#d4aa5c;
 }
 
 /* DIVIDER */
 
 .divider{
-  margin-top:22px;
+  margin-top:16px;
 
   display:flex;
   align-items:center;
-  gap:14px;
+  gap:12px;
 }
 
 .line{
-  width:90px;
+  width:70px;
   height:1px;
 
   background:#d4aa5c;
@@ -301,39 +291,37 @@ body{
 .small-star{
   color:#d4aa5c;
 
-  font-size:18px;
+  font-size:16px;
 }
 
 /* SUBTITLE */
 
 .subtitle{
-  margin-top:14px;
+  margin-top:10px;
 
-  font-size:26px;
+  font-size:18px;
 
   font-family:Georgia,serif;
 
   color:#b58b45;
 }
 
-/* ========================= */
-/* INPUT BAR */
-/* ========================= */
+/* BOTTOM BAR */
 
 .bottom-bar{
   position:absolute;
 
-  left:20px;
-  right:20px;
-  bottom:24px;
+  left:18px;
+  right:18px;
+  bottom:18px;
 
   z-index:10;
 }
 
-/* INPUT CONTAINER */
+/* INPUT BOX */
 
 .input-box{
-  height:84px;
+  height:72px;
 
   border-radius:999px;
 
@@ -348,19 +336,19 @@ body{
   backdrop-filter:blur(24px);
 
   box-shadow:
-  0 20px 45px rgba(190,160,120,0.14),
+  0 14px 35px rgba(190,160,120,0.12),
   inset 0 1px 3px rgba(255,255,255,0.95);
 
   display:flex;
   align-items:center;
 
-  padding:0 14px;
+  padding:0 12px;
 
-  gap:12px;
-
-  overflow:hidden;
+  gap:10px;
 
   position:relative;
+
+  overflow:hidden;
 }
 
 /* REFLECTION */
@@ -370,25 +358,25 @@ body{
 
   position:absolute;
 
-  width:150px;
-  height:220px;
+  width:120px;
+  height:200px;
 
-  background:rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.14);
 
-  left:70px;
-  top:-40px;
+  left:60px;
+  top:-30px;
 
   transform:rotate(18deg);
 
-  filter:blur(12px);
+  filter:blur(10px);
 }
 
 /* BUTTONS */
 
 .attach-btn,
 .send-btn{
-  width:52px;
-  height:52px;
+  width:46px;
+  height:46px;
 
   border:none;
 
@@ -405,15 +393,15 @@ body{
   background:
   linear-gradient(
   180deg,
-  rgba(255,255,255,0.92),
-  rgba(255,255,255,0.52));
+  rgba(255,255,255,0.9),
+  rgba(255,255,255,0.5));
 
   color:#b58b45;
 
-  font-size:22px;
+  font-size:20px;
 
   box-shadow:
-  0 8px 20px rgba(181,139,69,0.12);
+  0 6px 16px rgba(181,139,69,0.10);
 
   z-index:2;
 }
@@ -429,10 +417,10 @@ body{
 
   color:#8a5f1c;
 
-  font-size:24px;
+  font-size:22px;
 
   box-shadow:
-  0 10px 25px rgba(181,139,69,0.22);
+  0 8px 18px rgba(181,139,69,0.16);
 
   z-index:2;
 }
@@ -447,7 +435,7 @@ body{
 
   background:transparent;
 
-  font-size:16px;
+  font-size:15px;
 
   color:#7d7268;
 
@@ -458,36 +446,12 @@ body{
   color:#8f847a;
 }
 
-/* MOBILE */
-
-@media(max-width:480px){
-
-  .brand{
-    font-size:18px;
-  }
-
-  .logo-wrapper{
-    transform:scale(0.94);
-  }
-
-  .title{
-    font-size:56px;
-  }
-
-  .subtitle{
-    font-size:22px;
-  }
-
-}
-
 </style>
 </head>
 
 <body>
 
 <div class="app">
-
-  <!-- TOPBAR -->
 
   <header class="topbar">
 
@@ -505,8 +469,6 @@ body{
 
   </header>
 
-  <!-- HERO -->
-
   <section class="hero">
 
     <div class="logo-wrapper">
@@ -516,11 +478,7 @@ body{
       <div class="ring ring3"></div>
 
       <div class="logo-orb">
-
-        <div class="infinity">
-          ∞
-        </div>
-
+        <div class="infinity">∞</div>
       </div>
 
     </div>
@@ -546,8 +504,6 @@ body{
     </div>
 
   </section>
-
-  <!-- INPUT -->
 
   <div class="bottom-bar">
 
