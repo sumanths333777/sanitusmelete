@@ -27,17 +27,13 @@ body{
   background:#efe3d6;
 }
 
-/* APP */
+/* MAIN */
 
 .app{
   width:100%;
   height:100dvh;
-
   position:relative;
   overflow:hidden;
-
-  display:flex;
-  flex-direction:column;
 
   background:
   radial-gradient(circle at top,
@@ -50,27 +46,24 @@ body{
 
 .top-bar{
   width:100%;
-
   display:flex;
   justify-content:space-between;
   align-items:center;
 
-  padding:clamp(18px,2vw,30px)
-          clamp(18px,2.5vw,38px)
-          0;
+  padding:28px 38px 0;
 }
 
 .left-top{
   display:flex;
   align-items:center;
-  gap:clamp(10px,1vw,16px);
+  gap:16px;
 }
 
-/* GLASS BUTTON */
+/* BUTTONS */
 
 .glass-btn{
-  width:clamp(44px,4vw,62px);
-  height:clamp(44px,4vw,62px);
+  width:58px;
+  height:58px;
 
   border-radius:50%;
 
@@ -81,13 +74,13 @@ body{
   background:
   linear-gradient(
   145deg,
-  rgba(255,255,255,0.76),
+  rgba(255,255,255,0.75),
   rgba(255,255,255,0.18)
   );
 
   border:1px solid rgba(255,255,255,0.72);
 
-  backdrop-filter:blur(16px);
+  backdrop-filter:blur(18px);
 
   box-shadow:
   inset 0 1px 1px rgba(255,255,255,0.8),
@@ -97,7 +90,7 @@ body{
 .glass-btn i{
   font-style:normal;
   color:#062d71;
-  font-size:clamp(18px,1.7vw,28px);
+  font-size:26px;
 }
 
 /* BRAND */
@@ -105,36 +98,35 @@ body{
 .brand{
   color:#062d71;
 
-  font-size:clamp(15px,2vw,32px);
+  font-size:30px;
 
   font-family:'Cormorant Garamond',serif;
 
   font-weight:600;
 }
 
-/* CENTER */
+/* CENTER AREA */
 
 .center{
-  flex:1;
+  position:absolute;
 
-  display:flex;
-  flex-direction:column;
+  top:48%;
+  left:50%;
 
-  align-items:center;
-  justify-content:center;
+  transform:translate(-50%,-50%);
+
+  width:100%;
 
   text-align:center;
-
-  padding:20px;
-
-  margin-top:clamp(-10px,-2vw,-40px);
 }
 
 /* LOGO */
 
 .logo-ring{
-  width:clamp(190px,24vw,330px);
-  height:clamp(190px,24vw,330px);
+  width:290px;
+  height:290px;
+
+  margin:auto;
 
   border-radius:50%;
 
@@ -163,8 +155,8 @@ body{
 
   position:absolute;
 
-  width:clamp(240px,30vw,420px);
-  height:clamp(240px,30vw,420px);
+  width:360px;
+  height:360px;
 
   border-radius:50%;
 
@@ -174,21 +166,19 @@ body{
 }
 
 .infinity{
-  font-size:clamp(92px,10vw,160px);
-
+  font-size:132px;
   color:#062d71;
-
   z-index:2;
 }
 
 /* TITLE */
 
 .hero-title{
-  margin-top:clamp(24px,3vw,42px);
+  margin-top:34px;
 
   color:#062d71;
 
-  font-size:clamp(30px,5vw,62px);
+  font-size:64px;
 
   font-family:'Cormorant Garamond',serif;
 
@@ -204,27 +194,26 @@ body{
 /* DIVIDER */
 
 .divider{
-  width:clamp(170px,22vw,280px);
+  width:260px;
 
-  margin:clamp(12px,1.5vw,18px) auto;
+  margin:18px auto;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  gap:clamp(10px,1vw,16px);
+  gap:14px;
 }
 
 .divider span{
-  width:clamp(55px,8vw,95px);
+  width:90px;
   height:1px;
   background:#c79a3d;
 }
 
 .divider p{
   color:#c79a3d;
-
-  font-size:clamp(14px,1vw,18px);
+  font-size:18px;
 }
 
 /* SUBTEXT */
@@ -232,7 +221,7 @@ body{
 .sub{
   color:#b78633;
 
-  font-size:clamp(18px,2vw,32px);
+  font-size:30px;
 
   font-family:'Cormorant Garamond',serif;
 }
@@ -243,17 +232,16 @@ body{
   position:absolute;
 
   left:50%;
-  bottom:clamp(12px,2vw,20px);
+  bottom:20px;
 
   transform:translateX(-50%);
 
-  width:min(94%,1500px);
+  width:92%;
+  height:78px;
 
-  height:clamp(72px,6vw,92px);
+  border-radius:32px;
 
-  border-radius:clamp(28px,3vw,36px);
-
-  padding:0 clamp(12px,1.5vw,20px);
+  padding:0 16px;
 
   display:flex;
   align-items:center;
@@ -278,14 +266,12 @@ body{
 .search-left{
   display:flex;
   align-items:center;
-  gap:clamp(10px,1vw,16px);
+  gap:14px;
 }
 
-/* BUTTONS */
-
 .circle-btn{
-  width:clamp(44px,4vw,58px);
-  height:clamp(44px,4vw,58px);
+  width:50px;
+  height:50px;
 
   border-radius:50%;
 
@@ -309,16 +295,105 @@ body{
 
 .circle-btn span{
   color:#b8862e;
-
-  font-size:clamp(20px,1.6vw,28px);
+  font-size:24px;
 }
-
-/* PLACEHOLDER */
 
 .placeholder{
   color:#7d756e;
+  font-size:17px;
+}
 
-  font-size:clamp(14px,1.2vw,18px);
+/* ================= MOBILE ================= */
+
+@media (max-width:768px){
+
+  .top-bar{
+    padding:22px 18px 0;
+  }
+
+  .left-top{
+    gap:12px;
+  }
+
+  .brand{
+    font-size:15px;
+  }
+
+  .glass-btn{
+    width:44px;
+    height:44px;
+  }
+
+  .glass-btn i{
+    font-size:20px;
+  }
+
+  .center{
+    top:50%;
+  }
+
+  .logo-ring{
+    width:190px;
+    height:190px;
+  }
+
+  .logo-ring::before{
+    width:240px;
+    height:240px;
+  }
+
+  .infinity{
+    font-size:92px;
+  }
+
+  .hero-title{
+    margin-top:24px;
+    font-size:30px;
+  }
+
+  .divider{
+    width:170px;
+    margin:12px auto;
+    gap:10px;
+  }
+
+  .divider span{
+    width:55px;
+  }
+
+  .divider p{
+    font-size:14px;
+  }
+
+  .sub{
+    font-size:18px;
+  }
+
+  .search-wrap{
+    width:93%;
+    height:72px;
+    bottom:12px;
+    border-radius:28px;
+    padding:0 12px;
+  }
+
+  .search-left{
+    gap:10px;
+  }
+
+  .circle-btn{
+    width:44px;
+    height:44px;
+  }
+
+  .circle-btn span{
+    font-size:22px;
+  }
+
+  .placeholder{
+    font-size:14px;
+  }
+
 }
 
 </style>
@@ -328,7 +403,7 @@ body{
 
 <div class="app">
 
-  <!-- TOP BAR -->
+  <!-- TOP -->
 
   <div class="top-bar">
 
