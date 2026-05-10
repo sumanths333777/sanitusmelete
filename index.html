@@ -1,242 +1,581 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mebi UI - Exact Match</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-base: #ece1d3;
-            --navy: #0e1e3c;
-            --gold: #c3a47a;
-            --glass: rgba(255, 255, 255, 0.25);
-        }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            background-color: var(--bg-base);
-            background: radial-gradient(circle at 50% 30%, #f9f3ee 0%, #ece1d3 100%);
-            font-family: 'Playfair Display', serif;
-            display: flex;
-            justify-content: center;
-            overflow: hidden;
-        }
+<title>Sanitas Melete</title>
 
-        .container {
-            width: 100%;
-            max-width: 450px;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            box-sizing: border-box;
-            position: relative;
-        }
+<style>
 
-        /* --- Header --- */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 10px;
-        }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-        .nav-btn {
-            width: 52px;
-            height: 52px;
-            border-radius: 50%;
-            background: linear-gradient(145deg, #fefefe, #d4cab8);
-            box-shadow: 5px 5px 12px #cdc3b6, -5px -5px 12px #fffdfa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 1.5px solid rgba(255, 255, 255, 0.4);
-            color: var(--navy);
-            font-size: 22px;
-        }
+body{
+  font-family:
+  -apple-system,
+  BlinkMacSystemFont,
+  "SF Pro Display",
+  "Segoe UI",
+  sans-serif;
 
-        .brand {
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--navy);
-        }
+  background:#f3e7da;
 
-        /* --- Main Content (Centered) --- */
-        .content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            margin-top: -60px; /* Aligns visually to image */
-        }
+  overflow:hidden;
+}
 
-        .infinity-ring {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.5), inset 0 0 20px rgba(255, 255, 255, 0.3);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 40px;
-        }
+/* ========================= */
+/* APP */
+/* ========================= */
 
-        .infinity-icon {
-            width: 110px;
-            fill: var(--navy);
-        }
+.app{
+  width:100%;
+  height:100vh;
 
-        .hero-text {
-            font-size: 44px;
-            color: var(--navy);
-            margin: 0;
-            position: relative;
-        }
+  background:
+  radial-gradient(circle at top,#f7ede3 0%,#f3e7da 55%,#efe2d5 100%);
 
-        .hero-text::after {
-            content: '✦';
-            position: absolute;
-            right: -35px;
-            top: 5px;
-            color: #dcb88a;
-            font-size: 24px;
-        }
+  position:relative;
 
-        .sep {
-            display: flex;
-            align-items: center;
-            width: 180px;
-            margin: 15px 0;
-        }
+  overflow:hidden;
+}
 
-        .sep-line { height: 1px; flex: 1; background: linear-gradient(to right, transparent, var(--gold), transparent); }
-        .sep-star { font-size: 10px; color: var(--gold); margin: 0 8px; }
+/* SOFT LIGHT */
 
-        .buddy-text {
-            color: var(--gold);
-            font-size: 20px;
-            font-style: italic;
-            margin: 0;
-        }
+.app::before{
+  content:"";
 
-        /* --- Search Bar (Pinned to Bottom) --- */
-        .footer {
-            position: absolute;
-            bottom: 40px;
-            left: 20px;
-            right: 20px;
-        }
+  position:absolute;
+  top:120px;
+  left:50%;
 
-        .glass-pill {
-            height: 80px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-radius: 45px;
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            display: flex;
-            align-items: center;
-            padding: 0 12px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-            position: relative;
-            overflow: hidden;
-        }
+  transform:translateX(-50%);
 
-        /* Diagonal shine effect like the image */
-        .glass-pill::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -50%;
-            width: 100%; height: 100%;
-            background: linear-gradient(120deg, transparent, rgba(255,255,255,0.2), transparent);
-            transform: skewX(-25deg);
-        }
+  width:420px;
+  height:420px;
 
-        .paperclip-wrap {
-            width: 56px;
-            height: 56px;
-            background: #fffcf8;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
-            z-index: 2;
-        }
+  border-radius:50%;
 
-        .glass-pill input {
-            flex: 1;
-            background: transparent;
-            border: none;
-            padding: 0 20px;
-            font-size: 18px;
-            font-family: 'Playfair Display', serif;
-            color: #8a7a6a;
-            z-index: 2;
-        }
+  background:rgba(255,255,255,0.18);
 
-        .glass-pill input:focus { outline: none; }
+  filter:blur(80px);
 
-        .up-btn {
-            width: 56px;
-            height: 56px;
-            background: linear-gradient(145deg, #e8d9c5, #d2c1a8);
-            border: none;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            z-index: 2;
-        }
-    </style>
+  pointer-events:none;
+}
+
+/* ========================= */
+/* TOPBAR */
+/* ========================= */
+
+.topbar{
+  height:92px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 22px;
+
+  position:relative;
+  z-index:5;
+}
+
+.top-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+/* BUTTONS */
+
+.icon-btn{
+  width:58px;
+  height:58px;
+
+  border:none;
+
+  border-radius:50%;
+
+  color:#082b67;
+
+  font-size:24px;
+
+  background:
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,0.82),
+  rgba(255,255,255,0.42));
+
+  backdrop-filter:blur(20px);
+
+  border:1px solid rgba(255,255,255,0.7);
+
+  box-shadow:
+  0 10px 30px rgba(190,160,120,0.18),
+  inset 0 2px 4px rgba(255,255,255,0.95);
+
+  cursor:pointer;
+}
+
+/* TITLE */
+
+.brand-text{
+  font-family:Georgia,serif;
+
+  font-size:20px;
+
+  font-weight:600;
+
+  color:#082b67;
+
+  letter-spacing:-0.03em;
+}
+
+/* ========================= */
+/* MAIN */
+/* ========================= */
+
+.main{
+  height:calc(100vh - 92px);
+
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+
+  padding-bottom:120px;
+
+  position:relative;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.logo-wrapper{
+  position:relative;
+
+  width:340px;
+  height:340px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  margin-top:-10px;
+}
+
+/* RINGS */
+
+.ring{
+  position:absolute;
+
+  border-radius:50%;
+
+  border:1px solid rgba(255,255,255,0.16);
+}
+
+.ring1{
+  width:240px;
+  height:240px;
+}
+
+.ring2{
+  width:300px;
+  height:300px;
+}
+
+.ring3{
+  width:360px;
+  height:360px;
+}
+
+/* ORB */
+
+.logo-orb{
+  width:220px;
+  height:220px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,0.92),
+  rgba(255,255,255,0.52));
+
+  border:1px solid rgba(255,255,255,0.85);
+
+  backdrop-filter:blur(25px);
+
+  box-shadow:
+  0 0 60px rgba(255,255,255,0.7),
+  0 20px 60px rgba(214,184,146,0.18),
+  inset 0 2px 10px rgba(255,255,255,0.95);
+
+  overflow:hidden;
+
+  position:relative;
+}
+
+/* REFLECTION */
+
+.logo-orb::before{
+  content:"";
+
+  position:absolute;
+
+  width:120px;
+  height:240px;
+
+  background:rgba(255,255,255,0.22);
+
+  top:-20px;
+  left:-5px;
+
+  transform:rotate(18deg);
+
+  filter:blur(10px);
+}
+
+/* INFINITY */
+
+.infinity{
+  font-size:120px;
+
+  font-weight:700;
+
+  color:#082b67;
+
+  filter:
+  drop-shadow(
+  0 6px 14px rgba(11,43,103,0.14));
+}
+
+/* ========================= */
+/* TEXTS */
+/* ========================= */
+
+.hello{
+  margin-top:10px;
+
+  font-size:62px;
+
+  line-height:1;
+
+  font-family:Georgia,serif;
+
+  font-weight:700;
+
+  letter-spacing:-0.05em;
+
+  color:#082b67;
+}
+
+.spark{
+  color:#d4aa5c;
+}
+
+/* DIVIDER */
+
+.divider{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  margin-top:20px;
+}
+
+.line{
+  width:90px;
+  height:1px;
+
+  background:#d4aa5c;
+
+  opacity:0.5;
+}
+
+.small-star{
+  color:#d4aa5c;
+}
+
+/* SUB */
+
+.sub{
+  margin-top:14px;
+
+  font-size:26px;
+
+  font-family:Georgia,serif;
+
+  color:#b88d49;
+}
+
+/* ========================= */
+/* INPUT BAR */
+/* ========================= */
+
+.bottombar{
+  position:absolute;
+
+  bottom:24px;
+  left:18px;
+  right:18px;
+}
+
+/* INPUT */
+
+.input-row{
+  height:84px;
+
+  border-radius:999px;
+
+  background:
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,0.82),
+  rgba(255,255,255,0.42));
+
+  backdrop-filter:blur(25px);
+
+  border:1px solid rgba(255,255,255,0.82);
+
+  box-shadow:
+  0 20px 45px rgba(190,160,120,0.18),
+  inset 0 1px 3px rgba(255,255,255,0.95);
+
+  padding:0 14px;
+
+  display:flex;
+  align-items:center;
+  gap:12px;
+
+  overflow:hidden;
+
+  position:relative;
+}
+
+/* REFLECTION */
+
+.input-row::before{
+  content:"";
+
+  position:absolute;
+
+  width:150px;
+  height:220px;
+
+  background:rgba(255,255,255,0.22);
+
+  left:75px;
+  top:-40px;
+
+  transform:rotate(18deg);
+
+  filter:blur(12px);
+}
+
+/* BUTTONS */
+
+.upload-btn,
+.send-btn{
+  width:52px;
+  height:52px;
+
+  border:none;
+
+  border-radius:50%;
+
+  flex-shrink:0;
+
+  cursor:pointer;
+}
+
+/* UPLOAD */
+
+.upload-btn{
+  background:
+  linear-gradient(
+  180deg,
+  rgba(255,255,255,0.9),
+  rgba(255,255,255,0.5));
+
+  color:#b58b45;
+
+  font-size:22px;
+
+  box-shadow:
+  0 8px 20px rgba(181,139,69,0.12);
+
+  z-index:2;
+}
+
+/* SEND */
+
+.send-btn{
+  background:
+  linear-gradient(
+  180deg,
+  #f0d5a2,
+  #e5bf78);
+
+  color:#8a5f1c;
+
+  font-size:22px;
+
+  box-shadow:
+  0 10px 25px rgba(181,139,69,0.25);
+
+  z-index:2;
+}
+
+/* INPUT FIELD */
+
+.input-row input{
+  flex:1;
+
+  border:none;
+  outline:none;
+
+  background:transparent;
+
+  font-size:16px;
+
+  color:#7d7268;
+
+  z-index:2;
+}
+
+.input-row input::placeholder{
+  color:#8f847a;
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:480px){
+
+  .brand-text{
+    font-size:18px;
+  }
+
+  .logo-wrapper{
+    transform:scale(0.92);
+  }
+
+  .hello{
+    font-size:56px;
+  }
+
+  .sub{
+    font-size:22px;
+  }
+
+}
+
+</style>
 </head>
+
 <body>
 
-    <div class="container">
-        <header class="header">
-            <div class="nav-btn">☰</div>
-            <div class="brand">Sanitas Melete</div>
-            <div class="nav-btn">∞</div>
-        </header>
+<div class="app">
 
-        <main class="content">
-            <div class="infinity-ring">
-                <svg class="infinity-icon" viewBox="0 0 100 50">
-                    <path d="M25,10 C10,10 0,20 0,30 C0,40 10,50 25,50 C35,50 45,40 50,30 C55,40 65,50 75,50 C90,50 100,40 100,30 C100,20 90,10 75,10 C65,10 55,20 50,30 C45,20 35,10 25,10 Z M25,18 C32,18 38,24 42,30 C38,36 32,42 25,42 C18,42 12,36 12,30 C12,24 18,18 25,18 Z M75,18 C82,18 88,24 88,30 C88,36 82,42 75,42 C68,42 62,36 62,30 C62,24 68,18 75,18 Z" />
-                </svg>
-            </div>
+  <!-- TOPBAR -->
 
-            <h1 class="hero-text">Hi iam mebi</h1>
-            
-            <div class="sep">
-                <div class="sep-line"></div>
-                <div class="sep-star">✦</div>
-                <div class="sep-line"></div>
-            </div>
-            
-            <p class="buddy-text">your study buddy</p>
-        </main>
+  <header class="topbar">
 
-        <footer class="footer">
-            <div class="glass-pill">
-                <div class="paperclip-wrap">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b5e51" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"></path></svg>
-                </div>
-                <input type="text" placeholder="Put your documents or photos...">
-                <button class="up-btn">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6b5e51" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"></line><polyline points="5 12 12 5 19 12"></polyline></svg>
-                </button>
-            </div>
-        </footer>
+    <div class="top-left">
+
+      <button class="icon-btn">
+        ☰
+      </button>
+
+      <div class="brand-text">
+        Sanitas Melete
+      </div>
+
     </div>
+
+    <button class="icon-btn">
+      ∞
+    </button>
+
+  </header>
+
+  <!-- MAIN -->
+
+  <main class="main">
+
+    <div class="logo-wrapper">
+
+      <div class="ring ring1"></div>
+      <div class="ring ring2"></div>
+      <div class="ring ring3"></div>
+
+      <div class="logo-orb">
+
+        <div class="infinity">
+          ∞
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="hello">
+      Hi iam mebi<span class="spark">✦</span>
+    </div>
+
+    <div class="divider">
+
+      <div class="line"></div>
+
+      <div class="small-star">
+        ✦
+      </div>
+
+      <div class="line"></div>
+
+    </div>
+
+    <div class="sub">
+      your study buddy
+    </div>
+
+  </main>
+
+  <!-- INPUT BAR -->
+
+  <footer class="bottombar">
+
+    <div class="input-row">
+
+      <button class="upload-btn">
+        ⎋
+      </button>
+
+      <input
+      type="text"
+      placeholder="Put your documents or photos..."
+      >
+
+      <button class="send-btn">
+        ↑
+      </button>
+
+    </div>
+
+  </footer>
+
+</div>
 
 </body>
 </html>
