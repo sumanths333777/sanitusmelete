@@ -395,6 +395,191 @@ body{
   }
 
 }
+  /* SIDE MENU */
+
+.menu-overlay{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.08);
+
+  backdrop-filter:blur(8px);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.35s ease;
+
+  z-index:999;
+}
+
+.menu-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.side-menu{
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:340px;
+  max-width:88%;
+
+  height:100dvh;
+
+  padding:24px 18px;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.75),
+  rgba(255,255,255,0.25)
+  );
+
+  border-right:1px solid rgba(255,255,255,0.7);
+
+  backdrop-filter:blur(24px);
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.08);
+
+  transform:translateX(-100%);
+
+  transition:transform 0.35s ease;
+
+  z-index:1000;
+
+  overflow-y:auto;
+}
+
+.side-menu.active{
+  transform:translateX(0);
+}
+
+/* PROFILE */
+
+.menu-profile{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px;
+
+  border-radius:28px;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.20)
+  );
+
+  border:1px solid rgba(255,255,255,0.7);
+
+  margin-bottom:22px;
+}
+
+.profile-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.profile-icon{
+  width:64px;
+  height:64px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#f5dfba;
+
+  font-size:30px;
+}
+
+.menu-profile h2{
+  color:#062d71;
+
+  font-size:34px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.menu-profile p{
+  color:#b8862e;
+
+  font-size:18px;
+}
+
+.profile-star{
+  color:#d4a54f;
+
+  font-size:26px;
+}
+
+/* MENU ITEMS */
+
+.menu-items{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.menu-item{
+  height:76px;
+
+  padding:0 22px;
+
+  border-radius:24px;
+
+  display:flex;
+  align-items:center;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.20)
+  );
+
+  border:1px solid rgba(255,255,255,0.65);
+
+  box-shadow:
+  inset 0 0 6px rgba(255,255,255,0.4);
+
+  cursor:pointer;
+}
+
+.menu-item span{
+  font-size:26px;
+
+  color:#8d847c;
+}
+
+.menu-item p{
+  margin-left:18px;
+
+  color:#222;
+
+  font-size:20px;
+
+  font-family:'Cormorant Garamond',serif;
+
+  flex:1;
+}
+
+.menu-item i{
+  font-style:normal;
+
+  color:#999;
+
+  font-size:28px;
+}
 
 </style>
 </head>
@@ -402,14 +587,87 @@ body{
 <body>
 
 <div class="app">
+  <!-- SIDE MENU -->
 
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+<div class="side-menu" id="sideMenu">
+
+  <div class="menu-profile">
+
+    <div class="profile-left">
+
+      <div class="profile-icon">👤</div>
+
+      <div>
+        <h2>SK</h2>
+        <p>Premium User</p>
+      </div>
+
+    </div>
+
+    <div class="profile-star">✦</div>
+
+  </div>
+
+  <div class="menu-items">
+
+    <div class="menu-item">
+      <span>☷</span>
+      <p>Dashboard</p>
+      <i>›</i>
+    </div>
+
+    <div class="menu-item">
+      <span>💬</span>
+      <p>My Chats</p>
+      <i>›</i>
+    </div>
+
+    <div class="menu-item">
+      <span>📄</span>
+      <p>My Documents</p>
+      <i>›</i>
+    </div>
+
+    <div class="menu-item">
+      <span>🔖</span>
+      <p>Saved Answers</p>
+      <i>›</i>
+    </div>
+
+    <div class="menu-item">
+      <span>🗓</span>
+      <p>Study Planner</p>
+      <i>›</i>
+    </div>
+
+    <div class="menu-item">
+      <span>✦</span>
+      <p>AI Tools</p>
+      <i>›</i>
+    </div>
+
+    <div class="menu-item">
+      <span>⚙</span>
+      <p>Settings</p>
+    </div>
+
+    <div class="menu-item">
+      <span>↪</span>
+      <p>Log Out</p>
+    </div>
+
+  </div>
+
+</div>
   <!-- TOP -->
 
   <div class="top-bar">
 
     <div class="left-top">
 
-      <div class="glass-btn">
+      <div class="glass-btn"onclick="openMenu()">
         <i>☰</i>
       </div>
 
@@ -640,7 +898,49 @@ function closeAbout(){
   .getElementById("aboutPopup")
   .classList.remove("active");
 }
+<script>
 
+const sideMenu =
+document.getElementById("sideMenu");
+
+const menuOverlay =
+document.getElementById("menuOverlay");
+
+function openMenu(){
+  sideMenu.classList.add("active");
+  menuOverlay.classList.add("active");
+}
+
+function closeMenu(){
+  sideMenu.classList.remove("active");
+  menuOverlay.classList.remove("active");
+}
+
+/* SWIPE SUPPORT */
+
+let startX = 0;
+
+document.addEventListener("touchstart", e=>{
+  startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchmove", e=>{
+
+  let moveX = e.touches[0].clientX;
+
+  /* OPEN MENU */
+  if(startX < 30 && moveX > 100){
+    openMenu();
+  }
+
+  /* CLOSE MENU */
+  if(startX > 250 && moveX < 120){
+    closeMenu();
+  }
+
+});
+
+</script>
 </script>
 </body>
 </html>
