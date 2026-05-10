@@ -448,7 +448,7 @@ body{
 
     </div>
 
-    <div class="glass-btn">
+    <div class="glass-btn"onclick="openAbout()">
       <i>∞</i>
 
 
@@ -501,6 +501,175 @@ body{
   </div>
 
 </div>
+<!-- ABOUT POPUP -->
 
+<div class="about-popup" id="aboutPopup">
+
+  <div class="about-card">
+
+    <button class="close-popup" onclick="closeAbout()">✕</button>
+
+    <div class="about-logo">∞</div>
+
+    <h2>Sanitas Melete AI</h2>
+
+    <p class="about-sub">
+      your study buddy
+    </p>
+
+    <div class="about-line"></div>
+
+    <p class="about-text">
+      Premium AI learning platform crafted for students with elegant design and intelligent study experience.
+    </p>
+
+    <p class="founder">
+      Founder — SK
+    </p>
+
+  </div>
+
+</div>
+
+<style>
+
+/* ABOUT POPUP */
+
+.about-popup{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.10);
+
+  backdrop-filter:blur(10px);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.3s ease;
+
+  z-index:9999;
+}
+
+.about-popup.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.about-card{
+  width:88%;
+  max-width:360px;
+
+  padding:30px 24px;
+
+  border-radius:30px;
+
+  text-align:center;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.18)
+  );
+
+  border:1px solid rgba(255,255,255,0.7);
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.08),
+  inset 0 0 10px rgba(255,255,255,0.3);
+}
+
+.about-logo{
+  font-size:52px;
+  color:#062d71;
+}
+
+.about-card h2{
+  margin-top:10px;
+
+  color:#062d71;
+
+  font-size:30px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.about-sub{
+  color:#b8862e;
+
+  font-size:18px;
+
+  margin-top:4px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.about-line{
+  width:70px;
+  height:1px;
+
+  background:#d2a34f;
+
+  margin:18px auto;
+}
+
+.about-text{
+  color:#6f645b;
+
+  line-height:1.6;
+
+  font-size:16px;
+}
+
+.founder{
+  margin-top:18px;
+
+  color:#062d71;
+
+  font-size:22px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.close-popup{
+  position:absolute;
+
+  top:16px;
+  right:20px;
+
+  border:none;
+  background:none;
+
+  font-size:22px;
+
+  color:#7b7066;
+
+  cursor:pointer;
+}
+
+</style>
+
+<script>
+
+function openAbout(){
+  document
+  .getElementById("aboutPopup")
+  .classList.add("active");
+}
+
+function closeAbout(){
+  document
+  .getElementById("aboutPopup")
+  .classList.remove("active");
+}
+
+</script>
 </body>
 </html>
