@@ -1,10 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
 
-<title>Sanitas Melete AI</title>
+  <!-- MAIN TITLE -->
+  <title>SANITAS MELETE – AI Study Platform for NEET & JEE Students</title>
+
+  <!-- GOOGLE VERIFICATION -->
+  <meta name="google-site-verification" content="EdU-ky9MPlB5lYDK43D_SqeqpwxaNWTrfc-tO6FDCqc" />
+
+  <!-- RESPONSIVE -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- DESCRIPTION -->
+  <meta name="description" content="Sanitas Melete is a smart AI-powered study platform for NEET and JEE students. Get notes, MCQs, PYQs, quizzes and instant answers using AI.">
+
+  <!-- KEYWORDS -->
+  <meta name="keywords" content="Sanitas Melete, AI study app, MCQs, PYQs, notes, competitive exams, study platform, AI education, online learning, AI tutor">
+
+  <!-- AUTHOR -->
+  <meta name="author" content="Sanitas Melete Team">
+
+  <!-- OG TAGS -->
+  <meta property="og:title" content="SANITAS MELETE – AI Study Platform">
+  <meta property="og:description" content="Smart AI doubt solver for NEET & JEE students. Ask doubts, get instant answers.">
+  <meta property="og:url" content="https://sanitasmelete.vercel.app">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://sanitasmelete.vercel.app/favicon.ico">
+
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" href="favicon.ico" />
+
+  <!-- JSON-LD (FIXED) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "SANITAS MELETE",
+    "url": "https://sanitasmelete.vercel.app",
+    "applicationCategory": "EducationalApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "en",
+    "description": "Sanitas Melete is an AI-powered study platform with MEBI, your study buddy for All type of students. Ask doubts, request MCQs, see PYQs, and learn with AI support.",
+    "author": {
+      "@type": "Person",
+      "name": "SK",
+    "full name"; "SUMANTH KUMAR G"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "INR"
+    },
+    "featureList": [
+      "Instant AI answers for all doubts",
+      "MCQs with explanations",
+      "Previous year questions (PYQs)",
+      "Support for image-based questions",
+      "Available 24/7 on web"
+    ],
+    "brand": {
+      "@type": "Brand",
+      "name": "Sanitas Melete",
+      "logo": "https://sanitasmelete.vercel.app/favicon.ico"
+    }
+  }
+  </script>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
@@ -901,5 +962,38 @@ closeMenu();
 
 </script>
 
+</body>
+</html>
+
+    
+  </style>
+</head>
+<body>
+  <div class="app">
+
+      <div id="typing" class="typing hidden">
+        <div class="typing-dots">
+          <span></span><span></span><span></span>
+        </div>
+        <small>MEBI is thinking…</small>
+      </div>
+    </main>
+
+    <!-- BOTTOM INPUT -->
+    <footer class="bottombar">
+      <div class="input-row">
+        <button class="upload-btn" title="Upload image" onclick="document.getElementById('fileInput').click()">⌘</button>
+        <input id="fileInput" type="file" accept="image/*" style="display:none" />
+        <input id="user-input" type="text" placeholder="Type your question here..." />
+        <button class="send-btn" onclick="sendMessage()">↑</button>
+      
+      </div>
+      <div id="uploadPreview" class="upload-preview"></div>
+    </footer>
+
+  </script>
+
+  <!-- REAL CHAT LOGIC -->
+  <script src="script.js"></script>
 </body>
 </html>
