@@ -5,7 +5,7 @@
 
 <meta
   name="viewport"
-  content="width=device-width, initial-scale=1.0, maximum-scale=1"
+  content="width=device-width, initial-scale=1.0"
 />
 
 <title>Sanitas Melete AI</title>
@@ -56,20 +56,20 @@ html,body{
   justify-content:space-between;
   align-items:center;
 
-  padding:24px 22px 0;
+  padding:28px 34px 0;
 }
 
 .left-top{
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:16px;
 }
 
 /* GLASS BUTTON */
 
 .glass-btn{
-  width:46px;
-  height:46px;
+  width:58px;
+  height:58px;
 
   border-radius:50%;
 
@@ -91,14 +91,12 @@ html,body{
   display:flex;
   align-items:center;
   justify-content:center;
-
-  flex-shrink:0;
 }
 
 .glass-btn i{
   font-style:normal;
   color:#062d71;
-  font-size:20px;
+  font-size:26px;
 }
 
 /* BRAND */
@@ -106,7 +104,7 @@ html,body{
 .brand{
   color:#062d71;
 
-  font-size:15px;
+  font-size:30px;
 
   font-family:'Cormorant Garamond',serif;
 
@@ -127,15 +125,13 @@ html,body{
   text-align:center;
 
   padding:20px;
-
-  margin-top:-20px;
 }
 
 /* LOGO */
 
 .logo-ring{
-  width:170px;
-  height:170px;
+  width:330px;
+  height:330px;
 
   border-radius:50%;
 
@@ -164,8 +160,8 @@ html,body{
 
   position:absolute;
 
-  width:215px;
-  height:215px;
+  width:420px;
+  height:420px;
 
   border-radius:50%;
 
@@ -175,7 +171,7 @@ html,body{
 }
 
 .infinity{
-  font-size:82px;
+  font-size:155px;
   color:#062d71;
   z-index:2;
 }
@@ -183,11 +179,11 @@ html,body{
 /* TITLE */
 
 .hero-title{
-  margin-top:24px;
+  margin-top:42px;
 
   color:#062d71;
 
-  font-size:28px;
+  font-size:62px;
 
   font-family:'Cormorant Garamond',serif;
 
@@ -203,26 +199,26 @@ html,body{
 /* DIVIDER */
 
 .divider{
-  width:150px;
+  width:280px;
 
-  margin:12px auto;
+  margin:18px auto;
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  gap:10px;
+  gap:14px;
 }
 
 .divider span{
-  width:48px;
+  width:95px;
   height:1px;
   background:#c79a3d;
 }
 
 .divider p{
   color:#c79a3d;
-  font-size:14px;
+  font-size:18px;
 }
 
 /* SUBTEXT */
@@ -230,7 +226,7 @@ html,body{
 .sub{
   color:#b78633;
 
-  font-size:16px;
+  font-size:32px;
 
   font-family:'Cormorant Garamond',serif;
 }
@@ -241,16 +237,16 @@ html,body{
   position:absolute;
 
   left:50%;
-  bottom:14px;
+  bottom:20px;
 
   transform:translateX(-50%);
 
   width:94%;
-  height:66px;
+  height:92px;
 
-  border-radius:26px;
+  border-radius:36px;
 
-  padding:0 12px;
+  padding:0 18px;
 
   display:flex;
   align-items:center;
@@ -275,14 +271,14 @@ html,body{
 .search-left{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:14px;
 }
 
 /* BUTTONS */
 
 .circle-btn{
-  width:40px;
-  height:40px;
+  width:58px;
+  height:58px;
 
   border-radius:50%;
 
@@ -308,96 +304,105 @@ html,body{
 
 .circle-btn span{
   color:#b8862e;
-  font-size:18px;
+  font-size:26px;
 }
 
 /* PLACEHOLDER */
 
 .placeholder{
   color:#7d756e;
-  font-size:13px;
+  font-size:18px;
 }
 
-/* DESKTOP */
+/* ================= MOBILE ================= */
 
-@media (min-width:769px){
+@media (max-width:768px){
 
   .top-bar{
-    padding:28px 34px 0;
+    padding:22px 18px 0;
+  }
+
+  .left-top{
+    gap:12px;
   }
 
   .brand{
-    font-size:28px;
+    font-size:15px;
   }
 
   .glass-btn{
-    width:58px;
-    height:58px;
+    width:44px;
+    height:44px;
   }
 
   .glass-btn i{
-    font-size:26px;
+    font-size:20px;
   }
 
   .center{
-    margin-top:-30px;
+    margin-top:-10px;
   }
 
   .logo-ring{
-    width:320px;
-    height:320px;
+    width:190px;
+    height:190px;
   }
 
   .logo-ring::before{
-    width:400px;
-    height:400px;
+    width:240px;
+    height:240px;
   }
 
   .infinity{
-    font-size:150px;
+    font-size:92px;
   }
 
   .hero-title{
-    margin-top:38px;
-    font-size:56px;
-  }
-
-  .divider{
-    width:260px;
-    margin:18px auto;
-  }
-
-  .divider span{
-    width:90px;
-  }
-
-  .divider p{
-    font-size:18px;
-  }
-
-  .sub{
+    margin-top:24px;
     font-size:30px;
   }
 
+  .divider{
+    width:170px;
+    margin:12px auto;
+    gap:10px;
+  }
+
+  .divider span{
+    width:55px;
+  }
+
+  .divider p{
+    font-size:14px;
+  }
+
+  .sub{
+    font-size:18px;
+  }
+
   .search-wrap{
-    width:94%;
-    height:88px;
-    border-radius:34px;
-    bottom:18px;
-    padding:0 18px;
+    width:93%;
+    height:72px;
+    bottom:12px;
+    border-radius:28px;
+    padding:0 12px;
+  }
+
+  .search-left{
+    gap:10px;
   }
 
   .circle-btn{
-    width:56px;
-    height:56px;
+    width:44px;
+    height:44px;
   }
 
   .circle-btn span{
-    font-size:26px;
+    font-size:22px;
   }
 
   .placeholder{
-    font-size:18px;
+    font-size:14px;
   }
 
 }
@@ -455,7 +460,7 @@ html,body{
 
   </div>
 
-  <!-- SEARCH BAR -->
+  <!-- SEARCH -->
 
   <div class="search-wrap">
 
