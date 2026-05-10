@@ -4,7 +4,9 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>Sanitas Melete</title>
+<title>Sanitas Melete AI</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Instrument+Serif&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
@@ -15,464 +17,314 @@
 }
 
 body{
+  background:#efe1d2;
   overflow:hidden;
-
-  background:#f3e7da;
-
-  font-family:
-  -apple-system,
-  BlinkMacSystemFont,
-  "SF Pro Display",
-  sans-serif;
+  font-family:'Poppins',sans-serif;
 }
-
-/* ========================= */
-/* APP */
-/* ========================= */
 
 .app{
   width:100%;
   height:100vh;
-
   position:relative;
-
-  overflow:hidden;
-
   background:
-  radial-gradient(circle at top,
-  #f7ede3 0%,
-  #f3e7da 55%,
-  #efe2d5 100%);
+  radial-gradient(circle at top,#f7ecdf 0%,#efe1d2 45%,#ead9c6 100%);
 }
 
-/* SOFT BACK LIGHT */
+/* TOP BAR */
 
-.app::before{
-  content:"";
+.top-bar{
+  width:100%;
+  padding:28px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
 
+.left-top{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.brand{
+  font-size:30px;
+  color:#062b67;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:600;
+  letter-spacing:.3px;
+}
+
+/* GLASS BUTTONS */
+
+.glass-btn{
+  width:66px;
+  height:66px;
+  border-radius:50%;
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.75),
+  rgba(255,255,255,0.28)
+  );
+
+  border:1px solid rgba(255,255,255,0.7);
+
+  box-shadow:
+  inset 1px 1px 1px rgba(255,255,255,0.8),
+  inset -2px -2px 6px rgba(210,190,160,0.3),
+  0 10px 30px rgba(170,140,100,0.12);
+
+  backdrop-filter:blur(12px);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.glass-btn i{
+  color:#062b67;
+  font-size:32px;
+  font-style:normal;
+  font-weight:600;
+}
+
+/* CENTER AREA */
+
+.center{
   position:absolute;
-
-  width:460px;
-  height:460px;
-
+  top:50%;
   left:50%;
-  top:180px;
+  transform:translate(-50%,-50%);
+  width:100%;
+  text-align:center;
+}
 
-  transform:translateX(-50%);
+/* MAIN LOGO */
 
+.logo-ring{
+  width:430px;
+  height:430px;
+  margin:auto;
   border-radius:50%;
 
-  background:rgba(255,255,255,0.16);
+  background:
+  radial-gradient(circle at top left,
+  rgba(255,255,255,0.55),
+  rgba(255,255,255,0.08));
 
-  filter:blur(90px);
+  border:1px solid rgba(255,255,255,0.5);
+
+  box-shadow:
+  inset 0 0 18px rgba(255,255,255,0.45),
+  0 0 40px rgba(255,248,230,0.7),
+  0 0 80px rgba(255,255,255,0.35);
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  position:relative;
 }
 
-/* ========================= */
-/* TOPBAR */
-/* ========================= */
+.logo-ring::before{
+  content:'';
+  position:absolute;
+  width:520px;
+  height:520px;
+  border-radius:50%;
+  background:rgba(255,255,255,0.07);
+  filter:blur(2px);
+}
 
-.topbar{
-  height:92px;
+.infinity{
+  font-size:220px;
+  color:#022d72;
+  z-index:2;
+  font-weight:600;
+}
+
+/* TEXT */
+
+.hero-title{
+  margin-top:70px;
+  font-size:76px;
+  color:#062b67;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:700;
+  letter-spacing:.4px;
+}
+
+.spark{
+  color:#c79a3d;
+}
+
+.divider{
+  margin:18px auto 16px;
+  width:320px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+}
+
+.divider span{
+  width:120px;
+  height:1px;
+  background:#cda55a;
+}
+
+.divider p{
+  color:#cda55a;
+  font-size:20px;
+}
+
+.sub{
+  color:#b78633;
+  font-size:34px;
+  font-family:'Cormorant Garamond',serif;
+  font-weight:500;
+}
+
+/* SEARCH BAR */
+
+.search-wrap{
+  position:absolute;
+  bottom:34px;
+  left:50%;
+  transform:translateX(-50%);
+
+  width:92%;
+  height:118px;
+
+  border-radius:42px;
+
+  background:
+  linear-gradient(
+  135deg,
+  rgba(255,255,255,0.52),
+  rgba(255,255,255,0.18)
+  );
+
+  border:1px solid rgba(255,255,255,0.7);
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+  inset 0 0 8px rgba(255,255,255,0.55),
+  0 18px 35px rgba(180,140,100,0.15);
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  padding:0 28px;
-
-  position:relative;
-  z-index:5;
+  padding:0 24px;
 }
 
-/* GLASS BUTTON */
+.search-left{
+  display:flex;
+  align-items:center;
+  gap:22px;
+}
 
-.glass-btn{
-  width:54px;
-  height:54px;
-
-  border:none;
-
+.circle-btn{
+  width:72px;
+  height:72px;
   border-radius:50%;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.7),
+  rgba(255,255,255,0.28)
+  );
+
+  border:1px solid rgba(255,255,255,0.7);
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  background:
-  linear-gradient(
-  180deg,
-  rgba(255,255,255,0.82),
-  rgba(255,255,255,0.42));
-
-  border:1px solid rgba(255,255,255,0.75);
-
-  backdrop-filter:blur(20px);
-
   box-shadow:
-  0 8px 24px rgba(190,160,120,0.10),
-  inset 0 2px 4px rgba(255,255,255,0.95);
-
-  color:#082b67;
-
-  font-size:23px;
-
-  cursor:pointer;
+  inset 0 0 8px rgba(255,255,255,0.6),
+  0 8px 20px rgba(180,140,100,0.15);
 }
 
-/* BRAND */
+.circle-btn span{
+  font-size:42px;
+  color:#b8862e;
+}
 
-.brand{
-  position:absolute;
-
-  left:50%;
-  transform:translateX(-50%);
-
-  font-family:Georgia,serif;
-
+.placeholder{
+  color:#7c746c;
   font-size:20px;
-
-  font-weight:600;
-
-  color:#082b67;
-
-  letter-spacing:-0.03em;
+  font-weight:400;
 }
 
-/* ========================= */
-/* CENTER */
-/* ========================= */
+/* RESPONSIVE */
 
-.hero{
-  height:calc(100vh - 92px);
-
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-
-  padding-top:120px;
-
-  position:relative;
-  z-index:2;
-}
-
-/* ========================= */
-/* LOGO */
-/* ========================= */
-
-.logo-wrapper{
-  position:relative;
-
-  width:330px;
-  height:330px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* RINGS */
-
-.ring{
-  position:absolute;
-
-  border-radius:50%;
-
-  border:1px solid rgba(255,255,255,0.12);
-}
-
-.ring1{
-  width:230px;
-  height:230px;
-}
-
-.ring2{
-  width:300px;
-  height:300px;
-}
-
-.ring3{
-  width:360px;
-  height:360px;
-}
-
-/* MAIN ORB */
-
-.logo-orb{
-  width:215px;
-  height:215px;
-
-  border-radius:50%;
-
-  position:relative;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:
-  linear-gradient(
-  180deg,
-  rgba(255,255,255,0.32),
-  rgba(255,255,255,0.10));
-
-  border:1px solid rgba(255,255,255,0.42);
-
-  backdrop-filter:blur(30px);
-
-  box-shadow:
-  0 0 40px rgba(255,255,255,0.28),
-  inset 0 2px 12px rgba(255,255,255,0.42);
-}
-
-/* ORB REFLECTION */
-
-.logo-orb::before{
-  content:"";
-
-  position:absolute;
-
-  width:120px;
-  height:240px;
-
-  left:-10px;
-  top:-30px;
-
-  transform:rotate(18deg);
-
-  background:rgba(255,255,255,0.08);
-
-  filter:blur(10px);
-}
-
-/* INFINITY */
-
-.infinity{
-  font-size:118px;
-
-  font-weight:700;
-
-  color:#082b67;
-
-  line-height:1;
-
-  filter:
-  drop-shadow(
-  0 4px 10px rgba(11,43,103,0.10));
-}
-
-/* ========================= */
-/* TEXTS */
-/* ========================= */
-
-.title{
-  margin-top:34px;
-
-  font-size:40px;
-
-  font-family:Georgia,serif;
-
-  font-weight:700;
-
-  color:#082b67;
-
-  letter-spacing:-0.05em;
-}
-
-.spark{
-  color:#d4aa5c;
-}
-
-/* DIVIDER */
-
-.divider{
-  margin-top:16px;
-
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.line{
-  width:92px;
-  height:1px;
-
-  background:#d4aa5c;
-
-  opacity:0.42;
-}
-
-.star-small{
-  color:#d4aa5c;
-
-  font-size:16px;
-}
-
-/* SUBTITLE */
-
-.subtitle{
-  margin-top:12px;
-
-  font-size:18px;
-
-  font-family:Georgia,serif;
-
-  color:#b58b45;
-
-  letter-spacing:0.01em;
-}
-
-/* ========================= */
-/* INPUT BAR */
-/* ========================= */
-
-.bottom-bar{
-  position:absolute;
-
-  left:18px;
-  right:18px;
-  bottom:22px;
-
-  z-index:5;
-}
-
-/* INPUT CONTAINER */
-
-.input-box{
-  height:76px;
-
-  border-radius:999px;
-
-  position:relative;
-
-  overflow:hidden;
-
-  display:flex;
-  align-items:center;
-
-  gap:12px;
-
-  padding:0 14px;
-
-  background:
-  linear-gradient(
-  180deg,
-  rgba(255,255,255,0.42),
-  rgba(255,255,255,0.20));
-
-  border:1px solid rgba(255,255,255,0.52);
-
-  backdrop-filter:blur(24px);
-
-  box-shadow:
-  0 18px 35px rgba(190,160,120,0.12),
-  inset 0 1px 2px rgba(255,255,255,0.42);
-}
-
-/* INPUT REFLECTION */
-
-.input-box::before{
-  content:"";
-
-  position:absolute;
-
-  width:160px;
-  height:240px;
-
-  left:120px;
-  top:-60px;
-
-  transform:rotate(18deg);
-
-  background:rgba(255,255,255,0.10);
-
-  filter:blur(12px);
-}
-
-/* BUTTONS */
-
-.attach-btn,
-.send-btn{
-  width:50px;
-  height:50px;
-
-  border:none;
-
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  cursor:pointer;
-
-  z-index:2;
-}
-
-/* ATTACH */
-
-.attach-btn{
-  background:
-  linear-gradient(
-  180deg,
-  rgba(255,255,255,0.82),
-  rgba(255,255,255,0.42));
-
-  color:#b58b45;
-
-  font-size:22px;
-
-  box-shadow:
-  0 6px 16px rgba(181,139,69,0.10);
-}
-
-/* SEND */
-
-.send-btn{
-  background:
-  linear-gradient(
-  180deg,
-  #f0d5a2,
-  #e5bf78);
-
-  color:#8a5f1c;
-
-  font-size:24px;
-
-  box-shadow:
-  0 8px 18px rgba(181,139,69,0.16);
-}
-
-/* INPUT */
-
-.input-box input{
-  flex:1;
-
-  border:none;
-  outline:none;
-
-  background:transparent;
-
-  font-size:15px;
-
-  color:#7d7268;
-
-  z-index:2;
-}
-
-.input-box input::placeholder{
-  color:#8f847a;
-}
-
-/* MOBILE */
-
-@media(max-width:480px){
+@media(max-width:768px){
 
   .brand{
     font-size:18px;
   }
 
-  .logo-wrapper{
-    transform:scale(0.95);
+  .glass-btn{
+    width:52px;
+    height:52px;
+  }
+
+  .glass-btn i{
+    font-size:24px;
+  }
+
+  .logo-ring{
+    width:250px;
+    height:250px;
+  }
+
+  .logo-ring::before{
+    width:320px;
+    height:320px;
+  }
+
+  .infinity{
+    font-size:130px;
+  }
+
+  .hero-title{
+    margin-top:45px;
+    font-size:42px;
+  }
+
+  .divider{
+    width:220px;
+  }
+
+  .divider span{
+    width:70px;
+  }
+
+  .sub{
+    font-size:22px;
+  }
+
+  .search-wrap{
+    height:90px;
+    border-radius:34px;
+    bottom:22px;
+  }
+
+  .circle-btn{
+    width:56px;
+    height:56px;
+  }
+
+  .circle-btn span{
+    font-size:32px;
+  }
+
+  .placeholder{
+    font-size:16px;
   }
 
 }
@@ -484,85 +336,70 @@ body{
 
 <div class="app">
 
-  <!-- TOPBAR -->
+  <!-- TOP -->
 
-  <header class="topbar">
+  <div class="top-bar">
 
-    <button class="glass-btn">
-      ☰
-    </button>
+    <div class="left-top">
 
-    <div class="brand">
-      Sanitas Melete
-    </div>
+      <div class="glass-btn">
+        <i>☰</i>
+      </div>
 
-    <button class="glass-btn">
-      ∞
-    </button>
-
-  </header>
-
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <div class="logo-wrapper">
-
-      <div class="ring ring1"></div>
-      <div class="ring ring2"></div>
-      <div class="ring ring3"></div>
-
-      <div class="logo-orb">
-
-        <div class="infinity">
-          ∞
-        </div>
-
+      <div class="brand">
+        Sanitas Melete
       </div>
 
     </div>
 
-    <div class="title">
+    <div class="glass-btn">
+      <i>∞</i>
+    </div>
+
+  </div>
+
+  <!-- CENTER -->
+
+  <div class="center">
+
+    <div class="logo-ring">
+      <div class="infinity">∞</div>
+    </div>
+
+    <div class="hero-title">
       Hi iam mebi<span class="spark">✦</span>
     </div>
 
     <div class="divider">
-
-      <div class="line"></div>
-
-      <div class="star-small">
-        ✦
-      </div>
-
-      <div class="line"></div>
-
+      <span></span>
+      <p>✦</p>
+      <span></span>
     </div>
 
-    <div class="subtitle">
+    <div class="sub">
       your study buddy
     </div>
 
-  </section>
+  </div>
 
-  <!-- INPUT -->
+  <!-- SEARCH BAR -->
 
-  <div class="bottom-bar">
+  <div class="search-wrap">
 
-    <div class="input-box">
+    <div class="search-left">
 
-      <button class="attach-btn">
-        📎
-      </button>
+      <div class="circle-btn">
+        <span>⌘</span>
+      </div>
 
-      <input
-      type="text"
-      placeholder="Put your documents or photos..."
-      >
+      <div class="placeholder">
+        type your questions here
+      </div>
 
-      <button class="send-btn">
-        ↑
-      </button>
+    </div>
 
+    <div class="circle-btn">
+      <span>↑</span>
     </div>
 
   </div>
