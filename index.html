@@ -16,28 +16,22 @@
     box-sizing:border-box;
 }
 
-html{
+html,body{
     width:100%;
-    height:100%;
+    min-height:100%;
 }
 
 body{
-    width:100%;
-    min-height:100vh;
-
     background:#f8f1e8;
     font-family:'Poppins',sans-serif;
-
     color:#0b2c74;
-
-    position:relative;
+    overflow-x:hidden;
 }
 
-/* SOFT PREMIUM GLOW */
+/* SOFT GLOW */
 
 body::before{
     content:"";
-
     position:fixed;
     inset:0;
 
@@ -57,13 +51,13 @@ body::before{
     left:0;
     right:0;
 
-    padding:28px 42px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    z-index:999;
+    padding:24px 34px;
+
+    z-index:1000;
 }
 
 .left-top{
@@ -74,10 +68,14 @@ body::before{
 
 .menu-btn,
 .logo-btn{
-    width:74px;
-    height:74px;
+    width:68px;
+    height:68px;
 
     border-radius:50%;
+
+    border:none;
+    outline:none;
+    cursor:pointer;
 
     background:rgba(255,255,255,0.28);
 
@@ -90,30 +88,39 @@ body::before{
     align-items:center;
     justify-content:center;
 
+    color:#0b2c74;
+
     box-shadow:
     inset 0 1px 1px rgba(255,255,255,0.8),
     0 8px 25px rgba(0,0,0,0.04);
+
+    transition:0.25s ease;
+}
+
+.menu-btn:hover,
+.logo-btn:hover{
+    transform:scale(1.05);
 }
 
 .menu-btn{
-    font-size:34px;
+    font-size:30px;
 }
 
 .logo-btn{
-    font-size:36px;
+    font-size:34px;
 }
 
 .brand{
-    font-size:38px;
+    font-size:34px;
 
     font-family:'Cormorant Garamond',serif;
     font-weight:600;
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero{
-    width:100vw;
+    width:100%;
     min-height:100vh;
 
     display:flex;
@@ -124,19 +131,16 @@ body::before{
 
     text-align:center;
 
-    position:relative;
-
-    padding-top:120px;
-    padding-bottom:60px;
+    padding:120px 20px 50px;
 }
 
 .hero-logo-circle{
-    width:min(42vw,520px);
-    height:min(42vw,520px);
+    width:min(32vw,380px);
+    height:min(32vw,380px);
 
     border-radius:50%;
 
-    background:rgba(255,255,255,0.16);
+    background:rgba(255,255,255,0.18);
 
     border:1px solid rgba(255,255,255,0.5);
 
@@ -144,7 +148,7 @@ body::before{
     justify-content:center;
     align-items:center;
 
-    margin-bottom:40px;
+    margin-bottom:34px;
 
     box-shadow:
     inset 0 1px 1px rgba(255,255,255,0.7),
@@ -152,13 +156,11 @@ body::before{
 }
 
 .hero-logo{
-    font-size:min(14vw,180px);
-
-    color:#0b2c74;
+    font-size:min(9vw,120px);
 }
 
 .hero h1{
-    font-size:min(7vw,110px);
+    font-size:min(5vw,78px);
 
     font-family:'Cormorant Garamond',serif;
 
@@ -170,7 +172,7 @@ body::before{
 .hero-line{
     display:flex;
     align-items:center;
-    gap:18px;
+    gap:16px;
 
     color:#c79c36;
 
@@ -178,19 +180,19 @@ body::before{
 }
 
 .hero-line span{
-    width:min(12vw,150px);
+    width:min(9vw,120px);
     height:1px;
 
     background:#c79c36;
 }
 
 .hero p{
-    font-size:min(2vw,34px);
+    font-size:min(1.7vw,26px);
 
     color:#b48a2f;
 }
 
-/* CHAT AREA */
+/* CHAT */
 
 #chatContainer{
     width:100%;
@@ -198,34 +200,28 @@ body::before{
     display:flex;
     flex-direction:column;
 
-    gap:24px;
+    gap:22px;
 
-    padding:30px 40px 180px;
+    padding:20px 34px 160px;
 }
-
-/* MESSAGES */
 
 .message{
     width:fit-content;
-
     max-width:700px;
 
-    padding:22px 28px;
+    padding:20px 26px;
 
-    border-radius:34px;
+    border-radius:32px;
 
-    font-size:22px;
+    font-size:20px;
 
     line-height:1.7;
-
-    word-wrap:break-word;
 }
 
 .user{
     align-self:flex-end;
 
     background:#0b2c74;
-
     color:white;
 }
 
@@ -242,16 +238,16 @@ body::before{
     color:#0b2c74;
 }
 
-/* INPUT AREA */
+/* INPUT */
 
 .input-area{
     position:fixed;
 
-    left:28px;
-    right:28px;
-    bottom:20px;
+    left:24px;
+    right:24px;
+    bottom:18px;
 
-    height:92px;
+    height:84px;
 
     background:rgba(255,255,255,0.4);
 
@@ -265,18 +261,14 @@ body::before{
     display:flex;
     align-items:center;
 
-    padding:0 18px;
+    padding:0 16px;
 
     z-index:1000;
-
-    box-shadow:
-    inset 0 1px 1px rgba(255,255,255,0.75),
-    0 10px 30px rgba(0,0,0,0.04);
 }
 
 .left-icon{
-    width:58px;
-    height:58px;
+    width:54px;
+    height:54px;
 
     border-radius:50%;
 
@@ -286,11 +278,11 @@ body::before{
     align-items:center;
     justify-content:center;
 
-    font-size:28px;
+    font-size:26px;
 
     color:#c79c36;
 
-    margin-right:14px;
+    margin-right:12px;
 }
 
 #userInput{
@@ -301,26 +293,80 @@ body::before{
 
     background:transparent;
 
-    font-size:22px;
+    font-size:20px;
 
     color:#555;
 }
 
 #sendBtn{
-    width:60px;
-    height:60px;
+    width:56px;
+    height:56px;
 
     border:none;
-
     border-radius:50%;
 
     background:white;
 
     color:#b48a2f;
 
-    font-size:32px;
+    font-size:28px;
 
     cursor:pointer;
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    position:fixed;
+
+    top:0;
+    left:-320px;
+
+    width:300px;
+    height:100vh;
+
+    background:rgba(255,255,255,0.55);
+
+    backdrop-filter:blur(22px);
+
+    border-right:1px solid rgba(255,255,255,0.5);
+
+    padding:28px;
+
+    transition:0.35s ease;
+
+    z-index:2000;
+}
+
+.sidebar.active{
+    left:0;
+}
+
+.close-btn{
+    font-size:30px;
+
+    cursor:pointer;
+
+    margin-bottom:30px;
+}
+
+.sidebar h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:38px;
+
+    margin-bottom:20px;
+}
+
+.sidebar a{
+    display:block;
+
+    margin-bottom:18px;
+
+    color:#0b2c74;
+
+    text-decoration:none;
+
+    font-size:18px;
 }
 
 /* MOBILE */
@@ -328,21 +374,13 @@ body::before{
 @media(max-width:768px){
 
     .topbar{
-        padding:22px 20px;
+        padding:20px 18px;
     }
 
     .menu-btn,
     .logo-btn{
-        width:60px;
-        height:60px;
-    }
-
-    .menu-btn{
-        font-size:28px;
-    }
-
-    .logo-btn{
-        font-size:30px;
+        width:58px;
+        height:58px;
     }
 
     .brand{
@@ -359,7 +397,7 @@ body::before{
     }
 
     .hero-logo{
-        font-size:84px;
+        font-size:82px;
     }
 
     .hero h1{
@@ -375,7 +413,7 @@ body::before{
     }
 
     #chatContainer{
-        padding:25px 18px 150px;
+        padding:20px 18px 150px;
     }
 
     .message{
@@ -391,15 +429,13 @@ body::before{
         right:16px;
         bottom:16px;
 
-        height:78px;
+        height:76px;
     }
 
     .left-icon,
     #sendBtn{
         width:50px;
         height:50px;
-
-        font-size:26px;
     }
 
     #userInput{
@@ -413,15 +449,32 @@ body::before{
 
 <body>
 
+<!-- SIDEBAR -->
+
+<div class="sidebar" id="sidebar">
+
+    <div class="close-btn" onclick="closeSidebar()">
+        ✕
+    </div>
+
+    <h2>Sanitas Melete</h2>
+
+    <a href="#">Home</a>
+    <a href="about.html">About</a>
+    <a href="#">Features</a>
+    <a href="#">Contact</a>
+
+</div>
+
 <!-- TOPBAR -->
 
 <div class="topbar">
 
     <div class="left-top">
 
-        <div class="menu-btn">
+        <button class="menu-btn" onclick="openSidebar()">
             ☰
-        </div>
+        </button>
 
         <div class="brand">
             Sanitas Melete
@@ -429,15 +482,15 @@ body::before{
 
     </div>
 
-    <div class="logo-btn">
+    <button class="logo-btn" onclick="scrollToTopHero()">
         ∞
-    </div>
+    </button>
 
 </div>
 
 <!-- HERO -->
 
-<section class="hero">
+<section class="hero" id="hero">
 
     <div class="hero-logo-circle">
         <div class="hero-logo">∞</div>
@@ -455,11 +508,11 @@ body::before{
 
 </section>
 
-<!-- CHAT AREA -->
+<!-- CHAT -->
 
 <section id="chatContainer"></section>
 
-<!-- INPUT BAR -->
+<!-- INPUT -->
 
 <div class="input-area">
 
@@ -484,6 +537,10 @@ body::before{
 const userInput = document.getElementById("userInput");
 const sendBtn = document.getElementById("sendBtn");
 const chatContainer = document.getElementById("chatContainer");
+const hero = document.getElementById("hero");
+const sidebar = document.getElementById("sidebar");
+
+/* CHAT */
 
 function addMessage(text,type){
 
@@ -519,8 +576,7 @@ function sendMessage(){
 
 I am MEBI, your study buddy.
 How can I help you today?`,
-            "ai"
-        );
+        "ai");
 
     },700);
 }
@@ -534,6 +590,26 @@ userInput.addEventListener("keypress",function(e){
     }
 
 });
+
+/* SIDEBAR */
+
+function openSidebar(){
+    sidebar.classList.add("active");
+}
+
+function closeSidebar(){
+    sidebar.classList.remove("active");
+}
+
+/* HERO SCROLL */
+
+function scrollToTopHero(){
+
+    hero.scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
 
 </script>
 
