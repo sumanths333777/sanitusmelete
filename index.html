@@ -1,825 +1,905 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-
-  <!-- MAIN TITLE -->
-  <title>SANITAS MELETE – AI Study Platform for NEET & JEE Students</title>
-
-  <!-- RESPONSIVE -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
-  <meta name="description"
-    content="Sanitas Melete is a smart AI-powered study platform for students. Ask doubts, get instant answers and learn with MEBI AI.">
-
-  <!-- FONTS -->
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap"
-    rel="stylesheet">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Poppins', sans-serif;
-    }
+<title>Sanitas Melete AI</title>
 
-    body {
-      background: #efe3d6;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
-    .app {
-      width: 100%;
-      height: 100dvh;
-      position: relative;
-      overflow: hidden;
+<style>
 
-      background:
-        radial-gradient(circle at top,
-          #f8eee4 0%,
-          #efe3d6 45%,
-          #eadccd 100%);
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    /* TOP BAR */
+html,body{
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  font-family:'Poppins',sans-serif;
+}
 
-    .top-bar {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+body{
+  background:#efe3d6;
+}
 
-      padding: 28px 38px 0;
-    }
+/* MAIN */
 
-    .left-top {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+.app{
+  width:100%;
+  height:100dvh;
+  position:relative;
+  overflow:hidden;
 
-    /* BUTTONS */
+  background:
+  radial-gradient(circle at top,
+  #f8eee4 0%,
+  #efe3d6 45%,
+  #eadccd 100%);
+}
 
-    .glass-btn {
-      width: 58px;
-      height: 58px;
+/* TOP BAR */
 
-      border-radius: 50%;
+.top-bar{
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  padding:28px 38px 0;
+}
 
-      background:
-        linear-gradient(145deg,
-          rgba(255, 255, 255, 0.75),
-          rgba(255, 255, 255, 0.18));
+.left-top{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
 
-      border: 1px solid rgba(255, 255, 255, 0.72);
+/* BUTTONS */
 
-      backdrop-filter: blur(18px);
+.glass-btn{
+  width:58px;
+  height:58px;
 
-      box-shadow:
-        inset 0 1px 1px rgba(255, 255, 255, 0.8),
-        0 8px 22px rgba(180, 140, 100, 0.10);
+  border-radius:50%;
 
-      cursor: pointer;
-    }
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    .glass-btn i {
-      font-style: normal;
-      color: #062d71;
-      font-size: 26px;
-    }
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.75),
+  rgba(255,255,255,0.18)
+  );
 
-    /* BRAND */
+  border:1px solid rgba(255,255,255,0.72);
 
-    .brand {
-      color: #062d71;
-      font-size: 30px;
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-    }
+  backdrop-filter:blur(18px);
 
-    /* CENTER */
+  box-shadow:
+  inset 0 1px 1px rgba(255,255,255,0.8),
+  0 8px 22px rgba(180,140,100,0.10);
 
-    .center {
-      position: absolute;
+  cursor:pointer;
+}
 
-      top: 48%;
-      left: 50%;
+.glass-btn i{
+  font-style:normal;
+  color:#062d71;
+  font-size:26px;
+}
 
-      transform: translate(-50%, -50%);
+/* BRAND */
 
-      width: 100%;
-      text-align: center;
-    }
+.brand{
+  color:#062d71;
 
-    /* LOGO */
+  font-size:30px;
 
-    .logo-ring {
-      width: 290px;
-      height: 290px;
+  font-family:'Cormorant Garamond',serif;
 
-      margin: auto;
+  font-weight:600;
+}
 
-      border-radius: 50%;
+/* CENTER AREA */
 
-      position: relative;
+.center{
+  position:absolute;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  top:48%;
+  left:50%;
 
-      background:
-        linear-gradient(145deg,
-          rgba(255, 255, 255, 0.24),
-          rgba(255, 255, 255, 0.05));
+  transform:translate(-50%,-50%);
 
-      border: 1px solid rgba(255, 255, 255, 0.48);
+  width:100%;
 
-      box-shadow:
-        inset 0 0 18px rgba(255, 255, 255, 0.25),
-        0 0 45px rgba(255, 255, 255, 0.08);
-    }
+  text-align:center;
+}
 
-    .logo-ring::before {
-      content: '';
+/* LOGO */
 
-      position: absolute;
+.logo-ring{
+  width:290px;
+  height:290px;
 
-      width: 360px;
-      height: 360px;
+  margin:auto;
 
-      border-radius: 50%;
+  border-radius:50%;
 
-      background: rgba(255, 255, 255, 0.05);
+  position:relative;
 
-      filter: blur(2px);
-    }
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-    .infinity {
-      font-size: 132px;
-      color: #062d71;
-      z-index: 2;
-    }
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.24),
+  rgba(255,255,255,0.05)
+  );
 
-    /* TITLE */
+  border:1px solid rgba(255,255,255,0.48);
 
-    .hero-title {
-      margin-top: 34px;
+  box-shadow:
+  inset 0 0 18px rgba(255,255,255,0.25),
+  0 0 45px rgba(255,255,255,0.08);
+}
 
-      color: #062d71;
+.logo-ring::before{
+  content:'';
 
-      font-size: 64px;
+  position:absolute;
 
-      font-family: 'Cormorant Garamond', serif;
+  width:360px;
+  height:360px;
 
-      font-weight: 700;
-    }
+  border-radius:50%;
 
-    .spark {
-      color: #c79a3d;
-    }
+  background:rgba(255,255,255,0.05);
 
-    /* DIVIDER */
+  filter:blur(2px);
+}
 
-    .divider {
-      width: 260px;
+.infinity{
+  font-size:132px;
+  color:#062d71;
+  z-index:2;
+}
 
-      margin: 18px auto;
+/* TITLE */
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+.hero-title{
+  margin-top:34px;
 
-      gap: 14px;
-    }
+  color:#062d71;
 
-    .divider span {
-      width: 90px;
-      height: 1px;
-      background: #c79a3d;
-    }
+  font-size:64px;
 
-    .divider p {
-      color: #c79a3d;
-      font-size: 18px;
-    }
+  font-family:'Cormorant Garamond',serif;
 
-    /* SUBTEXT */
+  font-weight:700;
 
-    .sub {
-      color: #b78633;
-      font-size: 30px;
-      font-family: 'Cormorant Garamond', serif;
-    }
+  line-height:1;
+}
 
-    /* SEARCH */
+.spark{
+  color:#c79a3d;
+}
 
-    .search-wrap {
-      position: absolute;
+/* DIVIDER */
 
-      left: 50%;
-      bottom: 20px;
+.divider{
+  width:260px;
 
-      transform: translateX(-50%);
+  margin:18px auto;
 
-      width: 92%;
-      height: 78px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-      border-radius: 32px;
+  gap:14px;
+}
 
-      padding: 0 16px;
+.divider span{
+  width:90px;
+  height:1px;
+  background:#c79a3d;
+}
 
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+.divider p{
+  color:#c79a3d;
+  font-size:18px;
+}
 
-      background:
-        linear-gradient(145deg,
-          rgba(255, 255, 255, 0.58),
-          rgba(255, 255, 255, 0.18));
+/* SUBTEXT */
 
-      border: 1px solid rgba(255, 255, 255, 0.72);
+.sub{
+  color:#b78633;
 
-      backdrop-filter: blur(18px);
+  font-size:30px;
 
-      box-shadow:
-        inset 0 0 12px rgba(255, 255, 255, 0.4),
-        0 12px 28px rgba(180, 140, 100, 0.10);
-    }
+  font-family:'Cormorant Garamond',serif;
+}
 
-    .search-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+/* SEARCH BAR */
 
-    .circle-btn {
-      width: 50px;
-      height: 50px;
+.search-wrap{
+  position:absolute;
 
-      border-radius: 50%;
+  left:50%;
+  bottom:20px;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  transform:translateX(-50%);
 
-      background:
-        linear-gradient(145deg,
-          rgba(255, 255, 255, 0.72),
-          rgba(255, 255, 255, 0.20));
+  width:92%;
+  height:78px;
 
-      border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius:32px;
 
-      cursor: pointer;
-    }
+  padding:0 16px;
 
-    .circle-btn span {
-      color: #b8862e;
-      font-size: 24px;
-    }
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
 
-    .placeholder {
-      border: none;
-      outline: none;
-      background: transparent;
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.58),
+  rgba(255,255,255,0.18)
+  );
 
-      color: #7d756e;
-      font-size: 17px;
-      width: 100%;
-    }
+  border:1px solid rgba(255,255,255,0.72);
 
-    /* SIDE MENU */
+  backdrop-filter:blur(18px);
 
-    .menu-overlay {
-      position: fixed;
-      inset: 0;
+  box-shadow:
+  inset 0 0 12px rgba(255,255,255,0.4),
+  0 12px 28px rgba(180,140,100,0.10);
+}
 
-      background: rgba(0, 0, 0, 0.08);
+.search-left{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
 
-      backdrop-filter: blur(8px);
+.circle-btn{
+  width:50px;
+  height:50px;
 
-      opacity: 0;
-      visibility: hidden;
+  border-radius:50%;
 
-      transition: 0.35s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-      z-index: 999;
-    }
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.20)
+  );
 
-    .menu-overlay.active {
-      opacity: 1;
-      visibility: visible;
-    }
+  border:1px solid rgba(255,255,255,0.7);
 
-    .side-menu {
-      position: fixed;
+  box-shadow:
+  inset 0 0 8px rgba(255,255,255,0.5),
+  0 5px 16px rgba(180,140,100,0.10);
+}
 
-      top: 0;
-      left: 0;
+.circle-btn span{
+  color:#b8862e;
+  font-size:24px;
+}
 
-      width: 285px;
-      max-width: 82%;
+.placeholder{
+  color:#7d756e;
+  font-size:17px;
+}
 
-      height: 100dvh;
+/* SIDE MENU */
 
-      padding: 18px 14px;
+.menu-overlay{
+  position:fixed;
+  inset:0;
 
-      background:
-        linear-gradient(145deg,
-          rgba(255, 255, 255, 0.75),
-          rgba(255, 255, 255, 0.25));
+  background:rgba(0,0,0,0.08);
 
-      border-right: 1px solid rgba(255, 255, 255, 0.7);
+  backdrop-filter:blur(8px);
 
-      backdrop-filter: blur(24px);
+  opacity:0;
+  visibility:hidden;
 
-      transform: translateX(-100%);
+  transition:0.35s ease;
 
-      transition: transform 0.35s ease;
+  z-index:999;
+}
 
-      z-index: 1000;
-    }
+.menu-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
 
-    .side-menu.active {
-      transform: translateX(0);
-    }
+.side-menu{
+  position:fixed;
 
-    .menu-profile {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+  top:0;
+  left:0;
 
-      padding: 14px;
+  width:285px;
+  max-width:82%;
 
-      border-radius: 22px;
+  height:100dvh;
 
-      background:
-        linear-gradient(145deg,
-          rgba(255, 255, 255, 0.72),
-          rgba(255, 255, 255, 0.20));
+  padding:18px 14px;
 
-      margin-bottom: 16px;
-    }
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.75),
+  rgba(255,255,255,0.25)
+  );
 
-    .profile-left {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+  border-right:1px solid rgba(255,255,255,0.7);
 
-    .profile-icon {
-      width: 52px;
-      height: 52px;
+  backdrop-filter:blur(24px);
 
-      border-radius: 50%;
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.08);
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  transform:translateX(-100%);
 
-      background: #f5dfba;
+  transition:transform 0.35s ease;
 
-      font-size: 24px;
-    }
+  z-index:1000;
 
-    .menu-profile h2 {
-      color: #062d71;
-      font-size: 26px;
-      font-family: 'Cormorant Garamond', serif;
-    }
+  overflow-y:auto;
+}
 
-    .menu-profile p {
-      color: #b8862e;
-      font-size: 14px;
-    }
+.side-menu.active{
+  transform:translateX(0);
+}
 
-    .profile-star {
-      color: #d4a54f;
-      font-size: 20px;
-    }
+/* PROFILE */
 
-    .menu-items {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
+.menu-profile{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 
-    .menu-item {
-      height: 60px;
+  padding:14px;
 
-      padding: 0 16px;
+  border-radius:22px;
 
-      border-radius: 18px;
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.20)
+  );
 
-      display: flex;
-      align-items: center;
+  border:1px solid rgba(255,255,255,0.7);
 
-      background:
-        linear-gradient(145deg,
-          rgba(255, 255, 255, 0.72),
-          rgba(255, 255, 255, 0.20));
-    }
+  margin-bottom:16px;
+}
 
-    .menu-item span {
-      font-size: 20px;
-    }
+.profile-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
 
-    .menu-item p {
-      margin-left: 14px;
+.profile-icon{
+  width:52px;
+  height:52px;
 
-      color: #222;
+  border-radius:50%;
 
-      font-size: 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-      font-family: 'Cormorant Garamond', serif;
+  background:#f5dfba;
 
-      flex: 1;
-    }
+  font-size:24px;
+}
 
-    .menu-item i {
-      font-style: normal;
-      color: #999;
-      font-size: 22px;
-    }
+.menu-profile h2{
+  color:#062d71;
 
-    /* ABOUT */
+  font-size:26px;
 
-    .about-popup {
-      position: fixed;
-      inset: 0;
+  font-family:'Cormorant Garamond',serif;
 
-      background: rgba(0, 0, 0, 0.10);
+  line-height:1;
+}
 
-      backdrop-filter: blur(10px);
+.menu-profile p{
+  color:#b8862e;
 
-      display: flex;
-      align-items: center;
-      justify-content: center;
+  font-size:14px;
 
-      opacity: 0;
-      visibility: hidden;
+  margin-top:2px;
+}
 
-      transition: 0.3s ease;
+.profile-star{
+  color:#d4a54f;
 
-      z-index: 9999;
-    }
+  font-size:20px;
+}
 
-    .about-popup.active {
-      opacity: 1;
-      visibility: visible;
-    }
+/* MENU ITEMS */
 
-    .about-card {
-      width: 88%;
-      max-width: 360px;
+.menu-items{
+  display:flex;
+  flex-direction:column;
 
-      padding: 30px 24px;
+  gap:10px;
+}
 
-      border-radius: 30px;
+.menu-item{
+  height:60px;
 
-      text-align: center;
+  padding:0 16px;
 
-      background:
-        linear-gradient(145deg,
-          rgba(255, 255, 255, 0.72),
-          rgba(255, 255, 255, 0.18));
-    }
+  border-radius:18px;
 
-    .about-logo {
-      font-size: 52px;
-      color: #062d71;
-    }
+  display:flex;
+  align-items:center;
 
-    .about-card h2 {
-      margin-top: 10px;
-      color: #062d71;
-      font-size: 30px;
-      font-family: 'Cormorant Garamond', serif;
-    }
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.20)
+  );
 
-    .about-sub {
-      color: #b8862e;
-      font-size: 18px;
-      margin-top: 4px;
-      font-family: 'Cormorant Garamond', serif;
-    }
+  border:1px solid rgba(255,255,255,0.65);
 
-    .about-line {
-      width: 70px;
-      height: 1px;
+  box-shadow:
+  inset 0 0 6px rgba(255,255,255,0.4);
 
-      background: #d2a34f;
+  cursor:pointer;
+}
 
-      margin: 18px auto;
-    }
+.menu-item span{
+  font-size:20px;
 
-    .about-text {
-      color: #6f645b;
-      line-height: 1.6;
-      font-size: 16px;
-    }
+  color:#8d847c;
+}
 
-    .founder {
-      margin-top: 18px;
-      color: #062d71;
-      font-size: 22px;
-      font-family: 'Cormorant Garamond', serif;
-    }
+.menu-item p{
+  margin-left:14px;
 
-    .close-popup {
-      position: absolute;
-      top: 16px;
-      right: 20px;
+  color:#222;
 
-      border: none;
-      background: none;
+  font-size:16px;
 
-      font-size: 22px;
-      color: #7b7066;
+  font-family:'Cormorant Garamond',serif;
 
-      cursor: pointer;
-    }
+  flex:1;
+}
 
-    /* MOBILE */
+.menu-item i{
+  font-style:normal;
 
-    @media (max-width:768px) {
+  color:#999;
 
-      .top-bar {
-        padding: 22px 18px 0;
-      }
+  font-size:22px;
+}
 
-      .brand {
-        font-size: 15px;
-      }
+/* ABOUT POPUP */
 
-      .glass-btn {
-        width: 44px;
-        height: 44px;
-      }
+.about-popup{
+  position:fixed;
+  inset:0;
 
-      .glass-btn i {
-        font-size: 20px;
-      }
+  background:rgba(0,0,0,0.10);
 
-      .logo-ring {
-        width: 190px;
-        height: 190px;
-      }
+  backdrop-filter:blur(10px);
 
-      .logo-ring::before {
-        width: 240px;
-        height: 240px;
-      }
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-      .infinity {
-        font-size: 92px;
-      }
+  opacity:0;
+  visibility:hidden;
 
-      .hero-title {
-        margin-top: 24px;
-        font-size: 30px;
-      }
+  transition:0.3s ease;
 
-      .sub {
-        font-size: 18px;
-      }
+  z-index:9999;
+}
 
-      .search-wrap {
-        width: 93%;
-        height: 72px;
-        bottom: 12px;
-      }
+.about-popup.active{
+  opacity:1;
+  visibility:visible;
+}
 
-      .placeholder {
-        font-size: 14px;
-      }
-    }
-  </style>
+.about-card{
+  width:88%;
+  max-width:360px;
+
+  padding:30px 24px;
+
+  border-radius:30px;
+
+  text-align:center;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.18)
+  );
+
+  border:1px solid rgba(255,255,255,0.7);
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.08),
+  inset 0 0 10px rgba(255,255,255,0.3);
+}
+
+.about-logo{
+  font-size:52px;
+  color:#062d71;
+}
+
+.about-card h2{
+  margin-top:10px;
+
+  color:#062d71;
+
+  font-size:30px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.about-sub{
+  color:#b8862e;
+
+  font-size:18px;
+
+  margin-top:4px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.about-line{
+  width:70px;
+  height:1px;
+
+  background:#d2a34f;
+
+  margin:18px auto;
+}
+
+.about-text{
+  color:#6f645b;
+
+  line-height:1.6;
+
+  font-size:16px;
+}
+
+.founder{
+  margin-top:18px;
+
+  color:#062d71;
+
+  font-size:22px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.close-popup{
+  position:absolute;
+
+  top:16px;
+  right:20px;
+
+  border:none;
+  background:none;
+
+  font-size:22px;
+
+  color:#7b7066;
+
+  cursor:pointer;
+}
+
+@media (max-width:768px){
+
+  .top-bar{
+    padding:22px 18px 0;
+  }
+
+  .brand{
+    font-size:15px;
+  }
+
+  .glass-btn{
+    width:44px;
+    height:44px;
+  }
+
+  .glass-btn i{
+    font-size:20px;
+  }
+
+  .logo-ring{
+    width:190px;
+    height:190px;
+  }
+
+  .logo-ring::before{
+    width:240px;
+    height:240px;
+  }
+
+  .infinity{
+    font-size:92px;
+  }
+
+  .hero-title{
+    margin-top:24px;
+    font-size:30px;
+  }
+
+  .divider{
+    width:170px;
+    margin:12px auto;
+    gap:10px;
+  }
+
+  .divider span{
+    width:55px;
+  }
+
+  .divider p{
+    font-size:14px;
+  }
+
+  .sub{
+    font-size:18px;
+  }
+
+  .search-wrap{
+    width:93%;
+    height:72px;
+    bottom:12px;
+    border-radius:28px;
+    padding:0 12px;
+  }
+
+  .placeholder{
+    font-size:14px;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="app">
+<div class="app">
 
-    <!-- MENU -->
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
-    <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+<div class="side-menu" id="sideMenu">
 
-    <div class="side-menu" id="sideMenu">
+<div class="menu-profile">
 
-      <div class="menu-profile">
+<div class="profile-left">
 
-        <div class="profile-left">
+<div class="profile-icon">👤</div>
 
-          <div class="profile-icon">👤</div>
+<div>
+<h2>SK</h2>
+<p>Premium User</p>
+</div>
 
-          <div>
-            <h2>SK</h2>
-            <p>Premium User</p>
-          </div>
+</div>
 
-        </div>
+<div class="profile-star">✦</div>
 
-        <div class="profile-star">✦</div>
+</div>
 
-      </div>
+<div class="menu-items">
 
-      <div class="menu-items">
+<div class="menu-item">
+<span>☷</span>
+<p>Dashboard</p>
+<i>›</i>
+</div>
 
-        <div class="menu-item">
-          <span>☷</span>
-          <p>Dashboard</p>
-          <i>›</i>
-        </div>
+<div class="menu-item">
+<span>💬</span>
+<p>My Chats</p>
+<i>›</i>
+</div>
 
-        <div class="menu-item">
-          <span>💬</span>
-          <p>My Chats</p>
-          <i>›</i>
-        </div>
+<div class="menu-item">
+<span>📄</span>
+<p>My Documents</p>
+<i>›</i>
+</div>
 
-        <div class="menu-item">
-          <span>📄</span>
-          <p>My Documents</p>
-          <i>›</i>
-        </div>
+<div class="menu-item">
+<span>🔖</span>
+<p>Saved Answers</p>
+<i>›</i>
+</div>
 
-        <div class="menu-item">
-          <span>🔖</span>
-          <p>Saved Answers</p>
-          <i>›</i>
-        </div>
+<div class="menu-item">
+<span>🗓</span>
+<p>Study Planner</p>
+<i>›</i>
+</div>
 
-      </div>
+<div class="menu-item">
+<span>✦</span>
+<p>AI Tools</p>
+<i>›</i>
+</div>
 
-    </div>
+</div>
 
-    <!-- TOP -->
+</div>
 
-    <div class="top-bar">
+<div class="top-bar">
 
-      <div class="left-top">
+<div class="left-top">
 
-        <div class="glass-btn" onclick="openMenu()">
-          <i>☰</i>
-        </div>
+<div class="glass-btn" onclick="openMenu()">
+<i>☰</i>
+</div>
 
-        <div class="brand">
-          Sanitas Melete
-        </div>
+<div class="brand">
+Sanitas Melete
+</div>
 
-      </div>
+</div>
 
-      <div class="glass-btn" onclick="openAbout()">
-        <i>∞</i>
-      </div>
+<div class="glass-btn" onclick="openAbout()">
+<i>∞</i>
+</div>
 
-    </div>
+</div>
 
-    <!-- CENTER -->
+<div class="center">
 
-    <div class="center">
+<div class="logo-ring">
+<div class="infinity">∞</div>
+</div>
 
-      <div class="logo-ring">
-        <div class="infinity">∞</div>
-      </div>
+<div class="hero-title">
+Hi iam mebi<span class="spark">✦</span>
+</div>
 
-      <div class="hero-title">
-        Hi iam mebi<span class="spark">✦</span>
-      </div>
+<div class="divider">
+<span></span>
+<p>✦</p>
+<span></span>
+</div>
 
-      <div class="divider">
-        <span></span>
-        <p>✦</p>
-        <span></span>
-      </div>
+<div class="sub">
+your study buddy
+</div>
 
-      <div class="sub">
-        your study buddy
-      </div>
+</div>
 
-    </div>
+<div class="search-wrap">
 
-    <!-- SEARCH -->
+<div class="search-left">
 
-    <div class="search-wrap">
+<div class="circle-btn">
+<span>⌘</span>
+</div>
 
-      <div class="search-left">
+<div class="placeholder">
+type your questions here
+</div>
 
-        <div class="circle-btn">
-          <span>⌘</span>
-        </div>
+</div>
 
-        <input
-          type="text"
-          class="placeholder"
-          placeholder="Type your question here..." />
+<div class="circle-btn">
+<span>↑</span>
+</div>
 
-      </div>
+</div>
 
-      <div class="circle-btn">
-        <span>↑</span>
-      </div>
+</div>
 
-    </div>
+<div class="about-popup" id="aboutPopup">
 
-  </div>
+<div class="about-card">
 
-  <!-- ABOUT -->
+<button class="close-popup" onclick="closeAbout()">✕</button>
 
-  <div class="about-popup" id="aboutPopup">
+<div class="about-logo">∞</div>
 
-    <div class="about-card">
+<h2>Sanitas Melete AI</h2>
 
-      <button class="close-popup" onclick="closeAbout()">✕</button>
+<p class="about-sub">
+your study buddy
+</p>
 
-      <div class="about-logo">∞</div>
+<div class="about-line"></div>
 
-      <h2>Sanitas Melete AI</h2>
+<p class="about-text">
+Premium AI learning platform crafted for students with elegant design and intelligent study experience.
+</p>
 
-      <p class="about-sub">
-        your study buddy
-      </p>
+<p class="founder">
+Founder — SK
+</p>
 
-      <div class="about-line"></div>
+</div>
 
-      <p class="about-text">
-        Premium AI learning platform crafted for students with elegant design and intelligent study experience.
-      </p>
+</div>
 
-      <p class="founder">
-        Founder — SK
-      </p>
+<script>
 
-    </div>
+function openAbout(){
+document
+.getElementById("aboutPopup")
+.classList.add("active");
+}
 
-  </div>
+function closeAbout(){
+document
+.getElementById("aboutPopup")
+.classList.remove("active");
+}
 
-  <script>
+const sideMenu =
+document.getElementById("sideMenu");
 
-    function openAbout() {
-      document
-        .getElementById("aboutPopup")
-        .classList.add("active");
-    }
+const menuOverlay =
+document.getElementById("menuOverlay");
 
-    function closeAbout() {
-      document
-        .getElementById("aboutPopup")
-        .classList.remove("active");
-    }
+function openMenu(){
+sideMenu.classList.add("active");
+menuOverlay.classList.add("active");
+}
 
-    const sideMenu =
-      document.getElementById("sideMenu");
+function closeMenu(){
+sideMenu.classList.remove("active");
+menuOverlay.classList.remove("active");
+}
 
-    const menuOverlay =
-      document.getElementById("menuOverlay");
+let startX = 0;
 
-    function openMenu() {
-      sideMenu.classList.add("active");
-      menuOverlay.classList.add("active");
-    }
+document.addEventListener("touchstart", e=>{
+startX = e.touches[0].clientX;
+});
 
-    function closeMenu() {
-      sideMenu.classList.remove("active");
-      menuOverlay.classList.remove("active");
-    }
+document.addEventListener("touchmove", e=>{
 
-    let startX = 0;
+let moveX = e.touches[0].clientX;
 
-    document.addEventListener("touchstart", e => {
-      startX = e.touches[0].clientX;
-    });
+if(startX < 30 && moveX > 100){
+openMenu();
+}
 
-    document.addEventListener("touchmove", e => {
+if(startX > 250 && moveX < 120){
+closeMenu();
+}
 
-      let moveX = e.touches[0].clientX;
+});
 
-      if (startX < 30 && moveX > 100) {
-        openMenu();
-      }
-
-      if (startX > 250 && moveX < 120) {
-        closeMenu();
-      }
-
-    });
-
-  </script>
+</script>
 
 </body>
-
 </html>
