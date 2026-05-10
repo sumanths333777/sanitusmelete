@@ -96,11 +96,8 @@ body{
 
 .brand{
   color:#062d71;
-
   font-size:15px;
-
   font-family:'Cormorant Garamond',serif;
-
   font-weight:600;
 }
 
@@ -118,18 +115,7 @@ body{
 
   text-align:center;
 
-  transition:0.45s ease;
-
   z-index:10;
-}
-
-.center.hide{
-  opacity:0;
-
-  transform:
-  translate(-50%,-55%);
-
-  pointer-events:none;
 }
 
 .logo-ring{
@@ -228,16 +214,16 @@ body{
   font-family:'Cormorant Garamond',serif;
 }
 
-/* CHAT AREA */
+/* CHAT */
 
 .chat-area{
   position:absolute;
 
-  top:90px;
+  top:80px;
   left:0;
 
   width:100%;
-  height:calc(100dvh - 190px);
+  height:calc(100dvh - 170px);
 
   overflow-y:auto;
 
@@ -429,6 +415,276 @@ body{
   z-index:100;
 }
 
+/* SIDE MENU */
+
+.menu-overlay{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.08);
+
+  backdrop-filter:blur(8px);
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.35s ease;
+
+  z-index:999;
+}
+
+.menu-overlay.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.side-menu{
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:285px;
+  max-width:82%;
+
+  height:100dvh;
+
+  padding:18px 14px;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.75),
+  rgba(255,255,255,0.25)
+  );
+
+  border-right:1px solid rgba(255,255,255,0.7);
+
+  backdrop-filter:blur(24px);
+
+  transform:translateX(-100%);
+
+  transition:transform 0.35s ease;
+
+  z-index:1000;
+
+  overflow-y:auto;
+}
+
+.side-menu.active{
+  transform:translateX(0);
+}
+
+.menu-profile{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:14px;
+
+  border-radius:22px;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.20)
+  );
+
+  border:1px solid rgba(255,255,255,0.7);
+
+  margin-bottom:16px;
+}
+
+.profile-left{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.profile-icon{
+  width:52px;
+  height:52px;
+
+  border-radius:50%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#f5dfba;
+
+  font-size:24px;
+}
+
+.menu-profile h2{
+  color:#062d71;
+  font-size:24px;
+}
+
+.menu-profile p{
+  color:#b8862e;
+  font-size:14px;
+}
+
+.profile-star{
+  color:#d4a54f;
+  font-size:20px;
+}
+
+.menu-items{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.menu-item{
+  height:60px;
+
+  padding:0 16px;
+
+  border-radius:18px;
+
+  display:flex;
+  align-items:center;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.20)
+  );
+
+  border:1px solid rgba(255,255,255,0.65);
+
+  cursor:pointer;
+}
+
+.menu-item span{
+  font-size:20px;
+}
+
+.menu-item p{
+  margin-left:14px;
+
+  flex:1;
+
+  font-size:16px;
+
+  color:#222;
+}
+
+.menu-item i{
+  font-style:normal;
+  color:#999;
+}
+
+/* ABOUT */
+
+.about-popup{
+  position:fixed;
+  inset:0;
+
+  background:rgba(0,0,0,0.10);
+
+  backdrop-filter:blur(10px);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  opacity:0;
+  visibility:hidden;
+
+  transition:0.3s ease;
+
+  z-index:9999;
+}
+
+.about-popup.active{
+  opacity:1;
+  visibility:visible;
+}
+
+.about-card{
+  width:88%;
+  max-width:360px;
+
+  padding:30px 24px;
+
+  border-radius:30px;
+
+  text-align:center;
+
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.72),
+  rgba(255,255,255,0.18)
+  );
+
+  border:1px solid rgba(255,255,255,0.7);
+}
+
+.about-logo{
+  font-size:52px;
+  color:#062d71;
+}
+
+.about-card h2{
+  margin-top:10px;
+
+  color:#062d71;
+
+  font-size:30px;
+}
+
+.about-sub{
+  color:#b8862e;
+  margin-top:4px;
+}
+
+.about-line{
+  width:70px;
+  height:1px;
+
+  background:#d2a34f;
+
+  margin:18px auto;
+}
+
+.about-text{
+  color:#6f645b;
+
+  line-height:1.6;
+
+  font-size:16px;
+}
+
+.founder{
+  margin-top:18px;
+
+  color:#062d71;
+
+  font-size:22px;
+}
+
+.close-popup{
+  position:absolute;
+
+  top:16px;
+  right:20px;
+
+  border:none;
+  background:none;
+
+  font-size:22px;
+
+  color:#7b7066;
+
+  cursor:pointer;
+}
+
 @keyframes fadeUp{
   from{
     opacity:0;
@@ -448,13 +704,72 @@ body{
 
 <div class="app">
 
+<!-- SIDE MENU -->
+
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+<div class="side-menu" id="sideMenu">
+
+<div class="menu-profile">
+
+<div class="profile-left">
+
+<div class="profile-icon">👤</div>
+
+<div>
+<h2>SK</h2>
+<p>Premium User</p>
+</div>
+
+</div>
+
+<div class="profile-star">✦</div>
+
+</div>
+
+<div class="menu-items">
+
+<div class="menu-item">
+<span>☷</span>
+<p>Dashboard</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>💬</span>
+<p>My Chats</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>📄</span>
+<p>My Documents</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>🔖</span>
+<p>Saved Answers</p>
+<i>›</i>
+</div>
+
+<div class="menu-item">
+<span>🗓</span>
+<p>Study Planner</p>
+<i>›</i>
+</div>
+
+</div>
+
+</div>
+
 <!-- TOP -->
 
 <div class="top-bar">
 
 <div class="left-top">
 
-<div class="glass-btn">
+<div class="glass-btn" onclick="openMenu()">
 <i>☰</i>
 </div>
 
@@ -464,7 +779,7 @@ Sanitas Melete
 
 </div>
 
-<div class="glass-btn">
+<div class="glass-btn" onclick="openAbout()">
 <i>∞</i>
 </div>
 
@@ -540,6 +855,68 @@ hidden
 </div>
 
 </div>
+
+<!-- ABOUT POPUP -->
+
+<div class="about-popup" id="aboutPopup">
+
+<div class="about-card">
+
+<button class="close-popup" onclick="closeAbout()">✕</button>
+
+<div class="about-logo">∞</div>
+
+<h2>Sanitas Melete AI</h2>
+
+<p class="about-sub">
+your study buddy
+</p>
+
+<div class="about-line"></div>
+
+<p class="about-text">
+Premium AI learning platform crafted for students with elegant design and intelligent study experience.
+</p>
+
+<p class="founder">
+Founder — SK
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function openAbout(){
+document
+.getElementById("aboutPopup")
+.classList.add("active");
+}
+
+function closeAbout(){
+document
+.getElementById("aboutPopup")
+.classList.remove("active");
+}
+
+const sideMenu =
+document.getElementById("sideMenu");
+
+const menuOverlay =
+document.getElementById("menuOverlay");
+
+function openMenu(){
+sideMenu.classList.add("active");
+menuOverlay.classList.add("active");
+}
+
+function closeMenu(){
+sideMenu.classList.remove("active");
+menuOverlay.classList.remove("active");
+}
+
+</script>
 
 <script src="script.js"></script>
 
