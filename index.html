@@ -117,7 +117,7 @@ font-weight:600;
 .center{
 position:absolute;
 
-top:48%;
+top:50%;
 left:50%;
 
 transform:translate(-50%,-50%);
@@ -126,17 +126,21 @@ width:100%;
 
 text-align:center;
 
-transition:.4s ease;
+transition:.6s ease;
+
 z-index:5;
 }
 
-/* HIDE HERO */
+/* MOVE HERO */
 
-.center.hide{
-opacity:0;
-pointer-events:none;
-transform:
-translate(-50%,-55%);
+.center.chat-started{
+
+top:120px;
+
+transform:translate(-50%,0) scale(.82);
+
+opacity:.92;
+
 }
 
 /* LOGO */
@@ -248,17 +252,17 @@ font-family:'Cormorant Garamond',serif;
 .chat-screen{
 position:absolute;
 
-top:92px;
+top:0;
 left:0;
 
 width:100%;
-height:calc(100dvh - 180px);
+height:100dvh;
 
 overflow-y:auto;
 
 padding:
-20px 16px
-50px;
+320px 16px
+140px;
 
 scroll-behavior:smooth;
 }
@@ -276,9 +280,6 @@ display:flex;
 flex-direction:column;
 
 gap:18px;
-
-padding-top:420px;
-padding-bottom:30px;
 }
 
 /* MESSAGE */
@@ -783,7 +784,7 @@ onclick="sendMessage()"
 
 <script>
 
-/* API KEY */
+/* GEMINI API KEY */
 
 const API_KEY = "YOUR_GEMINI_API_KEY";
 
@@ -801,7 +802,7 @@ document.getElementById("hero");
 const chatScreen =
 document.getElementById("chatScreen");
 
-/* SEND */
+/* SEND MESSAGE */
 
 async function sendMessage(){
 
@@ -810,9 +811,11 @@ promptInput.value.trim();
 
 if(!text) return;
 
-/* HIDE HERO */
+/* MOVE HERO TO TOP */
 
-hero.classList.add("hide");
+hero.classList.add(
+"chat-started"
+);
 
 /* USER MESSAGE */
 
@@ -886,14 +889,18 @@ loading.innerText =
 
 }
 
-/* AUTO SCROLL */
+/* SCROLL TO BOTTOM */
+
+setTimeout(()=>{
 
 chatScreen.scrollTop =
 chatScreen.scrollHeight;
 
+},100);
+
 }
 
-/* APPEND */
+/* APPEND MESSAGE */
 
 function appendMessage(
 text,
@@ -909,9 +916,6 @@ div.className =
 div.innerText = text;
 
 messages.appendChild(div);
-
-chatScreen.scrollTop =
-chatScreen.scrollHeight;
 
 return div;
 
