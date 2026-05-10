@@ -1,754 +1,411 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sanitas Melete AI</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html,body{
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  font-family:'Poppins',sans-serif;
+html{
+    width:100%;
+    height:100%;
 }
 
 body{
-  background:#efe3d6;
+    width:100%;
+    min-height:100vh;
+
+    background:#f8f1e8;
+    font-family:'Poppins',sans-serif;
+
+    color:#0b2c74;
+
+    position:relative;
 }
 
-.app{
-  width:100%;
-  height:100dvh;
-  position:relative;
-  overflow:hidden;
+/* SOFT PREMIUM GLOW */
 
-  background:
-  radial-gradient(circle at top,
-  #f8eee4 0%,
-  #efe3d6 45%,
-  #eadccd 100%);
+body::before{
+    content:"";
+
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left, rgba(255,255,255,0.75), transparent 35%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.45), transparent 35%);
+
+    z-index:-1;
 }
 
-/* TOP */
+/* TOPBAR */
 
-.top-bar{
-  width:100%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.topbar{
+    position:fixed;
 
-  padding:22px 18px 0;
+    top:0;
+    left:0;
+    right:0;
 
-  position:relative;
-  z-index:100;
+    padding:28px 42px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    z-index:999;
 }
 
 .left-top{
-  display:flex;
-  align-items:center;
-  gap:12px;
+    display:flex;
+    align-items:center;
+    gap:18px;
 }
 
-.glass-btn{
-  width:44px;
-  height:44px;
+.menu-btn,
+.logo-btn{
+    width:74px;
+    height:74px;
 
-  border-radius:50%;
+    border-radius:50%;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    background:rgba(255,255,255,0.28);
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.75),
-  rgba(255,255,255,0.18)
-  );
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
-  border:1px solid rgba(255,255,255,0.72);
+    border:1px solid rgba(255,255,255,0.55);
 
-  backdrop-filter:blur(18px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-  box-shadow:
-  inset 0 1px 1px rgba(255,255,255,0.8),
-  0 8px 22px rgba(180,140,100,0.10);
-
-  cursor:pointer;
+    box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.8),
+    0 8px 25px rgba(0,0,0,0.04);
 }
 
-.glass-btn i{
-  font-style:normal;
-  color:#062d71;
-  font-size:20px;
+.menu-btn{
+    font-size:34px;
+}
+
+.logo-btn{
+    font-size:36px;
 }
 
 .brand{
-  color:#062d71;
+    font-size:38px;
 
-  font-size:15px;
-
-  font-family:'Cormorant Garamond',serif;
-
-  font-weight:600;
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
 }
 
-/* HERO */
+/* HERO SECTION */
 
-.center{
-  position:absolute;
+.hero{
+    width:100vw;
+    min-height:100vh;
 
-  top:42%;
-  left:50%;
+    display:flex;
+    flex-direction:column;
 
-  transform:translate(-50%,-50%);
+    justify-content:center;
+    align-items:center;
 
-  width:100%;
+    text-align:center;
 
-  text-align:center;
+    position:relative;
 
-  z-index:5;
-
-  pointer-events:none;
+    padding-top:120px;
+    padding-bottom:60px;
 }
 
-.logo-ring{
-  width:190px;
-  height:190px;
+.hero-logo-circle{
+    width:min(42vw,520px);
+    height:min(42vw,520px);
 
-  margin:auto;
+    border-radius:50%;
 
-  border-radius:50%;
+    background:rgba(255,255,255,0.16);
 
-  position:relative;
+    border:1px solid rgba(255,255,255,0.5);
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.24),
-  rgba(255,255,255,0.05)
-  );
+    margin-bottom:40px;
 
-  border:1px solid rgba(255,255,255,0.48);
-
-  box-shadow:
-  inset 0 0 18px rgba(255,255,255,0.25),
-  0 0 45px rgba(255,255,255,0.08);
+    box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.7),
+    0 18px 50px rgba(0,0,0,0.03);
 }
 
-.logo-ring::before{
-  content:'';
+.hero-logo{
+    font-size:min(14vw,180px);
 
-  position:absolute;
-
-  width:240px;
-  height:240px;
-
-  border-radius:50%;
-
-  background:rgba(255,255,255,0.05);
-
-  filter:blur(2px);
+    color:#0b2c74;
 }
 
-.infinity{
-  font-size:92px;
-  color:#062d71;
-  z-index:2;
+.hero h1{
+    font-size:min(7vw,110px);
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-weight:700;
+
+    margin-bottom:10px;
 }
 
-.hero-title{
-  margin-top:24px;
+.hero-line{
+    display:flex;
+    align-items:center;
+    gap:18px;
 
-  color:#062d71;
+    color:#c79c36;
 
-  font-size:30px;
-
-  font-family:'Cormorant Garamond',serif;
-
-  font-weight:700;
+    margin-bottom:14px;
 }
 
-.spark{
-  color:#c79a3d;
+.hero-line span{
+    width:min(12vw,150px);
+    height:1px;
+
+    background:#c79c36;
 }
 
-.divider{
-  width:170px;
+.hero p{
+    font-size:min(2vw,34px);
 
-  margin:12px auto;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  gap:10px;
+    color:#b48a2f;
 }
 
-.divider span{
-  width:55px;
-  height:1px;
-  background:#c79a3d;
+/* CHAT AREA */
+
+#chatContainer{
+    width:100%;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:24px;
+
+    padding:30px 40px 180px;
 }
 
-.divider p{
-  color:#c79a3d;
-  font-size:14px;
-}
+/* MESSAGES */
 
-.sub{
-  color:#b78633;
+.message{
+    width:fit-content;
 
-  font-size:18px;
+    max-width:700px;
 
-  font-family:'Cormorant Garamond',serif;
-}
-/* REPLACE YOUR FULL .chat-area CSS WITH THIS */
+    padding:22px 28px;
 
-.chat-area{
-  position:absolute;
+    border-radius:34px;
 
-  top:0;
-  left:0;
+    font-size:22px;
 
-  width:100%;
-  height:100dvh;
+    line-height:1.7;
 
-  overflow-y:auto;
-
-  padding-left:20px;
-  padding-right:20px;
-
-  /* THIS CREATES EMPTY SPACE FOR HERO */
-  padding-top:72dvh;
-
-  /* SEARCH BAR SPACE */
-  padding-bottom:130px;
-
-  display:flex;
-  flex-direction:column;
-
-  gap:14px;
-
-  z-index:20;
-
-  scroll-behavior:smooth;
-}
-
-
-.bubble{
-  max-width:82%;
-
-  padding:14px 18px;
-
-  border-radius:24px;
-
-  line-height:1.7;
-
-  white-space:pre-wrap;
-
-  animation:fadeUp 0.3s ease;
-
-  font-size:16px;
+    word-wrap:break-word;
 }
 
 .user{
-  align-self:flex-end;
+    align-self:flex-end;
 
-  background:#062d71;
-  color:white;
+    background:#0b2c74;
 
-  border-bottom-right-radius:8px;
+    color:white;
 }
 
-.bot{
-  align-self:flex-start;
+.ai{
+    align-self:flex-start;
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.20)
-  );
+    background:rgba(255,255,255,0.42);
 
-  border:1px solid rgba(255,255,255,0.6);
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
-  backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.55);
 
-  color:#062d71;
-
-  border-bottom-left-radius:8px;
+    color:#0b2c74;
 }
 
-/* SEARCH */
+/* INPUT AREA */
 
-.search-wrap{
-  position:absolute;
+.input-area{
+    position:fixed;
 
-  left:50%;
-  bottom:12px;
+    left:28px;
+    right:28px;
+    bottom:20px;
 
-  transform:translateX(-50%);
+    height:92px;
 
-  width:93%;
-  height:72px;
+    background:rgba(255,255,255,0.4);
 
-  border-radius:28px;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
-  padding:0 12px;
+    border-radius:50px;
 
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
+    border:1px solid rgba(255,255,255,0.55);
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.58),
-  rgba(255,255,255,0.18)
-  );
+    display:flex;
+    align-items:center;
 
-  border:1px solid rgba(255,255,255,0.72);
+    padding:0 18px;
 
-  backdrop-filter:blur(18px);
+    z-index:1000;
 
-  box-shadow:
-  inset 0 0 12px rgba(255,255,255,0.4),
-  0 12px 28px rgba(180,140,100,0.10);
-
-  z-index:100;
+    box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.75),
+    0 10px 30px rgba(0,0,0,0.04);
 }
 
-.search-left{
-  display:flex;
-  align-items:center;
-  gap:10px;
+.left-icon{
+    width:58px;
+    height:58px;
 
-  width:100%;
+    border-radius:50%;
+
+    background:rgba(255,255,255,0.65);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+
+    color:#c79c36;
+
+    margin-right:14px;
 }
 
-.circle-btn{
-  width:44px;
-  height:44px;
+#userInput{
+    flex:1;
 
-  border-radius:50%;
+    border:none;
+    outline:none;
 
-  display:flex;
-  align-items:center;
-  justify-content:center;
+    background:transparent;
 
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.20)
-  );
+    font-size:22px;
 
-  border:1px solid rgba(255,255,255,0.7);
-
-  box-shadow:
-  inset 0 0 8px rgba(255,255,255,0.5),
-  0 5px 16px rgba(180,140,100,0.10);
-
-  cursor:pointer;
-
-  flex-shrink:0;
+    color:#555;
 }
 
-.circle-btn span{
-  color:#b8862e;
-  font-size:22px;
+#sendBtn{
+    width:60px;
+    height:60px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:white;
+
+    color:#b48a2f;
+
+    font-size:32px;
+
+    cursor:pointer;
 }
 
-.ai-input{
-  width:100%;
+/* MOBILE */
 
-  border:none;
-  outline:none;
+@media(max-width:768px){
 
-  background:transparent;
+    .topbar{
+        padding:22px 20px;
+    }
 
-  color:#444;
+    .menu-btn,
+    .logo-btn{
+        width:60px;
+        height:60px;
+    }
 
-  font-size:15px;
+    .menu-btn{
+        font-size:28px;
+    }
 
-  font-family:'Poppins',sans-serif;
-}
+    .logo-btn{
+        font-size:30px;
+    }
 
-.ai-input::placeholder{
-  color:#7d756e;
-}
+    .brand{
+        font-size:22px;
+    }
 
-/* TYPING */
+    .hero{
+        padding-top:120px;
+    }
 
-.typing{
-  position:absolute;
+    .hero-logo-circle{
+        width:240px;
+        height:240px;
+    }
 
-  bottom:100px;
-  left:20px;
+    .hero-logo{
+        font-size:84px;
+    }
 
-  color:#000;
+    .hero h1{
+        font-size:52px;
+    }
 
-  font-size:15px;
+    .hero-line span{
+        width:70px;
+    }
 
-  z-index:100;
-}
+    .hero p{
+        font-size:20px;
+    }
 
-.hidden{
-  display:none;
-}
+    #chatContainer{
+        padding:25px 18px 150px;
+    }
 
-/* IMAGE PREVIEW */
+    .message{
+        max-width:85%;
 
-#uploadPreview{
-  position:absolute;
+        font-size:17px;
 
-  bottom:90px;
-  left:26px;
+        padding:18px 20px;
+    }
 
-  color:#8b6f45;
+    .input-area{
+        left:16px;
+        right:16px;
+        bottom:16px;
 
-  font-size:13px;
+        height:78px;
+    }
 
-  z-index:100;
-}
+    .left-icon,
+    #sendBtn{
+        width:50px;
+        height:50px;
 
-/* SIDE MENU */
+        font-size:26px;
+    }
 
-.menu-overlay{
-  position:fixed;
-  inset:0;
+    #userInput{
+        font-size:18px;
+    }
 
-  background:rgba(0,0,0,0.08);
-
-  backdrop-filter:blur(8px);
-
-  opacity:0;
-  visibility:hidden;
-
-  transition:0.35s ease;
-
-  z-index:999;
-}
-
-.menu-overlay.active{
-  opacity:1;
-  visibility:visible;
-}
-
-.side-menu{
-  position:fixed;
-
-  top:0;
-  left:0;
-
-  width:285px;
-  max-width:82%;
-
-  height:100dvh;
-
-  padding:18px 14px;
-
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.78),
-  rgba(255,255,255,0.24)
-  );
-
-  border-right:1px solid rgba(255,255,255,0.7);
-
-  backdrop-filter:blur(24px);
-
-  transform:translateX(-100%);
-
-  transition:transform 0.35s ease;
-
-  z-index:99999;
-}
-
-.side-menu.active{
-  transform:translateX(0);
-}
-
-.menu-profile{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  padding:14px;
-
-  border-radius:22px;
-
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.20)
-  );
-
-  border:1px solid rgba(255,255,255,0.7);
-
-  margin-bottom:16px;
-}
-
-.profile-left{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
-
-.profile-icon{
-  width:52px;
-  height:52px;
-
-  border-radius:50%;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  background:#f5dfba;
-
-  font-size:24px;
-}
-
-.menu-profile h2{
-  color:#062d71;
-
-  font-size:24px;
-
-  font-family:'Cormorant Garamond',serif;
-}
-
-.menu-profile p{
-  color:#b8862e;
-
-  font-size:14px;
-}
-
-.profile-star{
-  color:#d4a54f;
-
-  font-size:20px;
-}
-
-.menu-items{
-  display:flex;
-  flex-direction:column;
-
-  gap:10px;
-}
-
-.menu-item{
-  height:60px;
-
-  padding:0 16px;
-
-  border-radius:18px;
-
-  display:flex;
-  align-items:center;
-
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.20)
-  );
-
-  border:1px solid rgba(255,255,255,0.65);
-
-  cursor:pointer;
-}
-
-.menu-item span{
-  font-size:20px;
-}
-
-.menu-item p{
-  margin-left:14px;
-
-  flex:1;
-
-  font-size:16px;
-
-  font-family:'Cormorant Garamond',serif;
-
-  color:#222;
-}
-
-.menu-item i{
-  font-style:normal;
-
-  color:#999;
-}
-
-/* ABOUT */
-
-.about-popup{
-  position:fixed;
-  inset:0;
-
-  background:rgba(0,0,0,0.10);
-
-  backdrop-filter:blur(10px);
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  opacity:0;
-  visibility:hidden;
-
-  transition:0.3s ease;
-
-  z-index:9999;
-}
-
-.about-popup.active{
-  opacity:1;
-  visibility:visible;
-}
-
-.about-card{
-  position:relative;
-
-  width:88%;
-  max-width:360px;
-
-  padding:30px 24px;
-
-  border-radius:30px;
-
-  text-align:center;
-
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.72),
-  rgba(255,255,255,0.18)
-  );
-
-  border:1px solid rgba(255,255,255,0.7);
-
-  backdrop-filter:blur(18px);
-
-  box-shadow:
-  0 10px 40px rgba(0,0,0,0.08),
-  inset 0 0 10px rgba(255,255,255,0.3);
-}
-
-.about-logo{
-  font-size:52px;
-  color:#062d71;
-}
-
-.about-card h2{
-  margin-top:10px;
-
-  color:#062d71;
-
-  font-size:30px;
-
-  font-family:'Cormorant Garamond',serif;
-}
-
-.about-sub{
-  color:#b8862e;
-
-  font-size:18px;
-
-  margin-top:4px;
-
-  font-family:'Cormorant Garamond',serif;
-}
-
-.about-line{
-  width:70px;
-  height:1px;
-
-  background:#d2a34f;
-
-  margin:18px auto;
-}
-
-.about-text{
-  color:#6f645b;
-
-  line-height:1.6;
-
-  font-size:16px;
-}
-
-.founder{
-  margin-top:18px;
-
-  color:#062d71;
-
-  font-size:22px;
-
-  font-family:'Cormorant Garamond',serif;
-}
-
-.close-popup{
-  position:absolute;
-
-  top:14px;
-  right:18px;
-
-  width:34px;
-  height:34px;
-
-  border:none;
-
-  border-radius:50%;
-
-  background:
-  linear-gradient(
-  145deg,
-  rgba(255,255,255,0.9),
-  rgba(255,255,255,0.35)
-  );
-
-  backdrop-filter:blur(10px);
-
-  color:#555;
-
-  font-size:20px;
-
-  cursor:pointer;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-@keyframes fadeUp{
-  from{
-    opacity:0;
-    transform:translateY(10px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
 }
 
 </style>
@@ -756,263 +413,129 @@ body{
 
 <body>
 
-<div class="app">
+<!-- TOPBAR -->
 
-<!-- SIDE MENU -->
+<div class="topbar">
 
-<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+    <div class="left-top">
 
-<div class="side-menu" id="sideMenu">
+        <div class="menu-btn">
+            ☰
+        </div>
 
-<div class="menu-profile">
+        <div class="brand">
+            Sanitas Melete
+        </div>
 
-<div class="profile-left">
+    </div>
 
-<div class="profile-icon">👤</div>
-
-<div>
-<h2>SK</h2>
-<p>Premium User</p>
-</div>
-
-</div>
-
-<div class="profile-star">✦</div>
-
-</div>
-
-<div class="menu-items">
-
-<div class="menu-item">
-<span>☷</span>
-<p>Dashboard</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>💬</span>
-<p>My Chats</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>📄</span>
-<p>My Documents</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>🔖</span>
-<p>Saved Answers</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>🗓</span>
-<p>Study Planner</p>
-<i>›</i>
-</div>
-
-</div>
-
-</div>
-
-<!-- TOP -->
-
-<div class="top-bar">
-
-<div class="left-top">
-
-<div class="glass-btn" onclick="openMenu()">
-<i>☰</i>
-</div>
-
-<div class="brand">
-Sanitas Melete
-</div>
-
-</div>
-
-<div class="glass-btn" onclick="openAbout()">
-<i>∞</i>
-</div>
+    <div class="logo-btn">
+        ∞
+    </div>
 
 </div>
 
 <!-- HERO -->
 
-<div class="center">
+<section class="hero">
 
-<div class="logo-ring">
-<div class="infinity">∞</div>
-</div>
+    <div class="hero-logo-circle">
+        <div class="hero-logo">∞</div>
+    </div>
 
-<div class="hero-title">
-Hi iam mebi<span class="spark">✦</span>
-</div>
+    <h1>Hi iam mebi</h1>
 
-<div class="divider">
-<span></span>
-<p>✦</p>
-<span></span>
-</div>
+    <div class="hero-line">
+        <span></span>
+        ✦
+        <span></span>
+    </div>
 
-<div class="sub">
-your study buddy
-</div>
+    <p>your study buddy</p>
 
-</div>
+</section>
 
-<!-- CHAT -->
+<!-- CHAT AREA -->
 
-<div id="chat" class="chat-area"></div>
+<section id="chatContainer"></section>
 
-<div id="typing" class="typing hidden">
-MEBI is thinking✨
-</div>
+<!-- INPUT BAR -->
 
-<div id="uploadPreview"></div>
+<div class="input-area">
 
-<!-- SEARCH -->
+    <div class="left-icon">
+        ⌘
+    </div>
 
-<div class="search-wrap">
+    <input
+        type="text"
+        id="userInput"
+        placeholder="type your questions here"
+    >
 
-<div class="search-left">
-
-<div
-class="circle-btn"
-onclick="document.getElementById('fileInput').click()"
->
-<span>⌘</span>
-</div>
-
-<input
-type="text"
-id="user-input"
-placeholder="type your questions here"
-class="ai-input"
-/>
-
-</div>
-
-<input
-type="file"
-id="fileInput"
-accept="image/*"
-hidden
-/>
-
-<div class="circle-btn" onclick="sendMessage()">
-<span>↑</span>
-</div>
-
-</div>
-
-</div>
-
-<!-- ABOUT -->
-
-<div class="about-popup" id="aboutPopup">
-
-<div class="about-card">
-
-<button class="close-popup" onclick="closeAbout()">✕</button>
-
-<div class="about-logo">∞</div>
-
-<h2>Sanitas Melete AI</h2>
-
-<p class="about-sub">
-your study buddy
-</p>
-
-<div class="about-line"></div>
-
-<p class="about-text">
-Premium AI learning platform crafted for students with elegant design and intelligent study experience.
-</p>
-
-<p class="founder">
-Founder — SK
-</p>
-
-</div>
+    <button id="sendBtn">
+        ↑
+    </button>
 
 </div>
 
 <script>
 
-function openAbout(){
-document
-.getElementById("aboutPopup")
-.classList.add("active");
+const userInput = document.getElementById("userInput");
+const sendBtn = document.getElementById("sendBtn");
+const chatContainer = document.getElementById("chatContainer");
+
+function addMessage(text,type){
+
+    const msg = document.createElement("div");
+
+    msg.classList.add("message");
+    msg.classList.add(type);
+
+    msg.innerText = text;
+
+    chatContainer.appendChild(msg);
+
+    window.scrollTo({
+        top:document.body.scrollHeight,
+        behavior:"smooth"
+    });
 }
 
-function closeAbout(){
-document
-.getElementById("aboutPopup")
-.classList.remove("active");
+function sendMessage(){
+
+    const text = userInput.value.trim();
+
+    if(text === "") return;
+
+    addMessage(text,"user");
+
+    userInput.value = "";
+
+    setTimeout(()=>{
+
+        addMessage(
+`Hello there! 😊
+
+I am MEBI, your study buddy.
+How can I help you today?`,
+            "ai"
+        );
+
+    },700);
 }
 
-const sideMenu =
-document.getElementById("sideMenu");
+sendBtn.addEventListener("click",sendMessage);
 
-const menuOverlay =
-document.getElementById("menuOverlay");
-
-function openMenu(){
-sideMenu.classList.add("active");
-menuOverlay.classList.add("active");
-}
-
-function closeMenu(){
-sideMenu.classList.remove("active");
-menuOverlay.classList.remove("active");
-}
-
-/* SWIPE SUPPORT */
-
-let startX = 0;
-
-document.addEventListener("touchstart", e=>{
-  startX = e.touches[0].clientX;
-});
-
-document.addEventListener("touchmove", e=>{
-
-  let moveX = e.touches[0].clientX;
-
-  if(startX < 30 && moveX > 100){
-    openMenu();
-  }
-
-  if(startX > 250 && moveX < 120){
-    closeMenu();
-  }
-
-});
-
-/* ENTER TO SEND */
-
-const inputBox =
-document.getElementById("user-input");
-
-if(inputBox){
-
-  inputBox.addEventListener("keydown", function(e){
+userInput.addEventListener("keypress",function(e){
 
     if(e.key === "Enter"){
-      e.preventDefault();
-      sendMessage();
+        sendMessage();
     }
 
-  });
-
-}
+});
 
 </script>
-
-<script src="script.js"></script>
 
 </body>
 </html>
