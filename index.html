@@ -40,7 +40,7 @@ body{
   #eadccd 100%);
 }
 
-/* TOP BAR */
+/* TOP */
 
 .top-bar{
   width:100%;
@@ -109,7 +109,7 @@ body{
 .center{
   position:absolute;
 
-  top:50%;
+  top:42%;
   left:50%;
 
   transform:translate(-50%,-50%);
@@ -118,7 +118,9 @@ body{
 
   text-align:center;
 
-  z-index:10;
+  z-index:5;
+
+  pointer-events:none;
 }
 
 .logo-ring{
@@ -222,11 +224,13 @@ body{
 .chat-area{
   position:absolute;
 
-  top:80px;
   left:0;
 
+  top:72%;
+
   width:100%;
-  height:calc(100dvh - 170px);
+
+  height:calc(100dvh - 72%);
 
   overflow-y:auto;
 
@@ -240,6 +244,8 @@ body{
   gap:14px;
 
   z-index:20;
+
+  scroll-behavior:smooth;
 }
 
 .chat-area::-webkit-scrollbar{
@@ -258,6 +264,8 @@ body{
   white-space:pre-wrap;
 
   animation:fadeUp 0.3s ease;
+
+  font-size:16px;
 }
 
 .user{
@@ -359,6 +367,8 @@ body{
   0 5px 16px rgba(180,140,100,0.10);
 
   cursor:pointer;
+
+  flex-shrink:0;
 }
 
 .circle-btn span{
@@ -376,7 +386,7 @@ body{
 
   color:#444;
 
-  font-size:14px;
+  font-size:15px;
 
   font-family:'Poppins',sans-serif;
 }
@@ -390,13 +400,12 @@ body{
 .typing{
   position:absolute;
 
-  bottom:120px;
-
+  bottom:100px;
   left:20px;
 
   color:#000;
 
-  font-size:16px;
+  font-size:15px;
 
   z-index:100;
 }
@@ -405,10 +414,12 @@ body{
   display:none;
 }
 
+/* IMAGE PREVIEW */
+
 #uploadPreview{
   position:absolute;
 
-  bottom:92px;
+  bottom:90px;
   left:26px;
 
   color:#8b6f45;
@@ -465,16 +476,11 @@ body{
 
   backdrop-filter:blur(24px);
 
-  box-shadow:
-  0 10px 40px rgba(0,0,0,0.08);
-
   transform:translateX(-100%);
 
   transition:transform 0.35s ease;
 
   z-index:99999;
-
-  overflow-y:auto;
 }
 
 .side-menu.active{
@@ -622,6 +628,8 @@ body{
 }
 
 .about-card{
+  position:relative;
+
   width:88%;
   max-width:360px;
 
@@ -639,6 +647,12 @@ body{
   );
 
   border:1px solid rgba(255,255,255,0.7);
+
+  backdrop-filter:blur(18px);
+
+  box-shadow:
+  0 10px 40px rgba(0,0,0,0.08),
+  inset 0 0 10px rgba(255,255,255,0.3);
 }
 
 .about-logo{
@@ -658,6 +672,8 @@ body{
 
 .about-sub{
   color:#b8862e;
+
+  font-size:18px;
 
   margin-top:4px;
 
@@ -694,17 +710,34 @@ body{
 .close-popup{
   position:absolute;
 
-  top:16px;
-  right:20px;
+  top:14px;
+  right:18px;
+
+  width:34px;
+  height:34px;
 
   border:none;
-  background:none;
 
-  font-size:22px;
+  border-radius:50%;
 
-  color:#7b7066;
+  background:
+  linear-gradient(
+  145deg,
+  rgba(255,255,255,0.9),
+  rgba(255,255,255,0.35)
+  );
+
+  backdrop-filter:blur(10px);
+
+  color:#555;
+
+  font-size:20px;
 
   cursor:pointer;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 @keyframes fadeUp{
@@ -809,7 +842,7 @@ Sanitas Melete
 
 <!-- HERO -->
 
-<div class="center" id="heroSection">
+<div class="center">
 
 <div class="logo-ring">
 <div class="infinity">∞</div>
@@ -959,6 +992,24 @@ document.addEventListener("touchmove", e=>{
   }
 
 });
+
+/* ENTER TO SEND */
+
+const inputBox =
+document.getElementById("user-input");
+
+if(inputBox){
+
+  inputBox.addEventListener("keydown", function(e){
+
+    if(e.key === "Enter"){
+      e.preventDefault();
+      sendMessage();
+    }
+
+  });
+
+}
 
 </script>
 
