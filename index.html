@@ -27,8 +27,6 @@ body{
 background:#efe3d6;
 }
 
-/* MAIN */
-
 .app{
 width:100%;
 height:100dvh;
@@ -53,7 +51,7 @@ align-items:center;
 padding:28px 38px 0;
 
 position:relative;
-z-index:50;
+z-index:100;
 }
 
 .left-top{
@@ -61,8 +59,6 @@ display:flex;
 align-items:center;
 gap:16px;
 }
-
-/* BUTTONS */
 
 .glass-btn{
 width:58px;
@@ -98,8 +94,6 @@ color:#062d71;
 font-size:26px;
 }
 
-/* BRAND */
-
 .brand{
 color:#062d71;
 font-size:30px;
@@ -125,8 +119,6 @@ pointer-events:none;
 
 z-index:1;
 }
-
-/* LOGO */
 
 .logo-ring{
 width:290px;
@@ -177,8 +169,6 @@ color:#062d71;
 z-index:2;
 }
 
-/* TITLE */
-
 .hero-title{
 margin-top:34px;
 
@@ -196,8 +186,6 @@ line-height:1;
 .spark{
 color:#c79a3d;
 }
-
-/* DIVIDER */
 
 .divider{
 width:260px;
@@ -222,15 +210,13 @@ color:#c79a3d;
 font-size:18px;
 }
 
-/* SUB */
-
 .sub{
 color:#b78633;
 font-size:30px;
 font-family:'Cormorant Garamond',serif;
 }
 
-/* CHAT AREA */
+/* CHAT */
 
 .chat-area{
 
@@ -263,8 +249,6 @@ scroll-behavior:smooth;
 .chat-area::-webkit-scrollbar{
 display:none;
 }
-
-/* MESSAGE */
 
 .message{
 max-width:78%;
@@ -325,7 +309,7 @@ transform:translateY(0);
 
 }
 
-/* SEARCH BAR */
+/* SEARCH */
 
 .search-wrap{
 position:fixed;
@@ -421,6 +405,129 @@ font-family:'Poppins',sans-serif;
 color:#7d756e;
 }
 
+/* MENU */
+
+.menu-overlay{
+position:fixed;
+inset:0;
+
+background:rgba(0,0,0,0.08);
+
+backdrop-filter:blur(8px);
+
+opacity:0;
+visibility:hidden;
+
+transition:0.35s ease;
+
+z-index:999;
+}
+
+.menu-overlay.active{
+opacity:1;
+visibility:visible;
+}
+
+.side-menu{
+position:fixed;
+
+top:0;
+left:0;
+
+width:285px;
+max-width:82%;
+
+height:100dvh;
+
+padding:18px 14px;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.75),
+rgba(255,255,255,0.25)
+);
+
+border-right:1px solid rgba(255,255,255,0.7);
+
+backdrop-filter:blur(24px);
+
+box-shadow:
+0 10px 40px rgba(0,0,0,0.08);
+
+transform:translateX(-100%);
+
+transition:transform 0.35s ease;
+
+z-index:1000;
+}
+
+.side-menu.active{
+transform:translateX(0);
+}
+
+/* ABOUT */
+
+.about-popup{
+position:fixed;
+inset:0;
+
+background:rgba(0,0,0,0.10);
+
+backdrop-filter:blur(10px);
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+opacity:0;
+visibility:hidden;
+
+transition:0.3s ease;
+
+z-index:9999;
+}
+
+.about-popup.active{
+opacity:1;
+visibility:visible;
+}
+
+.about-card{
+width:88%;
+max-width:360px;
+
+padding:30px 24px;
+
+border-radius:30px;
+
+text-align:center;
+
+background:
+linear-gradient(
+145deg,
+rgba(255,255,255,0.72),
+rgba(255,255,255,0.18)
+);
+
+border:1px solid rgba(255,255,255,0.7);
+
+backdrop-filter:blur(18px);
+}
+
+.close-popup{
+position:absolute;
+top:16px;
+right:20px;
+
+border:none;
+background:none;
+
+font-size:22px;
+
+cursor:pointer;
+}
+
 /* MOBILE */
 
 @media (max-width:768px){
@@ -461,20 +568,6 @@ margin-top:24px;
 font-size:30px;
 }
 
-.divider{
-width:170px;
-margin:12px auto;
-gap:10px;
-}
-
-.divider span{
-width:55px;
-}
-
-.divider p{
-font-size:14px;
-}
-
 .sub{
 font-size:18px;
 }
@@ -489,9 +582,6 @@ padding:0 12px;
 
 .chat-area{
 padding-top:650px;
-padding-left:20px;
-padding-right:20px;
-padding-bottom:190px;
 }
 
 }
@@ -503,13 +593,19 @@ padding-bottom:190px;
 
 <div class="app">
 
-<!-- TOP BAR -->
+<!-- MENU -->
+
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+
+<div class="side-menu" id="sideMenu"></div>
+
+<!-- TOP -->
 
 <div class="top-bar">
 
 <div class="left-top">
 
-<div class="glass-btn">
+<div class="glass-btn" onclick="openMenu()">
 <i>☰</i>
 </div>
 
@@ -519,7 +615,7 @@ Sanitas Melete
 
 </div>
 
-<div class="glass-btn">
+<div class="glass-btn" onclick="openAbout()">
 <i>∞</i>
 </div>
 
@@ -577,6 +673,24 @@ placeholder="type your questions here"
 
 </div>
 
+<!-- ABOUT -->
+
+<div class="about-popup" id="aboutPopup">
+
+<div class="about-card">
+
+<button class="close-popup" onclick="closeAbout()">✕</button>
+
+<h2>Sanitas Melete AI</h2>
+
+<p style="margin-top:12px;color:#666;">
+Premium AI learning platform
+</p>
+
+</div>
+
+</div>
+
 </div>
 
 <script>
@@ -590,7 +704,39 @@ document.querySelector(".send-btn");
 const chatArea =
 document.getElementById("chatArea");
 
-/* ADD MESSAGE */
+/* MENU */
+
+const sideMenu =
+document.getElementById("sideMenu");
+
+const menuOverlay =
+document.getElementById("menuOverlay");
+
+function openMenu(){
+sideMenu.classList.add("active");
+menuOverlay.classList.add("active");
+}
+
+function closeMenu(){
+sideMenu.classList.remove("active");
+menuOverlay.classList.remove("active");
+}
+
+/* ABOUT */
+
+function openAbout(){
+document
+.getElementById("aboutPopup")
+.classList.add("active");
+}
+
+function closeAbout(){
+document
+.getElementById("aboutPopup")
+.classList.remove("active");
+}
+
+/* CHAT */
 
 function addMessage(text,type){
 
@@ -614,8 +760,6 @@ chatArea.scrollHeight;
 
 }
 
-/* SEND MESSAGE */
-
 async function sendMessage(){
 
 const text =
@@ -626,8 +770,6 @@ if(!text) return;
 addMessage(text,"user");
 
 input.value = "";
-
-/* LOADING */
 
 const loading =
 document.createElement("div");
@@ -681,20 +823,14 @@ addMessage(
 "ai"
 );
 
-console.log(err);
-
 }
 
 }
-
-/* BUTTON */
 
 sendBtn.addEventListener(
 "click",
 sendMessage
 );
-
-/* ENTER */
 
 input.addEventListener(
 "keypress",
