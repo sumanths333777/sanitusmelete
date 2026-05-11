@@ -55,6 +55,7 @@ top:0;
 left:0;
 
 z-index:1000;
+
 transition:0.25s ease;
 }
 
@@ -62,7 +63,6 @@ transition:0.25s ease;
 display:flex;
 align-items:center;
 gap:16px;
-transition:0.25s ease;
 }
 
 .glass-btn{
@@ -108,7 +108,6 @@ font-size:30px;
 font-family:'Cormorant Garamond',serif;
 font-weight:600;
 white-space:nowrap;
-transition:0.25s ease;
 }
 
 /* HERO */
@@ -128,7 +127,6 @@ text-align:center;
 pointer-events:none;
 
 z-index:1;
-transition:0.3s ease;
 }
 
 .logo-ring{
@@ -254,7 +252,6 @@ gap:14px;
 z-index:5;
 
 scroll-behavior:smooth;
-
 }
 
 .chat-area::-webkit-scrollbar{
@@ -392,8 +389,6 @@ inset 0 0 8px rgba(255,255,255,0.5),
 0 5px 16px rgba(180,140,100,0.10);
 
 cursor:pointer;
-
-flex-shrink:0;
 }
 
 .circle-btn span{
@@ -420,7 +415,7 @@ font-family:'Poppins',sans-serif;
 color:#7d756e;
 }
 
-/* MENU */
+/* OVERLAY */
 
 .menu-overlay{
 position:fixed;
@@ -444,14 +439,16 @@ opacity:1;
 visibility:visible;
 }
 
+/* SIDE MENU */
+
 .side-menu{
 position:fixed;
 
 top:0;
 left:0;
 
-width:285px;
-max-width:82%;
+width:78%;
+max-width:320px;
 
 height:100dvh;
 
@@ -466,20 +463,26 @@ rgba(255,255,255,0.25)
 
 border-right:1px solid rgba(255,255,255,0.7);
 
+border-top-right-radius:32px;
+border-bottom-right-radius:32px;
+
 backdrop-filter:blur(30px);
 -webkit-backdrop-filter:blur(30px);
 
 box-shadow:
 0 10px 40px rgba(0,0,0,0.08);
 
-transform:translateX(-105%);
+transform:translateX(-110%);
 
-transition:transform 0.35s cubic-bezier(.77,0,.18,1);
+transition:
+transform 0.42s cubic-bezier(.77,0,.18,1);
 
 z-index:999;
 
 overflow-y:auto;
 overflow-x:hidden;
+
+will-change:transform;
 }
 
 .side-menu::-webkit-scrollbar{
@@ -489,8 +492,6 @@ display:none;
 .side-menu.active{
 transform:translateX(0);
 }
-
-/* HIDE TOP BAR WHEN MENU OPEN */
 
 .app.menu-open .top-bar{
 opacity:0;
