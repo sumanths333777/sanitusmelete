@@ -904,13 +904,19 @@ your study buddy
 
 <!-- SEARCH -->
 
-<div class="input-row">
+<div class="search-left">
 
-<button-class="upload-btn"title="uploadimage"
-onclick="document.getElementByid('fileinput')
-<div class="circle-btn">
-<span>⌘</span>
-</div>
+<label for="fileUpload" class="circle-btn">
+<span>＋</span>
+</label>
+
+<input
+type="file"
+id="fileUpload"
+hidden
+multiple
+accept=".pdf,.doc,.docx,.txt,image/*"
+/>
 
 <input
 type="text"
@@ -919,6 +925,7 @@ placeholder="type your questions here"
 />
 
 </div>
+  
 
 <div class="circle-btn send-btn">
 <span>↑</span>
@@ -1139,6 +1146,34 @@ sendMessage();
 }
 
 });
+
+/* FILE UPLOAD */
+
+const fileUpload =
+document.getElementById("fileUpload");
+
+fileUpload.addEventListener(
+"change",
+e=>{
+
+const files = e.target.files;
+
+if(files.length > 0){
+
+for(let file of files){
+
+addMessage(
+"Uploaded: " + file.name,
+"user"
+);
+
+}
+
+}
+
+}
+);
+  
 
 </script>
 
