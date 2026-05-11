@@ -993,6 +993,9 @@ document.getElementById("sideMenu");
 const menuOverlay =
 document.getElementById("menuOverlay");
 
+const fileUpload =
+document.getElementById("fileUpload");
+
 /* MENU */
 
 function openMenu(){
@@ -1066,6 +1069,9 @@ block:"end"
 },100);
 
 }
+
+/* SEND MESSAGE */
+
 async function sendMessage(){
 
 const text =
@@ -1107,69 +1113,34 @@ addMessage(
 },1000);
 
 }
-  
-try{
 
-const response =
-await fetch("/api/ask",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-question:text
-})
-
-});
-
-const data =
-await response.json();
-
-loading.remove();
-
-addMessage(
-data.reply || "No response",
-"ai"
-);
-
-}catch(err){
-
-loading.remove();
-
-addMessage(
-"Error from AI service.",
-"ai"
-);
-
-}
-
-}
+/* SEND BUTTON */
 
 sendBtn.onclick = sendMessage;
-  
+
+/* ENTER KEY */
+
 input.addEventListener(
 "keypress",
 e=>{
 
 if(e.key === "Enter"){
+
 sendMessage();
+
 }
 
-});
+}
+);
 
 /* FILE UPLOAD */
-
-const fileUpload =
-document.getElementById("fileUpload");
 
 fileUpload.addEventListener(
 "change",
 e=>{
 
-const files = e.target.files;
+const files =
+e.target.files;
 
 if(files.length > 0){
 
@@ -1186,7 +1157,6 @@ addMessage(
 
 }
 );
-  
 
 </script>
 
