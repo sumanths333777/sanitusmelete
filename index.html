@@ -417,13 +417,14 @@ inset:0;
 background:rgba(0,0,0,0.08);
 
 backdrop-filter:blur(8px);
+-website-backdrop-filter:(8px);
 
 opacity:0;
 visibility:hidden;
 
 transition:0.35s ease;
 
-z-index:999;
+z-index:9998;
 }
 
 .menu-overlay.active{
@@ -447,24 +448,27 @@ padding:120px 14px 18px;
 background:
 linear-gradient(
 145deg,
-rgba(255,255,255,0.75),
+rgba(255,255,255,0.85),
 rgba(255,255,255,0.25)
 );
 
 border-right:1px solid rgba(255,255,255,0.7);
 
-backdrop-filter:blur(24px);
+backdrop-filter:blur(30px);
+-webkit-backdrop-filter:blur(30px);,
+  
 
 box-shadow:
 0 10px 40px rgba(0,0,0,0.08);
 
-transform:translateX(-100%);
+transform:translateX(-105%);
 
-transition:transform 0.35s ease;
+transition:transform 0.35s cubic-beizer(.77,0,.18,1);
 
 z-index:999;
 
 overflow-y:auto;
+overflow-x:hidden;
 }
 
 .side-menu.active{
@@ -743,6 +747,20 @@ padding:0 12px;
 padding-top:72vh;
 }
 
+.side-menu::-webkit-scrollbar{
+display:none;
+}
+
+.side-menu.active ~ .top-bar{
+pointer-events:none;
+}
+
+.side-menu.active ~ .top-bar .glass-btn,
+.side-menu.active ~ .top-bar .brand{
+opacity:0;
+transition:0.2s ease;
+
+  
 }
 
 </style>
