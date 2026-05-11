@@ -1133,9 +1133,10 @@ data.reply || "No response",
 loading.remove();
 
 addMessage(
-"API Error 🤗",
+"API Error:"+err.message,
 "ai"
 );
+console.error(err);
   
 }
 
