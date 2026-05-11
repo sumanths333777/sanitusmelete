@@ -1093,12 +1093,12 @@ chatArea.appendChild(loading);
 
 setTimeout(()=>{
 
-loading.scrollIntoView({
+loading.remove()
 behavior:"smooth",
 block:"end"
 });
 
-},100);
+},1000);
 
 try{
 
