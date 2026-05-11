@@ -105,12 +105,18 @@ MCQ RULES:
 
     clearTimeout(timeout);
 
-    if (!response.ok) {
-      const errText = await response.text();
-      console.error("Gemini error:", errText);
-      return res.status(500).json({ reply: "Error from AI service." });
-    }
+   if (!response.ok) {
 
+  const errText = await response.text();
+
+  console.error("Gemini error:", errText);
+
+  return res.status(500).json({
+    reply: errText
+  });
+
+}
+   
     const data = await response.json();
     const replyParts = data?.candidates?.[0]?.content?.parts || [];
     const replyText = replyParts.map(p => p.text || "").join(" ").trim();
@@ -120,6 +126,5 @@ MCQ RULES:
     });
   } catch (err) {
     console.error("Server error:", err);
-    return res.status(500).json({ reply: "Network error. Please try again." });
   }
 }
