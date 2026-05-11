@@ -602,6 +602,184 @@ body{
 
   cursor:pointer;
 }
+<script>
+
+function openAbout(){
+document
+.getElementById("aboutPopup")
+.classList.add("active");
+}
+
+function closeAbout(){
+document
+.getElementById("aboutPopup")
+.classList.remove("active");
+}
+
+const sideMenu =
+document.getElementById("sideMenu");
+
+const menuOverlay =
+document.getElementById("menuOverlay");
+
+function openMenu(){
+sideMenu.classList.add("active");
+menuOverlay.classList.add("active");
+}
+
+function closeMenu(){
+sideMenu.classList.remove("active");
+menuOverlay.classList.remove("active");
+}
+
+let startX = 0;
+
+document.addEventListener("touchstart", e=>{
+startX = e.touches[0].clientX;
+});
+
+document.addEventListener("touchmove", e=>{
+
+let moveX = e.touches[0].clientX;
+
+if(startX < 30 && moveX > 100){
+openMenu();
+}
+
+if(startX > 250 && moveX < 120){
+closeMenu();
+}
+
+});
+
+/* ===========================
+   CHAT SYSTEM
+=========================== */
+
+const input =
+document.querySelector(".search-input");
+
+const sendBtn =
+document.querySelector(".send-btn");
+
+const chatArea =
+document.getElementById("chatArea");
+
+function addMessage(text,type){
+
+const msg =
+document.createElement("div");
+
+msg.classList.add("message");
+
+if(type === "user"){
+msg.classList.add("user-message");
+}else{
+msg.classList.add("ai-message");
+}
+
+msg.innerText = text;
+
+chatArea.appendChild(msg);
+
+chatArea.scrollTop =
+chatArea.scrollHeight;
+}
+
+/* SEND MESSAGE */
+
+async function sendMessage(){
+
+const text = input.value.trim();
+
+if(!text) return;
+
+addMessage(text,"user");
+
+input.value = "";
+
+/* LOADING */
+
+const loading =
+document.createElement("div");
+
+loading.classList.add(
+"message",
+"ai-message"
+);
+
+loading.innerText = "Typing...";
+
+chatArea.appendChild(loading);
+
+chatArea.scrollTop =
+chatArea.scrollHeight;
+
+/* API */
+
+try{
+
+const response =
+await fetch("YOUR_API_URL",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+message:text
+})
+
+});
+
+const data =
+await response.json();
+
+loading.remove();
+
+addMessage(
+data.reply || "No response",
+"ai"
+);
+
+}catch(err){
+
+loading.remove();
+
+addMessage(
+"API Error",
+"ai"
+);
+
+console.log(err);
+
+}
+
+}
+
+/* BUTTON */
+
+sendBtn.addEventListener(
+"click",
+sendMessage
+);
+
+/* ENTER KEY */
+
+input.addEventListener(
+"keypress",
+e=>{
+
+if(e.key === "Enter"){
+sendMessage();
+}
+
+});
+
+</script>
+  
 
 /* MOBILE */
 
@@ -766,7 +944,8 @@ Sanitas Melete
 <div class="logo-ring">
 <div class="infinity">∞</div>
 </div>
-
+<dic class="chat-area"id="chatArea"></dic>div>
+  
 <div class="hero-title">
 Hi iam mebi<span class="spark">✦</span>
 </div>
@@ -883,6 +1062,132 @@ openMenu();
 
 if(startX > 250 && moveX < 120){
 closeMenu();
+}
+
+});
+
+/* ===========================
+   CHAT SYSTEM
+=========================== */
+
+const input =
+document.querySelector(".search-input");
+
+const sendBtn =
+document.querySelector(".send-btn");
+
+const chatArea =
+document.getElementById("chatArea");
+
+function addMessage(text,type){
+
+const msg =
+document.createElement("div");
+
+msg.classList.add("message");
+
+if(type === "user"){
+msg.classList.add("user-message");
+}else{
+msg.classList.add("ai-message");
+}
+
+msg.innerText = text;
+
+chatArea.appendChild(msg);
+
+chatArea.scrollTop =
+chatArea.scrollHeight;
+}
+
+/* SEND MESSAGE */
+
+async function sendMessage(){
+
+const text = input.value.trim();
+
+if(!text) return;
+
+addMessage(text,"user");
+
+input.value = "";
+
+/* LOADING */
+
+const loading =
+document.createElement("div");
+
+loading.classList.add(
+"message",
+"ai-message"
+);
+
+loading.innerText = "Typing...";
+
+chatArea.appendChild(loading);
+
+chatArea.scrollTop =
+chatArea.scrollHeight;
+
+/* API */
+
+try{
+
+const response =
+await fetch("YOUR_API_URL",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+message:text
+})
+
+});
+
+const data =
+await response.json();
+
+loading.remove();
+
+addMessage(
+data.reply || "No response",
+"ai"
+);
+
+}catch(err){
+
+loading.remove();
+
+addMessage(
+"API Error",
+"ai"
+);
+
+console.log(err);
+
+}
+
+}
+
+/* BUTTON */
+
+sendBtn.addEventListener(
+"click",
+sendMessage
+);
+
+/* ENTER KEY */
+
+input.addEventListener(
+"keypress",
+e=>{
+
+if(e.key === "Enter"){
+sendMessage();
 }
 
 });
