@@ -1066,7 +1066,6 @@ block:"end"
 },100);
 
 }
-
 async function sendMessage(){
 
 const text =
@@ -1091,15 +1090,24 @@ loading.innerText =
 
 chatArea.appendChild(loading);
 
-setTimeout(()=>{
-
-loading.remove()
+loading.scrollIntoView({
 behavior:"smooth",
 block:"end"
 });
 
+setTimeout(()=>{
+
+loading.remove();
+
+addMessage(
+"Hello SK 😇 I received: " + text,
+"ai"
+);
+
 },1000);
 
+}
+  
 try{
 
 const response =
@@ -1140,11 +1148,8 @@ addMessage(
 
 }
 
-sendBtn.addEventListener(
-"click",
-sendMessage
-);
-
+sendBtn.onclick = sendMessage;
+  
 input.addEventListener(
 "keypress",
 e=>{
