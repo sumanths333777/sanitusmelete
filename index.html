@@ -228,7 +228,6 @@ font-family:'Cormorant Garamond',serif;
 /* CHAT */
 
 .chat-area{
-
 position:absolute;
 
 top:0;
@@ -485,20 +484,13 @@ overflow-x:hidden;
 will-change:transform;
 }
 
-.side-menu::-webkit-scrollbar{
-display:none;
-}
-
 .side-menu.active{
 transform:translateX(0);
 }
 
-.app.menu-open .top-bar{
-opacity:0;
-pointer-events:none;
+.side-menu::-webkit-scrollbar{
+display:none;
 }
-
-/* PROFILE */
 
 .menu-profile{
 display:flex;
@@ -546,21 +538,17 @@ font-size:24px;
 color:#062d71;
 font-size:26px;
 font-family:'Cormorant Garamond',serif;
-line-height:1;
 }
 
 .menu-profile p{
 color:#b8862e;
 font-size:14px;
-margin-top:2px;
 }
 
 .profile-star{
 color:#d4a54f;
 font-size:20px;
 }
-
-/* MENU ITEMS */
 
 .menu-items{
 display:flex;
@@ -586,9 +574,6 @@ rgba(255,255,255,0.20)
 );
 
 border:1px solid rgba(255,255,255,0.65);
-
-box-shadow:
-inset 0 0 6px rgba(255,255,255,0.4);
 
 cursor:pointer;
 }
@@ -617,113 +602,6 @@ color:#999;
 font-size:24px;
 }
 
-/* ABOUT */
-
-.about-popup{
-position:fixed;
-inset:0;
-
-background:rgba(0,0,0,0.10);
-
-backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-opacity:0;
-visibility:hidden;
-
-transition:0.3s ease;
-
-z-index:9999;
-}
-
-.about-popup.active{
-opacity:1;
-visibility:visible;
-}
-
-.about-card{
-width:88%;
-max-width:360px;
-
-padding:30px 24px;
-
-border-radius:30px;
-
-text-align:center;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.18)
-);
-
-border:1px solid rgba(255,255,255,0.7);
-
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
-
-position:relative;
-}
-
-.about-logo{
-font-size:52px;
-color:#062d71;
-}
-
-.about-card h2{
-margin-top:10px;
-color:#062d71;
-font-size:30px;
-font-family:'Cormorant Garamond',serif;
-}
-
-.about-sub{
-color:#b8862e;
-font-size:18px;
-margin-top:4px;
-font-family:'Cormorant Garamond',serif;
-}
-
-.about-line{
-width:70px;
-height:1px;
-background:#d2a34f;
-margin:18px auto;
-}
-
-.about-text{
-color:#6f645b;
-line-height:1.6;
-font-size:16px;
-}
-
-.founder{
-margin-top:18px;
-color:#062d71;
-font-size:22px;
-font-family:'Cormorant Garamond',serif;
-}
-
-.close-popup{
-position:absolute;
-top:16px;
-right:20px;
-
-border:none;
-background:none;
-
-font-size:22px;
-
-cursor:pointer;
-
-color:#7a6f65;
-}
-
 /* MOBILE */
 
 @media (max-width:768px){
@@ -750,17 +628,11 @@ width:190px;
 height:190px;
 }
 
-.logo-ring::before{
-width:240px;
-height:240px;
-}
-
 .infinity{
 font-size:92px;
 }
 
 .hero-title{
-margin-top:24px;
 font-size:30px;
 }
 
@@ -772,8 +644,6 @@ font-size:18px;
 width:93%;
 height:72px;
 bottom:12px;
-border-radius:28px;
-padding:0 12px;
 }
 
 .chat-area{
@@ -783,8 +653,6 @@ padding-top:72vh;
 .side-menu{
 width:86vw;
 padding:105px 18px 20px;
-border-top-right-radius:38px;
-border-bottom-right-radius:0;
 }
 
 }
@@ -794,9 +662,9 @@ border-bottom-right-radius:0;
 
 <body>
 
-<div class="app" id="app">
+<div class="app">
 
-<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
+<div class="menu-overlay" id="menuOverlay"></div>
 
 <div class="side-menu" id="sideMenu">
 
@@ -859,13 +727,11 @@ border-bottom-right-radius:0;
 
 </div>
 
-<!-- TOP -->
-
 <div class="top-bar">
 
 <div class="left-top">
 
-<div class="glass-btn" onclick="openMenu()">
+<div class="glass-btn" id="menuBtn">
 <i>☰</i>
 </div>
 
@@ -875,13 +741,7 @@ Sanitas Melete
 
 </div>
 
-<div class="glass-btn" onclick="openAbout()">
-<i>∞</i>
 </div>
-
-</div>
-
-<!-- HERO -->
 
 <div class="center">
 
@@ -905,11 +765,7 @@ your study buddy
 
 </div>
 
-<!-- CHAT -->
-
 <div class="chat-area" id="chatArea"></div>
-
-<!-- SEARCH -->
 
 <div class="search-wrap">
 
@@ -933,219 +789,74 @@ placeholder="type your questions here"
 
 </div>
 
-<!-- ABOUT -->
-
-<div class="about-popup" id="aboutPopup">
-
-<div class="about-card">
-
-<button class="close-popup" onclick="closeAbout()">✕</button>
-
-<div class="about-logo">∞</div>
-
-<h2>Sanitas Melete AI</h2>
-
-<p class="about-sub">
-your study buddy
-</p>
-
-<div class="about-line"></div>
-
-<p class="about-text">
-Premium AI learning platform crafted for students with elegant design and intelligent study experience.
-</p>
-
-<p class="founder">
-Founder — SK
-</p>
-
-</div>
-
-</div>
-
 </div>
 
 <script>
 
-const app =
-document.getElementById("app");
-
-const input =
-document.querySelector(".search-input");
-
-const sendBtn =
-document.querySelector(".send-btn");
-
-const chatArea =
-document.getElementById("chatArea");
-
 const sideMenu =
 document.getElementById("sideMenu");
+
+const menuBtn =
+document.getElementById("menuBtn");
 
 const menuOverlay =
 document.getElementById("menuOverlay");
 
-/* MENU */
+/* OPEN */
 
-function openMenu(){
+menuBtn.addEventListener(
+"click",
+()=>{
 
 sideMenu.classList.add("active");
-
 menuOverlay.classList.add("active");
 
-app.classList.add("menu-open");
-
 }
+);
+
+/* CLOSE */
 
 function closeMenu(){
 
 sideMenu.classList.remove("active");
-
 menuOverlay.classList.remove("active");
 
-app.classList.remove("menu-open");
-
 }
 
-/* ABOUT */
-
-function openAbout(){
-
-document
-.getElementById("aboutPopup")
-.classList.add("active");
-
-}
-
-function closeAbout(){
-
-document
-.getElementById("aboutPopup")
-.classList.remove("active");
-
-}
-
-/* CHAT */
-
-function addMessage(text,type){
-
-const msg =
-document.createElement("div");
-
-msg.classList.add("message");
-
-if(type === "user"){
-
-msg.classList.add("user-message");
-
-}else{
-
-msg.classList.add("ai-message");
-
-}
-
-msg.innerText = text;
-
-chatArea.appendChild(msg);
-
-setTimeout(()=>{
-
-msg.scrollIntoView({
-behavior:"smooth",
-block:"end"
-});
-
-},100);
-
-}
-
-async function sendMessage(){
-
-const text =
-input.value.trim();
-
-if(!text) return;
-
-addMessage(text,"user");
-
-input.value = "";
-
-const loading =
-document.createElement("div");
-
-loading.classList.add(
-"message",
-"ai-message"
-);
-
-loading.innerText =
-"Typing...";
-
-chatArea.appendChild(loading);
-
-setTimeout(()=>{
-
-loading.scrollIntoView({
-behavior:"smooth",
-block:"end"
-});
-
-},100);
-
-try{
-
-const response =
-await fetch("/api/ask",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-question:text
-})
-
-});
-
-const data =
-await response.json();
-
-loading.remove();
-
-addMessage(
-data.reply || "No response",
-"ai"
-);
-
-}catch(err){
-
-loading.remove();
-
-addMessage(
-"Error from AI service.",
-"ai"
-);
-
-}
-
-}
-
-sendBtn.addEventListener(
+menuOverlay.addEventListener(
 "click",
-sendMessage
+closeMenu
 );
 
-input.addEventListener(
-"keypress",
+/* SWIPE LEFT CLOSE */
+
+let startX = 0;
+
+sideMenu.addEventListener(
+"touchstart",
 e=>{
 
-if(e.key === "Enter"){
-sendMessage();
+startX =
+e.touches[0].clientX;
+
+}
+);
+
+sideMenu.addEventListener(
+"touchmove",
+e=>{
+
+let currentX =
+e.touches[0].clientX;
+
+if(startX - currentX > 70){
+
+closeMenu();
+
 }
 
-});
+}
+);
 
 </script>
 
