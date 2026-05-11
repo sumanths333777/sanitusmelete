@@ -104,7 +104,7 @@ font-weight:600;
 /* HERO */
 
 .center{
-position:fixed;
+position:absolute;
 
 top:48%;
 left:50%;
@@ -230,7 +230,7 @@ height:100dvh;
 
 overflow-y:auto;
 
-padding-top:720px;
+padding-top:115vh;
 padding-left:20px;
 padding-right:20px;
 padding-bottom:190px;
@@ -468,206 +468,6 @@ overflow-y:auto;
 transform:translateX(0);
 }
 
-.menu-profile{
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:14px;
-
-border-radius:22px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.20)
-);
-
-border:1px solid rgba(255,255,255,0.7);
-
-margin-bottom:16px;
-}
-
-.profile-left{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.profile-icon{
-width:52px;
-height:52px;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:#f5dfba;
-
-font-size:24px;
-}
-
-.menu-profile h2{
-color:#062d71;
-font-size:26px;
-font-family:'Cormorant Garamond',serif;
-}
-
-.menu-profile p{
-color:#b8862e;
-font-size:14px;
-}
-
-.profile-star{
-color:#d4a54f;
-font-size:20px;
-}
-
-.menu-items{
-display:flex;
-flex-direction:column;
-gap:10px;
-}
-
-.menu-item{
-height:60px;
-
-padding:0 16px;
-
-border-radius:18px;
-
-display:flex;
-align-items:center;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.20)
-);
-
-border:1px solid rgba(255,255,255,0.65);
-}
-
-.menu-item span{
-font-size:20px;
-}
-
-.menu-item p{
-margin-left:14px;
-font-size:16px;
-flex:1;
-font-family:'Cormorant Garamond',serif;
-}
-
-.menu-item i{
-font-style:normal;
-}
-
-/* ABOUT */
-
-.about-popup{
-position:fixed;
-inset:0;
-
-background:rgba(0,0,0,0.10);
-
-backdrop-filter:blur(10px);
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-opacity:0;
-visibility:hidden;
-
-transition:0.3s ease;
-
-z-index:9999;
-}
-
-.about-popup.active{
-opacity:1;
-visibility:visible;
-}
-
-.about-card{
-width:88%;
-max-width:360px;
-
-padding:30px 24px;
-
-border-radius:30px;
-
-text-align:center;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.18)
-);
-
-border:1px solid rgba(255,255,255,0.7);
-
-backdrop-filter:blur(18px);
-}
-
-.about-logo{
-font-size:52px;
-color:#062d71;
-}
-
-.about-card h2{
-margin-top:10px;
-color:#062d71;
-font-size:30px;
-font-family:'Cormorant Garamond',serif;
-}
-
-.about-sub{
-color:#b8862e;
-font-size:18px;
-margin-top:4px;
-font-family:'Cormorant Garamond',serif;
-}
-
-.about-line{
-width:70px;
-height:1px;
-background:#d2a34f;
-margin:18px auto;
-}
-
-.about-text{
-color:#6f645b;
-line-height:1.6;
-font-size:16px;
-}
-
-.founder{
-margin-top:18px;
-color:#062d71;
-font-size:22px;
-font-family:'Cormorant Garamond',serif;
-}
-
-.close-popup{
-position:absolute;
-top:16px;
-right:20px;
-
-border:none;
-background:none;
-
-font-size:22px;
-
-cursor:pointer;
-}
-
 /* MOBILE */
 
 @media (max-width:768px){
@@ -720,10 +520,6 @@ border-radius:28px;
 padding:0 12px;
 }
 
-.chat-area{
-padding-top:650px;
-}
-
 }
 
 </style>
@@ -735,66 +531,9 @@ padding-top:650px;
 
 <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
-<div class="side-menu" id="sideMenu">
+<div class="side-menu" id="sideMenu"></div>
 
-<div class="menu-profile">
-
-<div class="profile-left">
-
-<div class="profile-icon">👤</div>
-
-<div>
-<h2>SK</h2>
-<p>Premium User</p>
-</div>
-
-</div>
-
-<div class="profile-star">✦</div>
-
-</div>
-
-<div class="menu-items">
-
-<div class="menu-item">
-<span>☷</span>
-<p>Dashboard</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>💬</span>
-<p>My Chats</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>📄</span>
-<p>My Documents</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>🔖</span>
-<p>Saved Answers</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>🗓</span>
-<p>Study Planner</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>✦</span>
-<p>AI Tools</p>
-<i>›</i>
-</div>
-
-</div>
-
-</div>
+<!-- TOP -->
 
 <div class="top-bar">
 
@@ -810,11 +549,13 @@ Sanitas Melete
 
 </div>
 
-<div class="glass-btn" onclick="openAbout()">
+<div class="glass-btn">
 <i>∞</i>
 </div>
 
 </div>
+
+<!-- HERO -->
 
 <div class="center">
 
@@ -838,7 +579,11 @@ your study buddy
 
 </div>
 
+<!-- CHAT -->
+
 <div class="chat-area" id="chatArea"></div>
+
+<!-- SEARCH -->
 
 <div class="search-wrap">
 
@@ -862,34 +607,6 @@ placeholder="type your questions here"
 
 </div>
 
-<div class="about-popup" id="aboutPopup">
-
-<div class="about-card">
-
-<button class="close-popup" onclick="closeAbout()">✕</button>
-
-<div class="about-logo">∞</div>
-
-<h2>Sanitas Melete AI</h2>
-
-<p class="about-sub">
-your study buddy
-</p>
-
-<div class="about-line"></div>
-
-<p class="about-text">
-Premium AI learning platform crafted for students with elegant design and intelligent study experience.
-</p>
-
-<p class="founder">
-Founder — SK
-</p>
-
-</div>
-
-</div>
-
 </div>
 
 <script>
@@ -902,6 +619,8 @@ document.querySelector(".send-btn");
 
 const chatArea =
 document.getElementById("chatArea");
+
+/* MENU */
 
 const sideMenu =
 document.getElementById("sideMenu");
@@ -919,17 +638,7 @@ sideMenu.classList.remove("active");
 menuOverlay.classList.remove("active");
 }
 
-function openAbout(){
-document
-.getElementById("aboutPopup")
-.classList.add("active");
-}
-
-function closeAbout(){
-document
-.getElementById("aboutPopup")
-.classList.remove("active");
-}
+/* CHAT */
 
 function addMessage(text,type){
 
@@ -948,8 +657,13 @@ msg.innerText = text;
 
 chatArea.appendChild(msg);
 
-chatArea.scrollTop =
-chatArea.scrollHeight;
+setTimeout(()=>{
+msg.scrollIntoView({
+behavior:"smooth",
+block:"end"
+});
+},100);
+
 }
 
 async function sendMessage(){
@@ -976,8 +690,12 @@ loading.innerText =
 
 chatArea.appendChild(loading);
 
-chatArea.scrollTop =
-chatArea.scrollHeight;
+setTimeout(()=>{
+loading.scrollIntoView({
+behavior:"smooth",
+block:"end"
+});
+},100);
 
 try{
 
@@ -1011,7 +729,7 @@ data.reply || "No response",
 loading.remove();
 
 addMessage(
-"API Error",
+"Error from AI service.",
 "ai"
 );
 
