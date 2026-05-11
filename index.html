@@ -1101,16 +1101,42 @@ behavior:"smooth",
 block:"end"
 });
 
-setTimeout(()=>{
+try{
+
+const response =
+await fetch("/api/ask",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+question:text
+})
+
+});
+
+const data =
+await response.json();
 
 loading.remove();
 
 addMessage(
-"Hello SK 😇 I received: " + text,
+data.reply || "No response",
 "ai"
 );
 
-},1000);
+}catch(err){
+
+loading.remove();
+
+addMessage(
+"API Error 🤗",
+"ai"
+);
+
 
 }
 
