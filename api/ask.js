@@ -1,4 +1,4 @@
-export cqnst config = {
+export const config = {
  runtime:"nodejs"
  };  
 
