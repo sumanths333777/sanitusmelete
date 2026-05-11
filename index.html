@@ -1,4 +1,4 @@
-\<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
@@ -26,6 +26,8 @@ html,body{
 body{
   background:#efe3d6;
 }
+
+/* MAIN */
 
 .app{
   width:100%;
@@ -105,7 +107,7 @@ body{
   font-weight:600;
 }
 
-/* HERO */
+/* CENTER AREA */
 
 .center{
   position:fixed;
@@ -130,9 +132,7 @@ body{
   width:290px;
   height:290px;
   margin:auto;
-
   border-radius:50%;
-
   position:relative;
 
   display:flex;
@@ -155,7 +155,6 @@ body{
 
 .logo-ring::before{
   content:'';
-
   position:absolute;
 
   width:360px;
@@ -178,15 +177,10 @@ body{
 
 .hero-title{
   margin-top:34px;
-
   color:#062d71;
-
   font-size:64px;
-
   font-family:'Cormorant Garamond',serif;
-
   font-weight:700;
-
   line-height:1;
 }
 
@@ -198,7 +192,6 @@ body{
 
 .divider{
   width:260px;
-
   margin:18px auto;
 
   display:flex;
@@ -233,19 +226,16 @@ body{
 
 position:absolute;
 
-top:58%;
-left:50%;
-
-transform:translateX(-50%);
+top:0;
+left:0;
 
 width:100%;
-
-height:calc(100dvh - 220px);
+height:100dvh;
 
 overflow-y:auto;
 
 padding:
-20px
+420px
 20px
 180px;
 
@@ -254,7 +244,7 @@ flex-direction:column;
 
 gap:14px;
 
-z-index:5;
+z-index:2;
 
 scroll-behavior:smooth;
 
@@ -405,10 +395,12 @@ transform:translateY(0);
 .search-input{
   width:100%;
 
-  border:none;
-  outline:none;
+  border:none !important;
+  outline:none !important;
 
-  background:transparent;
+  background:transparent !important;
+
+  box-shadow:none !important;
 
   color:#7d756e;
 
@@ -668,11 +660,11 @@ your study buddy
 
 </div>
 
-<!-- CHAT AREA -->
+<!-- CHAT -->
 
 <div class="chat-area" id="chatArea"></div>
 
-<!-- SEARCH BAR -->
+<!-- SEARCH -->
 
 <div class="search-wrap">
 
@@ -698,49 +690,18 @@ placeholder="type your questions here"
 
 </div>
 
-<!-- ABOUT -->
-
-<div class="about-popup" id="aboutPopup">
-
-<div class="about-card">
-
-<button class="close-popup" onclick="closeAbout()">✕</button>
-
-<div class="about-logo">∞</div>
-
-<h2>Sanitas Melete AI</h2>
-
-<p class="about-sub">
-your study buddy
-</p>
-
-<div class="about-line"></div>
-
-<p class="about-text">
-Premium AI learning platform crafted for students with elegant design and intelligent study experience.
-</p>
-
-<p class="founder">
-Founder — SK
-</p>
-
-</div>
-
-</div>
-
 <script>
 
-function openAbout(){
-document
-.getElementById("aboutPopup")
-.classList.add("active");
-}
+const input =
+document.querySelector(".search-input");
 
-function closeAbout(){
-document
-.getElementById("aboutPopup")
-.classList.remove("active");
-}
+const sendBtn =
+document.querySelector(".send-btn");
+
+const chatArea =
+document.getElementById("chatArea");
+
+/* MENU */
 
 const sideMenu =
 document.getElementById("sideMenu");
@@ -758,36 +719,7 @@ sideMenu.classList.remove("active");
 menuOverlay.classList.remove("active");
 }
 
-let startX = 0;
-
-document.addEventListener("touchstart", e=>{
-startX = e.touches[0].clientX;
-});
-
-document.addEventListener("touchmove", e=>{
-
-let moveX = e.touches[0].clientX;
-
-if(startX < 30 && moveX > 100){
-openMenu();
-}
-
-if(startX > 250 && moveX < 120){
-closeMenu();
-}
-
-});
-
-/* CHAT SYSTEM */
-
-const input =
-document.querySelector(".search-input");
-
-const sendBtn =
-document.querySelector(".send-btn");
-
-const chatArea =
-document.getElementById("chatArea");
+/* CHAT */
 
 function addMessage(text,type){
 
@@ -810,8 +742,6 @@ chatArea.scrollTop =
 chatArea.scrollHeight;
 }
 
-/* SEND MESSAGE */
-
 async function sendMessage(){
 
 const text = input.value.trim();
@@ -821,8 +751,6 @@ if(!text) return;
 addMessage(text,"user");
 
 input.value = "";
-
-/* LOADING */
 
 const loading =
 document.createElement("div");
@@ -838,8 +766,6 @@ chatArea.appendChild(loading);
 
 chatArea.scrollTop =
 chatArea.scrollHeight;
-
-/* API */
 
 try{
 
@@ -883,14 +809,10 @@ console.log(err);
 
 }
 
-/* BUTTON */
-
 sendBtn.addEventListener(
 "click",
 sendMessage
 );
-
-/* ENTER KEY */
 
 input.addEventListener(
 "keypress",
