@@ -93,7 +93,7 @@ MCQ RULES:
     const timeout = setTimeout(() => controller.abort(), 9000);
 
     const response = await fetch(
-      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview TTS:generateContent?key=" +
+      "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=" +
         apiKey,
       {
         method: "POST",
