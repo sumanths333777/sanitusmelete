@@ -633,6 +633,20 @@ color:#999;
 font-size:22px;
 }
 
+.sidebar{
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 85%;
+  height: 100vh;
+  transition: 0.4s ease;
+  z-index: 9999;
+}
+
+.sidebar.active{
+  left: 0;
+}
+  
 /* ABOUT */
 
 .about-popup{
@@ -1212,6 +1226,19 @@ addMessage(
 }
 );
 
+</script>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const sidebar = document.querySelector(".sidebar");
+
+menuBtn.onclick = () => {
+  sidebar.classList.add("active");
+};
+
+function closeSidebar(){
+  sidebar.classList.remove("active");
+}
 </script>
 
 </body>
