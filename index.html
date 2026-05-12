@@ -505,9 +505,7 @@ will-change:transform;
 display:none;
 }
 
-.side-menu.active{
-transform:translateX(0);
-}
+
 
 .app.menu-open .top-bar{
 opacity:0;
@@ -1025,25 +1023,23 @@ document.getElementById("fileUpload");
 
 /* MENU */
 
-function openMenu(){
 
-sideMenu.classList.add("active");
+function openMenu() {
 
-menuOverlay.classList.add("active");
+document.getElementById("sideMenu").style.transform = "translateX(0)";
 
-app.classList.add("menu-open");
+document.getElementById("menuOverlay").classList.add("active");
+
+}
+
+function closeMenu() {
+
+document.getElementById("sideMenu").style.transform = "translateX(-110%)";
+
+document.getElementById("menuOverlay").classList.remove("active");
 
 }
 
-function closeMenu(){
-
-sideMenu.classList.remove("active");
-
-menuOverlay.classList.remove("active");
-
-app.classList.remove("menu-open");
-
-}
 
 /* ABOUT */
 
