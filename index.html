@@ -488,7 +488,7 @@ backdrop-filter:blur(30px);
 box-shadow:
 0 10px 40px rgba(0,0,0,0.08);
 
-transform:translateX(-110%);
+transform:translate3d(-110%,0,0);
 
 transition:
 transform 0.42s cubic-bezier(.77,0,.18,1);
@@ -1026,7 +1026,7 @@ document.getElementById("fileUpload");
 
 function openMenu() {
 
-document.getElementById("sideMenu").style.transform = "translateX(0)";
+document.getElementById("sideMenu").style.transform = "translate3d(0,0,0)";
 
 document.getElementById("menuOverlay").classList.add("active");
 
@@ -1034,7 +1034,7 @@ document.getElementById("menuOverlay").classList.add("active");
 
 function closeMenu() {
 
-document.getElementById("sideMenu").style.transform = "translateX(-110%)";
+document.getElementById("sideMenu").style.transform = "translate3d(-110%,0,0)";
 
 document.getElementById("menuOverlay").classList.remove("active");
 
