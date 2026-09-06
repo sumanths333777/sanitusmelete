@@ -2,29 +2,25 @@
 <html lang="en">
 <head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <meta name="author" content="SK">
-
 <meta name="creator" content="SK">
-
 <meta name="publisher" content="Sanitas Melete AI">
 
-<meta name="description" content="Sanitas Melete AI is a premium AI-powered educational platform for NEET and JEE students, created by SK.">
-
-<meta name="keywords" content="SK, Sanitas Melete AI, NEET AI, JEE AI, AI study platform">
-
-<meta property="og:title" content="Sanitas Melete AI">
-
-<meta property="og:description" content="Premium AI learning platform for NEET and JEE students, created by SK.">
-
-  
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description"
+content="Sanitas Melete AI is a premium AI-powered educational platform for NEET and JEE students.">
 
 <title>Sanitas Melete AI</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
 <style>
+
+/* =========================
+   ROOT
+========================= */
 
 *{
 margin:0;
@@ -32,7 +28,8 @@ padding:0;
 box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
 width:100%;
 height:100%;
 overflow:hidden;
@@ -40,208 +37,743 @@ font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#efe3d6;
+background:#dce9f7;
+color:#12366d;
 }
+
+button,
+input{
+font-family:inherit;
+}
+
+
+/* =========================
+   APP BACKGROUND
+========================= */
 
 .app{
+position:relative;
 width:100%;
 height:100dvh;
-position:relative;
-overflow:visible;
+overflow:hidden;
 
 background:
-radial-gradient(circle at top,
-#f8eee4 0%,
-#efe3d6 45%,
-#eadccd 100%);
+radial-gradient(circle at 50% 25%,
+rgba(255,255,255,.90) 0%,
+rgba(220,234,249,.75) 30%,
+rgba(166,199,233,.65) 70%,
+rgba(120,165,213,.60) 100%);
 }
 
-/* TOP BAR */
+
+/* =========================
+   ATMOSPHERE
+========================= */
+
+.app::before{
+content:"";
+
+position:absolute;
+inset:0;
+
+background:
+
+radial-gradient(
+circle at 50% 33%,
+rgba(255,255,255,.8) 0%,
+rgba(255,255,255,.25) 20%,
+transparent 48%
+),
+
+linear-gradient(
+180deg,
+rgba(255,255,255,.30),
+rgba(190,215,240,.10)
+);
+
+pointer-events:none;
+z-index:0;
+}
+
+
+/* =========================
+   GLASS
+========================= */
+
+.glass{
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.50),
+rgba(255,255,255,.14)
+);
+
+border:1px solid rgba(255,255,255,.58);
+
+backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
+
+box-shadow:
+inset 0 1px 1px rgba(255,255,255,.65),
+0 8px 30px rgba(47,89,140,.08);
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
 
 .top-bar{
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
 
-padding:28px 38px 0;
+position:absolute;
 
-position:fixed;
 top:0;
 left:0;
 
-z-index:100000;
+width:100%;
 
-transition:0.25s ease;
-}
+padding:
+max(22px, env(safe-area-inset-top))
+24px
+0;
 
-.left-top{
 display:flex;
+
 align-items:center;
-gap:16px;
+
+justify-content:space-between;
+
+z-index:100;
+
 }
+
+.brand-area{
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+text-align:center;
+
+pointer-events:none;
+
+}
+
+.brand{
+
+font-size:22px;
+
+font-weight:600;
+
+letter-spacing:.2px;
+
+color:#12366d;
+
+white-space:nowrap;
+
+}
+
+.brand-sub{
+
+margin-top:3px;
+
+font-size:8px;
+
+font-weight:500;
+
+letter-spacing:5px;
+
+color:#274d82;
+
+white-space:nowrap;
+
+}
+
+
+/* =========================
+   ROUND BUTTON
+========================= */
 
 .glass-btn{
+
 width:58px;
 height:58px;
 
 border-radius:50%;
 
 display:flex;
+
 align-items:center;
 justify-content:center;
 
 background:
 linear-gradient(
 145deg,
-rgba(255,255,255,0.75),
-rgba(255,255,255,0.18)
+rgba(255,255,255,.55),
+rgba(255,255,255,.15)
 );
 
-border:1px solid rgba(255,255,255,0.72);
+border:1px solid rgba(255,255,255,.70);
 
 backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
 
 box-shadow:
-inset 0 1px 1px rgba(255,255,255,0.8),
-0 8px 22px rgba(180,140,100,0.10);
+inset 0 1px 2px rgba(255,255,255,.7),
+0 8px 25px rgba(33,72,120,.10);
+
+color:#12366d;
 
 cursor:pointer;
 
-flex-shrink:0;
+transition:.25s ease;
+
 }
 
-.glass-btn i{
-font-style:normal;
-color:#062d71;
-font-size:26px;
+.glass-btn:active{
+transform:scale(.94);
 }
 
-.brand{
-color:#062d71;
-font-size:30px;
-font-family:'Cormorant Garamond',serif;
-font-weight:600;
-white-space:nowrap;
+.menu-lines{
+font-size:27px;
+font-weight:300;
+line-height:1;
 }
 
-/* HERO */
 
-.center{
-position:fixed;
+/* =========================
+   MOUNTAIN SCENE
+========================= */
 
-top:48%;
-left:50%;
+.scene{
 
-transform:translate(-50%,-50%);
+position:absolute;
+
+left:0;
+bottom:0;
 
 width:100%;
+height:76%;
 
-text-align:center;
+overflow:hidden;
 
 pointer-events:none;
 
 z-index:1;
+
 }
 
-.logo-ring{
-width:290px;
-height:290px;
+/* SUN */
 
-margin:auto;
+.sun{
+
+position:absolute;
+
+top:8%;
+left:50%;
+
+transform:translateX(-50%);
+
+width:130px;
+height:130px;
 
 border-radius:50%;
 
-position:relative;
+background:
+radial-gradient(
+circle,
+rgba(255,255,255,.90),
+rgba(255,255,255,.35) 65%,
+transparent 72%
+);
 
-display:flex;
-align-items:center;
-justify-content:center;
+filter:blur(1px);
+
+}
+
+
+/* DISTANT MOUNTAINS */
+
+.mountain-back{
+
+position:absolute;
+
+bottom:35%;
+
+width:100%;
+height:42%;
+
+background:
+
+linear-gradient(
+135deg,
+transparent 0%,
+transparent 20%,
+rgba(104,150,204,.22) 20.2%,
+rgba(104,150,204,.22) 40%,
+transparent 40.2%
+),
+
+linear-gradient(
+45deg,
+transparent 0%,
+transparent 30%,
+rgba(120,164,211,.28) 30.2%,
+rgba(120,164,211,.28) 55%,
+transparent 55.2%
+);
+
+clip-path:polygon(
+0% 70%,
+15% 45%,
+27% 60%,
+43% 20%,
+57% 55%,
+70% 28%,
+84% 62%,
+100% 38%,
+100% 100%,
+0% 100%
+);
+
+background:#9fc2e5;
+
+opacity:.60;
+
+}
+
+
+/* FOREST */
+
+.forest{
+
+position:absolute;
+
+bottom:22%;
+
+width:100%;
+height:28%;
+
+background:
+
+repeating-linear-gradient(
+90deg,
+rgba(20,67,122,.30) 0px,
+rgba(20,67,122,.12) 8px,
+transparent 9px,
+transparent 17px
+);
+
+clip-path:polygon(
+0 65%,
+4% 35%,
+7% 65%,
+12% 20%,
+16% 70%,
+22% 35%,
+27% 70%,
+34% 25%,
+40% 75%,
+48% 30%,
+54% 72%,
+60% 25%,
+67% 68%,
+73% 32%,
+80% 70%,
+87% 20%,
+93% 65%,
+100% 25%,
+100% 100%,
+0 100%
+);
+
+opacity:.55;
+
+}
+
+
+/* CLIFF */
+
+.cliff{
+
+position:absolute;
+
+right:-5%;
+bottom:13%;
+
+width:46%;
+height:42%;
+
+background:
+linear-gradient(
+135deg,
+#234d85,
+#0e3267
+);
+
+clip-path:polygon(
+35% 0%,
+100% 18%,
+100% 100%,
+0% 100%,
+18% 52%
+);
+
+opacity:.88;
+
+}
+
+
+/* PERSON */
+
+.person{
+
+position:absolute;
+
+right:21%;
+bottom:46%;
+
+width:18px;
+height:70px;
+
+z-index:3;
+
+}
+
+.person::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:3px;
+
+width:13px;
+height:13px;
+
+border-radius:50%;
+
+background:#12366d;
+
+}
+
+.person::after{
+
+content:"";
+
+position:absolute;
+
+top:14px;
+left:0;
+
+width:18px;
+height:56px;
+
+background:#12366d;
+
+clip-path:polygon(
+25% 0,
+75% 0,
+100% 55%,
+70% 55%,
+70% 100%,
+48% 100%,
+48% 58%,
+30% 100%,
+10% 100%,
+25% 55%,
+0 55%
+);
+
+}
+
+
+/* FOG */
+
+.fog{
+
+position:absolute;
+
+bottom:0;
+
+width:100%;
+height:48%;
+
+background:
+
+linear-gradient(
+180deg,
+transparent,
+rgba(231,241,250,.35) 45%,
+rgba(230,240,250,.90)
+);
+
+}
+
+
+/* =========================
+   HERO TEXT
+========================= */
+
+.hero-copy{
+
+position:absolute;
+
+top:24%;
+
+left:7%;
+
+z-index:5;
+
+color:#12366d;
+
+}
+
+.hero-line{
+
+width:62px;
+height:2px;
+
+background:#12366d;
+
+margin-bottom:14px;
+
+opacity:.85;
+
+}
+
+.hero-title{
+
+font-size:48px;
+
+font-weight:400;
+
+line-height:1.16;
+
+letter-spacing:-1px;
+
+}
+
+.hero-sub{
+
+margin-top:20px;
+
+font-size:11px;
+
+letter-spacing:4px;
+
+line-height:2.2;
+
+font-weight:500;
+
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote{
+
+position:absolute;
+
+top:27%;
+right:7%;
+
+width:115px;
+
+z-index:5;
+
+font-family:'Playfair Display',serif;
+
+font-size:15px;
+
+line-height:1.35;
+
+color:#12366d;
+
+text-align:left;
+
+}
+
+.quote-line{
+
+width:35px;
+height:2px;
+
+background:#12366d;
+
+margin-top:10px;
+
+}
+
+
+/* =========================
+   MEBI CARD
+========================= */
+
+.mebi-card{
+
+position:absolute;
+
+left:50%;
+bottom:17%;
+
+transform:translateX(-50%);
+
+width:min(76%,420px);
+
+padding:26px 20px 22px;
+
+border-radius:30px;
+
+text-align:center;
+
+z-index:20;
 
 background:
 linear-gradient(
 145deg,
-rgba(255,255,255,0.24),
-rgba(255,255,255,0.05)
+rgba(255,255,255,.36),
+rgba(255,255,255,.12)
 );
 
-border:1px solid rgba(255,255,255,0.48);
+border:1px solid rgba(255,255,255,.65);
+
+backdrop-filter:blur(16px);
+-webkit-backdrop-filter:blur(16px);
 
 box-shadow:
-inset 0 0 18px rgba(255,255,255,0.25),
-0 0 45px rgba(255,255,255,0.08);
+inset 0 1px 2px rgba(255,255,255,.6),
+0 14px 40px rgba(32,75,125,.08);
+
 }
 
-.logo-ring::before{
-content:'';
+
+/* =========================
+   CUSTOM MEBI LOGO
+========================= */
+
+.mebi-logo{
+
+width:76px;
+height:76px;
+
+margin:0 auto 14px;
+
+position:relative;
+
+border:5px solid #12366d;
+
+border-radius:16px;
+
+overflow:hidden;
+
+background:transparent;
+
+}
+
+/* curved left stroke */
+
+.mebi-logo::before{
+
+content:"";
 
 position:absolute;
 
-width:360px;
-height:360px;
+width:58px;
+height:95px;
+
+left:-12px;
+top:-10px;
+
+border-right:7px solid #12366d;
 
 border-radius:50%;
 
-background:rgba(255,255,255,0.05);
+transform:rotate(-28deg);
 
-filter:blur(2px);
 }
 
-.infinity{
-font-size:132px;
-color:#062d71;
-z-index:2;
+/* diagonal */
+
+.mebi-logo::after{
+
+content:"";
+
+position:absolute;
+
+width:6px;
+height:72px;
+
+right:21px;
+top:2px;
+
+background:#12366d;
+
+transform:rotate(45deg);
+
+transform-origin:center;
+
 }
 
-.hero-title{
-margin-top:34px;
+.logo-cut{
 
-color:#062d71;
+position:absolute;
 
-font-size:64px;
+width:42px;
+height:6px;
 
-font-family:'Cormorant Garamond',serif;
+right:-2px;
+bottom:17px;
 
-font-weight:700;
+background:#dce9f7;
 
-line-height:1;
+transform:rotate(45deg);
+
+z-index:5;
+
 }
 
-.spark{
-color:#c79a3d;
-}
 
-.divider{
-width:260px;
+/* =========================
+   MEBI TEXT
+========================= */
 
-margin:18px auto;
+.mebi-title{
 
-display:flex;
-align-items:center;
-justify-content:center;
-
-gap:14px;
-}
-
-.divider span{
-width:90px;
-height:1px;
-background:#c79a3d;
-}
-
-.divider p{
-color:#c79a3d;
-font-size:18px;
-}
-
-.sub{
-color:#b78633;
 font-size:30px;
-font-family:'Cormorant Garamond',serif;
+
+font-weight:600;
+
+letter-spacing:.2px;
+
+color:#12366d;
+
 }
 
-/* CHAT */
+.mebi-sub{
+
+margin-top:5px;
+
+font-size:9px;
+
+letter-spacing:4px;
+
+line-height:2;
+
+font-weight:500;
+
+color:#183e74;
+
+}
+
+
+/* =========================
+   CHAT AREA
+========================= */
 
 .chat-area{
 
@@ -251,23 +783,25 @@ top:0;
 left:0;
 
 width:100%;
-height:100dvh;
+height:100%;
 
 overflow-y:auto;
 
-padding-top:95vh;
-padding-left:20px;
-padding-right:20px;
-padding-bottom:190px;
+padding:
+110vh
+20px
+180px;
 
 display:flex;
+
 flex-direction:column;
 
-gap:14px;
+gap:12px;
 
-z-index:5;
+z-index:50;
 
-scroll-behavior:smooth;
+pointer-events:none;
+
 }
 
 .chat-area::-webkit-scrollbar{
@@ -275,56 +809,56 @@ display:none;
 }
 
 .message{
+
 max-width:78%;
 
-padding:15px 18px;
+padding:14px 17px;
 
-border-radius:24px;
+border-radius:20px;
 
-font-size:15px;
+font-size:14px;
 
 line-height:1.6;
 
-word-wrap:break-word;
+pointer-events:auto;
 
 animation:fadeUp .25s ease;
+
 }
 
 .user-message{
+
 align-self:flex-end;
 
-background:#062d71;
+background:#12366d;
 
 color:white;
 
-border-bottom-right-radius:8px;
+border-bottom-right-radius:5px;
+
 }
 
 .ai-message{
+
 align-self:flex-start;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.75),
-rgba(255,255,255,0.22)
-);
+background:rgba(255,255,255,.58);
 
-border:1px solid rgba(255,255,255,0.7);
+border:1px solid rgba(255,255,255,.7);
 
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
+backdrop-filter:blur(15px);
 
-color:#333;
+color:#163866;
 
-border-bottom-left-radius:8px;
+border-bottom-left-radius:5px;
+
 }
 
 @keyframes fadeUp{
 
 from{
 opacity:0;
-transform:translateY(20px);
+transform:translateY(15px);
 }
 
 to{
@@ -334,336 +868,393 @@ transform:translateY(0);
 
 }
 
-/* SEARCH */
+
+/* =========================
+   SEARCH BAR
+========================= */
 
 .search-wrap{
+
 position:fixed;
 
 left:50%;
-bottom:20px;
+bottom:18px;
 
 transform:translateX(-50%);
 
 width:92%;
-height:78px;
+max-width:650px;
 
-border-radius:32px;
+height:70px;
 
-padding:0 16px;
+border-radius:30px;
+
+padding:8px 10px 8px 12px;
 
 display:flex;
+
 align-items:center;
-justify-content:space-between;
+
+gap:10px;
+
+background:
+linear-gradient(
+135deg,
+rgba(255,255,255,.58),
+rgba(255,255,255,.18)
+);
+
+border:1px solid rgba(255,255,255,.70);
+
+backdrop-filter:blur(22px);
+-webkit-backdrop-filter:blur(22px);
+
+box-shadow:
+inset 0 1px 2px rgba(255,255,255,.65),
+0 10px 35px rgba(37,77,125,.12);
+
+z-index:200;
+
+}
+
+.upload-btn,
+.send-btn{
+
+border:none;
+
+width:52px;
+height:52px;
+
+flex-shrink:0;
+
+border-radius:50%;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+cursor:pointer;
+
+}
+
+.upload-btn{
 
 background:
 linear-gradient(
 145deg,
-rgba(255,255,255,0.58),
-rgba(255,255,255,0.18)
+rgba(255,255,255,.68),
+rgba(255,255,255,.18)
 );
 
-border:1px solid rgba(255,255,255,0.72);
+border:1px solid rgba(255,255,255,.75);
 
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
+font-size:31px;
+
+font-weight:300;
+
+color:#12366d;
+
+}
+
+.search-input{
+
+flex:1;
+
+height:100%;
+
+border:none;
+
+outline:none;
+
+background:transparent;
+
+font-size:16px;
+
+color:#12366d;
+
+min-width:0;
+
+}
+
+.search-input::placeholder{
+color:#58749a;
+}
+
+.mic{
+
+font-size:25px;
+
+color:#12366d;
+
+padding:0 3px;
+
+}
+
+.send-btn{
+
+background:
+linear-gradient(
+145deg,
+#4e82c1,
+#285d9f
+);
+
+color:white;
+
+font-size:30px;
 
 box-shadow:
-inset 0 0 12px rgba(255,255,255,0.4),
-0 12px 28px rgba(180,140,100,0.10);
+0 7px 20px rgba(35,83,145,.25);
 
-z-index:100;
 }
 
-.search-left{
+.send-btn:active{
+transform:scale(.94);
+}
+
+
+/* =========================
+   MENU OVERLAY
+========================= */
+
+.menu-overlay{
+
+position:fixed;
+
+inset:0;
+
+background:rgba(15,45,85,.15);
+
+backdrop-filter:blur(8px);
+
+opacity:0;
+
+visibility:hidden;
+
+transition:.3s;
+
+z-index:998;
+
+}
+
+.menu-overlay.active{
+
+opacity:1;
+
+visibility:visible;
+
+}
+
+
+/* =========================
+   SIDE MENU
+========================= */
+
+.side-menu{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:84%;
+max-width:330px;
+
+height:100dvh;
+
+padding:110px 16px 25px;
+
+background:
+linear-gradient(
+145deg,
+rgba(231,242,253,.94),
+rgba(193,218,243,.78)
+);
+
+border-right:
+1px solid rgba(255,255,255,.75);
+
+backdrop-filter:blur(30px);
+
+transform:translateX(-110%);
+
+transition:
+transform .4s cubic-bezier(.77,0,.18,1);
+
+z-index:999;
+
+overflow-y:auto;
+
+}
+
+.side-menu.open{
+transform:translateX(0);
+}
+
+
+/* PROFILE */
+
+.menu-profile{
+
 display:flex;
+
 align-items:center;
-gap:14px;
-width:100%;
+
+gap:12px;
+
+padding:14px;
+
+margin-bottom:18px;
+
+border-radius:22px;
+
+background:rgba(255,255,255,.30);
+
+border:1px solid rgba(255,255,255,.55);
+
 }
 
-.circle-btn{
+.profile-icon{
+
 width:50px;
 height:50px;
 
 border-radius:50%;
 
 display:flex;
+
 align-items:center;
 justify-content:center;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.20)
-);
+background:rgba(255,255,255,.45);
 
-border:1px solid rgba(255,255,255,0.7);
+font-size:22px;
 
-box-shadow:
-inset 0 0 8px rgba(255,255,255,0.5),
-0 5px 16px rgba(180,140,100,0.10);
-
-cursor:pointer;
-}
-
-.circle-btn span{
-color:#b8862e;
-font-size:24px;
-}
-
-.search-input{
-width:100%;
-
-border:none;
-outline:none;
-
-background:transparent;
-
-color:#7d756e;
-
-font-size:17px;
-
-font-family:'Poppins',sans-serif;
-}
-
-.search-input::placeholder{
-color:#7d756e;
-}
-
-/* OVERLAY */
-
-.menu-overlay{
-position:fixed;
-inset:0;
-
-background:rgba(0,0,0,0.08);
-
-backdrop-filter:blur(8px);
--webkit-backdrop-filter:blur(8px);
-
-opacity:0;
-visibility:hidden;
-
-transition:0.35s ease;
-
-z-index:998;
-}
-
-.menu-overlay.active{
-opacity:1;
-visibility:visible;
-}
-
-/* SIDE MENU */
-
-.side-menu{
-position:fixed;
-
-top:0;
-left:0;
-
-width:88%;
-max-width:320px;
-
-height:100dvh;
-
-padding:120px 14px 18px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.85),
-rgba(255,255,255,0.25)
-);
-
-border-right:1px solid rgba(255,255,255,0.7);
-
-border-top-right-radius:32px;
-border-bottom-right-radius:32px;
-
-backdrop-filter:blur(30px);
--webkit-backdrop-filter:blur(30px);
-
-box-shadow:
-0 10px 40px rgba(0,0,0,0.08);
-
-transform:translate3d(-110%,0,0);
-
-transition:transform 0.42s cubic-bezier(.77,0,.18,1);
-
-z-index:100001;
-
-overflow-y:auto;
-overflow-x:hidden;
-
-will-change:transform;
-}
-
-.side-menu::-webkit-scrollbar{
-display:none;
-}
-
-
-
-.app.menu-open .top-bar{
-opacity:0;
-pointer-events:none;
-}
-
-/* PROFILE */
-
-.menu-profile{
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:14px;
-
-border-radius:22px;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.20)
-);
-
-border:1px solid rgba(255,255,255,0.7);
-
-margin-bottom:16px;
-}
-
-.profile-left{
-display:flex;
-align-items:center;
-gap:10px;
-}
-
-.profile-icon{
-width:52px;
-height:52px;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:#f5dfba;
-
-font-size:24px;
 }
 
 .menu-profile h2{
-color:#062d71;
-font-size:26px;
-font-family:'Cormorant Garamond',serif;
-line-height:1;
+
+font-size:20px;
+
+color:#12366d;
+
 }
 
 .menu-profile p{
-color:#b8862e;
-font-size:14px;
-margin-top:2px;
+
+font-size:11px;
+
+color:#55749d;
+
+margin-top:3px;
+
 }
 
-.profile-star{
-color:#d4a54f;
-font-size:20px;
-}
 
 /* MENU ITEMS */
 
 .menu-items{
+
 display:flex;
+
 flex-direction:column;
-gap:10px;
+
+gap:9px;
+
 }
 
 .menu-item{
-height:60px;
+
+height:58px;
 
 padding:0 16px;
 
-border-radius:18px;
-
 display:flex;
+
 align-items:center;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.20)
-);
+border-radius:17px;
 
-border:1px solid rgba(255,255,255,0.65);
+background:rgba(255,255,255,.28);
 
-box-shadow:
-inset 0 0 6px rgba(255,255,255,0.4);
+border:1px solid rgba(255,255,255,.45);
+
+color:#12366d;
 
 cursor:pointer;
+
 }
 
 .menu-item span{
-font-size:20px;
+font-size:19px;
+width:28px;
 }
 
 .menu-item p{
-margin-left:14px;
 
-color:#222;
+margin-left:10px;
 
-font-size:16px;
-
-font-family:'Cormorant Garamond',serif;
+font-size:14px;
 
 flex:1;
+
 }
 
 .menu-item i{
+
 font-style:normal;
 
-color:#999;
+font-size:21px;
 
-font-size:22px;
+opacity:.6;
+
 }
 
-  
-/* ABOUT */
+
+/* =========================
+   ABOUT POPUP
+========================= */
 
 .about-popup{
+
 position:fixed;
+
 inset:0;
 
-background:rgba(0,0,0,0.10);
-
-backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
-
 display:flex;
+
 align-items:center;
 justify-content:center;
 
+background:rgba(20,55,100,.18);
+
+backdrop-filter:blur(10px);
+
 opacity:0;
+
 visibility:hidden;
 
-transition:0.3s ease;
+transition:.3s;
 
-z-index:9999;
+z-index:1000;
+
 }
 
 .about-popup.active{
+
 opacity:1;
+
 visibility:visible;
+
 }
 
 .about-card{
-width:88%;
+
+width:86%;
 max-width:360px;
 
-padding:30px 24px;
+padding:35px 25px;
 
 border-radius:30px;
 
@@ -672,144 +1263,225 @@ text-align:center;
 background:
 linear-gradient(
 145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.18)
+rgba(235,245,255,.90),
+rgba(190,216,243,.72)
 );
 
-border:1px solid rgba(255,255,255,0.7);
+border:1px solid rgba(255,255,255,.8);
 
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
+backdrop-filter:blur(25px);
 
 position:relative;
+
+color:#12366d;
+
 }
 
 .about-logo{
-font-size:52px;
-color:#062d71;
+margin-bottom:14px;
 }
 
 .about-card h2{
-margin-top:10px;
-color:#062d71;
-font-size:30px;
-font-family:'Cormorant Garamond',serif;
+
+font-size:25px;
+
+margin-bottom:8px;
+
 }
 
 .about-sub{
-color:#b8862e;
-font-size:18px;
-margin-top:4px;
-font-family:'Cormorant Garamond',serif;
+
+font-size:11px;
+
+letter-spacing:3px;
+
 }
 
 .about-line{
-width:70px;
-height:1px;
-background:#d2a34f;
-margin:18px auto;
+
+width:55px;
+height:2px;
+
+background:#12366d;
+
+margin:20px auto;
+
 }
 
 .about-text{
-color:#6f645b;
-line-height:1.6;
-font-size:16px;
+
+font-size:14px;
+
+line-height:1.7;
+
+color:#45658e;
+
 }
 
 .founder{
+
 margin-top:18px;
-color:#062d71;
-font-size:22px;
-font-family:'Cormorant Garamond',serif;
+
+font-size:16px;
+
+font-weight:600;
+
 }
 
 .close-popup{
+
 position:absolute;
-top:16px;
-right:20px;
+
+top:14px;
+right:18px;
 
 border:none;
+
 background:none;
 
 font-size:22px;
 
+color:#12366d;
+
 cursor:pointer;
 
-color:#7a6f65;
 }
 
-/* MOBILE */
 
-@media (max-width:768px){
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:600px){
 
 .top-bar{
-padding:22px 18px 0;
-}
-
-.brand{
-font-size:15px;
+padding-left:28px;
+padding-right:28px;
 }
 
 .glass-btn{
-width:44px;
-height:44px;
+width:55px;
+height:55px;
 }
 
-.glass-btn i{
-font-size:20px;
+.brand{
+font-size:19px;
 }
 
-.logo-ring{
-width:190px;
-height:190px;
+.brand-sub{
+font-size:7px;
+letter-spacing:4px;
 }
 
-.logo-ring::before{
-width:240px;
-height:240px;
-}
-
-.infinity{
-font-size:92px;
+.hero-copy{
+top:25%;
+left:8%;
 }
 
 .hero-title{
-margin-top:24px;
-font-size:30px;
+font-size:42px;
 }
 
-.sub{
-font-size:18px;
+.quote{
+font-size:13px;
+right:5%;
+width:90px;
+}
+
+.mebi-card{
+bottom:16%;
+width:76%;
+padding:23px 15px 18px;
+}
+
+.mebi-logo{
+width:68px;
+height:68px;
+}
+
+.mebi-title{
+font-size:27px;
 }
 
 .search-wrap{
-width:93%;
-height:72px;
-bottom:12px;
-border-radius:28px;
-padding:0 12px;
+height:68px;
+bottom:14px;
+width:92%;
 }
 
-.chat-area{
-padding-top:72vh;
+.upload-btn,
+.send-btn{
+width:48px;
+height:48px;
+}
+
+.scene{
+height:80%;
+}
+
+}
+
+
+/* SMALL SCREENS */
+
+@media(max-height:720px){
+
+.hero-copy{
+top:21%;
+}
+
+.hero-title{
+font-size:36px;
+}
+
+.hero-sub{
+font-size:9px;
+margin-top:10px;
+}
+
+.mebi-card{
+bottom:15%;
+padding:17px;
+}
+
+.mebi-logo{
+width:58px;
+height:58px;
+margin-bottom:8px;
+}
+
+.mebi-title{
+font-size:23px;
 }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 <div class="app" id="app">
 
-<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
-<div class="side-menu" id="sideMenu">
+<!-- MENU OVERLAY -->
+
+<div
+class="menu-overlay"
+id="menuOverlay"
+onclick="closeMenu()">
+</div>
+
+
+<!-- SIDE MENU -->
+
+<div
+class="side-menu"
+id="sideMenu">
 
 <div class="menu-profile">
-
-<div class="profile-left">
 
 <div class="profile-icon">👤</div>
 
@@ -820,38 +1492,35 @@ padding-top:72vh;
 
 </div>
 
-<div class="profile-star">✦</div>
-
-</div>
 
 <div class="menu-items">
 
 <div class="menu-item">
-<span>☷</span>
+<span>⌂</span>
 <p>Dashboard</p>
 <i>›</i>
 </div>
 
 <div class="menu-item">
-<span>💬</span>
+<span>◌</span>
 <p>My Chats</p>
 <i>›</i>
 </div>
 
 <div class="menu-item">
-<span>📄</span>
+<span>▤</span>
 <p>My Documents</p>
 <i>›</i>
 </div>
 
 <div class="menu-item">
-<span>🔖</span>
+<span>♡</span>
 <p>Saved Answers</p>
 <i>›</i>
 </div>
 
 <div class="menu-item">
-<span>🗓</span>
+<span>◫</span>
 <p>Study Planner</p>
 <i>›</i>
 </div>
@@ -862,145 +1531,267 @@ padding-top:72vh;
 <i>›</i>
 </div>
 
-
-  
-  
 </div>
 
 </div>
 
-<!-- TOP -->
+
+<!-- TOP BAR -->
 
 <div class="top-bar">
 
-<div class="left-top">
+<button
+class="glass-btn"
+onclick="openMenu()">
 
-<div class="glass-btn" onclick="openMenu()">
-<i>☰</i>
-</div>
+<span class="menu-lines">☰</span>
+
+</button>
+
+
+<div class="brand-area">
 
 <div class="brand">
 Sanitas Melete
 </div>
 
+<div class="brand-sub">
+YOUR STUDY BUDDY
 </div>
 
-<div class="glass-btn" onclick="openAbout()">
-<i>∞</i>
 </div>
 
+
+<button
+class="glass-btn"
+onclick="openAbout()">
+
+<svg
+width="29"
+height="29"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M20 21a8 8 0 0 0-16 0"/>
+<circle cx="12" cy="7" r="4"/>
+
+</svg>
+
+</button>
+
 </div>
 
-<!-- HERO -->
 
-<div class="center">
+<!-- HERO SCENE -->
 
-<div class="logo-ring">
-<div class="infinity">∞</div>
+<div class="scene">
+
+<div class="sun"></div>
+
+<div class="mountain-back"></div>
+
+<div class="forest"></div>
+
+<div class="cliff"></div>
+
+<div class="person"></div>
+
+<div class="fog"></div>
+
 </div>
+
+
+<!-- HERO TEXT -->
+
+<div class="hero-copy">
+
+<div class="hero-line"></div>
 
 <div class="hero-title">
-Hi iam mebi<span class="spark">✦</span>
-</div>
 
-<div class="divider">
-<span></span>
-<p>✦</p>
-<span></span>
-</div>
-
-<div class="sub">
-your study buddy
-</div>
+Small<br>
+Steps<br>
+Big<br>
+Results.
 
 </div>
 
-<!-- CHAT -->
+<div class="hero-sub">
 
-<div class="chat-area" id="chatArea"></div>
+DISCIPLINE TODAY<br>
+A BRIGHTER TOMORROW
+
+</div>
+
+</div>
+
+
+<!-- QUOTE -->
+
+<div class="quote">
+
+“Better Students
+Build Brighter
+Futures.”
+
+<div class="quote-line"></div>
+
+</div>
+
+
+<!-- MEBI CARD -->
+
+<div class="mebi-card">
+
+<div class="mebi-logo">
+<div class="logo-cut"></div>
+</div>
+
+<div class="mebi-title">
+Hi, I'm MEBI
+</div>
+
+<div class="mebi-sub">
+ALWAYS HERE TO LEARN<br>
+WITH YOU
+</div>
+
+</div>
+
+
+<!-- CHAT AREA -->
+
+<div
+class="chat-area"
+id="chatArea">
+</div>
+
 
 <!-- SEARCH -->
 
 <div class="search-wrap">
 
-<div class="search-left">
+<label
+for="fileUpload"
+class="upload-btn">
 
-<!-- UPLOAD BUTTON -->
+＋
 
-<label for="fileUpload" class="circle-btn">
-<span>＋</span>
 </label>
+
 
 <input
 type="file"
 id="fileUpload"
 hidden
 multiple
-accept=".pdf,.doc,.docx,.txt,image/*"
-/>
+accept=".pdf,.doc,.docx,.txt,image/*">
 
-<!-- TEXT INPUT -->
 
 <input
 type="text"
 class="search-input"
-placeholder="type your questions here"
-/>
+placeholder="Ask me anything...">
 
-  
+
+<div class="mic">
+
+<svg
+width="25"
+height="25"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.8"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<rect
+x="9"
+y="2"
+width="6"
+height="12"
+rx="3"/>
+
+<path d="M5 10a7 7 0 0 0 14 0"/>
+<path d="M12 19v3"/>
+<path d="M8 22h8"/>
+
+</svg>
+
 </div>
 
-<!-- SEND BUTTON -->
 
-<button class="circle-btn send-btn"type="button">
-<span>↑</span>
+<button
+class="send-btn"
+type="button">
+
+↑
+
 </button>
 
 </div>
-  
 
-<!-- ABOUT -->
 
-<div class="about-popup" id="aboutPopup">
+<!-- ABOUT POPUP -->
+
+<div
+class="about-popup"
+id="aboutPopup">
 
 <div class="about-card">
 
-<button class="close-popup" onclick="closeAbout()">✕</button>
+<button
+class="close-popup"
+onclick="closeAbout()">
 
-<div class="about-logo">∞</div>
+✕
+</button>
+
+
+<div class="about-logo">
+
+<div class="mebi-logo"
+style="margin:auto;">
+<div class="logo-cut"></div>
+</div>
+
+</div>
+
 
 <h2>Sanitas Melete AI</h2>
 
-<p class="about-sub">
-your study buddy
-</p>
+<div class="about-sub">
+YOUR STUDY BUDDY
+</div>
 
 <div class="about-line"></div>
 
 <p class="about-text">
-Premium AI learning platform crafted for students with elegant design and intelligent study experience.
+
+Premium AI learning platform designed to help students learn,
+practice and grow with clarity.
+
 </p>
 
 <p class="founder">
 Founder — SK
 </p>
-<body>
-
-
-    
-  </section>
-
-</body>
-</div>
 
 </div>
 
 </div>
+
+
+</div>
+
 
 <script>
 
-const app =
-document.getElementById("app");
 
 const input =
 document.querySelector(".search-input");
@@ -1020,22 +1811,23 @@ document.getElementById("menuOverlay");
 const fileUpload =
 document.getElementById("fileUpload");
 
+
 /* MENU */
 
+function openMenu(){
 
-function openMenu() {
+sideMenu.classList.add("open");
 
-document.getElementById("sideMenu").style.transform = "translate3d(0,0,0)";
-
-document.getElementById("menuOverlay").classList.add("active");
+menuOverlay.classList.add("active");
 
 }
 
-function closeMenu() {
 
-document.getElementById("sideMenu").style.transform = "translate3d(-110%,0,0)";
+function closeMenu(){
 
-document.getElementById("menuOverlay").classList.remove("active");
+sideMenu.classList.remove("open");
+
+menuOverlay.classList.remove("active");
 
 }
 
@@ -1050,6 +1842,7 @@ document
 
 }
 
+
 function closeAbout(){
 
 document
@@ -1058,7 +1851,8 @@ document
 
 }
 
-/* CHAT */
+
+/* ADD MESSAGE */
 
 function addMessage(text,type){
 
@@ -1084,13 +1878,16 @@ chatArea.appendChild(msg);
 setTimeout(()=>{
 
 msg.scrollIntoView({
+
 behavior:"smooth",
 block:"end"
+
 });
 
 },100);
 
 }
+
 
 /* SEND MESSAGE */
 
@@ -1101,9 +1898,11 @@ input.value.trim();
 
 if(!text) return;
 
+
 addMessage(text,"user");
 
-input.value = "";
+input.value="";
+
 
 const loading =
 document.createElement("div");
@@ -1114,14 +1913,10 @@ loading.classList.add(
 );
 
 loading.innerText =
-"mebi is thinking ✨";
+"MEBI is thinking...";
 
 chatArea.appendChild(loading);
 
-loading.scrollIntoView({
-behavior:"smooth",
-block:"end"
-});
 
 try{
 
@@ -1135,40 +1930,56 @@ headers:{
 },
 
 body:JSON.stringify({
+
 question:text
+
 })
 
 });
 
+
 const data =
 await response.json();
 
+
 loading.remove();
 
+
 addMessage(
+
 data.reply || "No response",
+
 "ai"
+
 );
+
 
 }catch(err){
 
 loading.remove();
 
 addMessage(
-"API Error:"+err.message,
+
+"Unable to connect. Please try again.",
+
 "ai"
+
 );
+
 console.error(err);
-  
-}
 
 }
 
-/* SEND BUTTON */
+}
 
-sendBtn.onclick = sendMessage;
 
-/* ENTER KEY */
+/* SEND */
+
+sendBtn.onclick =
+sendMessage;
+
+
+/* ENTER */
 
 input.addEventListener(
 "keypress",
@@ -1183,6 +1994,7 @@ sendMessage();
 }
 );
 
+
 /* FILE UPLOAD */
 
 fileUpload.addEventListener(
@@ -1194,7 +2006,7 @@ e.target.files;
 
 if(files.length > 0){
 
-for(let file of files){
+for(const file of files){
 
 addMessage(
 "Uploaded: " + file.name,
