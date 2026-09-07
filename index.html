@@ -1167,200 +1167,140 @@ body{
 
 
 /* =========================
-   MOBILE
+   MOBILE PERFECT PROPORTIONS
 ========================= */
 
-@media(max-width:768px){
-
-    .app{
-
-        background-position:center center;
-    }
-
+@media (max-width: 768px){
 
     .top-bar{
-
-        padding:
-        max(18px, env(safe-area-inset-top))
-        34px
-        0;
-
-        grid-template-columns:
-        90px 1fr 90px;
+        padding: 30px 34px 0;
+        align-items:center;
     }
 
+    .left-top{
+        gap: 0;
+    }
 
     .glass-btn{
-
-        width:88px;
-        height:88px;
+        width:64px;
+        height:64px;
+        min-width:64px;
+        min-height:64px;
     }
 
-
-    .menu-lines{
-
-        width:45px;
-        height:38px;
+    .glass-btn i{
+        font-size:30px;
+        line-height:1;
     }
-
-
-    .menu-lines span{
-        height:5px;
-    }
-
-
-    .profile-symbol{
-
-        transform:scale(1.25);
-    }
-
 
     .brand{
+        position:absolute;
+        left:50%;
+        transform:translateX(-50%);
+        top:48px;
 
-        font-size:43px;
-
-        letter-spacing:0;
+        font-size:38px;
+        line-height:1;
+        white-space:nowrap;
     }
 
+    /* Add subtitle below brand */
+    .brand::after{
+        content:"YOUR STUDY BUDDY";
+        display:block;
 
-    .tagline{
+        margin-top:12px;
 
-        font-size:12px;
+        font-family:'Poppins',sans-serif;
+        font-size:10px;
+        font-weight:400;
 
         letter-spacing:8px;
+        text-align:center;
 
-        margin-top:14px;
+        color:#062d71;
     }
 
 
-    .left-content{
+    /* HERO */
 
-        left:8%;
-
-        top:31%;
+    .center{
+        top:55%;
     }
 
-
-    .small-line{
-
-        width:80px;
-
-        margin-bottom:30px;
+    .logo-ring{
+        width:200px;
+        height:200px;
     }
 
+    .logo-ring::before{
+        width:240px;
+        height:240px;
+    }
+
+    .infinity{
+        font-size:90px;
+    }
 
     .hero-title{
+        margin-top:24px;
+        font-size:52px;
+    }
 
-        font-size:78px;
-
-        line-height:.95;
-
-        letter-spacing:-2px;
+    .sub{
+        font-size:20px;
     }
 
 
-    .quote{
-        display:none;
-    }
-
-
-    .bottom-lines{
-
-        margin-top:25px;
-    }
-
-
-    .bottom-lines p{
-
-        font-size:10px;
-
-        letter-spacing:5px;
-    }
-
-
-    .mebi-card{
-
-        width:calc(100% - 196px);
-
-        min-width:500px;
-
-        height:490px;
-
-        top:63%;
-
-        padding:45px 25px;
-
-        border-radius:45px;
-    }
-
-
-    .mebi-logo{
-
-        width:140px;
-        height:140px;
-
-        margin-bottom:25px;
-    }
-
-
-    .mebi-title{
-
-        font-size:62px;
-    }
-
-
-    .mebi-sub{
-
-        font-size:14px;
-
-        letter-spacing:8px;
-    }
-
+    /* BOTTOM INPUT BAR */
 
     .search-wrap{
+        width:92%;
+        height:82px;
 
-        width:94%;
+        bottom:18px;
 
-        height:108px;
+        border-radius:42px;
 
-        bottom:
-        max(24px, env(safe-area-inset-bottom));
-
-        border-radius:55px;
-
-        padding:10px;
+        padding:0 10px 0 12px;
     }
-
 
     .circle-btn{
+        width:58px;
+        height:58px;
 
-        width:86px;
-        height:86px;
-
-        font-size:45px;
+        min-width:58px;
+        min-height:58px;
     }
 
+    .circle-btn span{
+        font-size:32px;
+    }
+
+    .send-btn{
+        width:62px;
+        height:62px;
+
+        border-radius:50%;
+
+        background:#174987;
+    }
+
+    .send-btn span{
+        color:white;
+        font-size:34px;
+    }
 
     .search-input{
-
-        font-size:25px;
+        font-size:17px;
+        padding-left:4px;
     }
-
-
-    .mic-btn{
-        display:none;
-    }
-
 
     .chat-area{
-
-        padding-top:85vh;
-
-        padding-left:20px;
-        padding-right:20px;
-
-        padding-bottom:150px;
+        padding-top:90vh;
+        padding-bottom:130px;
     }
+
 }
 
 
