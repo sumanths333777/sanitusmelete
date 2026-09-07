@@ -2,1612 +2,1557 @@
 <html lang="en">
 <head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
 <meta name="author" content="SK">
 <meta name="creator" content="SK">
 <meta name="publisher" content="Sanitas Melete AI">
-<meta name="description" content="Sanitas Melete AI is a premium AI-powered educational platform for NEET and JEE students, created by SK.">
-<meta name="keywords" content="SK, Sanitas Melete AI, NEET AI, JEE AI, AI study platform">
 
-<meta property="og:title" content="Sanitas Melete AI">
-<meta property="og:description" content="Premium AI learning platform for NEET and JEE students, created by SK.">
+<meta name="description"
+content="Sanitas Melete AI is a premium AI-powered educational platform for NEET and JEE students, created by SK.">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords"
+content="SK, Sanitas Melete AI, NEET AI, JEE AI, AI study platform">
 
 <title>Sanitas Melete AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
-/* ==============================
+/* =========================
    RESET
-================================= */
+========================= */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html,
 body{
-width:100%;
-height:100%;
-font-family:'Poppins',sans-serif;
-overflow:hidden;
+    width:100%;
+    min-height:100%;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#071a31;
-color:#102f60;
+    overflow:hidden;
+    background:#0d2035;
 }
 
 
-/* ==============================
-   APP BACKGROUND
-================================= */
+/* =========================
+   APP
+========================= */
 
 .app{
-width:100%;
-height:100dvh;
-position:relative;
-overflow:hidden;
+    position:relative;
+    width:100%;
+    height:100dvh;
+    min-height:100vh;
+    overflow:hidden;
 
-background-image:
-linear-gradient(
-rgba(218,235,248,.20),
-rgba(180,210,235,.12)
-),
-url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2200&q=90");
+    color:#123560;
 
-background-size:cover;
-background-position:center;
+    background:
+    linear-gradient(
+        rgba(217,231,242,0.18),
+        rgba(217,231,242,0.12)
+    ),
+    url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=90");
+
+    background-size:cover;
+    background-position:center;
 }
 
 
-/* LIGHT ATMOSPHERIC OVERLAY */
+/* atmospheric overlay */
 
 .app::before{
-content:"";
+    content:"";
 
-position:absolute;
-inset:0;
+    position:absolute;
+    inset:0;
 
-background:
-linear-gradient(
-180deg,
-rgba(220,238,250,.18) 0%,
-rgba(220,238,250,.02) 40%,
-rgba(220,238,250,.16) 100%
-);
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(220,235,245,0.25) 0%,
+        rgba(220,235,245,0.05) 35%,
+        rgba(15,42,70,0.05) 70%,
+        rgba(10,30,50,0.15) 100%
+    );
 
-pointer-events:none;
-z-index:0;
+    pointer-events:none;
+    z-index:0;
 }
 
 
-/* ==============================
+/* =========================
    TOP HEADER
-================================= */
+========================= */
 
 .top-bar{
 
-position:absolute;
+    position:absolute;
 
-top:0;
-left:0;
+    top:0;
+    left:0;
 
-width:100%;
+    width:100%;
 
-padding:28px 5.5%;
+    padding:
+    max(28px, env(safe-area-inset-top))
+    5vw
+    0;
 
-display:grid;
-grid-template-columns:1fr auto 1fr;
+    display:grid;
 
-align-items:center;
+    grid-template-columns:
+    70px 1fr 70px;
 
-z-index:100;
+    align-items:center;
+
+    z-index:100;
 }
 
 
-/* LEFT MENU */
-
-.top-left{
-justify-self:start;
+.brand-wrap{
+    text-align:center;
 }
 
-
-/* RIGHT PROFILE */
-
-.top-right{
-justify-self:end;
-}
-
-
-/* GLASS BUTTON */
-
-.glass-btn{
-
-width:94px;
-height:94px;
-
-border-radius:50%;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-border:1.5px solid rgba(255,255,255,.72);
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,.42),
-rgba(255,255,255,.12)
-);
-
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
-
-box-shadow:
-
-inset 0 1px 1px rgba(255,255,255,.8),
-
-0 12px 35px rgba(10,45,85,.12);
-
-cursor:pointer;
-
-transition:.25s ease;
-}
-
-.glass-btn:hover{
-transform:scale(1.05);
-}
-
-
-/* HAMBURGER */
-
-.hamburger{
-width:46px;
-display:flex;
-flex-direction:column;
-gap:9px;
-}
-
-.hamburger span{
-
-height:4px;
-
-border-radius:10px;
-
-background:#12396c;
-}
-
-
-/* PROFILE ICON */
-
-.profile-shape{
-
-width:43px;
-height:43px;
-
-border:4px solid #12396c;
-
-border-radius:50%;
-
-position:relative;
-
-margin-bottom:14px;
-}
-
-.profile-shape::after{
-
-content:"";
-
-position:absolute;
-
-width:58px;
-height:28px;
-
-border:4px solid #12396c;
-
-border-bottom:none;
-
-border-radius:40px 40px 0 0;
-
-left:50%;
-
-transform:translateX(-50%);
-
-top:48px;
-}
-
-
-/* ==============================
-   BRAND CENTER
-================================= */
-
-.brand-center{
-
-text-align:center;
-
-display:flex;
-flex-direction:column;
-align-items:center;
-
-pointer-events:none;
-}
 
 .brand{
 
-font-size:42px;
+    font-size:clamp(24px,3vw,42px);
 
-font-weight:500;
+    font-weight:500;
 
-letter-spacing:1px;
+    letter-spacing:1px;
 
-color:#133665;
+    color:#123560;
 
-line-height:1.1;
-}
+    white-space:nowrap;
 
-.brand-sub{
-
-margin-top:10px;
-
-font-size:14px;
-
-letter-spacing:12px;
-
-padding-left:12px;
-
-color:#1d416f;
-
-font-weight:400;
+    line-height:1;
 }
 
 
-/* ==============================
-   HERO TEXT
-================================= */
+.tagline{
 
-.hero-copy{
+    margin-top:10px;
 
-position:absolute;
+    font-size:clamp(8px,1vw,14px);
 
-left:6.5%;
-top:24%;
+    letter-spacing:9px;
 
-z-index:3;
+    color:#173b65;
+
+    font-weight:400;
+
+    white-space:nowrap;
 }
 
 
-/* DECORATIVE LINE */
+/* =========================
+   GLASS BUTTONS
+========================= */
 
-.hero-line{
+.glass-btn{
 
-width:70px;
-height:3px;
+    width:70px;
+    height:70px;
 
-background:#12396c;
+    border-radius:50%;
 
-margin-bottom:26px;
+    border:
+    1px solid rgba(255,255,255,0.75);
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.40),
+        rgba(255,255,255,0.12)
+    );
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
+    box-shadow:
+    inset 0 1px 1px rgba(255,255,255,0.8),
+    0 8px 25px rgba(12,47,84,0.10);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    color:#123560;
+
+    transition:.25s ease;
+
+    flex-shrink:0;
 }
 
 
-/* MAIN TITLE */
+.glass-btn:active{
+    transform:scale(.94);
+}
+
+
+.menu-lines{
+
+    width:35px;
+    height:28px;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:space-between;
+}
+
+
+.menu-lines span{
+
+    width:100%;
+    height:4px;
+
+    background:#123560;
+
+    border-radius:10px;
+}
+
+
+/* =========================
+   PROFILE ICON
+========================= */
+
+.profile-symbol{
+
+    width:42px;
+    height:42px;
+
+    position:relative;
+}
+
+
+.profile-symbol::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:18px;
+    height:18px;
+
+    border:4px solid #123560;
+
+    border-radius:50%;
+
+    top:0;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+
+.profile-symbol::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:38px;
+    height:21px;
+
+    border:
+    4px solid #123560;
+
+    border-bottom:none;
+
+    border-radius:
+    25px 25px 0 0;
+
+    bottom:0;
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+
+/* =========================
+   MAIN HERO
+========================= */
+
+.hero{
+
+    position:absolute;
+
+    inset:0;
+
+    z-index:2;
+
+    pointer-events:none;
+}
+
+
+/* LEFT TITLE */
+
+.left-content{
+
+    position:absolute;
+
+    left:6vw;
+    top:28%;
+}
+
+
+.small-line{
+
+    width:75px;
+    height:4px;
+
+    background:#173b65;
+
+    margin-bottom:24px;
+}
+
 
 .hero-title{
 
-font-family:'Cormorant Garamond',serif;
+    font-family:
+    'Cormorant Garamond',
+    serif;
 
-font-size:76px;
+    font-size:
+    clamp(52px,7vw,105px);
 
-line-height:.93;
+    font-weight:600;
 
-font-weight:600;
+    line-height:.88;
 
-color:#102f60;
+    color:#123560;
 
-max-width:360px;
+    letter-spacing:-2px;
 }
 
 
-/* BOTTOM TITLE LINE */
-
-.hero-bottom{
-
-margin-top:28px;
-
-display:flex;
-flex-direction:column;
-
-gap:20px;
-}
-
-.hero-bottom-line{
-
-width:72px;
-height:3px;
-
-background:#12396c;
-}
-
-.hero-tagline{
-
-font-size:14px;
-
-letter-spacing:7px;
-
-line-height:2.1;
-
-font-weight:500;
-
-color:#173963;
+.hero-title span{
+    display:block;
 }
 
 
-/* ==============================
+.bottom-lines{
+
+    margin-top:30px;
+}
+
+
+.bottom-lines .line{
+
+    width:75px;
+    height:4px;
+
+    background:#173b65;
+
+    margin:0 0 25px;
+}
+
+
+.bottom-lines p{
+
+    font-size:12px;
+
+    letter-spacing:7px;
+
+    line-height:2.5;
+
+    color:#123560;
+
+    font-weight:500;
+}
+
+
+/* =========================
    QUOTE
-================================= */
+========================= */
 
 .quote{
 
-position:absolute;
+    position:absolute;
 
-right:7%;
-top:25%;
+    right:6vw;
+    top:27%;
 
-width:220px;
+    width:220px;
 
-z-index:3;
+    font-family:
+    'Cormorant Garamond',
+    serif;
 
-font-family:'Cormorant Garamond',serif;
+    font-size:27px;
 
-font-size:28px;
+    line-height:1.05;
 
-line-height:1.15;
-
-color:#19385f;
-
-text-align:left;
+    color:#123560;
 }
+
 
 .quote-line{
 
-width:70px;
-height:3px;
+    width:70px;
+    height:4px;
 
-background:#12396c;
+    background:#173b65;
 
-margin-top:20px;
+    margin-top:20px;
 }
 
 
-/* ==============================
-   BIRDS
-================================= */
-
-.birds{
-
-position:absolute;
-
-top:29%;
-left:61%;
-
-font-size:32px;
-
-letter-spacing:6px;
-
-color:#12396c;
-
-z-index:2;
-
-transform:rotate(-8deg);
-}
-
-
-/* ==============================
-   MEBI GLASS CARD
-================================= */
+/* =========================
+   MEBI CARD
+========================= */
 
 .mebi-card{
 
-position:absolute;
+    position:absolute;
 
-left:50%;
-bottom:145px;
+    left:50%;
+    top:57%;
 
-transform:translateX(-50%);
+    transform:
+    translate(-50%,-50%);
 
-width:min(680px,58vw);
+    width:min(660px,58vw);
 
-min-height:300px;
+    min-height:440px;
 
-border-radius:48px;
+    border-radius:42px;
 
-display:flex;
+    padding:50px 30px;
 
-flex-direction:column;
+    display:flex;
 
-align-items:center;
+    flex-direction:column;
 
-justify-content:center;
+    align-items:center;
 
-text-align:center;
+    justify-content:center;
 
-z-index:20;
+    text-align:center;
 
-background:
+    background:
+    linear-gradient(
+        145deg,
+        rgba(245,250,255,0.52),
+        rgba(205,220,235,0.28)
+    );
 
-linear-gradient(
-145deg,
-rgba(255,255,255,.44),
-rgba(210,229,245,.18)
-);
+    border:
+    1.5px solid rgba(255,255,255,0.72);
 
-border:1.5px solid rgba(255,255,255,.72);
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
 
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
+    box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.8),
+    0 25px 60px rgba(9,38,70,.18);
 
-box-shadow:
-
-inset 0 1px 1px rgba(255,255,255,.8),
-
-0 18px 55px rgba(9,42,80,.12);
+    z-index:5;
 }
 
 
-/* LOGO */
+/* MEBI LOGO */
 
 .mebi-logo{
 
-width:120px;
-height:120px;
+    width:150px;
+    height:150px;
 
-border:8px solid #133c78;
+    position:relative;
 
-border-radius:32px;
-
-position:relative;
-
-margin-bottom:24px;
+    margin-bottom:28px;
 }
 
-
-/* CUSTOM LOGO DESIGN */
 
 .mebi-logo::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-width:60px;
-height:85px;
+    inset:8px;
 
-border-left:8px solid #133c78;
+    border:
+    10px solid #173f77;
 
-border-bottom:8px solid #133c78;
-
-left:19px;
-top:10px;
-
-border-radius:0 0 0 35px;
-
-transform:skewY(-38deg);
+    border-radius:
+    42px 42px 42px 42px;
 }
+
+
+/* diagonal leaf */
 
 .mebi-logo::after{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-width:74px;
-height:8px;
+    width:12px;
+    height:92px;
 
-background:#133c78;
+    background:#173f77;
 
-transform:rotate(-45deg);
+    border-radius:20px;
 
-right:-5px;
-top:50px;
+    transform:rotate(45deg);
 
-border-radius:10px;
+    top:27px;
+    left:70px;
+
+    box-shadow:
+    24px 24px 0 -2px #173f77;
 }
 
 
-/* CARD TITLE */
+.mebi-title{
 
-.mebi-card h1{
+    color:#173f77;
 
-font-size:62px;
+    font-size:
+    clamp(38px,4vw,65px);
 
-font-family:'Poppins',sans-serif;
+    font-weight:500;
 
-font-weight:500;
+    letter-spacing:1px;
 
-letter-spacing:-2px;
-
-color:#12396c;
+    margin-bottom:22px;
 }
 
 
-/* CARD SUB */
+.mebi-sub{
 
-.mebi-card p{
+    font-size:15px;
 
-margin-top:15px;
+    letter-spacing:9px;
 
-font-size:16px;
+    line-height:2.5;
 
-letter-spacing:10px;
+    color:#173f77;
 
-padding-left:10px;
-
-line-height:2.2;
-
-color:#173a67;
-
-max-width:480px;
+    font-weight:500;
 }
 
 
-/* ==============================
+/* =========================
    CHAT AREA
-================================= */
+========================= */
 
 .chat-area{
 
-position:absolute;
+    position:absolute;
 
-inset:0;
+    left:0;
+    top:0;
 
-padding:
-160px
-8%
-220px;
+    width:100%;
+    height:100%;
 
-overflow-y:auto;
+    overflow-y:auto;
 
-display:flex;
-flex-direction:column;
+    padding:
+    85vh
+    5vw
+    150px;
 
-gap:14px;
+    display:flex;
+    flex-direction:column;
 
-z-index:15;
+    gap:14px;
 
-pointer-events:none;
+    z-index:20;
 
-scroll-behavior:smooth;
+    pointer-events:auto;
+
+    scrollbar-width:none;
 }
+
 
 .chat-area::-webkit-scrollbar{
-display:none;
+    display:none;
 }
+
 
 .message{
 
-max-width:70%;
+    max-width:75%;
 
-padding:16px 20px;
+    padding:15px 18px;
 
-border-radius:24px;
+    border-radius:22px;
 
-font-size:15px;
+    font-size:15px;
 
-line-height:1.6;
+    line-height:1.6;
 
-word-break:break-word;
+    animation:fadeUp .3s ease;
 
-pointer-events:auto;
-
-animation:fadeUp .3s ease;
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.10);
 }
+
 
 .user-message{
 
-align-self:flex-end;
+    align-self:flex-end;
 
-background:#12396c;
+    background:#173f77;
 
-color:white;
+    color:white;
 
-border-bottom-right-radius:8px;
+    border-bottom-right-radius:6px;
 }
+
 
 .ai-message{
 
-align-self:flex-start;
+    align-self:flex-start;
 
-background:rgba(255,255,255,.65);
+    background:
+    rgba(255,255,255,.65);
 
-backdrop-filter:blur(15px);
+    backdrop-filter:blur(15px);
 
-border:1px solid rgba(255,255,255,.7);
+    color:#183b64;
 
-color:#163861;
+    border:
+    1px solid rgba(255,255,255,.7);
 
-border-bottom-left-radius:8px;
+    border-bottom-left-radius:6px;
 }
 
 
 @keyframes fadeUp{
 
-from{
-opacity:0;
-transform:translateY(20px);
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
-to{
-opacity:1;
-transform:translateY(0);
-}
 
-}
-
-
-/* ==============================
+/* =========================
    SEARCH BAR
-================================= */
+========================= */
 
 .search-wrap{
 
-position:absolute;
+    position:absolute;
 
-left:50%;
-bottom:28px;
+    left:50%;
+    bottom:max(22px, env(safe-area-inset-bottom));
 
-transform:translateX(-50%);
+    transform:translateX(-50%);
 
-width:94%;
-max-width:1200px;
+    width:min(1100px,92%);
 
-height:96px;
+    height:94px;
 
-padding:12px 14px;
+    padding:10px 12px;
 
-border-radius:48px;
+    display:flex;
 
-display:flex;
+    align-items:center;
 
-align-items:center;
+    gap:15px;
 
-gap:16px;
+    border-radius:50px;
 
-z-index:200;
+    background:
+    linear-gradient(
+        145deg,
+        rgba(245,250,255,.62),
+        rgba(210,225,240,.32)
+    );
 
-background:
+    border:
+    1.5px solid rgba(255,255,255,.75);
 
-linear-gradient(
-145deg,
-rgba(255,255,255,.55),
-rgba(225,239,250,.25)
-);
+    backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
 
-border:1.5px solid rgba(255,255,255,.75);
+    box-shadow:
+    inset 0 1px 1px rgba(255,255,255,.8),
+    0 15px 40px rgba(8,35,65,.16);
 
-backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
-
-box-shadow:
-
-inset 0 1px 1px rgba(255,255,255,.9),
-
-0 14px 40px rgba(10,45,85,.14);
+    z-index:200;
 }
 
-
-/* UPLOAD */
 
 .circle-btn{
 
-width:72px;
-height:72px;
+    width:72px;
+    height:72px;
 
-border:none;
+    flex-shrink:0;
 
-border-radius:50%;
+    border:none;
 
-display:flex;
+    border-radius:50%;
 
-align-items:center;
-justify-content:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-flex-shrink:0;
+    cursor:pointer;
 
-cursor:pointer;
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.52),
+        rgba(230,240,250,.22)
+    );
 
-background:
+    border:
+    1px solid rgba(255,255,255,.8);
 
-linear-gradient(
-145deg,
-rgba(255,255,255,.58),
-rgba(210,228,244,.30)
-);
+    color:#173f77;
 
-border:1px solid rgba(255,255,255,.8);
+    font-size:40px;
 
-box-shadow:
-
-inset 0 1px 1px rgba(255,255,255,.9),
-
-0 6px 18px rgba(10,45,85,.08);
-
-transition:.2s ease;
-}
-
-.circle-btn:hover{
-transform:scale(1.04);
+    transition:.2s ease;
 }
 
 
-/* PLUS */
-
-.plus-icon{
-
-font-size:45px;
-
-font-weight:300;
-
-color:#173d70;
-
-line-height:1;
+.circle-btn:active{
+    transform:scale(.93);
 }
 
-
-/* INPUT */
 
 .search-input{
 
-flex:1;
+    width:100%;
+    height:100%;
 
-height:100%;
+    border:none;
+    outline:none;
 
-border:none;
+    background:transparent;
 
-outline:none;
+    font-family:'Poppins',sans-serif;
 
-background:transparent;
+    font-size:22px;
 
-font-family:'Poppins',sans-serif;
+    color:#173f77;
 
-font-size:22px;
-
-color:#183961;
-
-min-width:0;
+    padding:0 5px;
 }
+
 
 .search-input::placeholder{
-
-color:#526b89;
-
-opacity:.9;
+    color:rgba(23,63,119,.65);
 }
 
-
-/* MIC */
 
 .mic-btn{
 
-width:58px;
+    border:none;
 
-height:58px;
+    background:transparent;
 
-border:none;
+    color:#173f77;
 
-background:transparent;
+    font-size:34px;
 
-font-size:34px;
-
-color:#12396c;
-
-cursor:pointer;
+    cursor:pointer;
 }
 
-
-/* SEND */
 
 .send-btn{
 
-width:72px;
+    background:
+    linear-gradient(
+        145deg,
+        #3d6fb5,
+        #173f77
+    );
 
-height:72px;
+    color:white;
 
-background:
+    font-size:42px;
 
-linear-gradient(
-145deg,
-#376ab0,
-#163b78
-);
-
-border:none;
-
-box-shadow:
-0 10px 25px rgba(17,57,112,.25);
-}
-
-.send-arrow{
-
-font-size:42px;
-
-color:white;
-
-line-height:1;
-
-transform:translateY(-3px);
+    box-shadow:
+    0 10px 25px rgba(20,60,115,.25);
 }
 
 
-/* ==============================
+/* =========================
    MENU OVERLAY
-================================= */
+========================= */
 
 .menu-overlay{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-background:rgba(4,20,40,.22);
+    background:
+    rgba(7,25,45,.25);
 
-backdrop-filter:blur(8px);
+    backdrop-filter:blur(8px);
 
-opacity:0;
+    opacity:0;
+    visibility:hidden;
 
-visibility:hidden;
+    transition:.3s ease;
 
-transition:.35s;
-
-z-index:998;
+    z-index:500;
 }
+
 
 .menu-overlay.active{
 
-opacity:1;
-
-visibility:visible;
+    opacity:1;
+    visibility:visible;
 }
 
 
-/* ==============================
+/* =========================
    SIDE MENU
-================================= */
+========================= */
 
 .side-menu{
 
-position:fixed;
+    position:fixed;
 
-top:0;
-left:0;
+    top:0;
+    left:0;
 
-width:360px;
+    width:min(360px,88vw);
 
-height:100dvh;
+    height:100dvh;
 
-padding:110px 18px 30px;
+    padding:
+    max(100px, env(safe-area-inset-top))
+    18px
+    25px;
 
-background:
+    background:
+    linear-gradient(
+        145deg,
+        rgba(235,245,252,.88),
+        rgba(180,205,225,.55)
+    );
 
-linear-gradient(
-145deg,
-rgba(235,246,255,.94),
-rgba(190,215,238,.72)
-);
+    border-right:
+    1px solid rgba(255,255,255,.7);
 
-backdrop-filter:blur(30px);
+    border-radius:
+    0 32px 32px 0;
 
-border-right:1px solid rgba(255,255,255,.8);
+    backdrop-filter:blur(30px);
 
-border-radius:0 35px 35px 0;
+    transform:
+    translateX(-110%);
 
-box-shadow:
-20px 0 60px rgba(0,0,0,.14);
+    transition:
+    transform .42s cubic-bezier(.77,0,.18,1);
 
-transform:translateX(-110%);
+    z-index:501;
 
-transition:
-transform .42s cubic-bezier(.77,0,.18,1);
-
-z-index:1000;
-
-overflow-y:auto;
+    overflow-y:auto;
 }
 
-.side-menu::-webkit-scrollbar{
-display:none;
-}
 
 .side-menu.active{
-transform:translateX(0);
+    transform:translateX(0);
 }
 
-
-/* PROFILE */
 
 .menu-profile{
 
-display:flex;
+    display:flex;
 
-justify-content:space-between;
+    align-items:center;
 
-align-items:center;
+    justify-content:space-between;
 
-padding:16px;
+    padding:16px;
 
-border-radius:24px;
+    border-radius:22px;
 
-background:rgba(255,255,255,.42);
+    background:
+    rgba(255,255,255,.35);
 
-border:1px solid rgba(255,255,255,.75);
+    border:
+    1px solid rgba(255,255,255,.7);
 
-margin-bottom:20px;
+    margin-bottom:18px;
 }
+
 
 .profile-left{
 
-display:flex;
+    display:flex;
 
-align-items:center;
+    align-items:center;
 
-gap:12px;
+    gap:12px;
 }
+
 
 .profile-icon{
 
-width:55px;
-height:55px;
+    width:52px;
+    height:52px;
 
-border-radius:50%;
+    border-radius:50%;
 
-display:flex;
+    display:flex;
 
-align-items:center;
-justify-content:center;
+    align-items:center;
+    justify-content:center;
 
-font-size:25px;
+    background:
+    rgba(255,255,255,.55);
 
-background:#dceaf5;
+    font-size:24px;
 }
+
 
 .menu-profile h2{
 
-color:#12396c;
+    font-family:
+    'Cormorant Garamond',
+    serif;
 
-font-family:'Cormorant Garamond',serif;
+    font-size:28px;
 
-font-size:30px;
+    color:#173f77;
 }
+
 
 .menu-profile p{
 
-font-size:13px;
+    font-size:12px;
 
-color:#58708f;
+    color:#547399;
 }
+
 
 .profile-star{
 
-font-size:22px;
+    font-size:22px;
 
-color:#1d4d8d;
+    color:#173f77;
 }
 
-
-/* MENU ITEMS */
 
 .menu-items{
 
-display:flex;
+    display:flex;
 
-flex-direction:column;
+    flex-direction:column;
 
-gap:10px;
+    gap:10px;
 }
+
 
 .menu-item{
 
-height:62px;
+    height:62px;
 
-padding:0 17px;
+    padding:0 17px;
 
-border-radius:18px;
+    display:flex;
 
-display:flex;
+    align-items:center;
 
-align-items:center;
+    border-radius:18px;
 
-background:rgba(255,255,255,.40);
+    background:
+    rgba(255,255,255,.34);
 
-border:1px solid rgba(255,255,255,.7);
+    border:
+    1px solid rgba(255,255,255,.6);
 
-cursor:pointer;
-
-transition:.2s;
+    cursor:pointer;
 }
 
-.menu-item:hover{
-
-background:rgba(255,255,255,.65);
-
-transform:translateX(4px);
-}
 
 .menu-item span{
-font-size:20px;
+    font-size:20px;
 }
+
 
 .menu-item p{
 
-margin-left:14px;
+    flex:1;
 
-flex:1;
+    margin-left:14px;
 
-color:#173961;
+    font-size:16px;
 
-font-size:16px;
+    color:#173f77;
 }
+
 
 .menu-item i{
 
-font-style:normal;
+    font-style:normal;
 
-font-size:22px;
+    font-size:24px;
 
-color:#7186a0;
+    color:#547399;
 }
 
 
-/* ==============================
+/* =========================
    ABOUT POPUP
-================================= */
+========================= */
 
 .about-popup{
 
-position:fixed;
+    position:fixed;
 
-inset:0;
+    inset:0;
 
-display:flex;
+    display:flex;
 
-align-items:center;
-justify-content:center;
+    align-items:center;
+    justify-content:center;
 
-background:rgba(4,20,40,.28);
+    background:
+    rgba(8,30,55,.28);
 
-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
 
-opacity:0;
+    opacity:0;
+    visibility:hidden;
 
-visibility:hidden;
+    transition:.3s ease;
 
-transition:.3s;
-
-z-index:5000;
+    z-index:600;
 }
+
 
 .about-popup.active{
 
-opacity:1;
-
-visibility:visible;
+    opacity:1;
+    visibility:visible;
 }
+
 
 .about-card{
 
-width:88%;
+    width:min(380px,88%);
 
-max-width:420px;
+    padding:40px 28px;
 
-padding:42px 30px;
+    border-radius:32px;
 
-border-radius:35px;
+    text-align:center;
 
-text-align:center;
+    background:
+    linear-gradient(
+        145deg,
+        rgba(245,250,255,.75),
+        rgba(190,215,235,.45)
+    );
 
-background:
+    border:
+    1px solid rgba(255,255,255,.8);
 
-linear-gradient(
-145deg,
-rgba(240,249,255,.80),
-rgba(190,215,240,.45)
-);
+    backdrop-filter:blur(25px);
 
-border:1px solid rgba(255,255,255,.8);
+    color:#173f77;
 
-backdrop-filter:blur(25px);
-
-position:relative;
-
-box-shadow:
-0 20px 60px rgba(0,0,0,.16);
+    position:relative;
 }
+
 
 .close-popup{
 
-position:absolute;
+    position:absolute;
 
-right:20px;
-top:15px;
+    right:18px;
+    top:14px;
 
-border:none;
+    border:none;
 
-background:none;
+    background:none;
 
-font-size:25px;
+    font-size:24px;
 
-color:#315474;
+    color:#173f77;
 
-cursor:pointer;
+    cursor:pointer;
 }
+
 
 .about-logo{
 
-font-size:60px;
+    font-size:60px;
 
-color:#12396c;
+    color:#173f77;
 }
+
 
 .about-card h2{
 
-margin-top:12px;
+    font-family:
+    'Cormorant Garamond',
+    serif;
 
-font-family:'Cormorant Garamond',serif;
+    font-size:34px;
 
-font-size:38px;
-
-color:#12396c;
+    margin-top:10px;
 }
+
 
 .about-sub{
 
-margin-top:5px;
+    margin-top:5px;
 
-letter-spacing:4px;
+    letter-spacing:3px;
 
-font-size:13px;
-
-color:#486887;
+    font-size:12px;
 }
+
 
 .about-line{
 
-width:70px;
+    width:70px;
+    height:2px;
 
-height:2px;
+    background:#173f77;
 
-background:#12396c;
-
-margin:22px auto;
+    margin:20px auto;
 }
+
 
 .about-text{
 
-font-size:15px;
+    font-size:14px;
 
-line-height:1.8;
+    line-height:1.7;
 
-color:#45617c;
+    color:#36587d;
 }
+
 
 .founder{
 
-margin-top:22px;
+    margin-top:18px;
 
-font-family:'Cormorant Garamond',serif;
+    font-family:
+    'Cormorant Garamond',
+    serif;
 
-font-size:25px;
-
-color:#12396c;
+    font-size:22px;
 }
 
 
-/* =========================================
+/* =========================
    MOBILE
-========================================= */
+========================= */
 
 @media(max-width:768px){
 
-/* Background */
+    .app{
 
-.app{
-background-position:center;
+        background-position:center center;
+    }
+
+
+    .top-bar{
+
+        padding:
+        max(18px, env(safe-area-inset-top))
+        34px
+        0;
+
+        grid-template-columns:
+        90px 1fr 90px;
+    }
+
+
+    .glass-btn{
+
+        width:88px;
+        height:88px;
+    }
+
+
+    .menu-lines{
+
+        width:45px;
+        height:38px;
+    }
+
+
+    .menu-lines span{
+        height:5px;
+    }
+
+
+    .profile-symbol{
+
+        transform:scale(1.25);
+    }
+
+
+    .brand{
+
+        font-size:43px;
+
+        letter-spacing:0;
+    }
+
+
+    .tagline{
+
+        font-size:12px;
+
+        letter-spacing:8px;
+
+        margin-top:14px;
+    }
+
+
+    .left-content{
+
+        left:8%;
+
+        top:31%;
+    }
+
+
+    .small-line{
+
+        width:80px;
+
+        margin-bottom:30px;
+    }
+
+
+    .hero-title{
+
+        font-size:78px;
+
+        line-height:.95;
+
+        letter-spacing:-2px;
+    }
+
+
+    .quote{
+        display:none;
+    }
+
+
+    .bottom-lines{
+
+        margin-top:25px;
+    }
+
+
+    .bottom-lines p{
+
+        font-size:10px;
+
+        letter-spacing:5px;
+    }
+
+
+    .mebi-card{
+
+        width:calc(100% - 196px);
+
+        min-width:500px;
+
+        height:490px;
+
+        top:63%;
+
+        padding:45px 25px;
+
+        border-radius:45px;
+    }
+
+
+    .mebi-logo{
+
+        width:140px;
+        height:140px;
+
+        margin-bottom:25px;
+    }
+
+
+    .mebi-title{
+
+        font-size:62px;
+    }
+
+
+    .mebi-sub{
+
+        font-size:14px;
+
+        letter-spacing:8px;
+    }
+
+
+    .search-wrap{
+
+        width:94%;
+
+        height:108px;
+
+        bottom:
+        max(24px, env(safe-area-inset-bottom));
+
+        border-radius:55px;
+
+        padding:10px;
+    }
+
+
+    .circle-btn{
+
+        width:86px;
+        height:86px;
+
+        font-size:45px;
+    }
+
+
+    .search-input{
+
+        font-size:25px;
+    }
+
+
+    .mic-btn{
+        display:none;
+    }
+
+
+    .chat-area{
+
+        padding-top:85vh;
+
+        padding-left:20px;
+        padding-right:20px;
+
+        padding-bottom:150px;
+    }
 }
 
 
-/* Header */
+/* =========================
+   SMALL MOBILE FIX
+========================= */
 
-.top-bar{
+@media(max-width:500px){
 
-padding:26px 24px;
+    .top-bar{
 
-grid-template-columns:60px 1fr 60px;
-}
+        padding-left:18px;
+        padding-right:18px;
 
-.glass-btn{
+        grid-template-columns:
+        70px 1fr 70px;
+    }
 
-width:92px;
-height:92px;
-}
 
-.top-left .glass-btn,
-.top-right .glass-btn{
+    .glass-btn{
 
-width:92px;
-height:92px;
-}
+        width:64px;
+        height:64px;
+    }
 
 
-/* Brand */
+    .menu-lines{
 
-.brand{
+        width:34px;
+        height:29px;
+    }
 
-font-size:34px;
 
-letter-spacing:.5px;
+    .menu-lines span{
+        height:4px;
+    }
 
-white-space:nowrap;
-}
 
-.brand-sub{
+    .profile-symbol{
+        transform:scale(.95);
+    }
 
-font-size:11px;
 
-letter-spacing:7px;
+    .brand{
 
-padding-left:7px;
+        font-size:29px;
+    }
 
-margin-top:7px;
-}
 
+    .tagline{
 
-/* Hero */
+        font-size:8px;
 
-.hero-copy{
+        letter-spacing:5px;
 
-left:7%;
+        margin-top:8px;
+    }
 
-top:24%;
-}
 
-.hero-line{
+    .left-content{
 
-width:58px;
+        top:29%;
 
-margin-bottom:22px;
-}
+        left:9%;
+    }
 
-.hero-title{
 
-font-size:72px;
+    .small-line{
 
-line-height:.94;
+        width:65px;
 
-max-width:260px;
-}
+        height:3px;
 
-.hero-bottom{
+        margin-bottom:22px;
+    }
 
-margin-top:22px;
-}
 
-.hero-tagline{
+    .hero-title{
 
-font-size:11px;
+        font-size:62px;
 
-letter-spacing:5px;
+        line-height:.95;
+    }
 
-line-height:2;
-}
 
+    .bottom-lines{
 
-/* Quote */
+        display:none;
+    }
 
-.quote{
 
-display:none;
-}
+    /* PERFECT MOBILE CARD */
 
+    .mebi-card{
 
-/* Birds */
+        width:calc(100% - 80px);
 
-.birds{
+        min-width:0;
 
-display:none;
-}
+        min-height:0;
 
+        height:390px;
 
-/* Mebi card */
+        top:63%;
 
-.mebi-card{
+        padding:30px 15px;
 
-width:72%;
+        border-radius:38px;
+    }
 
-bottom:140px;
 
-min-height:300px;
+    .mebi-logo{
 
-border-radius:38px;
+        width:110px;
+        height:110px;
 
-padding:25px 15px;
-}
+        margin-bottom:20px;
+    }
 
-.mebi-logo{
 
-width:105px;
-height:105px;
+    .mebi-logo::before{
 
-margin-bottom:22px;
-}
+        inset:5px;
 
-.mebi-card h1{
+        border-width:8px;
 
-font-size:43px;
+        border-radius:32px;
+    }
 
-letter-spacing:-1px;
-}
 
-.mebi-card p{
+    .mebi-logo::after{
 
-font-size:11px;
+        width:9px;
+        height:70px;
 
-letter-spacing:6px;
+        top:19px;
+        left:51px;
 
-line-height:2.3;
+        box-shadow:
+        18px 18px 0 -2px #173f77;
+    }
 
-max-width:280px;
-}
 
+    .mebi-title{
 
-/* Chat */
+        font-size:45px;
 
-.chat-area{
+        margin-bottom:14px;
+    }
 
-padding:
-180px
-20px
-170px;
 
-pointer-events:auto;
-}
+    .mebi-sub{
 
-.message{
+        font-size:10px;
 
-max-width:88%;
-}
+        letter-spacing:5px;
 
+        line-height:2.8;
+    }
 
-/* Search */
 
-.search-wrap{
+    .search-wrap{
 
-width:94%;
+        height:82px;
 
-height:88px;
+        width:94%;
 
-bottom:20px;
+        bottom:18px;
 
-border-radius:45px;
+        border-radius:42px;
+    }
 
-padding:8px 10px;
 
-gap:5px;
-}
+    .circle-btn{
 
-.circle-btn{
+        width:62px;
+        height:62px;
 
-width:68px;
-height:68px;
-}
+        font-size:34px;
+    }
 
-.search-input{
 
-font-size:17px;
+    .search-input{
 
-padding-left:8px;
-}
+        font-size:17px;
+    }
 
-.mic-btn{
 
-display:none;
-}
+    .message{
 
-.send-btn{
-
-width:68px;
-height:68px;
-}
-
-}
-
-
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
-@media(max-width:430px){
-
-.top-bar{
-
-padding:18px 18px;
-}
-
-.top-left .glass-btn,
-.top-right .glass-btn{
-
-width:64px;
-height:64px;
-}
-
-.hamburger{
-
-width:32px;
-
-gap:6px;
-}
-
-.hamburger span{
-
-height:3px;
-}
-
-.profile-shape{
-
-transform:scale(.7);
-
-margin-bottom:8px;
-}
-
-.brand{
-
-font-size:24px;
-}
-
-.brand-sub{
-
-font-size:8px;
-
-letter-spacing:5px;
-}
-
-
-/* Hero text */
-
-.hero-copy{
-
-top:24%;
-
-left:9%;
-}
-
-.hero-title{
-
-font-size:58px;
-
-max-width:220px;
-}
-
-.hero-line{
-
-margin-bottom:16px;
-}
-
-.hero-bottom{
-
-margin-top:16px;
-}
-
-.hero-tagline{
-
-font-size:8px;
-
-letter-spacing:4px;
-}
-
-
-/* Card */
-
-.mebi-card{
-
-width:72%;
-
-bottom:125px;
-
-min-height:250px;
-
-border-radius:32px;
-}
-
-.mebi-logo{
-
-width:82px;
-height:82px;
-
-border-width:6px;
-
-margin-bottom:16px;
-}
-
-.mebi-logo::before{
-
-width:42px;
-height:60px;
-
-border-width:6px;
-
-left:14px;
-top:8px;
-}
-
-.mebi-logo::after{
-
-width:52px;
-height:6px;
-
-top:35px;
-}
-
-.mebi-card h1{
-
-font-size:35px;
-}
-
-.mebi-card p{
-
-font-size:9px;
-
-letter-spacing:4px;
-
-max-width:240px;
-}
-
-
-/* Search */
-
-.search-wrap{
-
-height:76px;
-
-bottom:14px;
-}
-
-.circle-btn{
-
-width:58px;
-height:58px;
-}
-
-.plus-icon{
-
-font-size:35px;
-}
-
-.search-input{
-
-font-size:14px;
-}
-
-.send-btn{
-
-width:58px;
-height:58px;
-}
-
-.send-arrow{
-
-font-size:34px;
-}
-
-.side-menu{
-
-width:86%;
-}
-
+        max-width:85%;
+    }
 }
 
 </style>
@@ -1632,382 +1577,119 @@ onclick="closeMenu()">
 
 <div class="side-menu" id="sideMenu">
 
-<div class="menu-profile">
+    <div class="menu-profile">
 
-<div class="profile-left">
+        <div class="profile-left">
 
-<div class="profile-icon">👤</div>
+            <div class="profile-icon">👤</div>
 
-<div>
+            <div>
+                <h2>SK</h2>
+                <p>Premium User</p>
+            </div>
 
-<h2>SK</h2>
+        </div>
 
-<p>Premium User</p>
+        <div class="profile-star">✦</div>
 
-</div>
-
-</div>
-
-<div class="profile-star">✦</div>
-
-</div>
+    </div>
 
 
-<div class="menu-items">
+    <div class="menu-items">
 
-<div class="menu-item">
-<span>☷</span>
-<p>Dashboard</p>
-<i>›</i>
-</div>
+        <div class="menu-item">
+            <span>☷</span>
+            <p>Dashboard</p>
+            <i>›</i>
+        </div>
 
-<div class="menu-item">
-<span>💬</span>
-<p>My Chats</p>
-<i>›</i>
-</div>
+        <div class="menu-item">
+            <span>💬</span>
+            <p>My Chats</p>
+            <i>›</i>
+        </div>
 
-<div class="menu-item">
-<span>📄</span>
-<p>My Documents</p>
-<i>›</i>
-</div>
+        <div class="menu-item">
+            <span>📄</span>
+            <p>My Documents</p>
+            <i>›</i>
+        </div>
 
-<div class="menu-item">
-<span>🔖</span>
-<p>Saved Answers</p>
-<i>›</i>
-</div>
+        <div class="menu-item">
+            <span>🔖</span>
+            <p>Saved Answers</p>
+            <i>›</i>
+        </div>
 
-<div class="menu-item">
-<span>🗓</span>
-<p>Study Planner</p>
-<i>›</i>
-</div>
+        <div class="menu-item">
+            <span>🗓</span>
+            <p>Study Planner</p>
+            <i>›</i>
+        </div>
 
-<div class="menu-item">
-<span>✦</span>
-<p>AI Tools</p>
-<i>›</i>
-</div>
+        <div class="menu-item">
+            <span>✦</span>
+            <p>AI Tools</p>
+            <i>›</i>
+        </div>
 
-</div>
+    </div>
 
 </div>
 
 
-<!-- ================= HEADER ================= -->
+
+<!-- HEADER -->
 
 <div class="top-bar">
 
 
-<!-- MENU -->
+    <button
+    class="glass-btn"
+    onclick="openMenu()"
+    aria-label="Open menu">
 
-<div class="top-left">
+        <div class="menu-lines">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-<button
-class="glass-btn"
-onclick="openMenu()"
-aria-label="Open Menu">
+    </button>
 
-<div class="hamburger">
 
-<span></span>
-<span></span>
-<span></span>
+    <div class="brand-wrap">
 
-</div>
+        <div class="brand">
+            Sanitas Melete
+        </div>
 
-</button>
+        <div class="tagline">
+            YOUR STUDY BUDDY
+        </div>
 
-</div>
+    </div>
 
 
-<!-- BRAND -->
+    <button
+    class="glass-btn"
+    onclick="openAbout()"
+    aria-label="Profile">
 
-<div class="brand-center">
+        <div class="profile-symbol"></div>
 
-<div class="brand">
-Sanitas Melete
-</div>
-
-<div class="brand-sub">
-YOUR STUDY BUDDY
-</div>
-
-</div>
-
-
-<!-- PROFILE -->
-
-<div class="top-right">
-
-<button
-class="glass-btn"
-onclick="openAbout()"
-aria-label="About">
-
-<div class="profile-shape"></div>
-
-</button>
-
-</div>
-
-</div>
-
-
-<!-- ================= HERO ================= -->
-
-<div class="hero-copy">
-
-<div class="hero-line"></div>
-
-<div class="hero-title">
-
-Small<br>
-Steps<br>
-Big<br>
-Results.
-
-</div>
-
-
-<div class="hero-bottom">
-
-<div class="hero-bottom-line"></div>
-
-<div class="hero-tagline">
-
-DISCIPLINE TODAY<br>
-A BRIGHTER TOMORROW
-
-</div>
-
-<div class="hero-bottom-line"></div>
-
-</div>
-
-</div>
-
-
-<!-- BIRDS -->
-
-<div class="birds">
-⌁⌁⌁
-</div>
-
-
-<!-- QUOTE -->
-
-<div class="quote">
-
-“Better<br>
-Students Build<br>
-Brighter<br>
-Futures.”
-
-<div class="quote-line"></div>
-
-</div>
-
-
-<!-- ================= MEBI CARD ================= -->
-
-<div class="mebi-card">
-
-<div class="mebi-logo"></div>
-
-<h1>Hi, I'm MEBI</h1>
-
-<p>
-ALWAYS HERE TO LEARN<br>
-WITH YOU
-</p>
-
-</div>
-
-
-<!-- ================= CHAT ================= -->
-
-<div
-class="chat-area"
-id="chatArea">
-</div>
-
-
-<!-- ================= SEARCH ================= -->
-
-<div class="search-wrap">
-
-
-<!-- FILE UPLOAD -->
-
-<label
-for="fileUpload"
-class="circle-btn"
-title="Upload File">
-
-<span class="plus-icon">+</span>
-
-</label>
-
-<input
-type="file"
-id="fileUpload"
-hidden
-multiple
-accept=".pdf,.doc,.docx,.txt,image/*">
-
-
-<!-- INPUT -->
-
-<input
-type="text"
-class="search-input"
-placeholder="Ask me anything...">
-
-
-<!-- MIC -->
-
-<button
-class="mic-btn"
-type="button"
-title="Voice Input">
-
-♩
-
-</button>
-
-
-<!-- SEND -->
-
-<button
-class="circle-btn send-btn"
-type="button"
-aria-label="Send">
-
-<span class="send-arrow">↑</span>
-
-</button>
-
-</div>
-
-
-<!-- ================= ABOUT POPUP ================= -->
-
-<div
-class="about-popup"
-id="aboutPopup">
-
-<div class="about-card">
-
-<button
-class="close-popup"
-onclick="closeAbout()">
-
-✕
-</button>
-
-
-<div class="about-logo">
-∞
-</div>
-
-
-<h2>
-Sanitas Melete AI
-</h2>
-
-
-<p class="about-sub">
-YOUR STUDY BUDDY
-</p>
-
-
-<div class="about-line"></div>
-
-
-<p class="about-text">
-
-Premium AI learning platform crafted for
-students with an elegant design and an
-intelligent study experience.
-
-</p>
-
-
-<p class="founder">
-
-Founder — SK
-
-</p>
-
-</div>
-
-</div>
+    </button>
 
 
 </div>
 
 
-<script>
+
+<!-- HERO -->
+
+<div class="hero">
 
 
-const input =
-document.querySelector(".search-input");
+    <div class="left-content">
 
-
-const sendBtn =
-document.querySelector(".send-btn");
-
-
-const chatArea =
-document.getElementById("chatArea");
-
-
-const fileUpload =
-document.getElementById("fileUpload");
-
-
-/* ================= MENU ================= */
-
-function openMenu(){
-
-document
-.getElementById("sideMenu")
-.classList.add("active");
-
-document
-.getElementById("menuOverlay")
-.classList.add("active");
-
-}
-
-
-function closeMenu(){
-
-document
-.getElementById("sideMenu")
-.classList.remove("active");
-
-document
-.getElementById("menuOverlay")
-.classList.remove("active");
-
-}
-
-
-/* ================= ABOUT ================= */
-
-function openAbout(){
-
-document
-.getElementById("aboutPopup")
-.classList.add("active");
-
-}
-
-
-function closeAbout(){
-
-document
+        <div cla
