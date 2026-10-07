@@ -1,27 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="author" content="SK">
+<meta name="creator" content="SK">
+<meta name="publisher" content="Sanitas Melete AI">
+
 <title>Sanitas Melete AI</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 
-/* YOUR UPDATED BLUE UI */
-
 *{
-box-sizing:border-box;
 margin:0;
 padding:0;
+box-sizing:border-box;
 }
 
 html,body{
 width:100%;
 height:100%;
 overflow:hidden;
-font-family:Poppins,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 body{
@@ -30,9 +34,11 @@ background:#f3f8ff;
 
 :root{
 --blue:#06439a;
---blue-light:#0755b8;
+--blue2:#0755b8;
 --text:#29415f;
 }
+
+/* APP */
 
 .app{
 width:100%;
@@ -42,7 +48,7 @@ position:relative;
 background:
 radial-gradient(
 circle at top,
-#fff 0%,
+#ffffff 0%,
 #f4f8ff 45%,
 #eaf2ff 100%
 );
@@ -55,13 +61,14 @@ circle at top,
 position:fixed;
 top:0;
 left:0;
+
 width:100%;
 
 padding:28px 38px 0;
 
 display:flex;
-justify-content:space-between;
 align-items:center;
+justify-content:space-between;
 
 z-index:100000;
 }
@@ -72,29 +79,34 @@ align-items:center;
 gap:16px;
 }
 
+
+/* GLASS BUTTON */
+
 .glass-btn{
 width:58px;
 height:58px;
+
+border-radius:50%;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-border-radius:50%;
-
 background:
 linear-gradient(
 145deg,
-rgba(255,255,255,.9),
+rgba(255,255,255,.88),
 rgba(225,237,255,.35)
 );
 
 border:1px solid rgba(255,255,255,.95);
 
 backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
 
 box-shadow:
-0 8px 22px rgba(6,59,143,.1);
+inset 0 1px 1px rgba(255,255,255,.9),
+0 8px 22px rgba(6,59,143,.10);
 
 cursor:pointer;
 }
@@ -107,9 +119,14 @@ color:var(--blue);
 
 .brand{
 color:#063b82;
+
 font-size:30px;
-font-weight:600;
+
 font-family:'Cormorant Garamond',serif;
+
+font-weight:600;
+
+white-space:nowrap;
 }
 
 
@@ -133,24 +150,32 @@ z-index:1;
 }
 
 
-/* YOUR EXACT LOGO */
+/* =========================
+   YOUR REAL LOGO
+   TRANSPARENT
+========================= */
 
 .logo-image{
 width:150px;
 height:150px;
 
-object-fit:contain;
-
 display:block;
 
 margin:auto;
 
+object-fit:contain;
+
+background:transparent;
+
 filter:
 drop-shadow(
-0 8px 18px
-rgba(6,59,143,.08)
+0 7px 15px
+rgba(6,59,143,.06)
 );
 }
+
+
+/* TITLE */
 
 .hero-title{
 margin-top:34px;
@@ -170,6 +195,9 @@ line-height:1;
 color:#0755b8;
 }
 
+
+/* DIVIDER */
+
 .divider{
 width:260px;
 
@@ -186,6 +214,7 @@ gap:14px;
 
 .divider span{
 width:90px;
+
 height:1px;
 
 background:#0755b8;
@@ -193,8 +222,12 @@ background:#0755b8;
 
 .divider p{
 color:#0755b8;
+
 font-size:18px;
 }
+
+
+/* SUBTITLE */
 
 .sub{
 color:#627c9e;
@@ -210,16 +243,20 @@ font-family:'Cormorant Garamond',serif;
 .chat-area{
 position:absolute;
 
-inset:0;
+top:0;
+left:0;
 
+width:100%;
 height:100dvh;
 
 overflow-y:auto;
 
-padding:
-95vh
-20px
-190px;
+padding-top:95vh;
+
+padding-left:20px;
+padding-right:20px;
+
+padding-bottom:190px;
 
 display:flex;
 
@@ -228,6 +265,8 @@ flex-direction:column;
 gap:14px;
 
 z-index:5;
+
+scroll-behavior:smooth;
 }
 
 .chat-area::-webkit-scrollbar{
@@ -246,6 +285,8 @@ font-size:15px;
 line-height:1.6;
 
 word-wrap:break-word;
+
+animation:fadeUp .25s ease;
 }
 
 .user-message{
@@ -261,6 +302,10 @@ linear-gradient(
 color:white;
 
 border-bottom-right-radius:8px;
+
+box-shadow:
+0 7px 18px
+rgba(6,59,143,.16);
 }
 
 .ai-message{
@@ -270,16 +315,35 @@ background:
 linear-gradient(
 145deg,
 rgba(255,255,255,.86),
-rgba(231,241,255,.4)
+rgba(231,241,255,.40)
 );
 
 border:1px solid rgba(255,255,255,.85);
 
 backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
 
 color:#334b6c;
 
 border-bottom-left-radius:8px;
+
+box-shadow:
+0 7px 20px
+rgba(6,59,143,.07);
+}
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
 }
 
 
@@ -313,13 +377,14 @@ rgba(255,255,255,.78),
 rgba(225,237,255,.35)
 );
 
-border:1px solid rgba(255,255,255,.9);
+border:1px solid rgba(255,255,255,.90);
 
 backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
 
 box-shadow:
-0 12px 28px
-rgba(6,59,143,.1);
+inset 0 0 12px rgba(255,255,255,.5),
+0 12px 28px rgba(6,59,143,.10);
 
 z-index:100;
 }
@@ -338,15 +403,13 @@ width:100%;
 width:50px;
 height:50px;
 
-flex-shrink:0;
+border-radius:50%;
 
 display:flex;
 
 align-items:center;
 
 justify-content:center;
-
-border-radius:50%;
 
 background:
 linear-gradient(
@@ -355,31 +418,44 @@ rgba(255,255,255,.88),
 rgba(225,237,255,.35)
 );
 
-border:1px solid rgba(255,255,255,.9);
+border:1px solid rgba(255,255,255,.90);
+
+box-shadow:
+inset 0 0 8px rgba(255,255,255,.5),
+0 5px 16px rgba(6,59,143,.10);
 
 cursor:pointer;
+
+flex-shrink:0;
 }
 
 .circle-btn span{
 color:#0755b8;
+
 font-size:24px;
 }
 
 .send-btn{
 background:#0755b8;
+
 border:none;
+
+box-shadow:
+0 7px 18px
+rgba(6,59,143,.20);
 }
 
 .send-btn span{
 color:white;
+
 font-size:25px;
 }
 
 .search-input{
 width:100%;
 
-border:0;
-outline:0;
+border:none;
+outline:none;
 
 background:transparent;
 
@@ -387,7 +463,7 @@ color:#3b5272;
 
 font-size:17px;
 
-font-family:Poppins,sans-serif;
+font-family:'Poppins',sans-serif;
 }
 
 .search-input::placeholder{
@@ -395,7 +471,7 @@ color:#7184a0;
 }
 
 
-/* MENU */
+/* MENU OVERLAY */
 
 .menu-overlay{
 position:fixed;
@@ -405,6 +481,7 @@ inset:0;
 background:rgba(5,45,100,.08);
 
 backdrop-filter:blur(8px);
+-webkit-backdrop-filter:blur(8px);
 
 opacity:0;
 
@@ -417,8 +494,12 @@ z-index:998;
 
 .menu-overlay.active{
 opacity:1;
+
 visibility:visible;
 }
+
+
+/* SIDE MENU */
 
 .side-menu{
 position:fixed;
@@ -440,17 +521,20 @@ rgba(255,255,255,.92),
 rgba(226,238,255,.45)
 );
 
-border-radius:
-0 32px 32px 0;
+border-right:1px solid rgba(255,255,255,.85);
+
+border-top-right-radius:32px;
+
+border-bottom-right-radius:32px;
 
 backdrop-filter:blur(30px);
+-webkit-backdrop-filter:blur(30px);
 
 box-shadow:
 0 10px 40px
-rgba(6,59,143,.1);
+rgba(6,59,143,.10);
 
-transform:
-translate3d(-110%,0,0);
+transform:translate3d(-110%,0,0);
 
 transition:
 transform .42s
@@ -458,8 +542,15 @@ cubic-bezier(.77,0,.18,1);
 
 z-index:100001;
 
-overflow:auto;
+overflow-y:auto;
 }
+
+.side-menu::-webkit-scrollbar{
+display:none;
+}
+
+
+/* PROFILE */
 
 .menu-profile{
 display:flex;
@@ -473,7 +564,13 @@ padding:14px;
 border-radius:22px;
 
 background:
-rgba(255,255,255,.7);
+linear-gradient(
+145deg,
+rgba(255,255,255,.82),
+rgba(225,237,255,.32)
+);
+
+border:1px solid rgba(255,255,255,.78);
 
 margin-bottom:16px;
 }
@@ -523,6 +620,9 @@ color:#0755b8;
 font-size:20px;
 }
 
+
+/* MENU ITEMS */
+
 .menu-items{
 display:flex;
 
@@ -543,12 +643,19 @@ display:flex;
 align-items:center;
 
 background:
-rgba(255,255,255,.7);
+linear-gradient(
+145deg,
+rgba(255,255,255,.80),
+rgba(225,237,255,.28)
+);
 
-border:1px solid
-rgba(255,255,255,.75);
+border:1px solid rgba(255,255,255,.72);
 
 cursor:pointer;
+}
+
+.menu-item span{
+font-size:20px;
 }
 
 .menu-item p{
@@ -582,6 +689,7 @@ inset:0;
 background:rgba(5,45,100,.08);
 
 backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(10px);
 
 display:flex;
 
@@ -616,12 +724,16 @@ border-radius:30px;
 text-align:center;
 
 background:
-rgba(255,255,255,.84);
+linear-gradient(
+145deg,
+rgba(255,255,255,.84),
+rgba(225,237,255,.36)
+);
 
-border:1px solid
-rgba(255,255,255,.85);
+border:1px solid rgba(255,255,255,.82);
 
 backdrop-filter:blur(18px);
+-webkit-backdrop-filter:blur(18px);
 
 position:relative;
 }
@@ -638,6 +750,8 @@ width:100%;
 height:100%;
 
 object-fit:contain;
+
+background:transparent;
 }
 
 .about-card h2{
@@ -662,6 +776,7 @@ font-family:'Cormorant Garamond',serif;
 
 .about-line{
 width:70px;
+
 height:1px;
 
 background:#0755b8;
@@ -693,7 +808,7 @@ position:absolute;
 top:16px;
 right:20px;
 
-border:0;
+border:none;
 
 background:none;
 
@@ -733,6 +848,7 @@ height:150px;
 
 .hero-title{
 margin-top:24px;
+
 font-size:30px;
 }
 
@@ -742,6 +858,7 @@ font-size:18px;
 
 .search-wrap{
 width:93%;
+
 height:72px;
 
 bottom:12px;
@@ -760,9 +877,13 @@ padding-top:72vh;
 </style>
 </head>
 
+
 <body>
 
 <div class="app" id="app">
+
+
+<!-- MENU OVERLAY -->
 
 <div
 class="menu-overlay"
@@ -770,6 +891,8 @@ id="menuOverlay"
 onclick="closeMenu()">
 </div>
 
+
+<!-- SIDE MENU -->
 
 <div
 class="side-menu"
@@ -784,8 +907,11 @@ id="sideMenu">
 </div>
 
 <div>
+
 <h2>SK</h2>
+
 <p>Premium User</p>
+
 </div>
 
 </div>
@@ -840,6 +966,8 @@ id="sideMenu">
 </div>
 
 
+<!-- TOP BAR -->
+
 <div class="top-bar">
 
 <div class="left-top">
@@ -858,6 +986,7 @@ Sanitas Melete
 
 </div>
 
+
 <div
 class="glass-btn"
 onclick="openAbout()">
@@ -869,25 +998,27 @@ onclick="openAbout()">
 </div>
 
 
+<!-- HERO -->
+
 <div class="center">
 
-<!-- YOUR LOGO IS EMBEDDED HERE -->
+
+<!-- YOUR ACTUAL LOGO
+     BACKGROUND REMOVED -->
 
 <img
 class="logo-image"
-src="PASTE_YOUR_EMBEDDED_LOGO_DATA_HERE"
 alt="Sanitas Melete Logo"
+src="data:image/webp;base64,''' + webp_b64 + '''"
 >
+
 
 <div class="hero-title">
 
-Hi iam mebi
-
-<span class="spark">
-✦
-</span>
+Hi iam mebi<span class="spark">✦</span>
 
 </div>
+
 
 <div class="divider">
 
@@ -899,6 +1030,7 @@ Hi iam mebi
 
 </div>
 
+
 <div class="sub">
 your study buddy
 </div>
@@ -906,11 +1038,15 @@ your study buddy
 </div>
 
 
+<!-- CHAT -->
+
 <div
 class="chat-area"
 id="chatArea">
 </div>
 
+
+<!-- SEARCH -->
 
 <div class="search-wrap">
 
@@ -932,6 +1068,7 @@ multiple
 accept=".pdf,.doc,.docx,.txt,image/*"
 >
 
+
 <input
 type="text"
 class="search-input"
@@ -939,6 +1076,7 @@ placeholder="type your questions here"
 >
 
 </div>
+
 
 <button
 class="circle-btn send-btn"
@@ -950,6 +1088,8 @@ type="button">
 
 </div>
 
+
+<!-- ABOUT -->
 
 <div
 class="about-popup"
@@ -965,14 +1105,16 @@ onclick="closeAbout()">
 
 </button>
 
+
 <div class="about-logo">
 
 <img
-src="PASTE_YOUR_EMBEDDED_LOGO_DATA_HERE"
 alt="Sanitas Melete Logo"
+src="data:image/webp;base64,''' + webp_b64 + '''"
 >
 
 </div>
+
 
 <h2>
 Sanitas Melete AI
@@ -986,7 +1128,11 @@ your study buddy
 </div>
 
 <p class="about-text">
-Premium AI learning platform crafted for students with elegant design and intelligent study experience.
+
+Premium AI learning platform crafted
+for students with elegant design and
+intelligent study experience.
+
 </p>
 
 <p class="founder">
@@ -1001,6 +1147,8 @@ Founder — SK
 
 
 <script>
+
+/* ELEMENTS */
 
 const input =
 document.querySelector(".search-input");
@@ -1020,6 +1168,8 @@ document.getElementById("menuOverlay");
 const fileUpload =
 document.getElementById("fileUpload");
 
+
+/* MENU */
 
 function openMenu(){
 
@@ -1041,6 +1191,8 @@ menuOverlay.classList.remove("active");
 }
 
 
+/* ABOUT */
+
 function openAbout(){
 
 document
@@ -1059,6 +1211,8 @@ document
 }
 
 
+/* CHAT */
+
 function addMessage(text,type){
 
 const msg =
@@ -1066,19 +1220,26 @@ document.createElement("div");
 
 msg.classList.add("message");
 
+
 if(type==="user"){
 
-msg.classList.add("user-message");
+msg.classList.add(
+"user-message"
+);
 
 }else{
 
-msg.classList.add("ai-message");
+msg.classList.add(
+"ai-message"
+);
 
 }
+
 
 msg.innerText=text;
 
 chatArea.appendChild(msg);
+
 
 setTimeout(()=>{
 
@@ -1092,6 +1253,8 @@ block:"end"
 }
 
 
+/* SEND */
+
 async function sendMessage(){
 
 const text =
@@ -1099,9 +1262,14 @@ input.value.trim();
 
 if(!text)return;
 
-addMessage(text,"user");
+
+addMessage(
+text,
+"user"
+);
 
 input.value="";
+
 
 const loading =
 document.createElement("div");
@@ -1114,7 +1282,16 @@ loading.classList.add(
 loading.innerText =
 "mebi is thinking ✨";
 
-chatArea.appendChild(loading);
+chatArea.appendChild(
+loading
+);
+
+
+loading.scrollIntoView({
+behavior:"smooth",
+block:"end"
+});
+
 
 try{
 
@@ -1122,6 +1299,7 @@ const response =
 await fetch(
 "/api/ask",
 {
+
 method:"POST",
 
 headers:{
@@ -1133,13 +1311,17 @@ body:
 JSON.stringify({
 question:text
 })
+
 }
 );
+
 
 const data =
 await response.json();
 
+
 loading.remove();
+
 
 addMessage(
 data.reply ||
@@ -1147,15 +1329,18 @@ data.reply ||
 "ai"
 );
 
+
 }catch(err){
 
 loading.remove();
 
+
 addMessage(
-"API Error: "+
+"API Error: " +
 err.message,
 "ai"
 );
+
 
 console.error(err);
 
@@ -1164,9 +1349,13 @@ console.error(err);
 }
 
 
+/* SEND BUTTON */
+
 sendBtn.onclick =
 sendMessage;
 
+
+/* ENTER */
 
 input.addEventListener(
 "keypress",
@@ -1182,19 +1371,29 @@ sendMessage();
 );
 
 
+/* FILE UPLOAD */
+
 fileUpload.addEventListener(
 "change",
 e=>{
 
+const files =
+e.target.files;
+
+
+if(files.length>0){
+
 for(
-const file of e.target.files
+const file of files
 ){
 
 addMessage(
-"Uploaded: "+
+"Uploaded: " +
 file.name,
 "user"
 );
+
+}
 
 }
 
