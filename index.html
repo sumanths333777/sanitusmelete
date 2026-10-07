@@ -3,1213 +3,1506 @@
 <head>
 
 <meta name="author" content="SK">
-
 <meta name="creator" content="SK">
-
 <meta name="publisher" content="Sanitas Melete AI">
 
-<meta name="description" content="Sanitas Melete AI is a premium AI-powered educational platform for NEET and JEE students, created by SK.">
+<meta name="description"
+content="Sanitas Melete AI is a premium AI-powered educational platform for NEET and JEE students, created by SK.">
 
-<meta name="keywords" content="SK, Sanitas Melete AI, NEET AI, JEE AI, AI study platform">
+<meta name="keywords"
+content="SK, Sanitas Melete AI, NEET AI, JEE AI, AI study platform">
 
 <meta property="og:title" content="Sanitas Melete AI">
+<meta property="og:description"
+content="Premium AI learning platform for NEET and JEE students, created by SK.">
 
-<meta property="og:description" content="Premium AI learning platform for NEET and JEE students, created by SK.">
-
-  
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Sanitas Melete AI</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 
+/* =========================
+   GLOBAL
+========================= */
+
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html,body{
-width:100%;
-height:100%;
-overflow:hidden;
-font-family:'Poppins',sans-serif;
+html,
+body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#efe3d6;
+    background:#f3f8ff;
 }
+
+
+/* =========================
+   COLOR SYSTEM
+========================= */
+
+:root{
+
+    --blue:#063B8F;
+    --blue-dark:#032A68;
+    --blue-light:#0B5ED7;
+    --blue-soft:#EAF2FF;
+
+    --text:#17345f;
+    --muted:#7183a0;
+
+    --white:rgba(255,255,255,0.82);
+
+    --border:rgba(255,255,255,0.9);
+
+    --shadow:rgba(6,59,143,0.12);
+}
+
+
+/* =========================
+   APP
+========================= */
 
 .app{
-width:100%;
-height:100dvh;
-position:relative;
-overflow:visible;
+    width:100%;
+    height:100dvh;
 
-background:
-radial-gradient(circle at top,
-#f8eee4 0%,
-#efe3d6 45%,
-#eadccd 100%);
+    position:relative;
+
+    overflow:visible;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #ffffff 0%,
+            #f4f8ff 38%,
+            #eaf2ff 100%
+        );
 }
 
-/* TOP BAR */
+
+/* =========================
+   TOP BAR
+========================= */
 
 .top-bar{
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
 
-padding:28px 38px 0;
+    width:100%;
 
-position:fixed;
-top:0;
-left:0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-z-index:100000;
+    padding:28px 38px 0;
 
-transition:0.25s ease;
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    z-index:100000;
+
+    transition:0.25s ease;
 }
 
 .left-top{
-display:flex;
-align-items:center;
-gap:16px;
+
+    display:flex;
+    align-items:center;
+
+    gap:16px;
 }
 
+
+/* GLASS BUTTON */
+
 .glass-btn{
-width:58px;
-height:58px;
 
-border-radius:50%;
+    width:58px;
+    height:58px;
 
-display:flex;
-align-items:center;
-justify-content:center;
+    border-radius:50%;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.75),
-rgba(255,255,255,0.18)
-);
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-border:1px solid rgba(255,255,255,0.72);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.92),
+            rgba(225,237,255,0.55)
+        );
 
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.95);
 
-box-shadow:
-inset 0 1px 1px rgba(255,255,255,0.8),
-0 8px 22px rgba(180,140,100,0.10);
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
 
-cursor:pointer;
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,1),
+        0 8px 24px var(--shadow);
 
-flex-shrink:0;
+    cursor:pointer;
+
+    flex-shrink:0;
+
+    transition:0.25s ease;
+}
+
+.glass-btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        inset 0 1px 2px rgba(255,255,255,1),
+        0 12px 28px rgba(6,59,143,0.18);
 }
 
 .glass-btn i{
-font-style:normal;
-color:#062d71;
-font-size:26px;
+
+    font-style:normal;
+
+    color:var(--blue);
+
+    font-size:26px;
 }
+
+
+/* BRAND */
 
 .brand{
-color:#062d71;
-font-size:30px;
-font-family:'Cormorant Garamond',serif;
-font-weight:600;
-white-space:nowrap;
+
+    color:var(--blue);
+
+    font-size:30px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-weight:700;
+
+    white-space:nowrap;
 }
 
-/* HERO */
+
+/* =========================
+   LOGO
+========================= */
+
+.logo-mark{
+
+    width:125px;
+    height:125px;
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin:auto;
+
+    color:var(--blue);
+
+    filter:
+        drop-shadow(
+            0 12px 24px
+            rgba(6,59,143,0.12)
+        );
+}
+
+.logo-mark svg{
+
+    width:100%;
+    height:100%;
+}
+
+
+/* =========================
+   HERO
+========================= */
 
 .center{
-position:fixed;
 
-top:48%;
-left:50%;
+    position:fixed;
 
-transform:translate(-50%,-50%);
+    top:48%;
+    left:50%;
 
-width:100%;
+    transform:translate(-50%,-50%);
 
-text-align:center;
+    width:100%;
 
-pointer-events:none;
+    text-align:center;
 
-z-index:1;
+    pointer-events:none;
+
+    z-index:1;
 }
 
-.logo-ring{
-width:290px;
-height:290px;
 
-margin:auto;
-
-border-radius:50%;
-
-position:relative;
-
-display:flex;
-align-items:center;
-justify-content:center;
-
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.24),
-rgba(255,255,255,0.05)
-);
-
-border:1px solid rgba(255,255,255,0.48);
-
-box-shadow:
-inset 0 0 18px rgba(255,255,255,0.25),
-0 0 45px rgba(255,255,255,0.08);
-}
-
-.logo-ring::before{
-content:'';
-
-position:absolute;
-
-width:360px;
-height:360px;
-
-border-radius:50%;
-
-background:rgba(255,255,255,0.05);
-
-filter:blur(2px);
-}
-
-.infinity{
-font-size:132px;
-color:#062d71;
-z-index:2;
-}
+/* HERO TITLE */
 
 .hero-title{
-margin-top:34px;
 
-color:#062d71;
+    margin-top:28px;
 
-font-size:64px;
+    color:var(--blue);
 
-font-family:'Cormorant Garamond',serif;
+    font-size:64px;
 
-font-weight:700;
+    font-family:'Cormorant Garamond',serif;
 
-line-height:1;
+    font-weight:700;
+
+    line-height:1;
 }
 
 .spark{
-color:#c79a3d;
+
+    color:var(--blue-light);
+
+    margin-left:5px;
 }
 
+
+/* DIVIDER */
+
 .divider{
-width:260px;
 
-margin:18px auto;
+    width:260px;
 
-display:flex;
-align-items:center;
-justify-content:center;
+    margin:18px auto;
 
-gap:14px;
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:14px;
 }
 
 .divider span{
-width:90px;
-height:1px;
-background:#c79a3d;
+
+    width:90px;
+
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--blue)
+        );
+}
+
+.divider span:last-child{
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            transparent
+        );
 }
 
 .divider p{
-color:#c79a3d;
-font-size:18px;
+
+    color:var(--blue);
+
+    font-size:18px;
 }
+
+
+/* SUBTITLE */
 
 .sub{
-color:#b78633;
-font-size:30px;
-font-family:'Cormorant Garamond',serif;
+
+    color:#52709e;
+
+    font-size:30px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-weight:500;
 }
 
-/* CHAT */
+
+/* =========================
+   CHAT
+========================= */
 
 .chat-area{
 
-position:absolute;
+    position:absolute;
 
-top:0;
-left:0;
+    top:0;
+    left:0;
 
-width:100%;
-height:100dvh;
+    width:100%;
+    height:100dvh;
 
-overflow-y:auto;
+    overflow-y:auto;
 
-padding-top:95vh;
-padding-left:20px;
-padding-right:20px;
-padding-bottom:190px;
+    padding-top:95vh;
 
-display:flex;
-flex-direction:column;
+    padding-left:20px;
+    padding-right:20px;
 
-gap:14px;
+    padding-bottom:190px;
 
-z-index:5;
+    display:flex;
 
-scroll-behavior:smooth;
+    flex-direction:column;
+
+    gap:14px;
+
+    z-index:5;
+
+    scroll-behavior:smooth;
 }
 
 .chat-area::-webkit-scrollbar{
-display:none;
+    display:none;
 }
+
+
+/* MESSAGE */
 
 .message{
-max-width:78%;
 
-padding:15px 18px;
+    max-width:78%;
 
-border-radius:24px;
+    padding:15px 18px;
 
-font-size:15px;
+    border-radius:24px;
 
-line-height:1.6;
+    font-size:15px;
 
-word-wrap:break-word;
+    line-height:1.6;
 
-animation:fadeUp .25s ease;
+    word-wrap:break-word;
+
+    animation:fadeUp .25s ease;
 }
+
+
+/* USER */
 
 .user-message{
-align-self:flex-end;
 
-background:#062d71;
+    align-self:flex-end;
 
-color:white;
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--blue-light)
+        );
 
-border-bottom-right-radius:8px;
+    color:white;
+
+    border-bottom-right-radius:8px;
+
+    box-shadow:
+        0 8px 20px rgba(6,59,143,0.18);
 }
+
+
+/* AI */
 
 .ai-message{
-align-self:flex-start;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.75),
-rgba(255,255,255,0.22)
-);
+    align-self:flex-start;
 
-border:1px solid rgba(255,255,255,0.7);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.92),
+            rgba(237,245,255,0.68)
+        );
 
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.95);
 
-color:#333;
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
 
-border-bottom-left-radius:8px;
+    color:#263f66;
+
+    border-bottom-left-radius:8px;
+
+    box-shadow:
+        0 8px 24px rgba(6,59,143,0.08);
 }
+
+
+/* ANIMATION */
 
 @keyframes fadeUp{
 
-from{
-opacity:0;
-transform:translateY(20px);
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
 }
 
-to{
-opacity:1;
-transform:translateY(0);
-}
 
-}
-
-/* SEARCH */
+/* =========================
+   SEARCH
+========================= */
 
 .search-wrap{
-position:fixed;
 
-left:50%;
-bottom:20px;
+    position:fixed;
 
-transform:translateX(-50%);
+    left:50%;
+    bottom:20px;
 
-width:92%;
-height:78px;
+    transform:translateX(-50%);
 
-border-radius:32px;
+    width:92%;
+    height:78px;
 
-padding:0 16px;
+    border-radius:32px;
 
-display:flex;
-align-items:center;
-justify-content:space-between;
+    padding:0 16px;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.58),
-rgba(255,255,255,0.18)
-);
+    display:flex;
 
-border:1px solid rgba(255,255,255,0.72);
+    align-items:center;
 
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
+    justify-content:space-between;
 
-box-shadow:
-inset 0 0 12px rgba(255,255,255,0.4),
-0 12px 28px rgba(180,140,100,0.10);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.90),
+            rgba(231,241,255,0.68)
+        );
 
-z-index:100;
+    border:1px solid rgba(255,255,255,0.95);
+
+    backdrop-filter:blur(22px);
+    -webkit-backdrop-filter:blur(22px);
+
+    box-shadow:
+
+        inset 0 0 12px
+        rgba(255,255,255,0.8),
+
+        0 14px 32px
+        rgba(6,59,143,0.12);
+
+    z-index:100;
 }
+
+
+/* SEARCH LEFT */
 
 .search-left{
-display:flex;
-align-items:center;
-gap:14px;
-width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    width:100%;
 }
 
+
+/* CIRCLE BUTTON */
+
 .circle-btn{
-width:50px;
-height:50px;
 
-border-radius:50%;
+    width:50px;
+    height:50px;
 
-display:flex;
-align-items:center;
-justify-content:center;
+    border-radius:50%;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.20)
-);
+    display:flex;
 
-border:1px solid rgba(255,255,255,0.7);
+    align-items:center;
+    justify-content:center;
 
-box-shadow:
-inset 0 0 8px rgba(255,255,255,0.5),
-0 5px 16px rgba(180,140,100,0.10);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.95),
+            rgba(224,237,255,0.65)
+        );
 
-cursor:pointer;
+    border:1px solid rgba(255,255,255,0.95);
+
+    box-shadow:
+        inset 0 0 8px rgba(255,255,255,0.8),
+        0 6px 16px rgba(6,59,143,0.10);
+
+    cursor:pointer;
+
+    transition:0.2s ease;
+
+    flex-shrink:0;
+}
+
+.circle-btn:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+        0 8px 20px rgba(6,59,143,0.18);
 }
 
 .circle-btn span{
-color:#b8862e;
-font-size:24px;
+
+    color:var(--blue);
+
+    font-size:24px;
+
+    font-weight:500;
 }
 
+
+/* SEND */
+
+.send-btn{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--blue),
+            var(--blue-light)
+        );
+
+    border:none;
+
+    box-shadow:
+        0 8px 20px rgba(6,59,143,0.24);
+}
+
+.send-btn span{
+
+    color:white;
+
+    font-size:25px;
+}
+
+
+/* INPUT */
+
 .search-input{
-width:100%;
 
-border:none;
-outline:none;
+    width:100%;
 
-background:transparent;
+    border:none;
+    outline:none;
 
-color:#7d756e;
+    background:transparent;
 
-font-size:17px;
+    color:var(--text);
 
-font-family:'Poppins',sans-serif;
+    font-size:17px;
+
+    font-family:'Poppins',sans-serif;
 }
 
 .search-input::placeholder{
-color:#7d756e;
+
+    color:#7f91ad;
 }
 
-/* OVERLAY */
+
+/* =========================
+   OVERLAY
+========================= */
 
 .menu-overlay{
-position:fixed;
-inset:0;
 
-background:rgba(0,0,0,0.08);
+    position:fixed;
 
-backdrop-filter:blur(8px);
--webkit-backdrop-filter:blur(8px);
+    inset:0;
 
-opacity:0;
-visibility:hidden;
+    background:rgba(4,34,76,0.10);
 
-transition:0.35s ease;
+    backdrop-filter:blur(8px);
+    -webkit-backdrop-filter:blur(8px);
 
-z-index:998;
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:0.35s ease;
+
+    z-index:998;
 }
 
 .menu-overlay.active{
-opacity:1;
-visibility:visible;
+
+    opacity:1;
+
+    visibility:visible;
 }
 
-/* SIDE MENU */
+
+/* =========================
+   SIDE MENU
+========================= */
 
 .side-menu{
-position:fixed;
 
-top:0;
-left:0;
+    position:fixed;
 
-width:88%;
-max-width:320px;
+    top:0;
+    left:0;
 
-height:100dvh;
+    width:88%;
+    max-width:320px;
 
-padding:120px 14px 18px;
+    height:100dvh;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.85),
-rgba(255,255,255,0.25)
-);
+    padding:120px 14px 18px;
 
-border-right:1px solid rgba(255,255,255,0.7);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.94),
+            rgba(232,242,255,0.78)
+        );
 
-border-top-right-radius:32px;
-border-bottom-right-radius:32px;
+    border-right:1px solid rgba(255,255,255,0.95);
 
-backdrop-filter:blur(30px);
--webkit-backdrop-filter:blur(30px);
+    border-top-right-radius:32px;
 
-box-shadow:
-0 10px 40px rgba(0,0,0,0.08);
+    border-bottom-right-radius:32px;
 
-transform:translate3d(-110%,0,0);
+    backdrop-filter:blur(30px);
+    -webkit-backdrop-filter:blur(30px);
 
-transition:transform 0.42s cubic-bezier(.77,0,.18,1);
+    box-shadow:
+        10px 0 40px
+        rgba(6,59,143,0.12);
 
-z-index:100001;
+    transform:translate3d(-110%,0,0);
 
-overflow-y:auto;
-overflow-x:hidden;
+    transition:
+        transform 0.42s
+        cubic-bezier(.77,0,.18,1);
 
-will-change:transform;
+    z-index:100001;
+
+    overflow-y:auto;
+
+    overflow-x:hidden;
+
+    will-change:transform;
 }
 
 .side-menu::-webkit-scrollbar{
-display:none;
+    display:none;
 }
 
 
-
-.app.menu-open .top-bar{
-opacity:0;
-pointer-events:none;
-}
-
-/* PROFILE */
+/* =========================
+   PROFILE
+========================= */
 
 .menu-profile{
-display:flex;
-justify-content:space-between;
-align-items:center;
 
-padding:14px;
+    display:flex;
 
-border-radius:22px;
+    justify-content:space-between;
+    align-items:center;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.20)
-);
+    padding:14px;
 
-border:1px solid rgba(255,255,255,0.7);
+    border-radius:22px;
 
-margin-bottom:16px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.92),
+            rgba(230,240,255,0.65)
+        );
+
+    border:1px solid rgba(255,255,255,0.95);
+
+    margin-bottom:16px;
+
+    box-shadow:
+        0 8px 20px
+        rgba(6,59,143,0.06);
 }
+
 
 .profile-left{
-display:flex;
-align-items:center;
-gap:10px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
 }
+
 
 .profile-icon{
-width:52px;
-height:52px;
 
-border-radius:50%;
+    width:52px;
+    height:52px;
 
-display:flex;
-align-items:center;
-justify-content:center;
+    border-radius:50%;
 
-background:#f5dfba;
+    display:flex;
 
-font-size:24px;
+    align-items:center;
+    justify-content:center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dceaff,
+            #edf5ff
+        );
+
+    color:var(--blue);
+
+    font-size:24px;
 }
 
+
 .menu-profile h2{
-color:#062d71;
-font-size:26px;
-font-family:'Cormorant Garamond',serif;
-line-height:1;
+
+    color:var(--blue);
+
+    font-size:26px;
+
+    font-family:'Cormorant Garamond',serif;
+
+    line-height:1;
 }
 
 .menu-profile p{
-color:#b8862e;
-font-size:14px;
-margin-top:2px;
+
+    color:#6680a6;
+
+    font-size:14px;
+
+    margin-top:2px;
 }
 
 .profile-star{
-color:#d4a54f;
-font-size:20px;
+
+    color:var(--blue);
+
+    font-size:20px;
 }
 
-/* MENU ITEMS */
+
+/* =========================
+   MENU ITEMS
+========================= */
 
 .menu-items{
-display:flex;
-flex-direction:column;
-gap:10px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:10px;
 }
+
 
 .menu-item{
-height:60px;
 
-padding:0 16px;
+    height:60px;
 
-border-radius:18px;
+    padding:0 16px;
 
-display:flex;
-align-items:center;
+    border-radius:18px;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.20)
-);
+    display:flex;
 
-border:1px solid rgba(255,255,255,0.65);
+    align-items:center;
 
-box-shadow:
-inset 0 0 6px rgba(255,255,255,0.4);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.90),
+            rgba(232,242,255,0.58)
+        );
 
-cursor:pointer;
+    border:1px solid rgba(255,255,255,0.92);
+
+    box-shadow:
+        inset 0 0 6px rgba(255,255,255,0.7);
+
+    cursor:pointer;
+
+    transition:0.2s ease;
 }
 
+.menu-item:hover{
+
+    transform:translateX(4px);
+
+    background:#ffffff;
+}
+
+
 .menu-item span{
-font-size:20px;
+
+    font-size:20px;
+
+    color:var(--blue);
 }
 
 .menu-item p{
-margin-left:14px;
 
-color:#222;
+    margin-left:14px;
 
-font-size:16px;
+    color:#263f66;
 
-font-family:'Cormorant Garamond',serif;
+    font-size:16px;
 
-flex:1;
+    font-family:'Cormorant Garamond',serif;
+
+    flex:1;
 }
 
 .menu-item i{
-font-style:normal;
 
-color:#999;
+    font-style:normal;
 
-font-size:22px;
+    color:#7890b0;
+
+    font-size:22px;
 }
 
-  
-/* ABOUT */
+
+/* =========================
+   ABOUT
+========================= */
 
 .about-popup{
-position:fixed;
-inset:0;
 
-background:rgba(0,0,0,0.10);
+    position:fixed;
 
-backdrop-filter:blur(10px);
--webkit-backdrop-filter:blur(10px);
+    inset:0;
 
-display:flex;
-align-items:center;
-justify-content:center;
+    background:rgba(4,34,76,0.10);
 
-opacity:0;
-visibility:hidden;
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
 
-transition:0.3s ease;
+    display:flex;
 
-z-index:9999;
+    align-items:center;
+    justify-content:center;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:0.3s ease;
+
+    z-index:9999;
 }
 
 .about-popup.active{
-opacity:1;
-visibility:visible;
+
+    opacity:1;
+
+    visibility:visible;
 }
+
 
 .about-card{
-width:88%;
-max-width:360px;
 
-padding:30px 24px;
+    width:88%;
+    max-width:360px;
 
-border-radius:30px;
+    padding:30px 24px;
 
-text-align:center;
+    border-radius:30px;
 
-background:
-linear-gradient(
-145deg,
-rgba(255,255,255,0.72),
-rgba(255,255,255,0.18)
-);
+    text-align:center;
 
-border:1px solid rgba(255,255,255,0.7);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.94),
+            rgba(232,242,255,0.72)
+        );
 
-backdrop-filter:blur(18px);
--webkit-backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.95);
 
-position:relative;
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    position:relative;
+
+    box-shadow:
+        0 20px 50px
+        rgba(6,59,143,0.16);
 }
+
+
+/* ABOUT LOGO */
 
 .about-logo{
-font-size:52px;
-color:#062d71;
+
+    width:72px;
+    height:72px;
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--blue);
 }
+
+.about-logo svg{
+
+    width:100%;
+    height:100%;
+}
+
 
 .about-card h2{
-margin-top:10px;
-color:#062d71;
-font-size:30px;
-font-family:'Cormorant Garamond',serif;
+
+    margin-top:10px;
+
+    color:var(--blue);
+
+    font-size:30px;
+
+    font-family:'Cormorant Garamond',serif;
 }
+
 
 .about-sub{
-color:#b8862e;
-font-size:18px;
-margin-top:4px;
-font-family:'Cormorant Garamond',serif;
+
+    color:#6280a8;
+
+    font-size:18px;
+
+    margin-top:4px;
+
+    font-family:'Cormorant Garamond',serif;
 }
+
 
 .about-line{
-width:70px;
-height:1px;
-background:#d2a34f;
-margin:18px auto;
+
+    width:70px;
+
+    height:2px;
+
+    background:var(--blue);
+
+    margin:18px auto;
+
+    border-radius:5px;
 }
+
 
 .about-text{
-color:#6f645b;
-line-height:1.6;
-font-size:16px;
+
+    color:#647895;
+
+    line-height:1.6;
+
+    font-size:16px;
 }
+
 
 .founder{
-margin-top:18px;
-color:#062d71;
-font-size:22px;
-font-family:'Cormorant Garamond',serif;
+
+    margin-top:18px;
+
+    color:var(--blue);
+
+    font-size:22px;
+
+    font-family:'Cormorant Garamond',serif;
 }
+
 
 .close-popup{
-position:absolute;
-top:16px;
-right:20px;
 
-border:none;
-background:none;
+    position:absolute;
 
-font-size:22px;
+    top:16px;
+    right:20px;
 
-cursor:pointer;
+    border:none;
 
-color:#7a6f65;
+    background:none;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    color:#6d819f;
 }
 
-/* MOBILE */
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width:768px){
 
-.top-bar{
-padding:22px 18px 0;
+    .top-bar{
+
+        padding:22px 18px 0;
+    }
+
+    .brand{
+
+        font-size:17px;
+    }
+
+    .glass-btn{
+
+        width:44px;
+        height:44px;
+    }
+
+    .glass-btn i{
+
+        font-size:20px;
+    }
+
+    .logo-mark{
+
+        width:105px;
+        height:105px;
+    }
+
+    .hero-title{
+
+        margin-top:22px;
+
+        font-size:30px;
+    }
+
+    .sub{
+
+        font-size:18px;
+    }
+
+    .divider{
+
+        width:180px;
+
+        margin:13px auto;
+    }
+
+    .divider span{
+
+        width:55px;
+    }
+
+    .search-wrap{
+
+        width:93%;
+
+        height:72px;
+
+        bottom:12px;
+
+        border-radius:28px;
+
+        padding:0 12px;
+    }
+
+    .chat-area{
+
+        padding-top:72vh;
+    }
+
+    .message{
+
+        max-width:86%;
+    }
+
 }
 
-.brand{
-font-size:15px;
-}
 
-.glass-btn{
-width:44px;
-height:44px;
-}
+/* =========================
+   SMALL PHONES
+========================= */
 
-.glass-btn i{
-font-size:20px;
-}
+@media (max-width:420px){
 
-.logo-ring{
-width:190px;
-height:190px;
-}
+    .brand{
 
-.logo-ring::before{
-width:240px;
-height:240px;
-}
+        font-size:15px;
+    }
 
-.infinity{
-font-size:92px;
-}
+    .logo-mark{
 
-.hero-title{
-margin-top:24px;
-font-size:30px;
-}
+        width:90px;
+        height:90px;
+    }
 
-.sub{
-font-size:18px;
-}
+    .hero-title{
 
-.search-wrap{
-width:93%;
-height:72px;
-bottom:12px;
-border-radius:28px;
-padding:0 12px;
-}
+        font-size:28px;
+    }
 
-.chat-area{
-padding-top:72vh;
-}
+    .sub{
+
+        font-size:17px;
+    }
 
 }
 
 </style>
+
 </head>
+
 
 <body>
 
 <div class="app" id="app">
 
-<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
 
-<div class="side-menu" id="sideMenu">
+<!-- =========================
+     MENU OVERLAY
+========================= -->
 
-<div class="menu-profile">
-
-<div class="profile-left">
-
-<div class="profile-icon">👤</div>
-
-<div>
-<h2>SK</h2>
-<p>Premium User</p>
-</div>
-
-</div>
-
-<div class="profile-star">✦</div>
-
-</div>
-
-<div class="menu-items">
-
-<div class="menu-item">
-<span>☷</span>
-<p>Dashboard</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>💬</span>
-<p>My Chats</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>📄</span>
-<p>My Documents</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>🔖</span>
-<p>Saved Answers</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>🗓</span>
-<p>Study Planner</p>
-<i>›</i>
-</div>
-
-<div class="menu-item">
-<span>✦</span>
-<p>AI Tools</p>
-<i>›</i>
+<div
+    class="menu-overlay"
+    id="menuOverlay"
+    onclick="closeMenu()">
 </div>
 
 
-  
-  
-</div>
+<!-- =========================
+     SIDE MENU
+========================= -->
+
+<div
+    class="side-menu"
+    id="sideMenu">
+
+
+    <div class="menu-profile">
+
+        <div class="profile-left">
+
+            <div class="profile-icon">
+                👤
+            </div>
+
+            <div>
+
+                <h2>SK</h2>
+
+                <p>
+                    Premium User
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="profile-star">
+            ✦
+        </div>
+
+    </div>
+
+
+    <div class="menu-items">
+
+        <div class="menu-item">
+            <span>☷</span>
+            <p>Dashboard</p>
+            <i>›</i>
+        </div>
+
+        <div class="menu-item">
+            <span>💬</span>
+            <p>My Chats</p>
+            <i>›</i>
+        </div>
+
+        <div class="menu-item">
+            <span>📄</span>
+            <p>My Documents</p>
+            <i>›</i>
+        </div>
+
+        <div class="menu-item">
+            <span>🔖</span>
+            <p>Saved Answers</p>
+            <i>›</i>
+        </div>
+
+        <div class="menu-item">
+            <span>🗓</span>
+            <p>Study Planner</p>
+            <i>›</i>
+        </div>
+
+        <div class="menu-item">
+            <span>✦</span>
+            <p>AI Tools</p>
+            <i>›</i>
+        </div>
+
+    </div>
 
 </div>
 
-<!-- TOP -->
+
+<!-- =========================
+     TOP BAR
+========================= -->
 
 <div class="top-bar">
 
-<div class="left-top">
+    <div class="left-top">
 
-<div class="glass-btn" onclick="openMenu()">
-<i>☰</i>
+        <div
+            class="glass-btn"
+            onclick="openMenu()">
+
+            <i>☰</i>
+
+        </div>
+
+
+        <div class="brand">
+            Sanitas Melete
+        </div>
+
+    </div>
+
+
+    <div
+        class="glass-btn"
+        onclick="openAbout()">
+
+        <i>∞</i>
+
+    </div>
+
 </div>
 
-<div class="brand">
-Sanitas Melete
-</div>
 
-</div>
-
-<div class="glass-btn" onclick="openAbout()">
-<i>∞</i>
-</div>
-
-</div>
-
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
 <div class="center">
 
-<div class="logo-ring">
-<div class="infinity">∞</div>
+
+    <!-- NEW SANITAS LOGO -->
+
+    <div class="logo-mark">
+
+        <svg
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Rounded square -->
+
+            <rect
+                x="22"
+                y="22"
+                width="156"
+                height="156"
+                rx="35"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="12"/>
+
+
+            <!-- Main diagonal / infinity-style mark -->
+
+            <path
+                d="
+                M48 42
+                C55 88 78 122 116 148
+                C136 162 153 164 163 151
+                "
+                fill="none"
+                stroke="currentColor"
+                stroke-width="12"
+                stroke-linecap="round"/>
+
+
+            <path
+                d="
+                M76 112
+                L153 40
+                "
+                fill="none"
+                stroke="currentColor"
+                stroke-width="12"
+                stroke-linecap="round"/>
+
+
+            <path
+                d="
+                M105 142
+                L163 87
+                "
+                fill="none"
+                stroke="currentColor"
+                stroke-width="12"
+                stroke-linecap="round"/>
+
+        </svg>
+
+    </div>
+
+
+    <div class="hero-title">
+
+        Hi iam mebi
+
+        <span class="spark">
+            ✦
+        </span>
+
+    </div>
+
+
+    <div class="divider">
+
+        <span></span>
+
+        <p>✦</p>
+
+        <span></span>
+
+    </div>
+
+
+    <div class="sub">
+        your study buddy
+    </div>
+
 </div>
 
-<div class="hero-title">
-Hi iam mebi<span class="spark">✦</span>
+
+<!-- =========================
+     CHAT
+========================= -->
+
+<div
+    class="chat-area"
+    id="chatArea">
 </div>
 
-<div class="divider">
-<span></span>
-<p>✦</p>
-<span></span>
-</div>
 
-<div class="sub">
-your study buddy
-</div>
-
-</div>
-
-<!-- CHAT -->
-
-<div class="chat-area" id="chatArea"></div>
-
-<!-- SEARCH -->
+<!-- =========================
+     SEARCH
+========================= -->
 
 <div class="search-wrap">
 
-<div class="search-left">
-
-<!-- UPLOAD BUTTON -->
-
-<label for="fileUpload" class="circle-btn">
-<span>＋</span>
-</label>
-
-<input
-type="file"
-id="fileUpload"
-hidden
-multiple
-accept=".pdf,.doc,.docx,.txt,image/*"
-/>
-
-<!-- TEXT INPUT -->
-
-<input
-type="text"
-class="search-input"
-placeholder="type your questions here"
-/>
-
-  
-</div>
-
-<!-- SEND BUTTON -->
-
-<button class="circle-btn send-btn"type="button">
-<span>↑</span>
-</button>
-
-</div>
-  
-
-<!-- ABOUT -->
-
-<div class="about-popup" id="aboutPopup">
-
-<div class="about-card">
-
-<button class="close-popup" onclick="closeAbout()">✕</button>
-
-<div class="about-logo">∞</div>
-
-<h2>Sanitas Melete AI</h2>
-
-<p class="about-sub">
-your study buddy
-</p>
-
-<div class="about-line"></div>
-
-<p class="about-text">
-Premium AI learning platform crafted for students with elegant design and intelligent study experience.
-</p>
-
-<p class="founder">
-Founder — SK
-</p>
-<body>
+    <div class="search-left">
 
 
-    
-  </section>
+        <!-- UPLOAD -->
 
-</body>
-</div>
+        <label
+            for="fileUpload"
+            class="circle-btn">
+
+            <span>＋</span>
+
+        </label>
+
+
+        <input
+            type="file"
+            id="fileUpload"
+            hidden
+            multiple
+            accept=".pdf,.doc,.docx,.txt,image/*">
+
+
+        <!-- INPUT -->
+
+        <input
+            type="text"
+            class="search-input"
+            placeholder="Ask me anything...">
+
+
+    </div>
+
+
+    <!-- SEND -->
+
+    <button
+        class="circle-btn send-btn"
+        type="button">
+
+        <span>↑</span>
+
+    </button>
 
 </div>
 
-</div>
 
-<script>
+<!-- =========================
+     ABOUT
+========================= -->
 
-const app =
-document.getElementById("app");
+<div
+    class="about-popup"
+    id="aboutPopup">
 
-const input =
-document.querySelector(".search-input");
 
-const sendBtn =
-document.querySelector(".send-btn");
+    <div class="about-card">
 
-const chatArea =
-document.getElementById("chatArea");
 
-const sideMenu =
-document.getElementById("sideMenu");
+        <button
+            class="close-popup"
+            onclick="closeAbout()">
 
-const menuOverlay =
-document.getElementById("menuOverlay");
+            ✕
 
-const fileUpload =
-document.getElementById("fileUpload");
+        </button>
 
-/* MENU */
 
+        <div class="about-logo">
 
-function openMenu() {
+            <svg
+                viewBox="0 0 200 200"
+                xmlns="http://www.w3.org/2000/svg">
 
-document.getElementById("sideMenu").style.transform = "translate3d(0,0,0)";
-
-document.getElementById("menuOverlay").classList.add("active");
-
-}
-
-function closeMenu() {
-
-document.getElementById("sideMenu").style.transform = "translate3d(-110%,0,0)";
-
-document.getElementById("menuOverlay").classList.remove("active");
-
-}
-
-
-/* ABOUT */
-
-function openAbout(){
-
-document
-.getElementById("aboutPopup")
-.classList.add("active");
-
-}
-
-function closeAbout(){
-
-document
-.getElementById("aboutPopup")
-.classList.remove("active");
-
-}
-
-/* CHAT */
-
-function addMessage(text,type){
-
-const msg =
-document.createElement("div");
-
-msg.classList.add("message");
-
-if(type === "user"){
-
-msg.classList.add("user-message");
-
-}else{
-
-msg.classList.add("ai-message");
-
-}
-
-msg.innerText = text;
-
-chatArea.appendChild(msg);
-
-setTimeout(()=>{
-
-msg.scrollIntoView({
-behavior:"smooth",
-block:"end"
-});
-
-},100);
-
-}
-
-/* SEND MESSAGE */
-
-async function sendMessage(){
-
-const text =
-input.value.trim();
-
-if(!text) return;
-
-addMessage(text,"user");
-
-input.value = "";
-
-const loading =
-document.createElement("div");
-
-loading.classList.add(
-"message",
-"ai-message"
-);
-
-loading.innerText =
-"mebi is thinking ✨";
-
-chatArea.appendChild(loading);
-
-loading.scrollIntoView({
-behavior:"smooth",
-block:"end"
-});
-
-try{
-
-const response =
-await fetch("/api/ask",{
-
-method:"POST",
-
-headers:{
-"Content-Type":"application/json"
-},
-
-body:JSON.stringify({
-question:text
-})
-
-});
-
-const data =
-await response.json();
-
-loading.remove();
-
-addMessage(
-data.reply || "No response",
-"ai"
-);
-
-}catch(err){
-
-loading.remove();
-
-addMessage(
-"API Error:"+err.message,
-"ai"
-);
-console.error(err);
-  
-}
-
-}
-
-/* SEND BUTTON */
-
-sendBtn.onclick = sendMessage;
-
-/* ENTER KEY */
-
-input.addEventListener(
-"keypress",
-e=>{
-
-if(e.key === "Enter"){
-
-sendMessage();
-
-}
-
-}
-);
-
-/* FILE UPLOAD */
-
-fileUpload.addEventListener(
-"change",
-e=>{
-
-const files =
-e.target.files;
-
-if(files.length > 0){
-
-for(let file of files){
-
-addMessage(
-"Uploaded: " + file.name,
-"user"
-);
-
-}
-
-}
-
-}
-);
-
-
-</script>
-
-</body>
-</html>
+                <rect
+                    x="22"
+                    y="22"
+                    width="156"
+                    height="156"
+                    rx="
